@@ -19,7 +19,7 @@ def buildAndPublishDockerImages(String nextReleaseNumber='') {
     }
     // Frontend
     docker.withRegistry('', 'docker-token') {
-        def customImage = docker.build("${env.DOCKER_ORGANIZATION}/${cfg.projectName}-frontend:${nextReleaseNumber}", "--pull --no-cache --build-arg BUILD_ID=$BUILD_ID frontend")
+        def customImage = docker.build("${env.DOCKER_ORGANIZATION}/huelladigital-frontend:${nextReleaseNumber}", "--pull --no-cache --build-arg BUILD_ID=$BUILD_ID frontend")
         sh "docker image prune --filter label=stage=builder --filter label=build=$BUILD_ID"
         customImage.push()
         if (nextReleaseNumber != 'beta') {
