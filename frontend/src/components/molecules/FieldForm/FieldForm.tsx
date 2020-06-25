@@ -5,18 +5,18 @@ import { Label } from '../../atoms/Label';
 import { InputFieldForm } from '../../atoms/InputFieldForm';
 
 export const FieldForm: React.FC<FieldFormProps> = ({
-                                                      title = '',
-                                                      type = 'text',
-                                                      name = '',
-                                                      value,
-                                                      onChange,
-                                                      onBlur,
-                                                      stateValidate,
-                                                      messageInfoUser
-                                                    }) => {
+  title = '',
+  type = 'text',
+  name = '',
+  value,
+  onChange,
+  onBlur,
+  stateValidate,
+  messageInfoUser,
+}) => {
   return (
     <div className="FieldForm">
-      <Label text={title}/>
+      <Label text={title} />
       <InputFieldForm
         type={type}
         name={name}
@@ -25,7 +25,9 @@ export const FieldForm: React.FC<FieldFormProps> = ({
         onBlur={onBlur}
         stateValidate={stateValidate}
       />
-      {stateValidate === 'incorrect' && <p aria-label={'message-error'}>{messageInfoUser}</p>}
+      {stateValidate === 'incorrect' && (
+        <p aria-label={'message-error'}>{messageInfoUser}</p>
+      )}
     </div>
   );
 };

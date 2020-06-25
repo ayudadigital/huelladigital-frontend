@@ -1,11 +1,19 @@
-.Header{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    height: 170px;
-    padding: 0 50px;
+.Header {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 0;
     img {
-        width: 220px;
-        align-self: center;
-        justify-self: center;
+      width: 200px;
     }
+  }
 }

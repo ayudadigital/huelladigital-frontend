@@ -1,23 +1,35 @@
 .NavBar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 1px;
+    font-family: 'Open Sans', sans-serif;
 
-    a {
-        margin: 0 20px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: white;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 14px;
-        line-height: 160%;
-        letter-spacing: 1px;
-        font-family: "Open Sans",sans-serif;
-
-        &:hover {
-            color: #EABD00;
-            border-bottom: 3px solid #EABD00;
-        }
+    &:hover {
+      color: #eabd00;
+      border-bottom: 2px solid #eabd00;
     }
+  }
+}
+@media (min-width: 768px) {
+  .NavBar {
+    padding: initial;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    a {
+      margin-right: 10px;
+    }
+  }
 }
