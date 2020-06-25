@@ -13,7 +13,7 @@ export default class Client {
       body: JSON.stringify(credentials),
     })
       .then((response) => {
-        if (response.status === 201) {
+        if (response.status === 201 || response.status === 200) {
           window.location.replace(`${BASE.URI}${ROUTE.email.confirmation}`);
         }
       })
