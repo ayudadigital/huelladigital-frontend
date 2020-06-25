@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import { ROUTE } from '../../../../utils/ROUTES';
 import Client from '../FormUtils/client';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
+import { ROUTE } from '../../../../utils/ROUTES';
 
 export const FormRegisterVolunteer: React.FC = () => {
   const [data, setData] = useState<DataInterface>({
