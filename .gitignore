@@ -15,3 +15,4 @@ node_modules
 /backend/.settings/org.eclipse.m2e.core.prefs
 /frontend/build
 /frontend/npm_cache
+.env
