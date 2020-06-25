@@ -6,7 +6,9 @@ const menuValues: string[] = ['Inicio', 'Quiero ayuda', 'Necesito ayuda', 'Blog'
 
 export const NavBar: React.FC<{}> = () => (
   <div className="NavBar">
-    {menuValues.map(menu => <LinkText text={menu} to={'#'}/>)}
+    {
+      menuValues.map(menu => <LinkText text={menu} to={'#'}/>)
+    }
   </div>
 );
 
