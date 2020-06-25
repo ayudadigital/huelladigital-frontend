@@ -1,9 +1,10 @@
+import { BASE } from '../../../../utils/base';
 import { ROUTE } from '../../../../utils/routes';
+
 
 export default class Client {
   registerVolunteer(credentials: object) {
-    // FIXME: extract the URL to a variable on ENV i guess?
-    const URL = 'http://localhost:8080/api/v1/volunteers';
+    const URL = `${BASE.API}${ROUTE.API.volunteers.register}`;
     fetch(URL, {
       method: 'POST',
       headers: {
@@ -12,12 +13,13 @@ export default class Client {
       body: JSON.stringify(credentials),
     })
       .then((response) => {
-        if (response.status === 201) {
-          // FIXME: extract the URL to a variable on ENV i guess?
-          window.location.replace(`http://localhost:3000${ROUTE.email.confirmation}`);
+        if (response.status === 201 || response.status === 200) {
+          window.location.replace(`${BASE.URI}${ROUTE.email.confirmation}`);
         }
       })
       // tslint:disable-next-line:no-console
       .catch((error) => console.log(error));
   }
 }
+
+
