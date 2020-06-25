@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/scss/index.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
-import { ROUTE } from './utils/ROUTES';
+import { ROUTE } from './utils/routes';
 import { EmailConfirmation } from './pages/EmailConfirmation';
 
 const App: React.FC = () => {

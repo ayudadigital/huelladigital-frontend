@@ -1,4 +1,4 @@
-import { ROUTE } from '../../../src/utils/ROUTES';
+import { ROUTE } from '../../../src/utils/routes';
 
 describe('Volunteer should', () => {
 

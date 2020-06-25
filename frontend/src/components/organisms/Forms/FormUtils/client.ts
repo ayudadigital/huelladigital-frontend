@@ -1,5 +1,5 @@
-import { BASE } from '../../../../utils/BASE';
-import { ROUTE } from '../../../../utils/ROUTES';
+import { BASE } from '../../../../utils/base';
+import { ROUTE } from '../../../../utils/routes';
 
 
 export default class Client {
