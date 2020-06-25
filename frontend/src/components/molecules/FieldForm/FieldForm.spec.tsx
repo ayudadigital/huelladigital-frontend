@@ -3,7 +3,7 @@ import { render, RenderResult } from '@testing-library/react';
 import { FieldForm } from './FieldForm';
 
 describe('FieldForm', () => {
-  xit('should display the default message', () => {
+  it('should display a field form', () => {
     const textValue = 'irrelevant text';
     const renderResult: RenderResult = render(
       <FieldForm type={'text'} name={'text'} title={'text'} value={textValue}/>,
