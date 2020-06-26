@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {NavBar} from './NavBar';
+import { NavBarDesktop } from './NavBarDesktop';
 import { withA11y } from '@storybook/addon-a11y';
 import { BrowserRouter } from 'react-router-dom';
 
 export default {
-  title: 'Molecules | NavBar',
+  title: 'Molecules |  Navbar/NavBarDesktop',
   decorators: [withA11y,
     (storyFn:any) => <BrowserRouter>{storyFn()}</BrowserRouter>
     ],
@@ -13,7 +13,7 @@ export default {
 export const Dashboard = () => {
   return (
     <div style={{background: '#7E254E', height: '100vh', padding: '0', margin: '0'}}>
-    <NavBar/>
+    <NavBarDesktop/>
     </div>
   );
 };

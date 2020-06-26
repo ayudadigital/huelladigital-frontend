@@ -1,8 +1,9 @@
 .Header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   img {
-    width: 80%;
+    width: 50vw;
   }
 }
 

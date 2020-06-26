@@ -4,7 +4,7 @@ import { LinkText } from '../../atoms/LinkText';
 
 const menuValues: string[] = ['Inicio', 'Quiero ayuda', 'Necesito ayuda', 'Blog', 'Contacto'];
 
-export const NavBar: React.FC<{}> = () => (
+export const NavBarDesktop: React.FC<{}> = () => (
   <div className="NavBar">
     {
       menuValues.map(menu => <LinkText text={menu} to={'#'}/>)
@@ -12,4 +12,4 @@ export const NavBar: React.FC<{}> = () => (
   </div>
 );
 
-NavBar.displayName = 'NavBar';
+NavBarDesktop.displayName = 'NavBarDesktop';
