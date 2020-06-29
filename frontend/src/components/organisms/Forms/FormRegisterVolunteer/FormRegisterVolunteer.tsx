@@ -4,7 +4,6 @@ import { SubmitButton } from '../../../atoms/SubmitButton';
 import Client from '../FormUtils/client';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
-import { ROUTE } from '../../../../utils/routes';
 
 export const FormRegisterVolunteer: React.FC = () => {
   const [data, setData] = useState<DataInterface>({
@@ -13,15 +12,23 @@ export const FormRegisterVolunteer: React.FC = () => {
     passwordRepeated: '',
   });
 
-  const handleSubmit = (event: FormEvent) => {
+  const [statusMsg, setStatusMsg] = useState<any>();
+
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     const volunteerDTO = {
       email: data.email,
       password: data.password,
     };
     const client = new Client();
-    client.registerVolunteer(volunteerDTO);
+    const response = await client.registerVolunteer(volunteerDTO);
+    await setStatusMsg(response);
+
+    if (statusMsg === 409){
+      setCheck({...check, email: 'incorrect'});
+    }
   };
+
 
   const [check, setCheck] = useState<CheckInterface>({
     email: '',
@@ -69,7 +76,7 @@ export const FormRegisterVolunteer: React.FC = () => {
   };
 
   const [submitState, setSubmitState] = useState(true);
-  const handleSubmitStateButton = () => {
+  const handleEnableSubmitButton = () => {
     if (check.email === 'correct' && check.password === 'correct' && check.passwordRepeated === 'correct') {
       setSubmitState(false);
     } else {
@@ -78,13 +85,14 @@ export const FormRegisterVolunteer: React.FC = () => {
   };
 
   useEffect(() => {
-    handleSubmitStateButton();
+    handleEnableSubmitButton();
   });
 
   useEffect(() => {
     checkPasswordsAreTheSame();
     // eslint-disable-next-line
   }, [data.passwordRepeated, data.password]);
+
 
   return (
     <form className="ContainerForm" method="POST" onSubmit={handleSubmit}>
@@ -98,7 +106,7 @@ export const FormRegisterVolunteer: React.FC = () => {
           setData({ ...data, email: event.target.value });
         }}
         stateValidate={check.email}
-        messageInfoUser={'El email introducido no es válido'}
+        messageInfoUser={statusMsg === 409 ? 'Email ya registrado' : 'El email introducido no es válido'}
       />
       <FieldForm
         title={'Contraseña'}
@@ -121,7 +129,7 @@ export const FormRegisterVolunteer: React.FC = () => {
         stateValidate={check.passwordRepeated}
         messageInfoUser={'Las contraseñas no coinciden'}
       />
-        <SubmitButton text={'Registrarse'} disabled={submitState} to={ROUTE.email.confirmation}/>
+      <SubmitButton text={'Registrarse'} disabled={submitState}/>
     </form>
   );
 };
