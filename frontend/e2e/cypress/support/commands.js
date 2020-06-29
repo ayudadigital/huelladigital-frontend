@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+import { ROUTE } from '../../../src/utils/routes';
+
+Cypress.Commands.add('typeRegisterVolunteer', (volunteer) => {
+  cy.get('input[name=email]')
+    .type(volunteer.email);
+  cy.get('input[name=password]')
+    .type(volunteer.password);
+  cy.get('input[name=repeatedPassword]')
+    .type(volunteer.password);
+});
+
+Cypress.Commands.add('registerVolunteer', (volunteer) => {
+  cy.visit(ROUTE.home);
+  cy.get('button[aria-label=register-button]').click();
+  cy.get('input[name=email]')
+    .type(volunteer.email);
+  cy.get('input[name=password]')
+    .type(volunteer.password);
+  cy.get('input[name=repeatedPassword]')
+    .type(volunteer.password);
+  cy.get('button[type=submit]').click();
+});

@@ -7,6 +7,7 @@ export default class Client {
     const URL = `${BASE.API}${ROUTE.API.volunteers.register}`;
     return fetch(URL, {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -14,8 +15,12 @@ export default class Client {
     })
       .then((response) => {
         if (response.status === 201 || response.status === 200) {
+          JSON.stringify(response.json().then(res => {
+            window.document.cookie = `accessToken=${res.accessToken}; path=/;`;
+            window.document.cookie = `refreshToken=${res.refreshToken}; path=/;`;
+          }));
           window.location.replace(`${BASE.URI}${ROUTE.email.confirmation}`);
-        } else if (response.status === 409){
+        } else if (response.status === 409) {
           return 409;
         }
       })
@@ -23,5 +28,3 @@ export default class Client {
       .catch((error) => console.log(error));
   }
 }
-
-
