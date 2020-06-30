@@ -4,21 +4,24 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import { ROUTE } from './utils/routes';
 import { EmailConfirmation } from './pages/EmailConfirmation';
+import { WrapperPages } from './components/templates/WrapperPages';
+import { Header } from './components/organisms/Header';
+import { Footer } from './components/organisms/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path={ROUTE.home}>
-            <Home />
-          </Route>
-          <Route path={ROUTE.email.confirmation}>
-            <EmailConfirmation/>
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <div className="App">
+        <WrapperPages>
+          <Header/>
+          <Switch>
+            <Route exact path={ROUTE.home} component={Home}/>
+            <Route path={ROUTE.email.confirmation} component={EmailConfirmation}/>
+          </Switch>
+          <Footer/>
+        </WrapperPages>
+      </div>
+    </Router>
   );
 };
 
