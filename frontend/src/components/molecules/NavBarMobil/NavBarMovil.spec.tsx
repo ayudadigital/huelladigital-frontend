@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { render, RenderResult } from '@testing-library/react';
-import { NavBarMovil } from './index';
+import { NabBarMobil } from './index';
 
-describe('NavBarMovil', () => {
+describe('NavBarMobil', () => {
   xit('should display the default message', () => {
     const renderResult: RenderResult = render(
-      <NavBarMovil/>,
+      <NabBarMobil/>,
     );
-    expect(renderResult.queryByText('Hello from NavBarMovil!')).toBeTruthy();
+    expect(renderResult.queryByText('Hello from NavBarMobil!')).toBeTruthy();
   });
 });

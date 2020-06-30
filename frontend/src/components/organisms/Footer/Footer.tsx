@@ -4,19 +4,13 @@ import bannerER from '../../../assets/banner-er.png';
 import bannerOdds from '../../../assets/banner-odds.png';
 import { Politics } from '../../molecules/Politics';
 import { Social } from '../Social';
-import waveFooter from './assets/wave-footer.svg';
-
-const bgStyle = {
-  background: `url(${waveFooter}) top center no-repeat, #7e254e`,
-  backgroundSize: '110%, auto',
-};
 
 export const Footer: React.FC<{}> = () => (
-  <div className="Footer" style={bgStyle}>
-    <Social />
-    <img src={bannerER} alt="Banner_Entidad_Reconoce" />
-    <img src={bannerOdds} alt="banner_Objetivos_Desarrollo_Sostenibles" />
-    <Politics />
+  <div className="Footer">
+    <Social/>
+    <img src={bannerER} alt="Banner_Entidad_Reconoce"/>
+    <img src={bannerOdds} alt="banner_Objetivos_Desarrollo_Sostenibles"/>
+    <Politics/>
     <p>Huella Positiva © 2020 Huella Positiva</p>
   </div>
 );

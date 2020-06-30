@@ -1,1 +1,0 @@
-export { NavBarMovil } from './NavBarMovil';
