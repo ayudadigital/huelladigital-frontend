@@ -15,7 +15,7 @@ export const ROUTE: typeRoute = {
     confirmation: '/email-confirmation-register',
     resendConfirmation: '/resend-email-confirmation',
   },
-  loginRegister: '/login-regiter',
+  loginRegister: '/login-register',
   API: {
     volunteers: {
       register: `${ENDPOINT_VOLUNTEERS}/register`,

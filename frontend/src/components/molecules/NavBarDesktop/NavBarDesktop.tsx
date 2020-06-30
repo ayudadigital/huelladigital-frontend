@@ -4,7 +4,7 @@ import { LinkText } from '../../atoms/LinkText';
 import { ROUTE } from '../../../utils/routes';
 import { Menu } from './types';
 
-const menuValues: Menu[] = [
+const MENU_VALUES: Menu[] = [
   {
     title: 'Inicio',
     path: ROUTE.home,
@@ -26,7 +26,7 @@ interface NavBarDesktopProps {
 export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({onClick}) => (
   <div className="NavBar"  onClick={onClick}>
     {
-      menuValues.map((menu:Menu) => <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path}/>)
+      MENU_VALUES.map((menu:Menu) => <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path}/>)
     }
   </div>
 );
