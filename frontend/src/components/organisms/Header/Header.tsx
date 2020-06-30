@@ -12,7 +12,6 @@ export const Header: React.FC<{}> = () => {
 
   function handleModal() {
     setShowModal(!showModal);
-    console.log(showModal);
   }
 
   return (

@@ -7,13 +7,13 @@ describe('Volunteer should', () => {
   };
 
   beforeEach(() => {
-    const COMMAND_TO_DROP_INFO_CREDENTIALS_TABLE = 'docker exec local_huellapositiva_database_1 psql -U root -d huellapositiva -c \'TRUNCATE credentials CASCADE\'';
+    const COMMAND_TO_DROP_INFO_CREDENTIALS_TABLE = 'docker exec local_huellapositiva_database_1 psql -U root -d huellapositiva -c "TRUNCATE credentials CASCADE"';
     cy.exec(COMMAND_TO_DROP_INFO_CREDENTIALS_TABLE)
       .its('stdout').should('contain', 'TRUNCATE TABLE');
   });
 
   it('open the web', () => {
-    cy.visit(ROUTE.home);
+    cy.visit(ROUTE.loginRegister);
   });
 
   it('verify resend to email confirmation page when the form is good way', () => {
@@ -23,22 +23,16 @@ describe('Volunteer should', () => {
     cy.get('p').should('contain', 'reenviar correo');
   });
 
-  it('tell user that email are registered', () => {
-    cy.registerVolunteer(VOLUNTEER);
-    cy.registerVolunteer(VOLUNTEER);
-
-    cy.url().should('include', '/');
-    cy.get('p').should('contain', 'Email ya registrado');
-  });
-
   it('registered email should be changed after notified that it already exist', () => {
     cy.registerVolunteer(VOLUNTEER);
     cy.registerVolunteer(VOLUNTEER);
 
     cy.url().should('include', '/');
     cy.get('p').should('contain', 'Email ya registrado');
+
+    // Now changed the input after notify user already exist
     cy.get('input[name=email]').clear();
-    cy.get('input[name=email]').type('another'+VOLUNTEER.email);
+    cy.get('input[name=email]').type('another' + VOLUNTEER.email);
     cy.get('button[type=submit]').click();
 
     cy.url().should('include', ROUTE.email.confirmation);
@@ -48,6 +42,7 @@ describe('Volunteer should', () => {
   it('verify to cookies accessToken and refreshToken saved on window cookies', () => {
     cy.clearCookies();
     cy.registerVolunteer(VOLUNTEER);
+    cy.get('div .resend-container');
 
     cy.getCookies()
       .should('have.length', 2)

@@ -37,7 +37,7 @@ Cypress.Commands.add('typeRegisterVolunteer', (volunteer) => {
 });
 
 Cypress.Commands.add('registerVolunteer', (volunteer) => {
-  cy.visit(ROUTE.home);
+  cy.visit(ROUTE.loginRegister);
   cy.get('button[aria-label=register-button]').click();
   cy.get('input[name=email]')
     .type(volunteer.email);
