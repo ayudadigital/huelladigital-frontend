@@ -6,14 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 export default {
   title: 'Molecules |  Navbar/NavBarDesktop',
   decorators: [withA11y,
-    (storyFn:any) => <BrowserRouter>{storyFn()}</BrowserRouter>
-    ],
+    (storyFn: any) => <BrowserRouter>{storyFn()}</BrowserRouter>,
+  ],
 };
 
-export const Dashboard = () => {
-  return (
-    <div style={{background: '#7E254E', height: '100vh', padding: '0', margin: '0'}}>
-    <NavBarDesktop/>
-    </div>
-  );
-};
+export const Dashboard = () => <NavBarDesktop/>;

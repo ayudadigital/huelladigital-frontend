@@ -3,8 +3,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  background: #7E254E;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  //Modal
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0.9;
+
+
   a {
+    margin: 20px 0;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -21,6 +35,7 @@
     }
   }
 }
+
 @media (min-width: 768px) {
   .NavBar {
     padding: initial;
@@ -28,6 +43,12 @@
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;
+    background: none;
+    height: inherit;
+
+    top: inherit;
+    left: inherit;
+
     a {
       margin-right: 10px;
     }

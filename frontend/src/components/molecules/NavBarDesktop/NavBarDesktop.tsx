@@ -19,8 +19,12 @@ const menuValues: Menu[] = [
   },
 ];
 
-export const NavBarDesktop: React.FC<{}> = () => (
-  <div className="NavBar">
+interface NavBarDesktopProps {
+  onClick?: () => void;
+}
+
+export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({onClick}) => (
+  <div className="NavBar"  onClick={onClick}>
     {
       menuValues.map((menu:Menu) => <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path}/>)
     }
