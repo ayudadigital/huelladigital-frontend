@@ -1,6 +1,9 @@
-.Home {
+$bg: url('./assets/register.svg');
+
+.LoginRegister {
+  background: $bg no-repeat top center;
+  background-size: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -8,15 +11,16 @@
 }
 
 @media (min-width: 576px) {
-  .Home {
+  .LoginRegister {
     padding: 0;
   }
 }
 
 @media (min-width: 992px) {
-  .Home {
+  .LoginRegister {
     padding: 0;
     background-size: 45%;
   }
 }
+
 

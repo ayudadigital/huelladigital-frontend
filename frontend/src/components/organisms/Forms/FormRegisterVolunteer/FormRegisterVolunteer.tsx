@@ -4,7 +4,6 @@ import { SubmitButton } from '../../../atoms/SubmitButton';
 import Client from '../FormUtils/client';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
-import { ROUTE } from '../../../../utils/routes';
 
 export const FormRegisterVolunteer: React.FC = () => {
   const [data, setData] = useState<DataInterface>({
@@ -13,14 +12,21 @@ export const FormRegisterVolunteer: React.FC = () => {
     passwordRepeated: '',
   });
 
-  const handleSubmit = (event: FormEvent) => {
+  const [userAlreadyExist, setAlreadyExist] = useState<any>();
+
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     const volunteerDTO = {
       email: data.email,
       password: data.password,
     };
     const client = new Client();
-    client.registerVolunteer(volunteerDTO);
+    const response = await client.registerVolunteer(volunteerDTO);
+    await setAlreadyExist(response);
+
+    if (userAlreadyExist !== undefined && userAlreadyExist === 409) {
+      setCheck({ ...check, email: 'incorrect' });
+    }
   };
 
   const [check, setCheck] = useState<CheckInterface>({
@@ -40,7 +46,9 @@ export const FormRegisterVolunteer: React.FC = () => {
       }
     }
   };
-  const checkIsAllowedValue: (event: ChangeEvent<HTMLInputElement>) => void = (event: ChangeEvent<HTMLInputElement>) => {
+  const checkIsAllowedValue: (event: ChangeEvent<HTMLInputElement>) => void = (
+    event: ChangeEvent<HTMLInputElement>,
+  ) => {
     const minLength: number = 6;
     const regexEmail = new RegExp(
       /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
@@ -69,8 +77,12 @@ export const FormRegisterVolunteer: React.FC = () => {
   };
 
   const [submitState, setSubmitState] = useState(true);
-  const handleSubmitStateButton = () => {
-    if (check.email === 'correct' && check.password === 'correct' && check.passwordRepeated === 'correct') {
+  const handleEnableSubmitButton = () => {
+    if (
+      check.email === 'correct' &&
+      check.password === 'correct' &&
+      check.passwordRepeated === 'correct'
+    ) {
       setSubmitState(false);
     } else {
       setSubmitState(true);
@@ -78,7 +90,15 @@ export const FormRegisterVolunteer: React.FC = () => {
   };
 
   useEffect(() => {
-    handleSubmitStateButton();
+    if (userAlreadyExist !== undefined && userAlreadyExist === 409) {
+      setCheck({ ...check, email: 'incorrect' });
+    } else if (userAlreadyExist === 200) {
+      setCheck({ ...check, email: 'correct' });
+    }
+  }, [userAlreadyExist]);
+
+  useEffect(() => {
+    handleEnableSubmitButton();
   });
 
   useEffect(() => {
@@ -88,7 +108,6 @@ export const FormRegisterVolunteer: React.FC = () => {
 
   return (
     <form className="ContainerForm" method="POST" onSubmit={handleSubmit}>
-
       <FieldForm
         title={'Email'}
         type={'email'}
@@ -98,7 +117,11 @@ export const FormRegisterVolunteer: React.FC = () => {
           setData({ ...data, email: event.target.value });
         }}
         stateValidate={check.email}
-        messageInfoUser={'El email introducido no es válido'}
+        messageInfoUser={
+          userAlreadyExist === 409
+            ? 'Email ya registrado'
+            : 'El email introducido no es válido'
+        }
       />
       <FieldForm
         title={'Contraseña'}
@@ -121,7 +144,7 @@ export const FormRegisterVolunteer: React.FC = () => {
         stateValidate={check.passwordRepeated}
         messageInfoUser={'Las contraseñas no coinciden'}
       />
-        <SubmitButton text={'Registrarse'} disabled={submitState} to={ROUTE.email.confirmation}/>
+      <SubmitButton text={'Registrarse'} disabled={submitState} />
     </form>
   );
 };
