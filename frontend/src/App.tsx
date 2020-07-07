@@ -8,19 +8,34 @@ import { WrapperPages } from './components/templates/WrapperPages';
 import { Header } from './components/organisms/Header';
 import { Footer } from './components/organisms/Footer';
 import { LoginRegister } from './pages/LoginRegister';
+import { ConvocatoryDetails } from './pages/Convocatories/ConvocatoryDetails';
+import { ConvocatoryList } from './pages/Convocatories/ConvocatoryList';
+import { ConvocatoryRegister } from './pages/Convocatories/ConvocatoryRegister';
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
         <WrapperPages>
-          <Header/>
+          <Header />
           <Switch>
-            <Route exact path={ROUTE.home} component={Home}/>
-            <Route exact path={ROUTE.loginRegister} component={LoginRegister}/>
-            <Route path={ROUTE.email.confirmation} component={EmailConfirmation}/>
+            <Route exact path={ROUTE.home} component={Home} />
+            <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
+            <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
+            <Route
+              path={ROUTE.convocatory.convocatories.list}
+              component={ConvocatoryList}
+            />
+            <Route
+              path={ROUTE.convocatory.convocatories.details}
+              component={ConvocatoryDetails}
+            />
+            <Route
+              path={ROUTE.convocatory.convocatories.register}
+              component={ConvocatoryRegister}
+            />
           </Switch>
-          <Footer/>
+          <Footer />
         </WrapperPages>
       </div>
     </Router>
