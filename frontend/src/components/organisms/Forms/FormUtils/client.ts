@@ -28,6 +28,33 @@ export default class Client {
       // tslint:disable-next-line:no-console
       .catch((error) => console.log(error));
   }
+
+  async loginVolunteer(credentials: object) {
+    const URL = `${BASE.API}${ROUTE.API.volunteers.login}`;
+    return await fetch(URL, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    })
+      .then((response) => {
+        if (response.status === 201 || response.status === 200) {
+
+          JSON.stringify(response.json().then((res: { accessToken: string, refreshToken: string }) => {
+            setCookie('accessToken', res.accessToken);
+            setCookie('refreshToken', res.refreshToken);
+          }));
+          window.location.replace(`${BASE.URI}${ROUTE.home}`);
+          return 'OK';
+        } else if (response.status === 409) { // TODO: Contemplar las bad request
+          return 409;
+        }
+      })
+      // tslint:disable-next-line:no-console
+      .catch((error) => console.log(error));
+  }
 }
 
 

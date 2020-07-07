@@ -2,7 +2,7 @@ type typeRoute = {
   home: string;
   email: { confirmation: string; resendConfirmation: string };
   loginRegister: string;
-  API: { volunteers: { register: string }, email: { resendConfirmation: string } };
+  API: { volunteers: { register: string, login: string }, email: { resendConfirmation: string } };
 };
 
 const V1 = 'v1';
@@ -19,6 +19,7 @@ export const ROUTE: typeRoute = {
   API: {
     volunteers: {
       register: `${ENDPOINT_VOLUNTEERS}/register`,
+      login: `${ENDPOINT_VOLUNTEERS}/login`,
     },
     email: {
       resendConfirmation: `${ENDPOINT_EMAILCONFIRMATION}/resend-email-confirmation`,
