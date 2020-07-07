@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {ConvocatoryRegister} from './ConvocatoryRegister';
+import { ConvocatoryRegister } from './ConvocatoryRegister';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'ConvocatoryRegister',
+  title: 'Pages | Convocatories / ConvocatoryRegister',
   decorators: [withA11y],
 };
 

@@ -17,17 +17,21 @@ const MENU_VALUES: Menu[] = [
     title: 'Registrarse',
     path: ROUTE.loginRegister,
   },
+  {
+    title: 'Convocatorias',
+    path: ROUTE.convocatory.convocatories.list,
+  },
 ];
 
 interface NavBarDesktopProps {
   onClick?: () => void;
 }
 
-export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({onClick}) => (
-  <div className="NavBar"  onClick={onClick}>
-    {
-      MENU_VALUES.map((menu:Menu) => <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path}/>)
-    }
+export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({ onClick }) => (
+  <div className="NavBar" onClick={onClick}>
+    {MENU_VALUES.map((menu: Menu) => (
+      <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path} />
+    ))}
   </div>
 );
 
