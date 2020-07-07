@@ -13,9 +13,9 @@ const ENDPOINT_EMAILCONFIRMATION = `/api/${V1}/email-confirmation`;
 export const ROUTE: typeRoute = {
   convocatory: {
     convocatories: {
-      details: '/details',
-      list: '/list',
-      register: '/register',
+      details: '/convocatory-details',
+      list: '/convocatories-list',
+      register: '/convocatory-register',
     },
   },
   home: '/',
