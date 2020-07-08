@@ -31,6 +31,7 @@ export default class Client {
 
   async loginVolunteer(credentials: object) {
     const URL = `${BASE.API}${ROUTE.API.volunteers.login}`;
+
     return await fetch(URL, {
       method: 'POST',
       mode: 'cors',
@@ -41,15 +42,15 @@ export default class Client {
     })
       .then((response) => {
         if (response.status === 201 || response.status === 200) {
-
           JSON.stringify(response.json().then((res: { accessToken: string, refreshToken: string }) => {
             setCookie('accessToken', res.accessToken);
             setCookie('refreshToken', res.refreshToken);
           }));
           window.location.replace(`${BASE.URI}${ROUTE.home}`);
+
           return 'OK';
-        } else if (response.status === 409) { // TODO: Contemplar las bad request
-          return 409;
+        } else {
+          return 'ERROR';
         }
       })
       // tslint:disable-next-line:no-console
@@ -64,7 +65,9 @@ function setCookie(key: string, value: any) {
   document.cookie = `${key}=${value}; expires=${expires.toUTCString()}; path=/;`;
 }
 
+/*
 function getCookie(key: string) {
   const keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
   return keyValue ? keyValue[2] : null;
 }
+*/

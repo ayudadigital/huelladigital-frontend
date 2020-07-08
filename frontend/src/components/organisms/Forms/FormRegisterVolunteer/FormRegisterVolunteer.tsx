@@ -95,6 +95,7 @@ export const FormRegisterVolunteer: React.FC = () => {
     } else if (userAlreadyExist === 200) {
       setCheck({ ...check, email: 'correct' });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAlreadyExist]);
 
   useEffect(() => {
