@@ -1,5 +1,6 @@
-import { BASE } from '../../../../utils/base';
-import { ROUTE } from '../../../../utils/routes';
+import { BASE } from '../base';
+import { ROUTE } from '../routes';
+import { setCookie } from './cookies';
 
 
 export default class Client {
@@ -57,17 +58,3 @@ export default class Client {
       .catch((error) => console.log(error));
   }
 }
-
-
-function setCookie(key: string, value: any) {
-  const expires = new Date();
-  expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
-  document.cookie = `${key}=${value}; expires=${expires.toUTCString()}; path=/;`;
-}
-
-/*
-function getCookie(key: string) {
-  const keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-  return keyValue ? keyValue[2] : null;
-}
-*/

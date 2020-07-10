@@ -2,7 +2,7 @@ import React, { Fragment, useCallback, useContext, useEffect, useState } from 'r
 import '../styles.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import Client from '../FormUtils/client';
+import Client from '../../../../utils/fetch/client';
 import { Store } from '../../../../redux/Store';
 import { button } from '@storybook/addon-knobs';
 

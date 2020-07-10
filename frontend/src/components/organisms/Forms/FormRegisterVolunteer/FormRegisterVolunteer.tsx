@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import Client from '../FormUtils/client';
+import Client from '../../../../utils/fetch/client';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
 
