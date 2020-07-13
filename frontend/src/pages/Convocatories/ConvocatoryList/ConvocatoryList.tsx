@@ -39,7 +39,7 @@ export const ConvocatoryList: React.FC<{}> = () => (
             <img src={ages} alt="icono fecha de fin" />
             Fin: 10/06/2020
           </div>
-          <LinkButton path={ROUTE.convocatory.convocatories.details} text={'More info'} />
+          <LinkButton path={ROUTE.convocatories.details} text={'More info'} />
         </div>
       </div>
     </div>

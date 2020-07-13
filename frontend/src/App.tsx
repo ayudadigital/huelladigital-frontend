@@ -20,30 +20,21 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <WrapperPages>
-          <Header/>
+          <Header />
           <Switch>
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
-            <Route
-              path={ROUTE.convocatory.convocatories.list}
-              component={ConvocatoryList}
-            />
-            <Route
-              path={ROUTE.convocatory.convocatories.details}
-              component={ConvocatoryDetails}
-            />
-            <Route
-              path={ROUTE.convocatory.convocatories.register}
-              component={ConvocatoryRegister}
-            />
-            <Route exact path={ROUTE.home} component={Home}/>
-            <Route exact path={ROUTE.loginRegister} component={LoginRegister}/>
-            <Route path={ROUTE.email.confirmation} component={EmailConfirmation}/>
-            {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister}/>}
-            {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home}/>}
+            <Route path={ROUTE.convocatories.list} component={ConvocatoryList} />
+            <Route path={ROUTE.convocatories.details} component={ConvocatoryDetails} />
+            <Route path={ROUTE.convocatories.register} component={ConvocatoryRegister} />
+            <Route exact path={ROUTE.home} component={Home} />
+            <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
+            <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
+            {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
+            {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
           </Switch>
-          <Footer/>
+          <Footer />
         </WrapperPages>
       </div>
     </Router>
