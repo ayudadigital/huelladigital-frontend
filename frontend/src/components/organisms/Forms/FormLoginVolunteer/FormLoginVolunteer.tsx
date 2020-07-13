@@ -1,10 +1,10 @@
-import React, { Fragment, useCallback, useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import '../styles.scss';
-import { FieldForm } from '../../../molecules/FieldForm';
-import { SubmitButton } from '../../../atoms/SubmitButton';
+import {FieldForm} from '../../../molecules/FieldForm';
+import {SubmitButton} from '../../../atoms/SubmitButton';
 import Client from '../../../../utils/fetch/client';
 
-export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
+export const FormLoginVolunteer: React.FC<any> = () => {
   const [stateButton, setStateButton] = useState(true);
   const [data, setData] = useState(
     {
@@ -34,7 +34,6 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
   }, [data, handleStateButton]);
 
   return (
-    <Fragment>
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
         <FieldForm title={'Email'}
                    type={'email'}
@@ -46,7 +45,6 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
                    onChange={(e) => setData({ ...data, password: e.target.value })}/>
         <SubmitButton text={'Acceder'} disabled={stateButton}/>
       </form>
-    </Fragment>
   );
 };
 

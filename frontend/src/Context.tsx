@@ -4,7 +4,6 @@ import {cleanCookies, getCookie} from './utils/fetch/cookies';
 
 interface ContextParams {
   isAuth: boolean;
-  activateAuth?: () => void;
   removeAuth?: () => void;
 }
 
