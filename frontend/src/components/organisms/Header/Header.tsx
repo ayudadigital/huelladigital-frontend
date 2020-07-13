@@ -4,6 +4,7 @@ import './Header.scss';
 import {Image} from '../../atoms/Image';
 import {NavBarDesktop} from '../../molecules/NavBarDesktop';
 import {Context} from '../../../Context';
+import {HamburguerMenu} from '../../molecules/NavBarMobil';
 
 export const Header: React.FC<{}> = () => {
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +24,7 @@ export const Header: React.FC<{}> = () => {
       // @ts-ignore
       <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/>
       }
+      <HamburguerMenu onClick={handleModal} />
     </div>
   );
 };

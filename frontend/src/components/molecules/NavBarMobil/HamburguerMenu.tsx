@@ -5,7 +5,7 @@ interface NabBarMobilProps {
   onClick?: () => void;
 }
 
-export const NabBarMobil: React.FC<NabBarMobilProps> = ({onClick}) => (
+export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick}) => (
   <div className="NavBarMobil">
     <div className={'container'} onClick={onClick}>
       <span/>
@@ -15,4 +15,4 @@ export const NabBarMobil: React.FC<NabBarMobilProps> = ({onClick}) => (
   </div>
 );
 
-NabBarMobil.displayName = 'NavBarMobil';
+HamburguerMenu.displayName = 'NavBarMobil';

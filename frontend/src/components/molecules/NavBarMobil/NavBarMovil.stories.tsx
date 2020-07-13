@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NabBarMobil } from './NabBarMobil';
+import { HamburguerMenu } from './HamburguerMenu';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
@@ -7,4 +7,4 @@ export default {
   decorators: [withA11y],
 };
 
-export const Movil = () => <NabBarMobil />;
+export const Movil = () => <HamburguerMenu />;

@@ -1,12 +1,27 @@
 $waveHeader: url('./assets/wave-header.svg');
 
 .Header {
-
   background: $waveHeader no-repeat center bottom, linear-gradient(rgba(126, 37, 78, 0.45), rgba(126, 37, 78, 0.45)), url(https://huellapositiva.com/wp-content/uploads/2020/03/remi-walle-UOwvwZ9Dy6w-unsplash.jpg) no-repeat center;
   background-size: 110%, auto, cover;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 135px;
   img {
     width: 50vw;
+  }
+
+  .NavBar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left:0;
+    z-index: 1000;
   }
 }
 
@@ -15,6 +30,27 @@ $waveHeader: url('./assets/wave-header.svg');
 
     img {
       width: 200px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .Header {
+    .NavBar {
+      background: initial;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      position: initial;
+      height: initial;
+      width: 100%;
+      top: initial;
+      left: initial;
+      z-index: initial;
+    }
+    .NavBarMobil {
+      display: none;
     }
   }
 }

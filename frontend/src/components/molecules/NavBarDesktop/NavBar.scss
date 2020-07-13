@@ -1,11 +1,7 @@
 .NavBar {
-
   background: #7E254E;
-  padding: 0;
-  margin: 0;
-
   a {
-    margin: 20px 0;
+    margin: 20px;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -20,11 +16,5 @@
       color: #eabd00;
       border-bottom: 2px solid #eabd00;
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .NavBar {
-
   }
 }
