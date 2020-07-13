@@ -1,14 +1,10 @@
-import React, { Fragment, useCallback, useContext, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import '../styles.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import Client from '../../../../utils/fetch/client';
-import { Store } from '../../../../redux/Store';
-import { button } from '@storybook/addon-knobs';
 
 export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { state, dispatch } = useContext(Store);
   const [stateButton, setStateButton] = useState(true);
   const [data, setData] = useState(
     {
@@ -16,12 +12,6 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
       password: '',
     },
   );
-
-  // redux
-  const toggleLoginStatus = () => {
-    return dispatch({ type: 'LOG-IN' });
-  };
-
 
   const handleStateButton = useCallback(() => {
     (data.email !== '' && data.password !== '')
@@ -38,7 +28,6 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
     const client = new Client();
     const response = await client.loginVolunteer(volunteerDTO);
     if (response === 'OK') {
-      toggleLoginStatus(); // redux
       alert('Tu usuario se ha registrado');
     }
   }
@@ -49,10 +38,6 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
 
   return (
     <Fragment>
-      {/*// TODO : Botones de prueba borrarlos*/}
-      <button onClick={toggleLoginStatus}>loguearse</button>
-      <button onClick={() => dispatch({ type: 'LOG-OUT' })}>Desconectar</button>
-      {/*// TODO : Botones de prueba borrarlos*/}
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
         <FieldForm title={'Email'}
                    type={'email'}

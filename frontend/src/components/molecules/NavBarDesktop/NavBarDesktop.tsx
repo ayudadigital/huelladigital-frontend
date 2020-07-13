@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { useContext } from 'react';
 import './NavBar.scss';
 import { LinkText } from '../../atoms/LinkText';
 import { ROUTE } from '../../../utils/routes';
 import { Menu } from './types';
-import { Store } from '../../../redux/Store';
 import { button } from '@storybook/addon-knobs';
+import { cleanCookies } from '../../../utils/fetch/cookies';
 
 const MENU_VALUES: Menu[] = [
   {
@@ -32,19 +31,9 @@ interface NavBarDesktopProps {
 
 export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({ onClick }) => {
 
-  const { state, dispatch } = useContext(Store);
-
-  function tokenExist(key:string) {
+  function tokenExist(key: string) {
     const token = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return token !== null || token !== undefined;
-  }
-
-  function cleanCookies() {
-    document.cookie.split(';').forEach((cookie)  => {
-      document.cookie = cookie
-        .replace(/^ +/, '')
-        .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
-    });
+    return token !== null && token !== undefined;
   }
 
   function handleStateLogin() {
@@ -54,7 +43,6 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({ onClick }) => {
   return (
     <div className="NavBar" onClick={onClick}>
       {console.log('access-cookie: ' + tokenExist('accessToken'))}
-      {console.log('refresh-cookie: ' + tokenExist('refreshToken'))}
       {
         MENU_VALUES.map((menu: Menu) => <LinkText key={`menu-${menu.title}`} text={menu.title} to={menu.path}/>)
       }

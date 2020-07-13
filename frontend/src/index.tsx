@@ -4,12 +4,12 @@ import '../node_modules/bulma/css/bulma.min.css';
 import './styles/scss/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { StoreProvider } from './redux/Store';
+import { Provider } from './Context';
 
 ReactDOM.render(
-  <StoreProvider>
+  <Provider>
     <App/>
-  </StoreProvider>
+  </Provider>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
