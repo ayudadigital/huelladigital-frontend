@@ -26,10 +26,7 @@ export const FormLoginVolunteer: React.FC<any> = ({ dispatchObj }) => {
       password: data.password,
     };
     const client = new Client();
-    const response = await client.loginVolunteer(volunteerDTO);
-    if (response === 'OK') {
-      alert('Tu usuario se ha registrado');
-    }
+    await client.loginVolunteer(volunteerDTO);
   }
 
   useEffect(() => {
