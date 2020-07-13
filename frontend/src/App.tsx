@@ -15,7 +15,6 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      {console.log('isAuth - ' + isAuth)}
       <div className="App">
         <WrapperPages>
           <Header/>

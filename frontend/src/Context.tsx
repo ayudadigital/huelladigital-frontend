@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { getCookie } from './utils/fetch/cookies';
+import React, {createContext, useState} from 'react';
+import {cleanCookies, getCookie} from './utils/fetch/cookies';
 
 
 interface ContextParams {
@@ -21,15 +21,9 @@ export const Provider = ({ children }) => {
 
   const value = {
     isAuth,
-    activateAuth: (accessToken: string, refreshToken: string) => {
-      setIsAuth(true);
-      // TODO: Aquí seteo las cookies
-      // window.sessionStorage.setItem('token', token);
-    },
     removeAuth: () => {
       setIsAuth(false);
-      // TODO: Aquí las elimino
-      // window.sessionStorage.removeItem('token');
+      cleanCookies();
     },
 
   };

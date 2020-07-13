@@ -18,3 +18,8 @@ export function cleanCookies() {
       .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
   });
 }
+
+export function activateAuth(accessToken: string, refreshToken: string) {
+  setCookie('accessToken', accessToken);
+  setCookie('refreshToken', refreshToken);
+}
