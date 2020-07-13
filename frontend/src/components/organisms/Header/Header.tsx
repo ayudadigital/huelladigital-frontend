@@ -1,13 +1,15 @@
 import * as React from 'react';
+import {useContext, useState} from 'react';
 import './Header.scss';
-import { Image } from '../../atoms/Image';
-import { NavBarDesktop } from '../../molecules/NavBarDesktop';
+import {Image} from '../../atoms/Image';
+import {NavBarDesktop} from '../../molecules/NavBarDesktop';
 import useWindowSize from '../../../utils/hooks/useWindowSize';
-import { NabBarMobil } from '../../molecules/NavBarMobil';
-import { useState } from 'react';
+import {NabBarMobil} from '../../molecules/NavBarMobil';
+import {Context} from '../../../Context';
 
 export const Header: React.FC<{}> = () => {
   const [showModal, setShowModal] = useState(false);
+  const isAuth = useContext(Context);
   const size = useWindowSize();
 
   function handleModal() {
@@ -22,10 +24,11 @@ export const Header: React.FC<{}> = () => {
       />
       {
         // @ts-ignore
-        size.width > 780 ? <NavBarDesktop onClick={handleModal}/> : <NabBarMobil onClick={handleModal}/>
+        size.width > 780 ? <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/> : <NabBarMobil onClick={handleModal}/>
       }
       {
-        showModal && <NavBarDesktop onClick={handleModal}/>
+        // @ts-ignore
+        showModal && <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/>
       }
     </div>
   );

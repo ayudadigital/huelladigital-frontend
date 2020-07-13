@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import '../styles.scss';
-import { FieldForm } from '../../../molecules/FieldForm';
-import { SubmitButton } from '../../../atoms/SubmitButton';
+import {FieldForm} from '../../../molecules/FieldForm';
+import {SubmitButton} from '../../../atoms/SubmitButton';
+import Client from '../../../../utils/fetch/client';
 
-export const FormLoginVolunteer: React.FC<{}> = () => {
+export const FormLoginVolunteer: React.FC<any> = () => {
   const [stateButton, setStateButton] = useState(true);
   const [data, setData] = useState(
     {
@@ -12,34 +13,38 @@ export const FormLoginVolunteer: React.FC<{}> = () => {
     },
   );
 
-  function handleStateButton() {
-    (data.email !== '' && data.password !== '') ? setStateButton(false)
+  const handleStateButton = useCallback(() => {
+    (data.email !== '' && data.password !== '')
+      ? setStateButton(false)
       : setStateButton(true);
-  }
+  }, [data.email, data.password]);
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-
-    // TODO: Add here all the logic when user login
+    const volunteerDTO = {
+      email: data.email,
+      password: data.password,
+    };
+    const client = new Client();
+    await client.loginVolunteer(volunteerDTO);
   }
 
   useEffect(() => {
     handleStateButton();
-    // eslint-disable-next-line
-  }, [data]);
+  }, [data, handleStateButton]);
 
   return (
-    <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
-      <FieldForm title={'Email'}
-                 type={'email'}
-                 name={'email'}
-                 onChange={(e) => setData({ ...data, email: e.target.value })}/>
-      <FieldForm title={'Contraseña'}
-                 type={'password'}
-                 name={'password'}
-                 onChange={(e) => setData({ ...data, password: e.target.value })}/>
-      <SubmitButton text={'Acceder'} disabled={stateButton}/>
-    </form>
+      <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
+        <FieldForm title={'Email'}
+                   type={'email'}
+                   name={'email'}
+                   onChange={(e) => setData({ ...data, email: e.target.value })}/>
+        <FieldForm title={'Contraseña'}
+                   type={'password'}
+                   name={'password'}
+                   onChange={(e) => setData({ ...data, password: e.target.value })}/>
+        <SubmitButton text={'Acceder'} disabled={stateButton}/>
+      </form>
   );
 };
 

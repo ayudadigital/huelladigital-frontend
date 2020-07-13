@@ -10,4 +10,4 @@ export default {
   ],
 };
 
-export const Dashboard = () => <NavBarDesktop/>;
+export const Dashboard = () => <NavBarDesktop isAuth={true}/>;
