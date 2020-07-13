@@ -3,14 +3,11 @@ import {useContext, useState} from 'react';
 import './Header.scss';
 import {Image} from '../../atoms/Image';
 import {NavBarDesktop} from '../../molecules/NavBarDesktop';
-import useWindowSize from '../../../utils/hooks/useWindowSize';
-import {NabBarMobil} from '../../molecules/NavBarMobil';
 import {Context} from '../../../Context';
 
 export const Header: React.FC<{}> = () => {
   const [showModal, setShowModal] = useState(false);
   const isAuth = useContext(Context);
-  const size = useWindowSize();
 
   function handleModal() {
     setShowModal(!showModal);
@@ -23,12 +20,8 @@ export const Header: React.FC<{}> = () => {
         description="logo"
       />
       {
-        // @ts-ignore
-        size.width > 780 ? <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/> : <NabBarMobil onClick={handleModal}/>
-      }
-      {
-        // @ts-ignore
-        showModal && <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/>
+      // @ts-ignore
+      <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/>
       }
     </div>
   );
