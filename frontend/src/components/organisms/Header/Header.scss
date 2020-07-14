@@ -13,21 +13,64 @@ $waveHeader: url('./assets/wave-header.svg');
 
   .NavBar {
     display: none;
+  }
+  .NavBarShow{
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    align-content: center;
-    position: absolute;
-    height: 100vh;
+    background: #7E254E;
+    padding: 0;
+    margin: 0;
     width: 100vw;
-    top:0;
-    left:0;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
     z-index: 1000;
+    opacity: 0.9;
+    position: fixed;
+
+    a {
+      margin: 20px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: 1px;
+      font-family: 'Open Sans', sans-serif;
+
+      &:hover {
+        color: #eabd00;
+        border-bottom: 2px solid #eabd00;
+      }
+    }
+  }
+  .NavBarMobil{
+    display: flex;
+    .CloseModal{
+      color: white;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      opacity: 0.9;
+      position: fixed;
+    }
   }
 }
 
 @media (min-width: 768px) {
   .Header {
+    .NavBar {
+      display: none;
 
+    }
+    .NavBarMobil{
+      display: flex;
+    }
     img {
       width: 200px;
     }
@@ -37,17 +80,7 @@ $waveHeader: url('./assets/wave-header.svg');
 @media (min-width: 992px) {
   .Header {
     .NavBar {
-      background: initial;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-end;
-      position: initial;
-      height: initial;
-      width: 100%;
-      top: initial;
-      left: initial;
-      z-index: initial;
     }
     .NavBarMobil {
       display: none;

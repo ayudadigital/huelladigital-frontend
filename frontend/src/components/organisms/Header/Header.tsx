@@ -7,26 +7,27 @@ import {Context} from '../../../Context';
 import {HamburguerMenu} from '../../molecules/NavBarMobil';
 
 export const Header: React.FC<{}> = () => {
-  const [showModal, setShowModal] = useState(false);
-  const isAuth = useContext(Context);
+    const [showModal, setShowModal] = useState(false);
+    const isAuth = useContext(Context);
 
-  function handleModal() {
-    setShowModal(!showModal);
-  }
+    function handleModal() {
+        setShowModal(!showModal);
+    }
 
-  return (
-    <div className="Header">
-      <Image
-        source="https://huellapositiva.com/wp-content/uploads/2020/03/cropped-Logo-Huella-Positiva-PV-05.png"
-        description="logo"
-      />
-      {
-      // @ts-ignore
-      <NavBarDesktop isAuth={isAuth.isAuth} onClick={handleModal}/>
-      }
-      <HamburguerMenu onClick={handleModal} />
-    </div>
-  );
+
+    return (
+        <div className="Header">
+            <Image
+                source="https://huellapositiva.com/wp-content/uploads/2020/03/cropped-Logo-Huella-Positiva-PV-05.png"
+                description="logo"
+            />
+            {
+                // @ts-ignore
+                <NavBarDesktop isAuth={isAuth.isAuth} show={showModal}/>
+            }
+            <HamburguerMenu onClick={handleModal} show={showModal}/>
+        </div>
+    );
 };
 
 Header.displayName = 'Header';
