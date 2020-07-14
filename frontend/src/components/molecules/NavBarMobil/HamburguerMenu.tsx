@@ -2,17 +2,23 @@ import * as React from 'react';
 import './NavBarMovil.scss';
 
 interface NabBarMobilProps {
-  onClick?: () => void;
+    onClick?: () => void;
+    show?: any;
 }
 
-export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick}) => (
-  <div className="NavBarMobil">
-    <div className={'container'} onClick={onClick}>
-      <span/>
-      <span/>
-      <span/>
+
+export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick, show}) => (
+    <div className="NavBarMobil">
+        {
+            !show ?
+            <div className={'container'} onClick={onClick}>
+                <span/>
+                <span/>
+                <span/>
+            </div>:
+                <div className={'CloseModal'} onClick={onClick}>X</div>
+        }
     </div>
-  </div>
 );
 
 HamburguerMenu.displayName = 'NavBarMobil';
