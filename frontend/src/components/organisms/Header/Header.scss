@@ -51,6 +51,7 @@ $waveHeader: url('./assets/wave-header.svg');
   }
   .NavBarMobil{
     display: flex;
+    padding-right: 15px;
     .CloseModal{
       color: white;
       top: 0;
@@ -66,7 +67,6 @@ $waveHeader: url('./assets/wave-header.svg');
   .Header {
     .NavBar {
       display: none;
-
     }
     .NavBarMobil{
       display: flex;
@@ -81,6 +81,7 @@ $waveHeader: url('./assets/wave-header.svg');
   .Header {
     .NavBar {
       display: flex;
+      background: none;
     }
     .NavBarMobil {
       display: none;
