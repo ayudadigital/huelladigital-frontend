@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './NavBarMovil.scss';
+import './HamburguerMenu.scss';
 
 interface NabBarMobilProps {
     onClick?: () => void;
@@ -8,7 +8,7 @@ interface NabBarMobilProps {
 
 
 export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick, show}) => (
-    <div className="NavBarMobil">
+    <div className="HamburguerMenu">
         {
             !show ?
             <div className={'container'} onClick={onClick}>
@@ -21,4 +21,4 @@ export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick, show}) => (
     </div>
 );
 
-HamburguerMenu.displayName = 'NavBarMobil';
+HamburguerMenu.displayName = 'HamburguerMenu';

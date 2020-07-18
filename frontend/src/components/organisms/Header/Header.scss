@@ -14,51 +14,56 @@ $waveHeader: url('./assets/wave-header.svg');
   .NavBar {
     display: none;
   }
+
   .NavBarShow{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #7E254E;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #7E254E;
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
 
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    opacity: 0.9;
-    position: fixed;
-
-    a {
-      margin: 20px 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: white;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 14px;
-      line-height: 160%;
-      letter-spacing: 1px;
-      font-family: 'Open Sans', sans-serif;
-
-      &:hover {
-        color: #eabd00;
-        border-bottom: 2px solid #eabd00;
-      }
-    }
-  }
-  .NavBarMobil{
-    display: flex;
-    padding-right: 15px;
-    .CloseModal{
-      color: white;
       top: 0;
-      right: 0;
+      left: 0;
       z-index: 1000;
       opacity: 0.9;
       position: fixed;
+
+      a {
+        margin: 20px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+        line-height: 160%;
+        letter-spacing: 1px;
+        font-family: 'Open Sans', sans-serif;
+
+        &:hover {
+          color: #eabd00;
+          border-bottom: 2px solid #eabd00;
+        }
+      }
+  }
+
+  .HamburguerMenu{
+    display: flex;
+    padding-right: 15px;
+    .CloseModal{
+      font-weight: bolder;
+      font-size: 2rem;
+      color: white;
+      top: 3rem;
+      right: 3rem;
+      z-index: 1000;
+      opacity: 0.9;
+      position: fixed;
+      cursor: pointer;
     }
   }
 }
@@ -68,7 +73,7 @@ $waveHeader: url('./assets/wave-header.svg');
     .NavBar {
       display: none;
     }
-    .NavBarMobil{
+    .HamburguerMenu{
       display: flex;
     }
     img {
@@ -83,7 +88,7 @@ $waveHeader: url('./assets/wave-header.svg');
       display: flex;
       background: none;
     }
-    .NavBarMobil {
+    .HamburguerMenu {
       display: none;
     }
   }

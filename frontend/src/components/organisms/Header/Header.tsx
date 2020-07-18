@@ -1,14 +1,14 @@
 import * as React from 'react';
-import {useContext, useState} from 'react';
+import { useContext, useState } from 'react';
 import './Header.scss';
-import {Image} from '../../atoms/Image';
-import {NavBarDesktop} from '../../molecules/NavBarDesktop';
-import {Context} from '../../../Context';
-import {HamburguerMenu} from '../../molecules/NavBarMobil';
+import { Image } from '../../atoms/Image';
+import { NavBarDesktop } from '../../molecules/NavBarDesktop';
+import { Context } from '../../../Context';
+import { HamburguerMenu } from '../../molecules/HamburguerMenu';
 
 export const Header: React.FC<{}> = () => {
     const [showModal, setShowModal] = useState(false);
-    const isAuth = useContext(Context);
+    const auth = useContext(Context);
 
     function handleModal() {
         setShowModal(!showModal);
@@ -23,7 +23,7 @@ export const Header: React.FC<{}> = () => {
             />
             {
                 // @ts-ignore
-                <NavBarDesktop isAuth={isAuth.isAuth} show={showModal}/>
+                <NavBarDesktop isAuth={auth.isAuth} show={showModal} onClick={handleModal} onClickDisconnect={auth.removeAuth}/>
             }
             <HamburguerMenu onClick={handleModal} show={showModal}/>
         </div>

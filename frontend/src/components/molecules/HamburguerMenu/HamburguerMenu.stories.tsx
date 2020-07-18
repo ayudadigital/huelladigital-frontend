@@ -3,8 +3,8 @@ import { HamburguerMenu } from './HamburguerMenu';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'Molecules | Navbar/NavBarMobil',
+  title: 'Molecules | Navbar/HamburguerMenu',
   decorators: [withA11y],
 };
 
-export const Movil = () => <HamburguerMenu />;
+export const Mobil = () => <HamburguerMenu />;
