@@ -4,12 +4,12 @@ import { ConvocatoryList } from './';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('ConvocatoryList', () => {
-  xit('should display the default message', () => {
+  it('should display the default message', () => {
     const renderResult: RenderResult = render(
       <BrowserRouter>
         <ConvocatoryList/>,
       </BrowserRouter>,
     );
-    expect(renderResult.queryByText('Hello from ConvocatoryList!')).toBeTruthy();
+    expect(renderResult.queryByText('Convocatorias')).toBeTruthy();
   });
 });
