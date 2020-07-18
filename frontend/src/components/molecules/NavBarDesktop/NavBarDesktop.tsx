@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {Fragment, useContext} from 'react';
+import { Fragment, useContext } from 'react';
 import './NavBar.scss';
-import {LinkText} from '../../atoms/LinkText';
-import {ROUTE} from '../../../utils/routes';
-import {button} from '@storybook/addon-knobs';
-import {Context} from '../../../Context';
+import { LinkText } from '../../atoms/LinkText';
+import { ROUTE } from '../../../utils/routes';
+import { button } from '@storybook/addon-knobs';
+import { Context } from '../../../Context';
 
 interface NavBarDesktopProps {
     onClick?: () => void;
@@ -15,15 +15,15 @@ interface NavBarDesktopProps {
 export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({onClick, isAuth, show}) => {
     const auth = useContext(Context);
     return (
-        <div className={!show ? 'NavBar' : 'NavBarShow'} onClick={onClick}>
-                    <LinkText key={`menu-inicio`} text={'Inicio'} to={ROUTE.home}/>
+        <div className={!show ? 'NavBar' : 'NavBar show'} onClick={onClick}>
+                    <LinkText key={`menu-inicio`} text={'inicio'} to={ROUTE.home}/>
                     {
                         !isAuth && (
                             <Fragment>
-                                <LinkText key={`menu-Acceder`} text={'Acceder'} to={ROUTE.loginRegister}/>
+                                <LinkText key={`menu-acceder`} text={'acceder'} to={ROUTE.loginRegister}/>
                                 <LinkText
-                                    key={`menu-Registrarse`}
-                                    text={'Registrarse'}
+                                    key={`menu-registrarse`}
+                                    text={'registrarse'}
                                     to={ROUTE.loginRegister}
                                 />
                             </Fragment>
