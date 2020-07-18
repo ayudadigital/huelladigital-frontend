@@ -16,3 +16,5 @@ node_modules
 /frontend/build
 /frontend/npm_cache
 .env
+.DS_Store
+npm_cache
