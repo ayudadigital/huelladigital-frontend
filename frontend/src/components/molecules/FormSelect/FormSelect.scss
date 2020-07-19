@@ -1,3 +1,17 @@
-.FormSelect{
+.FormSelect {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
 
+  select {
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    padding: 10px 10px;
+    font-size: 1rem;
+  }
+
+  & p {
+    margin-top: 5px;
+    color: red;
+  }
 }
