@@ -1,3 +1,14 @@
 .ConvocatoryList {
+  display: grid;
+  row-gap: 30px;
+  padding: 0 3%;
 
+  .pageNav{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-content: space-around;
+    margin: 30px;
+    width: 40%;
+  }
 }

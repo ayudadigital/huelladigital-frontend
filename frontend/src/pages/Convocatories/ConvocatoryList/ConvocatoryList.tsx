@@ -9,16 +9,24 @@ export const ConvocatoryList: React.FC<{}> = () => (
     <h2 className="Title">Convocatorias</h2>
     {
       exampleConvocatoryList.map((convocatory: ConvocatoryCardProps) =>
-        <ConvocatoryCard title={convocatory.title}
-                         description={convocatory.description}
-                         photo={convocatory.photo}
-                         city={convocatory.city}
-                         localization={convocatory.localization}
-                         agesRange={convocatory.agesRange}
-                         startDay={convocatory.startDay}
-                         finishDay={convocatory.finishDay}
-        />)
+        <div className={'card'}>
+          <ConvocatoryCard title={convocatory.title}
+                           description={convocatory.description}
+                           photo={convocatory.photo}
+                           city={convocatory.city}
+                           localization={convocatory.localization}
+                           agesRange={convocatory.agesRange}
+                           startDay={convocatory.startDay}
+                           finishDay={convocatory.finishDay}
+          />
+        </div>,
+      )
     }
+    <div className={'pageNav'}>
+    <button>Anterior</button>
+      <p>1 - 2- 3 - 5 .... 30</p>
+    <button>Siguiente</button>
+    </div>
   </div>
 );
 
