@@ -17,7 +17,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       description: '',
       photo: '',
       city: 'Santa Cruz de Tenerife',
-      localization: '',
+      localization: 'No seleccionado',
       agesMin: '15',
       agesMax: '16',
       startDay: '01/01/2020',
@@ -69,24 +69,34 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
                     onChange={(e) => setData({ ...data, localization: e.target.value })}
                     optionsList={['Prueba 1', 'Prueba 2', 'Prueba 3', 'Prueba 4', 'Prueba 5']}
         />
-        <FormSelect title={'Edad mínima '}
-                    name={'agesRange'}
-                    onChange={(e) => setData({ ...data, agesMin: e.target.value })}
-                    optionsList={ages}
-        />
-        <FormSelect title={'Edad máxima '}
-                    name={'agesRange'}
-                    onChange={(e) => setData({ ...data, agesMax: e.target.value })}
-                    optionsList={ages}
-        />
-        <FieldForm title={'Fecha de inicio'}
-                   type={'date'}
-                   name={'startDay'}
-                   onChange={(e) => setData({ ...data, startDay: e.target.value.split('-').reverse().join('/') })}/>
-        <FieldForm title={'Fecha de finalización'}
-                   type={'date'}
-                   name={'finishDay'}
-                   onChange={(e) => setData({ ...data, finishDay: e.target.value.split('-').reverse().join('/') })}/>
+        <h3>Edades</h3>
+        <div className={'ages'}>
+          <FormSelect title={'Mínima '}
+                      name={'agesRange'}
+                      onChange={(e) => setData({ ...data, agesMin: e.target.value })}
+                      optionsList={ages}
+          />
+          <span> - </span>
+          <FormSelect title={'Máxima '}
+                      name={'agesRange'}
+                      onChange={(e) => setData({ ...data, agesMax: e.target.value })}
+                      optionsList={ages}
+          />
+        </div>
+        <h3>Fechas</h3>
+        <div className={'dates'}>
+          <FieldForm title={'Inicio'}
+                     type={'date'}
+                     name={'startDay'}
+                     onChange={(e) => setData({ ...data, startDay: e.target.value.split('-').reverse().join('/') })}
+          />
+          <span> - </span>
+          <FieldForm title={'Finalización'}
+                     type={'date'}
+                     name={'finishDay'}
+                     onChange={(e) => setData({ ...data, finishDay: e.target.value.split('-').reverse().join('/') })}
+          />
+        </div>
         <SubmitButton text={'Crear convocatoria'}/>
       </form>
     </div>
