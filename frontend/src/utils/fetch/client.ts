@@ -1,6 +1,6 @@
-import {BASE} from '../base';
-import {ROUTE} from '../routes';
-import {activateAuth} from './cookies';
+import { BASE } from '../base';
+import { ROUTE } from '../routes';
+import { activateAuth } from './cookies';
 
 
 export default class Client {
@@ -47,9 +47,9 @@ export default class Client {
           }));
           window.location.replace(`${BASE.URI}${ROUTE.home}`);
 
-          return 'OK';
+          return 200;
         } else {
-          return 'ERROR';
+          return 403;
         }
       })
       // tslint:disable-next-line:no-console

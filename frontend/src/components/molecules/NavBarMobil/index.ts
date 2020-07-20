@@ -1,1 +1,0 @@
-export { NabBarMobil } from './NabBarMobil';
