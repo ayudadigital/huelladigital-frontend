@@ -1,2 +1,6 @@
 # review when someone opens a pull request.
-*       @rubenzagon @ci @devops
+*                 @RubenZagon
+
+Jenkinsfile       @ci @devops
+devcontrol/       @ci @devops
+bin/              @ci @devops
