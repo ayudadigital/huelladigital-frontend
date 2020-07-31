@@ -1,35 +1,40 @@
 import * as React from 'react';
-import {useContext} from 'react';
+import { Fragment } from 'react';
 import './NavBar.scss';
-import {LinkText} from '../../atoms/LinkText';
-import {ROUTE} from '../../../utils/routes';
-import {button} from '@storybook/addon-knobs';
-import {Context} from '../../../Context';
+import { LinkText } from '../../atoms/LinkText';
+import { ROUTE } from '../../../utils/routes';
+import { button } from '@storybook/addon-knobs';
 
 interface NavBarDesktopProps {
   onClick?: () => void;
+  onClickDisconnect?: () => void;
   isAuth: boolean | unknown;
+  show?: boolean;
 }
 
-export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({ onClick, isAuth }) => {
-  const auth = useContext(Context);
-
+export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
+                                                              onClick,
+                                                              onClickDisconnect,
+                                                              isAuth,
+                                                              show,
+                                                            }) => {
   return (
-    <div className="NavBar" onClick={onClick}>
+    <div className={!show ? 'NavBar' : 'NavBarShow'} onClick={onClick}>
+      <LinkText key={`menu-inicio`} text={'inicio'} to={ROUTE.home}/>
       {
-        <LinkText key={`menu-inicio`} text={'Inicio'} to={ROUTE.home}/>
-      }
-      {
-        !isAuth && <LinkText key={`menu-Acceder`} text={'Acceder'} to={ROUTE.loginRegister}/>
-      }
-      {
-        !isAuth && <LinkText key={`menu-Registrarse`} text={'Registrarse'} to={ROUTE.loginRegister}/>
+        !isAuth && (
+          <Fragment>
+            <LinkText key={`menu-acceder`} text={'acceder'} to={ROUTE.loginRegister}/>
+            <LinkText key={`menu-registrarse`} text={'registrarse'} to={ROUTE.loginRegister}/>
+          </Fragment>
+        )
       }
       {
         // @ts-ignore
-        isAuth && <button onClick={auth.removeAuth}>Desconectar</button>
+        isAuth && <button onClick={onClickDisconnect}>desconectar</button>
       }
     </div>
+
   );
 };
 

@@ -1,8 +1,8 @@
-import React, {createContext, useState} from 'react';
-import {cleanCookies, getCookie} from './utils/fetch/cookies';
+import React, { createContext, useState } from 'react';
+import { cleanCookies, getCookie } from './utils/fetch/cookies';
 
 
-interface ContextParams {
+export interface ContextParams {
   isAuth: boolean;
   removeAuth?: () => void;
 }

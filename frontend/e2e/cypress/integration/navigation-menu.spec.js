@@ -1,5 +1,8 @@
 import { ROUTE } from '../../../src/utils/routes';
 
+const INICIO = 'inicio';
+const ACCEDER = 'acceder';
+const REGISTRARSE = 'registrarse';
 
 describe('Navigation menu', () => {
 
@@ -8,20 +11,25 @@ describe('Navigation menu', () => {
   });
 
   it('verify navigation on Dashboard', () => {
-
-    cy.contains('Acceder').should('contain', 'Acceder').click({ force: true });
+    cy.contains(ACCEDER).should('contain', ACCEDER).click({ force: true });
     cy.url().should('include', ROUTE.loginRegister);
 
-    cy.contains('Inicio').should('contain', 'Inicio').click({ force: true });
+    cy.contains(INICIO).should('contain', INICIO).click({ force: true });
     cy.url().should('include', ROUTE.home);
 
-    cy.contains('Registrarse').should('contain', 'Registrarse').click();
+    cy.contains(REGISTRARSE).should('contain', REGISTRARSE).click();
     cy.url().should('include', ROUTE.loginRegister);
 
 
   });
 
-  it.only('verify render of menu mobil', () => {
+  it("can't contain double navbar repeating", () => {
+    cy.get('.NavBar').within(()=>{
+      cy.get('.LinkText').should('have.length', 3)
+    });
+  });
+
+  it('verify render of menu mobil', () => {
 
     // lets see what our app looks like on a super small screen
     cy.viewport(320, 480);
@@ -35,26 +43,26 @@ describe('Navigation menu', () => {
     cy.viewport('ipad-2');
     cy.wait(200);
     cy.get('.container').click();
-    cy.contains('Inicio').should('contain', 'Inicio').click({ force: true });
+    cy.contains(INICIO).should('contain', INICIO).click({ force: true });
     cy.url().should('include', ROUTE.home);
 
     cy.viewport('ipad-mini');
     cy.wait(200);
     cy.get('.container').click();
-    cy.contains('Acceder').should('contain', 'Acceder').click({ force: true });
+    cy.contains(ACCEDER).should('contain', ACCEDER).click({ force: true });
     cy.url().should('include', ROUTE.loginRegister);
 
 
     cy.viewport('iphone-6+');
     cy.wait(200);
     cy.get('.container').click();
-    cy.contains('Inicio').should('contain', 'Inicio').click({ force: true });
+    cy.contains(INICIO).should('contain', INICIO).click({ force: true });
     cy.url().should('include', ROUTE.home);
 
     cy.viewport('iphone-3');
     cy.wait(200);
     cy.get('.container').click();
-    cy.contains('Acceder').should('contain', 'Acceder').click({ force: true });
+    cy.contains(ACCEDER).should('contain', ACCEDER).click({ force: true });
     cy.url().should('include', ROUTE.loginRegister);
 
 
@@ -64,7 +72,7 @@ describe('Navigation menu', () => {
     cy.viewport('iphone-4', 'landscape');
     cy.wait(200);
     cy.get('.container').click();
-    cy.contains('Inicio').should('contain', 'Inicio').click({ force: true });
+    cy.contains(INICIO).should('contain', INICIO).click({ force: true });
     cy.url().should('include', ROUTE.home);
   });
 });
