@@ -1,13 +1,13 @@
 .ConvocatoryRegister {
+  padding: 10px;
   .dates {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
   }
 
   .ages {
     display: flex;
-    flex-direction: row;
     align-items: center;
   }
 

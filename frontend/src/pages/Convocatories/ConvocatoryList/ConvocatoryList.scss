@@ -1,9 +1,8 @@
 .ConvocatoryList {
   display: grid;
-  row-gap: 30px;
-  padding: 0 3%;
-
-  .pageNav{
+  grid-gap: 20px;
+  padding: 10px;
+  .pageNav {
     display: flex;
     flex-direction: row;
     justify-self: center;
