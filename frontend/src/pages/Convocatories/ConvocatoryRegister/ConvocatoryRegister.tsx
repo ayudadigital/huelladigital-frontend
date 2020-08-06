@@ -76,7 +76,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
                       onChange={(e) => setData({ ...data, agesMin: e.target.value })}
                       optionsList={ages}
           />
-          <span> - </span>
+
           <FormSelect title={'Máxima '}
                       name={'agesRange'}
                       onChange={(e) => setData({ ...data, agesMax: e.target.value })}
@@ -90,7 +90,6 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
                      name={'startDay'}
                      onChange={(e) => setData({ ...data, startDay: e.target.value.split('-').reverse().join('/') })}
           />
-          <span> - </span>
           <FieldForm title={'Finalización'}
                      type={'date'}
                      name={'finishDay'}
