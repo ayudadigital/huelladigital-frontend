@@ -2,7 +2,13 @@ type typeRoute = {
   home: string;
   email: { confirmation: string; resendConfirmation: string };
   loginRegister: string;
-  API: { volunteers: { register: string, login: string }, email: { resendConfirmation: string } };
+  API: {
+    volunteers: { register: string; login: string };
+    email: { resendConfirmation: string };
+  };
+  organizations: {
+    register: string;
+  };
   convocatories: { list: string; register: string; details: string };
 };
 
@@ -11,12 +17,14 @@ const ENDPOINT_VOLUNTEERS = `/api/${V1}/volunteers`;
 const ENDPOINT_EMAILCONFIRMATION = `/api/${V1}/email-confirmation`;
 
 export const ROUTE: typeRoute = {
-    convocatories: {
-      details: '/convocatory-details',
-      list: '/convocatories-list',
-      register: '/convocatory-register',
-    },
-
+  convocatories: {
+    details: '/convocatory-details',
+    list: '/convocatories-list',
+    register: '/convocatory-register',
+  },
+  organizations: {
+    register: '/organization-register',
+  },
   home: '/',
   email: {
     confirmation: '/email-confirmation-register',

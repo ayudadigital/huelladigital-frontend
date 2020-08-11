@@ -12,6 +12,7 @@ import { ConvocatoryDetails } from './pages/Convocatories/ConvocatoryDetails';
 import { ConvocatoryList } from './pages/Convocatories/ConvocatoryList';
 import { ConvocatoryRegister } from './pages/Convocatories/ConvocatoryRegister';
 import { Context } from './Context';
+import { OrganizationRegister } from './pages/Organizations/OrganizationRegister';
 
 const App: React.FC = () => {
   const { isAuth } = useContext(Context);
@@ -27,6 +28,11 @@ const App: React.FC = () => {
             <Route path={ROUTE.convocatories.register} component={ConvocatoryRegister} />
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
+            <Route
+              exact
+              path={ROUTE.organizations.register}
+              component={OrganizationRegister}
+            />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}

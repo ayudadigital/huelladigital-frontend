@@ -26,6 +26,7 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
           <Fragment>
             <LinkText key={`menu-acceder`} text={'acceder'} to={ROUTE.loginRegister}/>
             <LinkText key={`menu-registrarse`} text={'registrarse'} to={ROUTE.loginRegister}/>
+            <LinkText key={`menu-organization-register`} text={'organización'} to={ROUTE.organizations.register}/>
           </Fragment>
         )
       }
