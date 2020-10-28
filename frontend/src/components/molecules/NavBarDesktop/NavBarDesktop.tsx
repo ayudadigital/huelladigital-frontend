@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import './NavBar.scss';
 import { LinkText } from '../../atoms/LinkText';
 import { ROUTE } from '../../../utils/routes';
-import { button } from '@storybook/addon-knobs';
+import { LogoutButton } from '../../atoms/LogoutButton/LogoutButton';
 
 interface NavBarDesktopProps {
   onClick?: () => void;
@@ -32,7 +32,7 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
       }
       {
         // @ts-ignore
-        isAuth && <button onClick={onClickDisconnect}>desconectar</button>
+        isAuth && <LogoutButton onClick={onClickDisconnect}>desconectar</LogoutButton>
       }
     </div>
 
