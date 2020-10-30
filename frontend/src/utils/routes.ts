@@ -10,7 +10,7 @@ type typeRoute = {
       fetchConvocatory: (id: number) => string;
       joinConvocatory: (id: number) => string;
       registerAsReviser: string;
-      fetchListOfConvocatories: (id: number, page: number) => string;
+      fetchListOfConvocatories: (page: number, size: number) => string;
       submitRevision: (id: number) => string;
       fetchVolunteers: (id: number) => string;
       fetchProposalsAndVolunteers: (id: number) => string;
