@@ -3,8 +3,8 @@ import { FormRegisterOrganization } from './FormRegisterOrganization';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'Organization | FormRegisterOrganization',
+  title: 'Organization | Fields Register',
   decorators: [withA11y],
 };
 
-export const withText = () => <FormRegisterOrganization />;
+export const Default = () => <FormRegisterOrganization />;
