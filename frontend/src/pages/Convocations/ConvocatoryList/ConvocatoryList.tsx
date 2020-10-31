@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import './ConvocatoryList.scss';
 import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
 import exampleConvocatoryList from './exampleConvocatoryList.json';

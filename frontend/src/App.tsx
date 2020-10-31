@@ -8,9 +8,9 @@ import { WrapperPages } from './components/templates/WrapperPages';
 import { Header } from './components/organisms/Header';
 import { Footer } from './components/organisms/Footer';
 import { LoginRegister } from './pages/LoginRegister';
-import { ConvocatoryDetails } from './pages/Convocatories/ConvocatoryDetails';
-import { ConvocatoryList } from './pages/Convocatories/ConvocatoryList';
-import { ConvocatoryRegister } from './pages/Convocatories/ConvocatoryRegister';
+import { ConvocatoryDetails } from './pages/Convocations/ConvocatoryDetails';
+import { ConvocatoryList } from './pages/Convocations/ConvocatoryList';
+import { ConvocatoryRegister } from './pages/Convocations/ConvocatoryRegister';
 import { Context } from './Context';
 import { OrganizationRegister } from './pages/Organizations/OrganizationRegister';
 

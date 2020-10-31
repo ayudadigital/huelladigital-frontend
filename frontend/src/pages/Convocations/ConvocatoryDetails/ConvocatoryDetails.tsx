@@ -1,13 +1,10 @@
 import * as React from 'react';
+import { useState } from 'react';
 import './ConvocatoryDetails.scss';
 import exampleConvocatory from './assets/exampleConvocatory.json';
-import { useState } from 'react';
-import { url } from 'inspector';
 import { ReactComponent as DescriptionIcon } from './assets/Description.svg';
 import { ReactComponent as RequisitosIcon } from './assets/Requisites.svg';
 import { ReactComponent as InformationIcon } from './assets/Information.svg';
-import HamburguerMenuStories from '../../../components/molecules/HamburguerMenu/HamburguerMenu.stories';
-import { convertCompilerOptionsFromJson } from 'typescript';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
   const [active, setActive] = useState('Descripción');

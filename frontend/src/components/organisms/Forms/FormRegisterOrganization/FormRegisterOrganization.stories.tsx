@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {FormRegisterOrganization} from './FormRegisterOrganization';
+import { FormRegisterOrganization } from './FormRegisterOrganization';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'FormRegisterOrganization',
+  title: 'Organization | FormRegisterOrganization',
   decorators: [withA11y],
 };
 

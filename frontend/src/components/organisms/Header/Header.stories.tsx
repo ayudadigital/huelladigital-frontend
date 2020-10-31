@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Header} from './Header';
+import { Header } from './Header';
 import { withA11y } from '@storybook/addon-a11y';
 import { BrowserRouter } from 'react-router-dom';
 

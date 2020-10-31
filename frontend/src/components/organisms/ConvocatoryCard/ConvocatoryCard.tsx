@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './ConvocatoryCard.scss';
-import town from '../../../pages/Convocatories/assets/Convocatory-icons/town.jpeg';
-import location from '../../../pages/Convocatories/assets/Convocatory-icons/location.jpeg';
-import ages from '../../../pages/Convocatories/assets/Convocatory-icons/ages.jpeg';
+import town from '../../../pages/Convocations/assets/Convocatory-icons/town.jpeg';
+import location from '../../../pages/Convocations/assets/Convocatory-icons/location.jpeg';
+import ages from '../../../pages/Convocations/assets/Convocatory-icons/ages.jpeg';
 import { LinkButton } from '../../atoms/LinkButton/LinkButton';
 import { ROUTE } from '../../../utils/routes';
 import { ConvocatoryCardProps } from './types';
