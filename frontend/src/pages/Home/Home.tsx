@@ -1,11 +1,13 @@
 import React from 'react';
 import './styles.scss';
+import { LinkButton } from '../../components/atoms/LinkButton/LinkButton';
+import { ROUTE } from '../../utils/routes';
 
 export const Home: React.FC<{}> = () => {
   return (
       <section className={'Home'}>
-        <img src="https://media1.tenor.com/images/a828888852e708d9afaaad06c7f9513f/tenor.gif?itemid=10251428" alt="gif meme"/>
-        ✨🚀 Estamos trabajando en el inicio, disculpen las molestias
+        <LinkButton path={ROUTE.convocatories.list} text={'Ver todas las convocatorias'}/>
+        <LinkButton path={ROUTE.convocatories.register} text={'Crear una nueva convocatoria'}/>
       </section>
   );
 };

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { withA11y } from '@storybook/addon-a11y';
 import { FieldForm } from './FieldForm';
-import { withKnobs, text , select} from '@storybook/addon-knobs';
+import { select, text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Molecules | Field Form',
+  title: 'Molecules | Form/Field',
   decorators: [withA11y, withKnobs],
 };
 
-export const fieldForm = () => {
+export const Default = () => {
   const label = 'TYPE';
   const options = ['text', 'email', 'password'];
   const defaultValue = 'text';
