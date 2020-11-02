@@ -22,8 +22,8 @@ export const MixForms: React.FC<{}> = () => {
       {
         activeLogin ? <FormLoginVolunteer/> : <FormRegisterVolunteer/>
       }
-    </div>
-  );
+      </div>
+    );
 };
 
 MixForms.displayName = 'mixForms';
