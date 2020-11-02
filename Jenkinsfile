@@ -77,7 +77,12 @@ pipeline {
         }
         stage("AWS deploy") {
             agent {
-                label 'docker'
+                agent {
+                    dockerfile {
+                        filename 'Dockerfile'
+                        dir 'frontend/docker/build/aws-ibai'
+                    }
+                }
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-ibai', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
