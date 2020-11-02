@@ -77,11 +77,9 @@ pipeline {
         }
         stage("AWS deploy") {
             agent {
-                agent {
-                    dockerfile {
-                        filename 'Dockerfile'
-                        dir 'frontend/docker/build/aws-ibai'
-                    }
+                dockerfile {
+                    filename 'Dockerfile'
+                    dir 'frontend/docker/build/aws-ibai'
                 }
             }
             steps {
