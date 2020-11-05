@@ -6,27 +6,50 @@ import { SubmitButton } from '../../../components/atoms/SubmitButton';
 import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
 import { FormSelect } from '../../../components/molecules/FormSelect';
 import { LIST_MUNICIPALITY } from './assets/listMunicipality';
+import { ConvocatoryDto } from '../../../utils/dto';
+import ConvocatoriesFetch from '../../../utils/fetch/convocatories';
+import { FileWatcherEventKind } from 'typescript';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
+  const [image, setImage] = useState('');
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const [data, setData] = useState({
     title: '',
+    esalName: '',
+    province: '',
+    town: 'No seleccionado',
+    address: 'Santa Cruz de Tenerife',
+    minimumAge: 15,
+    maximumAge: 16,
+    startingProposalDate: '01/01/2020',
+    startingVolunteeringDate: '01/01/2020',
+    closingProposalDate: '02/01/2020',
     description: '',
-    photo: '',
-    city: 'Santa Cruz de Tenerife',
-    localization: 'No seleccionado',
-    agesMin: '15',
-    agesMax: '16',
-    startDay: '01/01/2020',
-    finishDay: '02/01/2020',
+    durationInDays: '0',
+    category: '',
+    imageURL: '',
   });
+
+  function handleFileChange (e: any) {
+    const fileReader = new FileReader();
+    const file = e.target.files[0];
+    fileReader.readAsDataURL(file);
+    fileReader.onload = (event: Event) => {
+      window.localStorage.setItem(
+        'Image', fileReader.result as string
+      );
+      setImage(fileReader.result as string);
+    }
+  }
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    const convocatoryDto : ConvocatoryDto = data;
+    const fetcher = new ConvocatoriesFetch();
+    fetcher.addNewConvocatory(convocatoryDto);
 
-    console.log(data);
-    // TODO: Hacer el POST
+
   }
 
   return (
@@ -35,12 +58,12 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       <ConvocatoryCard
         title={data.title}
         description={data.description}
-        photo={data.photo}
-        city={data.city}
-        localization={data.localization}
-        agesRange={`${data.agesMin}-${data.agesMax}`}
-        startDay={data.startDay}
-        finishDay={data.finishDay}
+        photo={image}
+        city={data.town}
+        localization={data.town}
+        agesRange={`${data.minimumAge}-${data.maximumAge}`}
+        startDay={data.startingProposalDate}
+        finishDay={data.closingProposalDate}
       />
 
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
@@ -60,18 +83,18 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
           title={'Foto'}
           type={'file'}
           name={'photo'}
-          onChange={(e) => setData({ ...data, photo: e.target.value })}
+          onChange={(e) => handleFileChange(e)}
         />
         <FormSelect
           title={'Ciudad'}
           name={'city'}
-          onChange={(e: any) => setData({ ...data, city: e.target.value })}
+          onChange={(e: any) => setData({ ...data, town: e.target.value })}
           optionsList={LIST_MUNICIPALITY}
         />
         <FormSelect
           title={'Ubicación'}
           name={'localization'}
-          onChange={(e) => setData({ ...data, localization: e.target.value })}
+          onChange={(e) => setData({ ...data, town: e.target.value })}
           optionsList={['Prueba 1', 'Prueba 2', 'Prueba 3', 'Prueba 4', 'Prueba 5']}
         />
         <h3>Edades</h3>
@@ -79,14 +102,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
           <FormSelect
             title={'Mínima '}
             name={'agesRangeMin'}
-            onChange={(e) => setData({ ...data, agesMin: e.target.value })}
+            onChange={(e) => setData({ ...data, minimumAge: e.target.value })}
             optionsList={ages}
           />
 
           <FormSelect
             title={'Máxima '}
             name={'agesRangeMax'}
-            onChange={(e) => setData({ ...data, agesMax: e.target.value })}
+            onChange={(e) => setData({ ...data, maximumAge: e.target.value })}
             optionsList={ages}
           />
         </div>
@@ -99,7 +122,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             onChange={(e) =>
               setData({
                 ...data,
-                startDay: e.target.value
+                startingProposalDate: e.target.value
                   .split('-')
                   .reverse()
                   .join('/'),
@@ -113,7 +136,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             onChange={(e) =>
               setData({
                 ...data,
-                finishDay: e.target.value
+                startingProposalDate: e.target.value
                   .split('-')
                   .reverse()
                   .join('/'),

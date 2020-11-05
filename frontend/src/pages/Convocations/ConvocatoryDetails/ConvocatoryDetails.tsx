@@ -63,7 +63,6 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             </div>
           </div>
           <div className="MenuInfoContainer">
-            
           </div>
       </div>
     </div>
