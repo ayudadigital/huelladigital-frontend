@@ -31,9 +31,10 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
   ];
   return (
     <div className="ConvocatoryDetails">
+      <img src = {convocatory.imageURL} className="sm-display"/>
       <div className="Panel">
-        <img src = {convocatory.imageURL}/>
-        <div className="AttributesList">
+        <img src = {convocatory.imageURL} className="bg-display"/>
+        <div className="AttributesList bg-display">
           {
             menu.map((menuItem) => (
               <span onClick={() => handleClick(menuItem.title)} className="MenuItem" style={{color: active === menuItem.title ? 'black' : '#AEAEAE'}}>
@@ -60,6 +61,19 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             <div className="IconGrid">
               <div className="Icon-location"/>
               {convocatory.address}
+            </div>
+            <div className="AttributesList sm-display">
+              {
+                menu.map((menuItem) => (
+                  <span onClick={() => handleClick(menuItem.title)} className="MenuItem" style={{color: active === menuItem.title ? 'black' : '#AEAEAE'}}>
+                    <div className="Item-description">
+                      {menuItem.icon}
+                      {menuItem.title}
+                    </div>
+                    <div className={active===menuItem.title ? 'Selected' : 'Not-selected'}/>
+                  </span>
+                ))
+              }
             </div>
           </div>
           <div className="MenuInfoContainer">
