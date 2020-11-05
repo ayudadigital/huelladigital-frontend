@@ -1,5 +1,5 @@
 export interface ConvocatoryDto {
-    id: string;
+    id?: string;
     title: string;
     esalName: string;
     province: string;
@@ -10,19 +10,19 @@ export interface ConvocatoryDto {
     startingProposalDate: string;
     startingVolunteeringDate: string;
     closingProposalDate: string;
-    status: string;
+    status?: string;
     description: string;
-    instructions: string;
-    extraInfo: string;
+    instructions?: string;
+    extraInfo?: string;
     durationInDays: string;
     category: string;
-    imageURL: string;
-    inscribedVolunteers: [VolunteerDto];
-    inscribedVolunteersCount: 0;
-    skills: [SkillDto];
-    requirements: [
+    imageURL?: string;
+    inscribedVolunteers?: [VolunteerDto];
+    inscribedVolunteersCount?: 0;
+    skills?: [SkillDto];
+    requirements?: [
         string
-    ]
+    ];
 }
 
 export interface VolunteerDto {

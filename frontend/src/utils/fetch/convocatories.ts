@@ -23,18 +23,23 @@ export default class ConvocatoriesFetch {
             });
     }
 
-    /*async addNewConvocatory(convocatoryData: ConvocatoryDto) {
-        const XSRF = getCookie('XSRF-TOKEN');
+    async addNewConvocatory(convocatoryData: ConvocatoryDto) {
         const URL = `${BASE.API}${ROUTE.API.convocatories.register}`;
+        let file;
+        if (window.localStorage.getItem('Image')) {
+            file = window.localStorage.getItem('Image');
+        } else {
+            file = '';
+        }
         return await fetch(URL, {
             method: 'POST',
             mode: 'cors',
             headers: {
-                'X-XSRF-TOKEN': `${XSRF}`,
-                'Cookie': `XSRF-TOKEN=${XSRF}`,
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data',
             },
-            body: JSON.stringify(convocatoryData, )
+            body: JSON.stringify({convocatoryData, file, contactPersonEmail:''})
+        }).then((response) => {
+            console.log(response);
         })
-    }*/
+    }
 }
