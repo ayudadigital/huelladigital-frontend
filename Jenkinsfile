@@ -22,9 +22,6 @@ def buildAndPublishDockerImages(String nextReleaseNumber='') {
         def customImage = docker.build("${env.DOCKER_ORGANIZATION}/huelladigital-frontend:${nextReleaseNumber}", "--pull --no-cache --build-arg BUILD_ID=$BUILD_ID frontend")
         sh "docker image prune --filter label=stage=builder --filter label=build=$BUILD_ID"
         customImage.push()
-        if (nextReleaseNumber != 'beta') {
-            customImage.push('latest')
-        }
     }
 }
 
@@ -58,9 +55,12 @@ pipeline {
         }
         stage("Docker Publish") {
             agent { label 'docker' }
-            when { branch 'develop' }
             steps {
-                buildAndPublishDockerImages('beta')
+                script {
+                    env.DOCKER_TAG = "${BUILD_NUMBER}"
+                }
+                sh "echo \"Building tag: ${env.DOCKER_TAG}\""
+                buildAndPublishDockerImages("${env.DOCKER_TAG}")
             }
         }
         stage("Remote deploy") {
@@ -69,6 +69,25 @@ pipeline {
             steps {
                 sshagent (credentials: ['jpl-ssh-credentials']) {
                     sh "bin/deploy.sh dev"
+                }
+            }
+        }
+        stage("AWS deploy") {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                    dir 'frontend/docker/build/aws-ibai'
+                }
+            }
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'aws-ibai', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    sh """
+                        echo 'Deploying to AWS -> Docker tag: ${env.DOCKER_TAG}'
+                        echo 'Deploying ... ======================================================='
+                        TASK_DEFINITION=\$(cat aws/frontend_task_definition.json | jq -c .)
+                        export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+                        bin/deploy-aws-ibai.sh dev \${TASK_DEFINITION} ${env.DOCKER_TAG}
+                    """
                 }
             }
         }
