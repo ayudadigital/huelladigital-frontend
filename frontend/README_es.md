@@ -34,7 +34,7 @@ npm run start
 
 Con ello ya estaría disponible la vista en el navegador. :link: http://localhost:3000.
 
-Existen otras uitilidades disponibles para probar y desplegar el código:
+Existen otras utilidades disponibles para probar y desplegar el código:
 
 #### `npm test`
 
