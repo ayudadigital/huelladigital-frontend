@@ -1,5 +1,26 @@
 # :sos: Frontend Huella positiva
 
+## How to run the project
+
+The back-end needs to be running for requests and forms to work as expected. This is an optional step.
+
+### How to run the back-end application
+
+Updated instructions on how to run the back-end can be found in [the back-end's own repository](https://github.com/ayudadigital/huelladigital-backend).
+
+### How to run the front-end application
+
+The only dependency needed is [NodeJS](https://nodejs.org/en/).
+
+To run the project for the first time, you have to run two scripts:
+```bash
+npm install
+npm run start
+```
+
+If the previous steps complete successfully, the view will be available on [http://localhost:3000](http://localhost:3000).
+
+
 ## Available Scripts
 
 In the project directory, you can run:
