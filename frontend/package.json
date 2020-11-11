@@ -2,7 +2,7 @@
   "name": "react-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3000",
+  "proxy":"http://localhost:8080",
   "dependencies": {
     "@types/jest": "25.1.4",
     "@types/node": "13.9.2",

@@ -1,4 +1,3 @@
-// This is a placeholder file
 export interface ProposalDTO {
   id: string;
   title: string;

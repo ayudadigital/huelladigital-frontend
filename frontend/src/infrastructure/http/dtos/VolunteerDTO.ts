@@ -1,4 +1,4 @@
 // This is a placeholder file
-export interface VolunteerDTO {
+export interface PolunteerDTO {
     id: string;
 }

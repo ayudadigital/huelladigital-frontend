@@ -1,6 +1,6 @@
 import { BASE } from '../base';
 import { ROUTE } from '../http/routes';
-import { ConvocatoryDto } from '../http/dtos/dto';
+import { ProposalDTO } from '../http/dtos/ProposalDTO';
 import { getCookie } from '../http/cookies';
 
 

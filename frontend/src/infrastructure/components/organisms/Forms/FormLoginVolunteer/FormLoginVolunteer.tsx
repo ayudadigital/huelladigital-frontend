@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import '../styles.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import Client from '../../../../repositories/client';
+import { volunteerRepository } from '../../../../repositories/Volunteer.repository';
 
 export const FormLoginVolunteer: React.FC<any> = () => {
   const [stateButton, setStateButton] = useState(true);
@@ -26,12 +26,11 @@ export const FormLoginVolunteer: React.FC<any> = () => {
       email: data.email,
       password: data.password,
     };
-    const client = new Client();
-    const response = await client.loginVolunteer(volunteerDTO);
+    volunteerRepository.login(volunteerDTO);
 
-    if (response === 403) {
+    /*if (response === 403) {
       setMessageShow(true);
-    }
+    }*/
   }
 
   useEffect(() => {
