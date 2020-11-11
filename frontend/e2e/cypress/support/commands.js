@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 
-import { ROUTE } from '../../../src/utils/routes';
+import { ROUTE } from '../../../src/infrastructure/http/routes';
 
 Cypress.Commands.add('typeRegisterVolunteer', (volunteer) => {
   cy.get('input[name=email]')

@@ -1,4 +1,4 @@
-import { ROUTE } from '../../../src/utils/routes';
+import { ROUTE } from '../../../src/infrastructure/http/routes';
 
 const INICIO = 'inicio';
 const ACCEDER = 'acceder';

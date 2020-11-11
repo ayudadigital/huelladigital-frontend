@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/scss/index.scss';
-import App from './App';
+import './infrastructure/styles/scss/index.scss';
+import App from './infrastructure/App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from './Context';
+import { Provider } from './infrastructure/Context';
 
 ReactDOM.render(
   <Provider>
