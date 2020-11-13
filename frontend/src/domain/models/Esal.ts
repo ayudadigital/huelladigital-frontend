@@ -1,2 +1,4 @@
-// This is a placeholder file
-export {};
+export type Esal = {
+    name: string;
+    contactPerson: string;
+};
