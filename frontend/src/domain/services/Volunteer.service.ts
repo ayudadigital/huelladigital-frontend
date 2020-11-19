@@ -1,24 +1,21 @@
-import {Volunteer} from '../models/Volunteer';
+import { Volunteer } from '../models/Volunteer';
 
 // Importar el repository encargado de la comunicación con el back
 
 const addCV = () => {
-    // Repository.addCV()
+  // Repository.addCV()
 };
 
-
 const changePassword = () => {
-    // repository.changePassword()
+  // repository.changePassword()
 };
 
 const editProfile = (newVolunteerData: Volunteer) => {
-    // repository.changeProfile(newVolunteerData)
-}
-
-
+  // repository.changeProfile(newVolunteerData)
+};
 
 export const VolunteerService = {
-    changePassword,
-    addCV,
-    editProfile
+  changePassword,
+  addCV,
+  editProfile,
 };

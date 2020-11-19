@@ -1,4 +1,4 @@
 export type Esal = {
-    name: string;
-    contactPerson: string;
+  name: string;
+  contactPerson: string;
 };
