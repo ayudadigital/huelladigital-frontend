@@ -1,3 +1,3 @@
-export interface VolunteerDTO {
-    id: string;
+export interface VolunteerDto {
+  id: string;
 }

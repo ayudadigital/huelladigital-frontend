@@ -1,3 +1,5 @@
+import { VolunteerDto } from './VolunteerDTO';
+
 export interface ProposalDTO {
   id: string;
   title: string;
@@ -28,10 +30,6 @@ export interface SkillDto {
   description: string;
 }
 
-export interface VolunteerDto {
-  id: string;
-}
-
 export interface ProposalListDTO {
-  proposals: [ProposalDTO];
+  proposals: ProposalDTO[];
 }

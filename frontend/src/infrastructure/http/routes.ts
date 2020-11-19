@@ -19,8 +19,8 @@ type typeRoute = {
       register: string;
       delete: (id: number) => string;
       registerAsReviser: string;
-    },
-    tokens: {refresh: string}
+    };
+    tokens: { refresh: string };
   };
   organizations: {
     register: string;
@@ -33,7 +33,7 @@ const ENDPOINT_VOLUNTEERS = `/api/${V1}/volunteers`;
 const ENDPOINT_EMAILCONFIRMATION = `/api/${V1}/email-confirmation`;
 const ENDPOINT_AUTHENTICATION = `/api/${V1}/authentication`;
 const ENDPOINT_PROPOSALS = `/api/${V1}/proposals`;
-const ENDPOINT_ORGANIZATIONS =  `api/${V1}/esal`;
+const ENDPOINT_ORGANIZATIONS = `api/${V1}/esal`;
 
 export const ROUTE: typeRoute = {
   convocatories: {
@@ -63,7 +63,8 @@ export const ROUTE: typeRoute = {
       fetchConvocatory: (id: number) => `${ENDPOINT_PROPOSALS}/${id}`,
       joinConvocatory: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/join`,
       registerAsReviser: `${ENDPOINT_PROPOSALS}/reviser`,
-      fetchListOfConvocatories: (page: number, size: number) => `${ENDPOINT_PROPOSALS}/${page}/${size}`,
+      fetchListOfConvocatories: (page: number, size: number) =>
+        `${ENDPOINT_PROPOSALS}/${page}/${size}`,
       submitRevision: (id: number) => `${ENDPOINT_PROPOSALS}/revision/${id}`,
       fetchVolunteers: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/volunteers`,
       fetchProposalsAndVolunteers: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/proposal`,
@@ -73,6 +74,6 @@ export const ROUTE: typeRoute = {
       delete: (id: number) => `${ENDPOINT_ORGANIZATIONS}/${id}`,
       registerAsReviser: `${ENDPOINT_ORGANIZATIONS}/reviser`,
     },
-    tokens: {refresh: `/api/${V1}/refresh`},
+    tokens: { refresh: `/api/${V1}/refresh` },
   },
 };
