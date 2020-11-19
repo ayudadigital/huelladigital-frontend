@@ -1,7 +1,12 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import Client from '../../../../repositories/client';
+//import Client from '../../../../repositories/client';
+
+// Este import no puede estar aquí. Se debe implementar el modelo, y que el modelo se 
+// comunique con llos repositories
+import {VolunteerCredentialsDTO } from '../../../../http/dtos/CredentialsDTO';
+import {volunteerRepository} from '../../../../repositories/Volunteer.repository';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
 
@@ -16,12 +21,11 @@ export const FormRegisterVolunteer: React.FC = () => {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const volunteerDTO = {
-      email: data.email,
-      password: data.password,
+    const volunteerDTO: VolunteerCredentialsDTO= {
+      email: data.email as string,
+      password: data.password as string,
     };
-    const client = new Client();
-    const response = await client.registerVolunteer(volunteerDTO);
+    const response = await volunteerRepository.register(volunteerDTO);
     await setAlreadyExist(response);
 
     if (userAlreadyExist !== undefined && userAlreadyExist === 409) {
