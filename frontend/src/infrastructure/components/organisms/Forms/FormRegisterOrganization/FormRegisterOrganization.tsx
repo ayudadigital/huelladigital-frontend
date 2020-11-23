@@ -3,17 +3,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import './FormRegisterOrganization.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-
-export interface OrganizationProps {
-  email: string | React.ChangeEvent<HTMLInputElement>;
-  organization: string | React.ChangeEvent<HTMLInputElement>;
-}
-
-export interface CheckProps {
-  email: stateValidateTypes;
-  organization: stateValidateTypes;
-}
-type stateValidateTypes = '' | 'correct' | 'incorrect';
+import { CheckProps, OrganizationProps } from './types';
 
 export const FormRegisterOrganization: React.FC<{}> = () => {
   const [data, setData] = useState<OrganizationProps>({

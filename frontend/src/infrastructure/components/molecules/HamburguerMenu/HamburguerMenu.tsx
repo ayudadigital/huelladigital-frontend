@@ -1,11 +1,6 @@
 import * as React from 'react';
 import './HamburguerMenu.scss';
-
-interface NabBarMobilProps {
-    onClick?: () => void;
-    show?: boolean;
-}
-
+import { NabBarMobilProps } from './types';
 
 export const HamburguerMenu: React.FC<NabBarMobilProps> = ({onClick, show}) => (
     <div className="HamburguerMenu">

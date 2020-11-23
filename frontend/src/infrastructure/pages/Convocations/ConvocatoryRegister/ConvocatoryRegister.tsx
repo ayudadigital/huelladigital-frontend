@@ -15,7 +15,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     description: '',
     photo: '',
     city: 'Santa Cruz de Tenerife',
-    localization: 'No seleccionado',
+    localization: 'Prueba 1',
     agesMin: '15',
     agesMax: '16',
     startDay: '01/01/2020',
@@ -63,13 +63,13 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
           onChange={(e) => setData({ ...data, photo: e.target.value })}
         />
         <FormSelect
-          title={'Ciudad'}
+          text={'Ciudad'}
           name={'city'}
           onChange={(e: any) => setData({ ...data, city: e.target.value })}
           optionsList={LIST_MUNICIPALITY}
         />
         <FormSelect
-          title={'Ubicación'}
+          text={'Ubicación'}
           name={'localization'}
           onChange={(e) => setData({ ...data, localization: e.target.value })}
           optionsList={['Prueba 1', 'Prueba 2', 'Prueba 3', 'Prueba 4', 'Prueba 5']}
@@ -77,14 +77,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
         <h3>Edades</h3>
         <div className={'ages'}>
           <FormSelect
-            title={'Mínima '}
+            text={'Mínima '}
             name={'agesRangeMin'}
             onChange={(e) => setData({ ...data, agesMin: e.target.value })}
             optionsList={ages}
           />
 
           <FormSelect
-            title={'Máxima '}
+            text={'Máxima '}
             name={'agesRangeMax'}
             onChange={(e) => setData({ ...data, agesMax: e.target.value })}
             optionsList={ages}

@@ -1,11 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './styles.scss';
-
-interface LinkButtonProps {
-  path: string;
-  text: string;
-}
+import { LinkButtonProps } from './types';
 
 export const LinkButton: React.FC<LinkButtonProps> = ({path, text='boton'}) => {
   return (

@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default = () => <FormSelect
-  title={'Ejemplo'}
+  text={'Ejemplo'}
   name={'example'}
   optionsList={['Opcion 1', 'Opcion 2', 'Opcion 3', 'Opcion 4']}
 />;
