@@ -5,8 +5,8 @@ import { SubmitButton } from '../../../atoms/SubmitButton';
 
 // Este import no puede estar aquí. Se debe implementar el modelo, y que el modelo se 
 // comunique con llos repositories
-import {VolunteerCredentialsDTO } from '../../../../http/dtos/CredentialsDTO';
-import {volunteerRepository} from '../../../../repositories/Volunteer.repository';
+import {VolunteerCredentialsDTO } from '../../../../../http/dtos/CredentialsDTO';
+import {volunteerRepository} from '../../../../../repositories/Volunteer.repository';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
 

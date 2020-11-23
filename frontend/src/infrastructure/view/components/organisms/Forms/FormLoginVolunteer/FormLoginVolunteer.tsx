@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import '../styles.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import { VolunteerCredential } from '../../../../../domain/models/Credential';
-import { VolunteerService } from '../../../../../domain/services/Volunteer.service';
+import { VolunteerCredential } from '../../../../../../domain/models/Credential';
+import { VolunteerService } from '../../../../../../domain/services/Volunteer.service';
 
 export const FormLoginVolunteer: React.FC<any> = () => {
   const [stateButton, setStateButton] = useState(true);

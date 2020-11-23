@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Footer.scss';
-import bannerER from '../../../assets/banner-er.png';
-import bannerOdds from '../../../assets/banner-odds.png';
+import bannerER from '../../../../assets/banner-er.png';
+import bannerOdds from '../../../../assets/banner-odds.png';
 import { Politics } from '../../molecules/Politics';
 import { Social } from '../Social';
 

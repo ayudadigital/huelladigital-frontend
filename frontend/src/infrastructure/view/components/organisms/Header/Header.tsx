@@ -3,9 +3,9 @@ import { useContext, useState } from 'react';
 import './Header.scss';
 import { Image } from '../../atoms/Image';
 import { NavBarDesktop } from '../../molecules/NavBarDesktop';
-import { Context } from '../../../Context';
+import { Context } from '../../../../Context';
 import { HamburguerMenu } from '../../molecules/HamburguerMenu';
-import useWindowSize from '../../../hooks/useWindowSize';
+import useWindowSize from '../../../../hooks/useWindowSize';
 
 export const Header: React.FC<{}> = () => {
   const [showModal, setShowModal] = useState(false);

@@ -4,7 +4,7 @@ import './ConvocatoryList.scss';
 import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
 import exampleConvocatoryList from './exampleConvocatoryList.json';
 import { ConvocatoryCardProps } from '../../../components/organisms/ConvocatoryCard/types';
-import ConvocatoriesFetch from '../../../repositories/convocatories';
+import ConvocatoriesFetch from '../../../../repositories/convocatories';
 
 export const ConvocatoryList: React.FC<{}> = () => {
   const [page, changePage] = useState(1);

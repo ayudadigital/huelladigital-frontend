@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image } from './Image';
 import { withA11y } from '@storybook/addon-a11y';
-import logo from '../../../../../public/logo192.png';
+import logo from '../../../../../../public/logo192.png';
 import superHeroes from './assets/superHeroes.svg';
 import { Fragment } from 'react';
 import { text, withKnobs } from '@storybook/addon-knobs';

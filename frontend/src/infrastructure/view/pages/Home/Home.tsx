@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import { LinkButton } from '../../components/atoms/LinkButton/LinkButton';
-import { ROUTE } from '../../http/routes';
+import { ROUTE } from '../../../http/routes';
 
 export const Home: React.FC<{}> = () => {
   return (

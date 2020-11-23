@@ -1,7 +1,7 @@
 import React from 'react';
 import { ConvocatoryInfo } from './ConvocatoryInfo';
 import { withA11y } from '@storybook/addon-a11y';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import town from '../../../pages/Convocations/assets/Convocatory-icons/town.jpeg';
 
 export default {

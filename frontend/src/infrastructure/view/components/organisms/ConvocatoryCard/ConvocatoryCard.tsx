@@ -4,7 +4,7 @@ import town from '../../../pages/Convocations/assets/Convocatory-icons/town.jpeg
 import location from '../../../pages/Convocations/assets/Convocatory-icons/location.jpeg';
 import ages from '../../../pages/Convocations/assets/Convocatory-icons/ages.jpeg';
 import { LinkButton } from '../../atoms/LinkButton/LinkButton';
-import { ROUTE } from '../../../http/routes';
+import { ROUTE } from '../../../../http/routes';
 import { ConvocatoryCardProps } from './types';
 import { ConvocatoryInfo } from '../../atoms/ConvocatoryInfo';
 

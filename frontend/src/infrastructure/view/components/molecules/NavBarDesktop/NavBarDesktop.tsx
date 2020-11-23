@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Fragment } from 'react';
 import './NavBar.scss';
 import { LinkText } from '../../atoms/LinkText';
-import { ROUTE } from '../../../http/routes';
+import { ROUTE } from '../../../../http/routes';
 import { button } from '@storybook/addon-knobs';
 
 interface NavBarDesktopProps {
