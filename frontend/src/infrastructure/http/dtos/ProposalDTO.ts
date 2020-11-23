@@ -1,10 +1,10 @@
 import { VolunteerDto } from './VolunteerDTO';
 
 export interface ProposalDTO {
-  id: string;
+  id?: string;
   title: string;
   esalName: string;
-  province: string;
+  province: number;
   town: string;
   address: string;
   minimumAge: number;
@@ -12,16 +12,16 @@ export interface ProposalDTO {
   startingProposalDate: string;
   startingVolunteeringDate: string;
   closingProposalDate: string;
-  status: string;
+  status: number;
   description: string;
   instructions: string;
   extraInfo: string;
-  durationInDays: string;
+  durationInDays: number;
   category: string;
   imageURL: string;
-  inscribedVolunteers: [VolunteerDto];
-  inscribedVolunteersCount: 0;
-  skills: [SkillDto];
+  inscribedVolunteers: [VolunteerDto] | null;
+  inscribedVolunteersCount: number;
+  skills: [SkillDto] | null;
   requirements: [string];
 }
 
