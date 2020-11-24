@@ -6,10 +6,14 @@ import { SubmitButton } from '../../../components/atoms/SubmitButton';
 import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
 import { FormSelect } from '../../../components/molecules/FormSelect';
 import { LIST_MUNICIPALITY } from './assets/listMunicipality';
+import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
+import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
+import { Volunteer } from '../../../../../domain/models/Volunteer';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
+  const exampleSkill: Skill = {name: "Nombre skill", description: 'description'};
   const [data, setData] = useState({
     title: '',
     description: '',
@@ -20,6 +24,8 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     agesMax: '16',
     startDay: '01/01/2020',
     finishDay: '02/01/2020',
+    inscribedVolunteers: null,
+    skills: exampleSkill
   });
 
   async function handleSubmit(event: React.FormEvent) {
@@ -27,6 +33,32 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
     console.log(data);
     // TODO: Hacer el POST
+    const convocatoryTemp: Convocatory = {
+      title: data.title,
+      organizer: '',
+      category: '',
+      endingDate: data.finishDay,
+      minimumAge: Number(data.agesMin),
+      maximumAge: Number(data.agesMax),
+      province: 0,
+      town: data.city,
+      address: '',
+      startingDate: data.startDay,
+      closingDate: '',
+      startingVolunteeringDate: '',
+      status: 0,
+      description: data.description,
+      instructions: '', // ¿Qué voy a hacer?
+      extraInfo: '', // ¿Qué más necesito saber?
+      duration: 0,
+      imageURL: '',
+      inscribedVolunteersCount: 0,
+      inscribedVolunteers: data.inscribedVolunteers,
+      skills: [data.skills],
+      requirements: [''],
+    };
+
+    ConvocatoryService.registerConvocatory(convocatoryTemp, '');
   }
 
   return (
