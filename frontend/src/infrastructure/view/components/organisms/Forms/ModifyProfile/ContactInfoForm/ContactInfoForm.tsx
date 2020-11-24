@@ -1,7 +1,7 @@
 import React from 'react';
-import { InputFieldForm } from '../../../atoms/InputFieldForm';
-import { SubmitButton } from '../../../atoms/SubmitButton';
-import { FieldForm } from '../../../molecules/FieldForm';
+import { InputFieldForm } from '../../../../atoms/InputFieldForm';
+import { SubmitButton } from '../../../../atoms/SubmitButton';
+import { FieldForm } from '../../../../molecules/FieldForm';
 import './ContactInfoForm';
 
 export const ContactInfoForm: React.FC<{}> = () => {
@@ -16,3 +16,5 @@ export const ContactInfoForm: React.FC<{}> = () => {
     </div>
   );
 };
+
+ContactInfoForm.displayName = 'ContactInfoForm';
