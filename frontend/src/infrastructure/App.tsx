@@ -7,7 +7,7 @@ import { EmailConfirmation } from './view/pages/EmailConfirmation';
 import { WrapperPages } from './view/components/templates/WrapperPages';
 import { Header } from './view/components/organisms/Header';
 import { Footer } from './view/components/organisms/Footer';
-import { LoginRegister } from './view/pages/LoginRegister';
+import { LoginRegister } from './view/pages/User/LoginRegister';
 import { ConvocatoryDetails } from './view/pages/Convocations/ConvocatoryDetails';
 import { ConvocatoryList } from './view/pages/Convocations/ConvocatoryList';
 import { ConvocatoryRegister } from './view/pages/Convocations/ConvocatoryRegister';
