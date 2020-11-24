@@ -1,5 +1,5 @@
 export interface ImageProps {
-    source: string;
-    description: string;
-    width?: string;
+  source: string;
+  description: string;
+  width?: string;
 }

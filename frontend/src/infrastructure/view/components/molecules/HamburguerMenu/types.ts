@@ -1,4 +1,4 @@
 export interface NabBarMobilProps {
-    onClick?: () => void;
-    show?: boolean;
+  onClick?: () => void;
+  show?: boolean;
 }

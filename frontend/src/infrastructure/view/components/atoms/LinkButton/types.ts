@@ -1,4 +1,4 @@
 export interface LinkButtonProps {
-    path: string;
-    text: string;
+  path: string;
+  text: string;
 }

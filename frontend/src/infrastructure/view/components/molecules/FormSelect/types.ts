@@ -1,9 +1,9 @@
-import { LabelProps } from "../../atoms/Label/types";
+import { LabelProps } from '../../atoms/Label/types';
 
-export interface FormSelectProps extends LabelProps{
-    name: string;
-    id?: string;
-    onChange?: (event: any) => void;
-    onBlur?: () => void;
-    optionsList: string[];
+export interface FormSelectProps extends LabelProps {
+  name: string;
+  id?: string;
+  onChange?: (event: any) => void;
+  onBlur?: () => void;
+  optionsList: string[];
 }

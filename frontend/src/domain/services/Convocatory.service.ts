@@ -2,8 +2,7 @@ import { convocatoryRepository } from '../../infrastructure/repositories/Convoca
 import { Convocatory } from '../models/Convocatory';
 
 const registerConvocatory = (convocatory: Convocatory, file: string) => {
-    const response = convocatoryRepository.createConvocatory(convocatory, file);
-    console.log(response);
+  const response = convocatoryRepository.createConvocatory(convocatory, file);
 };
 
 export const ConvocatoryService = { registerConvocatory };

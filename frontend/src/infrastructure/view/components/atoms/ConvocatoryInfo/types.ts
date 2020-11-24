@@ -1,5 +1,5 @@
 export interface ConvocatoryInfoProps {
-    description: string;
-    imageURL: string;
-    title: string;
+  description: string;
+  imageURL: string;
+  title: string;
 }
