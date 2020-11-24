@@ -38,15 +38,16 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           Otra información
         </button>
       </div>
-      <div>
-        {activeContactInfo ? (
-          <ContactInfoForm />
-        ) : activeLocationinfo ? (
-          <LocationInfoForm />
-        ) : (
-          <OtherInfoForm />
-        )}
-      </div>
     </div>
   );
 };
+
+/*<div>
+  {activeContactInfo ? (
+    <ContactInfoForm />
+  ) : activeLocationinfo ? (
+    <LocationInfoForm />
+  ) : (
+    <OtherInfoForm />
+  )}
+</div>;*/
