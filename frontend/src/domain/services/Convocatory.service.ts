@@ -1,3 +1,4 @@
+import { ProposalDTO } from '../../infrastructure/http/dtos/ProposalDTO';
 import { convocatoryRepository } from '../../infrastructure/repositories/Convocatory.repository';
 import { Convocatory } from '../models/Convocatory';
 

@@ -3,8 +3,9 @@ import { http } from '../http/http';
 import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
 import { activateAuth } from '../http/cookies';
+import { VolunteerCredential } from '../../domain/models/Credential';
 
-const login = (loginCredentials: VolunteerCredentialsDTO) => {
+const login = (loginCredentials: VolunteerCredential) => {
   http
     .post(`${BASE.API}${ROUTE.API.volunteers.login}`, JSON.stringify(loginCredentials))
     .then((response) => {
