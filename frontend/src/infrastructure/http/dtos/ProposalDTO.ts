@@ -21,7 +21,7 @@ export interface ProposalDTO {
   imageURL: string;
   inscribedVolunteers: [VolunteerDto] | null;
   inscribedVolunteersCount: number;
-  skills: [SkillDto] | null;
+  skills: [SkillDto];
   requirements: [string];
 }
 
