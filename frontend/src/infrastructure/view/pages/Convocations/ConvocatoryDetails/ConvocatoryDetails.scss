@@ -1,3 +1,30 @@
-.ConvocatoryDetails{
-
+.ConvocatoryDetails {
+  .Convocatory {
+    padding: 0% 10%;
+    margin-top: 5rem;
+    background-color: white;
+    .Img-title-container {
+      position: relative;
+      img {
+        width: 100%;
+        max-height: 30vh;
+        object-fit: cover;
+      }
+      .Title {
+        position: absolute;
+        display: flex;
+        flex-direction: column-reverse;
+        bottom: 0;
+        left: 0;
+        height: 35%;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        h2 {
+          color: white;
+          margin-left: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
 }
