@@ -1,0 +1,28 @@
+{
+    "Convocatory": {
+        "id":1,
+        "title": "Recogida de residuos: Igueste de San Andres",
+        "organizer": "string",
+        "category": "string",
+        "endingDate": "string",
+        "minimumAge": 1,
+        "maximumAge": 1,
+        "province": 1,
+        "town": "string",
+        "address": "string",
+        "startingDate": "string",
+        "closingDate": "string",
+        "startingVolunteeringDate": "string",
+        "status": 1,
+        "description": "string",
+        "instructions": "string", 
+        "extraInfo": "string", 
+        "duration": 1,
+        "imageURL": "../assets/Convocatory-images/Igueste.jpg",
+        "inscribedVolunteers": null,
+        "inscribedVolunteersCount": 4,
+        "skills": [],
+        "requirements": []
+    }
+}
+  
