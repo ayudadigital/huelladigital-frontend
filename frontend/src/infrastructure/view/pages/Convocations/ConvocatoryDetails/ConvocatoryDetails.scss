@@ -1,8 +1,9 @@
 .ConvocatoryDetails {
+  padding: 0% 10%;
+  margin-top: 5rem;
   .Convocatory {
-    padding: 0% 10%;
-    margin-top: 5rem;
     background-color: white;
+    border: 1px solid #eaeaea;
     .Img-title-container {
       position: relative;
       img {
@@ -24,6 +25,18 @@
           margin-left: 2rem;
           margin-bottom: 1rem;
         }
+      }
+    }
+    .Content {
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .TableContainer {
+        height: 100%;
+        background-color: #fefbfb;
+        width: 50%;
+        border-right: 1px solid #e9e9e9;
       }
     }
   }

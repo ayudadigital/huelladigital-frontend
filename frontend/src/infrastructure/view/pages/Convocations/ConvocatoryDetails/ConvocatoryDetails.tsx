@@ -15,6 +15,11 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             <h2>{convocatory.title}</h2>
           </div>
         </div>
+        <div className="Content">
+          <div className="TableContainer">
+            {/** Table component **/}
+          </div>
+        </div>
       </div>
     </div>
   );
