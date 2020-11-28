@@ -8,13 +8,15 @@ import { FormSelect } from '../../../components/molecules/FormSelect';
 import { LIST_MUNICIPALITY } from './assets/listMunicipality';
 import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
 import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
-import { Volunteer } from '../../../../../domain/models/Volunteer';
-import { ProposalDTO } from '../../../../http/dtos/ProposalDTO';
+import { number } from '@storybook/addon-knobs';
+import { Interface } from 'readline';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
+  const checkDate: Date = new Date();
+
   const [data, setData] = useState({
     title: '',
     description: '',
@@ -23,17 +25,72 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     localization: 'Prueba 1',
     agesMin: '15',
     agesMax: '16',
-    startDay: '01/01/2020',
-    finishDay: '02/01/2020',
+    startDay: '',
+    finishDay: '',
     inscribedVolunteers: null,
     skills: exampleSkill,
   });
 
+  const checkStartDateIsCorrect = (dateIsCorrect: boolean) => {
+    let separator: string = '';
+
+    interface DateType {
+      day: number;
+      month: number;
+      year: number;
+    }
+
+    const dateForType: DateType = {
+      day: 0,
+      month: 0,
+      year: 0,
+    };
+
+    const toDay: DateType = {
+      day: checkDate.getDate(),
+      month: checkDate.getMonth() + 1,
+      year: checkDate.getFullYear(),
+    };
+    for (const isNotaNumber of data.startDay) {
+      if (isNaN(Number(isNotaNumber))) {
+        separator = isNotaNumber;
+      }
+    }
+    for (const numberDate of data.startDay.split(separator)) {
+      if (numberDate.length !== 4) {
+        if (dateForType.day === 0) {
+          dateForType.day = Number(numberDate);
+        } else {
+          dateForType.month = Number(numberDate);
+        }
+      } else {
+        if (dateForType.year === 0) {
+          dateForType.year = Number(numberDate);
+        } else {
+          if (dateForType.month === 0) {
+            dateForType.month = Number(numberDate);
+          } else {
+            dateForType.day = Number(numberDate);
+          }
+        }
+      }
+    }
+
+    if (toDay.year <= dateForType.year.valueOf()) {
+      if (toDay.month <= dateForType.month.valueOf()) {
+        dateIsCorrect = toDay.day <= dateForType.day.valueOf();
+      } else {
+        dateIsCorrect = false;
+      }
+    } else {
+      dateIsCorrect = false;
+    }
+    return dateIsCorrect;
+  };
+
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    console.log(data);
-    // TODO: Hacer el POST
     const convocatoryTemp: Convocatory = {
       title: data.title,
       organizer: '',
@@ -58,8 +115,10 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       skills: [data.skills],
       requirements: [''],
     };
-
-    ConvocatoryService.registerConvocatory(convocatoryTemp, '');
+    // @ts-ignore
+    checkStartDateIsCorrect()
+      ? ConvocatoryService.registerConvocatory(convocatoryTemp, '')
+      : alert('Formato Fecha incorrecto');
   }
 
   return (
