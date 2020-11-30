@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {TextAreaForm} from './TextAreaForm';
+import { TextAreaForm } from './TextAreaForm';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
@@ -7,4 +7,4 @@ export default {
   decorators: [withA11y],
 };
 
-export const withText = () => <TextAreaForm />;
+export const withText = () => <TextAreaForm name="" placeholder="Text area" />;
