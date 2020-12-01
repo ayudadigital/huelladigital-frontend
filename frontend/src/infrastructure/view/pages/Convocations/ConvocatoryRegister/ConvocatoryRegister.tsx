@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './ConvocatoryRegister.scss';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
@@ -8,13 +8,19 @@ import { FormSelect } from '../../../components/molecules/FormSelect';
 import { LIST_MUNICIPALITY } from './assets/listMunicipality';
 import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
 import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
-import { Volunteer } from '../../../../../domain/models/Volunteer';
-import { ProposalDTO } from '../../../../http/dtos/ProposalDTO';
+import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
+  const separatorDate = '/';
+  const [finishDateIsCorrect, setFinishDateIsCorrect] = React.useState<
+    stateValidateTypes
+  >('');
+  const [startDateIsCorrect, setStartDateIsCorrect] = React.useState<stateValidateTypes>(
+    '',
+  );
   const [data, setData] = useState({
     title: '',
     description: '',
@@ -23,17 +29,47 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     localization: 'Prueba 1',
     agesMin: '15',
     agesMax: '16',
-    startDay: '01/01/2020',
-    finishDay: '02/01/2020',
+    startDay: '',
+    finishDay: '',
     inscribedVolunteers: null,
     skills: exampleSkill,
   });
 
+  const checkDateIsCorrect = (dateIsCorrect: boolean) => {
+    const checkDate: Date = new Date();
+    const toDay = {
+      day: checkDate.getDate(),
+      month: checkDate.getMonth(),
+      year: checkDate.getFullYear(),
+    };
+
+    const startDateCheck: Date = new Date(
+      String(data.startDay.split(separatorDate).reverse()),
+    );
+    const finishDateCheck: Date = new Date(
+      String(data.finishDay.split(separatorDate).reverse()),
+    );
+
+    const toDayForCheck: Date = new Date(toDay.year, toDay.month, toDay.day);
+
+    if (toDayForCheck <= startDateCheck && finishDateCheck > startDateCheck) {
+      dateIsCorrect = true;
+      setStartDateIsCorrect('correct');
+      setFinishDateIsCorrect('correct');
+    } else if (finishDateCheck < startDateCheck) {
+      dateIsCorrect = false;
+      setFinishDateIsCorrect('incorrect');
+    } else if (toDayForCheck > startDateCheck) {
+      setStartDateIsCorrect('incorrect');
+      dateIsCorrect = false;
+    }
+
+    return dateIsCorrect;
+  };
+
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    console.log(data);
-    // TODO: Hacer el POST
     const convocatoryTemp: Convocatory = {
       title: data.title,
       organizer: '',
@@ -58,8 +94,10 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       skills: [data.skills],
       requirements: [''],
     };
-
-    ConvocatoryService.registerConvocatory(convocatoryTemp, '');
+    // @ts-ignore
+    if (checkDateIsCorrect()) {
+      ConvocatoryService.registerConvocatory(convocatoryTemp, '');
+    }
   }
 
   return (
@@ -129,13 +167,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             title={'Inicio'}
             type={'date'}
             name={'startDay'}
+            stateValidate={startDateIsCorrect}
             onChange={(e) =>
               setData({
                 ...data,
                 startDay: e.target.value
                   .split('-')
                   .reverse()
-                  .join('/'),
+                  .join(separatorDate),
               })
             }
           />
@@ -143,13 +182,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             title={'Finalización'}
             type={'date'}
             name={'finishDay'}
+            stateValidate={finishDateIsCorrect}
             onChange={(e) =>
               setData({
                 ...data,
                 finishDay: e.target.value
                   .split('-')
                   .reverse()
-                  .join('/'),
+                  .join(separatorDate),
               })
             }
           />
