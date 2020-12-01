@@ -7,4 +7,4 @@ export default {
   decorators: [withA11y],
 };
 
-export const withText = () => <TextAreaForm name="" placeholder="Text area" />;
+export const withText = () => <TextAreaForm text="" placeholder="Text area" />;
