@@ -46,3 +46,5 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     </div>
   );
 };
+
+MixModifyUserForm.displayName = 'mixModifyUserForm';
