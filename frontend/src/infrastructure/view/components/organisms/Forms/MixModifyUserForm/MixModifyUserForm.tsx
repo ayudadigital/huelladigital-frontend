@@ -34,7 +34,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         <FieldForm title="Twitter" name="Twitter" type="url" />
         <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
         <FieldForm title="Instagram" name="Instagram" type="url" />
-        <TextAreaForm name="Otra informacion" placeholder="Información de interés" />
+        <TextAreaForm text="Otra informacion" placeholder="Información de interés" />
         <div className="cv-div-class">
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />

@@ -5,8 +5,8 @@ import { TextAreaForm } from './';
 describe('TextAreaForm', () => {
   it('should display the default message', () => {
     const renderResult: RenderResult = render(
-      <TextAreaForm name="Text area" placeholder="Text area" />,
+      <TextAreaForm text="Text area" placeholder="Información de interés" />,
     );
-    expect(renderResult.queryByText('Hello from TextAreaForm!')).toBeTruthy();
+    expect(renderResult.queryByPlaceholderText('Información de interés')).toBeTruthy();
   });
 });
