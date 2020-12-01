@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './ConvocatoryRegister.scss';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
@@ -8,15 +8,19 @@ import { FormSelect } from '../../../components/molecules/FormSelect';
 import { LIST_MUNICIPALITY } from './assets/listMunicipality';
 import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
 import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
-import { number } from '@storybook/addon-knobs';
-import { Interface } from 'readline';
+import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
-  const checkDate: Date = new Date();
-
+  const separatorDate = '/';
+  const [finishDateIsCorrect, setFinishDateIsCorrect] = React.useState<
+    stateValidateTypes
+  >('');
+  const [startDateIsCorrect, setStartDateIsCorrect] = React.useState<stateValidateTypes>(
+    '',
+  );
   const [data, setData] = useState({
     title: '',
     description: '',
@@ -31,60 +35,35 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     skills: exampleSkill,
   });
 
-  const checkStartDateIsCorrect = (dateIsCorrect: boolean) => {
-    let separator: string = '';
-
-    interface DateType {
-      day: number;
-      month: number;
-      year: number;
-    }
-
-    const dateForType: DateType = {
-      day: 0,
-      month: 0,
-      year: 0,
-    };
-
-    const toDay: DateType = {
+  const checkDateIsCorrect = (dateIsCorrect: boolean) => {
+    const checkDate: Date = new Date();
+    const toDay = {
       day: checkDate.getDate(),
-      month: checkDate.getMonth() + 1,
+      month: checkDate.getMonth(),
       year: checkDate.getFullYear(),
     };
-    for (const isNotaNumber of data.startDay) {
-      if (isNaN(Number(isNotaNumber))) {
-        separator = isNotaNumber;
-      }
-    }
-    for (const numberDate of data.startDay.split(separator)) {
-      if (numberDate.length !== 4) {
-        if (dateForType.day === 0) {
-          dateForType.day = Number(numberDate);
-        } else {
-          dateForType.month = Number(numberDate);
-        }
-      } else {
-        if (dateForType.year === 0) {
-          dateForType.year = Number(numberDate);
-        } else {
-          if (dateForType.month === 0) {
-            dateForType.month = Number(numberDate);
-          } else {
-            dateForType.day = Number(numberDate);
-          }
-        }
-      }
-    }
 
-    if (toDay.year <= dateForType.year.valueOf()) {
-      if (toDay.month <= dateForType.month.valueOf()) {
-        dateIsCorrect = toDay.day <= dateForType.day.valueOf();
-      } else {
-        dateIsCorrect = false;
-      }
-    } else {
+    const startDateCheck: Date = new Date(
+      String(data.startDay.split(separatorDate).reverse()),
+    );
+    const finishDateCheck: Date = new Date(
+      String(data.finishDay.split(separatorDate).reverse()),
+    );
+
+    const toDayForCheck: Date = new Date(toDay.year, toDay.month, toDay.day);
+
+    if (toDayForCheck <= startDateCheck && finishDateCheck > startDateCheck) {
+      dateIsCorrect = true;
+      setStartDateIsCorrect('correct');
+      setFinishDateIsCorrect('correct');
+    } else if (finishDateCheck < startDateCheck) {
+      dateIsCorrect = false;
+      setFinishDateIsCorrect('incorrect');
+    } else if (toDayForCheck > startDateCheck) {
+      setStartDateIsCorrect('incorrect');
       dateIsCorrect = false;
     }
+
     return dateIsCorrect;
   };
 
@@ -116,9 +95,9 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       requirements: [''],
     };
     // @ts-ignore
-    checkStartDateIsCorrect()
-      ? ConvocatoryService.registerConvocatory(convocatoryTemp, '')
-      : alert('Formato Fecha incorrecto');
+    if (checkDateIsCorrect()) {
+      ConvocatoryService.registerConvocatory(convocatoryTemp, '');
+    }
   }
 
   return (
@@ -188,13 +167,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             title={'Inicio'}
             type={'date'}
             name={'startDay'}
+            stateValidate={startDateIsCorrect}
             onChange={(e) =>
               setData({
                 ...data,
                 startDay: e.target.value
                   .split('-')
                   .reverse()
-                  .join('/'),
+                  .join(separatorDate),
               })
             }
           />
@@ -202,13 +182,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             title={'Finalización'}
             type={'date'}
             name={'finishDay'}
+            stateValidate={finishDateIsCorrect}
             onChange={(e) =>
               setData({
                 ...data,
                 finishDay: e.target.value
                   .split('-')
                   .reverse()
-                  .join('/'),
+                  .join(separatorDate),
               })
             }
           />
