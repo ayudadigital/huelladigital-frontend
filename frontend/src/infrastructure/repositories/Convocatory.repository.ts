@@ -30,10 +30,18 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
     requirements: convocatory.requirements,
   };
 
-  const response = http.post(
-    `${BASE.API}${ROUTE.API.convocatories.register}`,
-    JSON.stringify({ proposalDto, file }),
-  );
+  const content = new FormData();
+  content.append('dto', JSON.stringify(proposalDto));
+  content.append('file', file);
+  const response = http
+    .post(
+      `${BASE.API}${ROUTE.API.convocatories.register}`,
+      content,
+      'multipart/data-form',
+    )
+    .then((response) => {
+      console.log(response);
+    });
   return response;
 };
 
