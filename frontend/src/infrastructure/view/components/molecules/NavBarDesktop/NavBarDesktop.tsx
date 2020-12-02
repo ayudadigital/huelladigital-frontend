@@ -13,29 +13,37 @@ interface NavBarDesktopProps {
 }
 
 export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
-                                                              onClick,
-                                                              onClickDisconnect,
-                                                              isAuth,
-                                                              show,
-                                                            }) => {
+  onClick,
+  onClickDisconnect,
+  isAuth,
+  show,
+}) => {
   return (
     <div className={!show ? 'NavBar' : 'NavBarShow'} onClick={onClick}>
-      <LinkText key={`menu-inicio`} text={'inicio'} to={ROUTE.home}/>
-      {
-        !isAuth && (
-          <Fragment>
-            <LinkText key={`menu-acceder`} text={'acceder'} to={ROUTE.loginRegister}/>
-            <LinkText key={`menu-registrarse`} text={'registrarse'} to={ROUTE.loginRegister}/>
-            <LinkText key={`menu-organization-register`} text={'organización'} to={ROUTE.organizations.register}/>
-          </Fragment>
-        )
-      }
-      {
-        // @ts-ignore
-        isAuth && <button onClick={onClickDisconnect}>desconectar</button>
-      }
+      <LinkText key={`menu-inicio`} text={'Inicio'} to={ROUTE.home} />
+      {!isAuth && (
+        <Fragment>
+          <LinkText
+            key={`menu-registrarse-usuario`}
+            text={'Quiero ayudar'}
+            to={ROUTE.loginRegister}
+          />
+          <LinkText
+            key={`menu-registrarse-ESAL`}
+            text={'Necesito ayuda'}
+            to={ROUTE.organizations.register}
+          />
+        </Fragment>
+      )}
+      <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
+      <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
+      {//@ts-ignore
+      isAuth ? (
+        <button onClick={onClickDisconnect}>Desconectar</button>
+      ) : (
+        <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
+      )}
     </div>
-
   );
 };
 
