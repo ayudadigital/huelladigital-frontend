@@ -3,7 +3,7 @@ import { TextAreaForm } from './TextAreaForm';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'TextAreaForm',
+  title: 'Atom | TextAreaForm',
   decorators: [withA11y],
 };
 
