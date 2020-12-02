@@ -1,8 +1,7 @@
-import { Convocatory, Skill } from '../../domain/models/Convocatory';
-import { ProposalDTO, SkillDto } from '../http/dtos/ProposalDTO';
+import { Convocatory } from '../../domain/models/Convocatory';
+import { ProposalDTO } from '../http/dtos/ProposalDTO';
 import { http } from '../http/http';
 import { ROUTE } from '../http/routes';
-import { VolunteerDto } from '../http/dtos/VolunteerDTO';
 import { BASE } from '../base';
 
 const createConvocatory = (convocatory: Convocatory, file: string) => {
