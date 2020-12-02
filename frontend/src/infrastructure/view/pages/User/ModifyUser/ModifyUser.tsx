@@ -1,5 +1,5 @@
 import React from 'react';
-import { MixModifyUserForm } from '../../../components/organisms/Forms/ModifyProfile/MixModifyUserForm';
+import { MixModifyUserForm } from '../../../components/organisms/Forms/MixModifyUserForm/MixModifyUserForm';
 import './ModifyUser.scss';
 
 export const ModifyUser: React.FC<{}> = () => (

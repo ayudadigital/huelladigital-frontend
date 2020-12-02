@@ -1,1 +1,0 @@
-export { LocationInfoForm } from './LocationInfoForm';
