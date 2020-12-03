@@ -4,9 +4,10 @@ import { Question} from '.';
 
 describe('Question', () => {
   it('should display the default message', () => {
+    const title = 'Pregunta';
     const renderResult: RenderResult = render(
-      <Question title = "" body = ""/>,
+      <Question title = {title} body = ""/>,
     );
-    expect(renderResult.queryByText('Hello from Question!')).toBeTruthy();
+    expect(renderResult.queryByText('Pregunta')).toBeTruthy();
   });
 });
