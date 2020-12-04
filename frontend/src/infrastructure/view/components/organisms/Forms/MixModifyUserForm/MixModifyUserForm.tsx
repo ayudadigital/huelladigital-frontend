@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { FieldForm } from '../../../molecules/FieldForm';
-import { TextAreaForm } from '../../../atoms/TextAreaForm';
+import { InputTextArea } from '../../../atoms/InputTextArea';
 import { Image } from '../../../atoms/Image';
 import profile_example from './assets/profile_example.svg';
 import './MixModifyUserForm.scss';
@@ -43,7 +43,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         <FieldForm title="Twitter" name="Twitter" type="url" />
         <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
         <FieldForm title="Instagram" name="Instagram" type="url" />
-        <TextAreaForm text="Otra informacion" placeholder="Información de interés" />
+        <InputTextArea id="Otra informacion" placeholder="Información de interés" />
         <div className="cv-div-class">
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
