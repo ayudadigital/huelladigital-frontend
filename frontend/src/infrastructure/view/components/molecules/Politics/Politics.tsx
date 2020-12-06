@@ -14,7 +14,7 @@ export const Politics: React.FC<{}> = () => (
       <LinkText to={'#'} text={'Política de Cookies'} />
     </li>
     <li>
-      <LinkText to={'#'} text={'Preguntas Frecuentes'} />
+      <LinkText to={'frequently-asked-questions'} text={'Preguntas Frecuentes'} />
     </li>
   </ul>
 );
