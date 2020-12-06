@@ -10,8 +10,10 @@ export default {
 
 export const withText = () => (
   <TextAreaForm
-    id={'Text-Area'}
+    name={'Text-Area'}
     placeholder={'Información adicional'}
+    cols={10}
+    rows={5}
     title={text('Label', 'Label Text')}
     messageInfoUser={''}
   />
