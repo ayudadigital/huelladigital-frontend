@@ -5,7 +5,7 @@ import { InputTextArea } from './';
 describe('InputTextArea', () => {
   it('should display the default message', () => {
     const renderResult: RenderResult = render(
-      <InputTextArea id="textArea" placeholder="Información de interés" />,
+      <InputTextArea name="textArea" placeholder="Información de interés" />,
     );
     expect(renderResult.queryByLabelText('input-textArea')).toBeTruthy();
   });

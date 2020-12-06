@@ -1,4 +1,6 @@
-export interface TextAreaProps {
-  id: string;
+export interface InputTextAreaProps {
+  name: string;
   placeholder: string;
+  rows?: number;
+  cols?: number;
 }
