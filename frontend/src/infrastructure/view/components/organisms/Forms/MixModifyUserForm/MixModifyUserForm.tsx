@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { FieldForm } from '../../../molecules/FieldForm';
-import { TextAreaForm } from '../../../atoms/TextAreaForm';
 import { Image } from '../../../atoms/Image';
 import profile_example from './assets/profile_example.svg';
 import './MixModifyUserForm.scss';
+import { TextAreaForm } from '../../../molecules/TextAreaForm';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
   const [cvButtonClass, setCvButtonClass] = useState('cv-button');
@@ -43,7 +43,13 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         <FieldForm title="Twitter" name="Twitter" type="url" />
         <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
         <FieldForm title="Instagram" name="Instagram" type="url" />
-        <TextAreaForm text="Otra informacion" placeholder="Información de interés" />
+        <TextAreaForm
+          title="Información de interès"
+          name="Información-de-interes"
+          rows={10}
+          cols={3}
+          placeholder="Información de interés"
+        />
         <div className="cv-div-class">
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
