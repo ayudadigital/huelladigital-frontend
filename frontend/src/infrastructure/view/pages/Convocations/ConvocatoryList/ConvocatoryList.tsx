@@ -12,19 +12,17 @@ export const ConvocatoryList: React.FC<{}> = () => {
   const convocatoriesFetcher = new ConvocatoriesFetch();
 
   React.useEffect(() => {
-    convocatoriesFetcher.getConvocatoriesPage(page,8).then(
-      (result) => {
-        setConvocatories(result.proposals);
-      }
-    );
+    convocatoriesFetcher.getConvocatoriesPage(page, 8).then((result) => {
+      setConvocatories(result.proposals);
+    });
   }, [page]);
 
   const nextPage = () => {
-    changePage(page+1);
+    changePage(page + 1);
   };
   const prevPage = () => {
     // tslint:disable-next-line: no-unused-expression
-    page > 1 && changePage(page-1);
+    page > 1 && changePage(page - 1);
   };
 
   return (
@@ -44,11 +42,16 @@ export const ConvocatoryList: React.FC<{}> = () => {
         />
       ))}
       <div className={'pageNav'}>
-        <button onClick={() => prevPage()}>Anterior</button>
+        <button onClick={() => prevPage()} className="navigation-button">
+          Anterior
+        </button>
         <p>1 - 2- 3 - 5 .... 30</p>
-        <button onClick={()=> nextPage()}>Siguiente</button>
+        <button onClick={() => nextPage()} className="navigation-button">
+          Siguiente
+        </button>
       </div>
-    </div>);
+    </div>
+  );
 };
 
 ConvocatoryList.displayName = 'ConvocatoryList';
