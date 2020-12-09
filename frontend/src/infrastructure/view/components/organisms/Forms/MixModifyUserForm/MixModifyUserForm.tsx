@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { FieldForm } from '../../../molecules/FieldForm';
-import { InputTextArea } from '../../../atoms/InputTextArea';
 import { Image } from '../../../atoms/Image';
 import profile_example from './assets/profile_example.svg';
 import './MixModifyUserForm.scss';
