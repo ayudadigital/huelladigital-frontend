@@ -3,39 +3,12 @@ import './ConvocatoryDetails.scss';
 import {Convocatory,Skill} from '../../../../../domain/models/Convocatory';
 import exampleConvocatory from './exampleConvocatory.json';
 import {Image} from '../../../components/atoms/Image';
+import {ConvocatoryListRequirements} from '../../../components/molecules/ConvocatoryListRequirements';
+import {ConvocatoryListSkills} from '../../../components/molecules/ConvocatoryListSkills';
+import {ConvocatoryTextSection} from '../../../components/molecules/ConvocatoryTextSection';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
-  const listRequirements = (requirements: string[]) => {
-    let result = '<ul>';
-    requirements.forEach((requirement) => {
-      result += '<ul>' + requirement + '</ul>';
-    });
-    return result + '</ul>';
-  }
-  const listSkills = (skills: Skill[]) => {
-    let result = '<ul>';
-    skills.forEach(skill => {
-      result += '<li>'+ skill.name+': '+skill.description+'</li>';
-    });
-    return result + '</ul>';
-  };
   const convocatory = exampleConvocatory.Convocatory as Convocatory;
-  const sections = [{
-    question: '¿Qué voy a hacer?',
-    text: convocatory.description
-  },
-  {
-    question: '¿Qué habilidades desarrollaré para mi CV?',
-    text: listSkills(convocatory.skills)
-  },
-  {
-    question: '¿Qué necesito?',
-    text: listRequirements(convocatory.requirements),
-  },
-  {
-    question: '¿Qué más necesito saber',
-    text: convocatory.extraInfo
-  }];
   return (
     <div className="ConvocatoryDetails">
       <div className="Convocatory">
@@ -50,12 +23,10 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             {/** Table component **/}
           </div>
           <div className="ConvocatoryInfo">
-            {sections.map((section)=> {
-              return <>
-              <h3>{section.question}</h3>
-              <p>{section.text}</p>
-              </>;
-            })}
+            <ConvocatoryTextSection title="¿Qué voy a hacer?" content = {convocatory.description}/>
+            <ConvocatoryListSkills title="¿Qué habilidades desarrollaré para mi CV?" skills={convocatory.skills}/>
+            <ConvocatoryListRequirements title="¿Qué necesito?" requirements = {convocatory.requirements}/>
+            <ConvocatoryTextSection title="¿Qué más necesito saber?" content={convocatory.extraInfo}/>
           </div>
         </div>
       </div>
