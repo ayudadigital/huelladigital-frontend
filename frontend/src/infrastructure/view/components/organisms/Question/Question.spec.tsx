@@ -3,10 +3,9 @@ import { render, RenderResult } from '@testing-library/react';
 import { Question} from '.';
 
 describe('Question', () => {
-  it('should display the default message', () => {
-    const title = 'Pregunta';
+  it('should display the passed question', () => {
     const renderResult: RenderResult = render(
-      <Question title = {title} body = ""/>,
+      <Question title = "Pregunta" body = "Respuesta"/>,
     );
     expect(renderResult.queryByText('Pregunta')).toBeTruthy();
   });

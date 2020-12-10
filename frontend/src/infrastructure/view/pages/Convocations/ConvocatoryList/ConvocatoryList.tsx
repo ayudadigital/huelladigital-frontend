@@ -12,9 +12,11 @@ export const ConvocatoryList: React.FC<{}> = () => {
   const convocatoriesFetcher = new ConvocatoriesFetch();
 
   React.useEffect(() => {
-    convocatoriesFetcher.getConvocatoriesPage(page, 8).then((result) => {
-      setConvocatories(result.proposals);
-    });
+    /*convocatoriesFetcher.getConvocatoriesPage(page,8).then(
+      (result) => {
+        setConvocatories(result.proposals);
+      }
+    );*/
   }, [page]);
 
   const nextPage = () => {

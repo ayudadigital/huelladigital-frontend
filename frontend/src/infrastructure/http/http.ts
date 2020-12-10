@@ -1,8 +1,16 @@
-const headers = {
+import { getCookie } from './cookies';
+
+const GET_HEADERS = {
   'Content-Type': 'application/json',
 };
 
+const POST_HEADERS = {
+  Authorization: 'Bearer ' + getCookie('accessToken'),
+  'X-XSRF-TOKEN': '' + getCookie('XSRF-TOKEN'),
+};
+
 const get = async (url: string) => {
+  const headers = GET_HEADERS;
   const response = await fetch(url, {
     method: 'GET',
     mode: 'cors',
@@ -11,7 +19,12 @@ const get = async (url: string) => {
   return response;
 };
 
-const post = async (url: string, body: string) => {
+const post = async (
+  url: string,
+  body: string | FormData,
+  contentType = 'application/json',
+) => {
+  const headers = { ...POST_HEADERS, 'Content-Type': contentType };
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',

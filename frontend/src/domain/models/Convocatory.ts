@@ -20,10 +20,10 @@ export type Convocatory = {
   extraInfo: string; //¿Qué más necesito saber?
   duration: number;
   imageURL: string;
-  inscribedVolunteers: [Volunteer] | null;
+  inscribedVolunteers: Volunteer[] | null;
   inscribedVolunteersCount: number;
-  skills: [Skill];
-  requirements: [string];
+  skills: Skill[];
+  requirements: string[];
 };
 
 export type Skill = {
