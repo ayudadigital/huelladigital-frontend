@@ -13,7 +13,11 @@ export const Default = () => {
   const options = ['text', 'email', 'password'];
   const defaultValue = 'text';
 
-  return <FieldForm name={'text'}
-                    title={text('LABEL', 'Label text')}
-                    type={select(label, options, defaultValue)}/>;
+  return (
+    <FieldForm
+      name={'text'}
+      title={text('LABEL', 'Label text')}
+      type={select(label, options, defaultValue)}
+    />
+  );
 };
