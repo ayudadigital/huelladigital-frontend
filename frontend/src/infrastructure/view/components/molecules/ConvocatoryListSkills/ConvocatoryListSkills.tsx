@@ -12,8 +12,7 @@ export const ConvocatoryListSkills: React.FC<ConvocatoryListSkillsProps> = ({tit
     <h3>{title}</h3>
     {skills && skills.map((skill: Skill) => {
       return <>
-        <h5>{skill.name}</h5>
-        <p>{skill.description}</p>
+        <p><b>{skill.name}</b> {skill.description}</p>
       </>
     })}
   </div>

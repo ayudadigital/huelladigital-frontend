@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './ConvocatoryDetails.scss';
-import {Convocatory,Skill} from '../../../../../domain/models/Convocatory';
+import {Convocatory} from '../../../../../domain/models/Convocatory';
 import exampleConvocatory from './exampleConvocatory.json';
 import {Image} from '../../../components/atoms/Image';
 import {ConvocatoryListRequirements} from '../../../components/molecules/ConvocatoryListRequirements';
 import {ConvocatoryListSkills} from '../../../components/molecules/ConvocatoryListSkills';
 import {ConvocatoryTextSection} from '../../../components/molecules/ConvocatoryTextSection';
+import {ConvocatoryInformationDisplay} from '../../../components/molecules/ConvocatoryInformationDisplay'
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
   const convocatory = exampleConvocatory.Convocatory as Convocatory;
@@ -20,7 +21,7 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
         </div>
         <div className="Content">
           <div className="TableContainer">
-            {/** Table component **/}
+            <ConvocatoryInformationDisplay convocatory={convocatory}/>
           </div>
           <div className="ConvocatoryInfo">
             <ConvocatoryTextSection title="¿Qué voy a hacer?" content = {convocatory.description}/>

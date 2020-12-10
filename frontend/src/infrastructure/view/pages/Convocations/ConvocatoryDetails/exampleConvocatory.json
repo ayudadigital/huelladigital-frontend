@@ -21,7 +21,7 @@
         "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Igueste_de_San_Andr%C3%A9s._principal.jpg",
         "inscribedVolunteers": null,
         "inscribedVolunteersCount": 4,
-        "skills": [{"name":"Skill 1","description":"Descrition for skill1"}],
+        "skills": [{"name":"Skill 1","description":"Descrition for skill1"}, {"name":"Skill 2","description":"Descrition for skill2"}, {"name":"Skill 1","description":"Descrition for skill1"}],
         "requirements": ["Requirement 1"]
     }
 }
