@@ -64,10 +64,14 @@ describe('convocatoryRepository', () => {
       requirements: ['Example Requirements'],
     };
     const file = 'file';
+    const content = new FormData();
+    content.append('dto', JSON.stringify(proposalDto));
+    content.append('file', file);
     convocatoryRepository.createConvocatory(proposal, file);
     expect(spyFunction).toBeCalledWith(
       `${BASE.API}${ROUTE.API.convocatories.register}`,
-      JSON.stringify({ proposalDto, file }),
+      content,
+      'multipart/data-form',
     );
   });
 });

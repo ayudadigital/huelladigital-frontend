@@ -1,3 +1,4 @@
+import { Skill } from '../../../domain/models/Convocatory';
 import { VolunteerDto } from './VolunteerDTO';
 
 export interface ProposalDTO {
@@ -19,10 +20,10 @@ export interface ProposalDTO {
   durationInDays: number;
   category: string;
   imageURL: string;
-  inscribedVolunteers: [VolunteerDto] | null;
+  inscribedVolunteers: VolunteerDto[] | null;
   inscribedVolunteersCount: number;
-  skills: [SkillDto];
-  requirements: [string];
+  skills: SkillDto[];
+  requirements: string[];
 }
 
 export interface SkillDto {

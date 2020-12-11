@@ -7,7 +7,7 @@
 
 .ConvocatoryRegister {
   padding: 10px;
-
+  margin: 5%;
   .ages {
     @include displayRes;
 
@@ -55,5 +55,3 @@
     }
   }
 }
-
-
