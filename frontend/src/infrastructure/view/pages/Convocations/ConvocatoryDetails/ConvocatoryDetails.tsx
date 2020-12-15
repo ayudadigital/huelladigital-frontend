@@ -48,27 +48,27 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
               content={convocatory.extraInfo}
             />
           </div>
-        </div>
-        {isAuth ? (
           <div className="convocatory-register">
-            <FieldForm title="Correo" type="text" name="Correo" />
-            <FieldForm title="Contraseña" type="password" name="Contraseña" />
-            <FieldForm title="Contraseña" type="password" name="Contraseña" />
-            <hr />
+            <h2>Datos de inscripción</h2>
+            {isAuth && (
+              <div>
+                <FieldForm title="Correo" type="text" name="Correo" />
+                <FieldForm title="Contraseña" type="password" name="Contraseña" />
+                <FieldForm
+                  title="Repetir contraseña"
+                  type="password"
+                  name="Repetir contraseña"
+                />
+                <hr />
+              </div>
+            )}
             <FieldForm title="Nombre" type="text" name="Nombre" />
             <FieldForm title="Apellidos" type="text" name="Apellidos" />
             <label>Motivaciones</label>
-            <InputTextArea name="Motivaciones" placeholder="" />
+            <InputTextArea name="Motivaciones" placeholder="" rows={10} />
             <SubmitButton text="Inscribirse" />
           </div>
-        ) : (
-          <div className="convocatory-register">
-            <FieldForm title="Nombre" type="text" name="Nombre" />
-            <FieldForm title="Apellidos" type="text" name="Apellidos" />
-            <label>Motivaciones</label>
-            <InputTextArea name="Motivaciones" placeholder="" />
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );
