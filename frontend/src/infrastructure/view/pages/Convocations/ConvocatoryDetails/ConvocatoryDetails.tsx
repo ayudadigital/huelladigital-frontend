@@ -8,15 +8,13 @@ import { ConvocatoryListSkills } from '../../../components/molecules/Convocatory
 import { ConvocatoryTextSection } from '../../../components/molecules/ConvocatoryTextSection';
 import { ConvocatoryInformationDisplay } from '../../../components/molecules/ConvocatoryInformationDisplay';
 import { Context } from '../../../../Context';
-import { InputFieldForm } from '../../../components/atoms/InputFieldForm';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { InputTextArea } from '../../../components/atoms/InputTextArea';
-import { FormRegisterVolunteer } from '../../../components/organisms/Forms/FormRegisterVolunteer';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
   const convocatory = exampleConvocatory.Convocatory as Convocatory;
-  const isAuth = React.useContext(Context);
+  const auth = React.useContext(Context);
   return (
     <div className="ConvocatoryDetails">
       <div className="Convocatory">
@@ -49,8 +47,8 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             />
           </div>
           <div className="convocatory-register">
-            <h2>Datos de inscripción</h2>
-            {isAuth && (
+            <h3>Datos de inscripción</h3>
+            {auth && (
               <div>
                 <FieldForm title="Correo" type="text" name="Correo" />
                 <FieldForm title="Contraseña" type="password" name="Contraseña" />
@@ -64,8 +62,12 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
             )}
             <FieldForm title="Nombre" type="text" name="Nombre" />
             <FieldForm title="Apellidos" type="text" name="Apellidos" />
-            <label>Motivaciones</label>
-            <InputTextArea name="Motivaciones" placeholder="" rows={10} />
+            <InputTextArea
+              name="Motivaciones"
+              placeholder="Motivaciones"
+              rows={10}
+              cols={8}
+            />
             <SubmitButton text="Inscribirse" />
           </div>
         </div>
