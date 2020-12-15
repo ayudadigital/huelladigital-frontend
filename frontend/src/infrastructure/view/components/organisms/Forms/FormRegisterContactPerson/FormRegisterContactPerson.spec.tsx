@@ -7,6 +7,6 @@ describe('FormRegisterContactPerson', () => {
     const renderResult: RenderResult = render(
       <FormRegisterContactPerson/>,
     );
-    expect(renderResult.queryByText('Hello from FormRegisterContactPerson!')).toBeTruthy();
+    expect(renderResult.queryByText('Persona de Contacto')).toBeTruthy();
   });
 });

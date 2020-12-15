@@ -1,3 +1,26 @@
-.FormRegisterContactPerson{
+.FormRegisterContactPerson {
+  header {
+    color: #7e254e;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
+  .contactPerson {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    .FieldForm {
+      margin: 0.5rem 1rem;
+
+      .Label {
+        color: #7e254e;
+      }
+    }
+  }
+
 
 }
+
+
+

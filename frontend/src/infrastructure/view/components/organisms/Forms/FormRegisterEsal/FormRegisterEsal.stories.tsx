@@ -1,5 +1,5 @@
-import * as React from 'react';
-import {FormRegisterEsal} from './FormRegisterEsal';
+import React from 'react';
+import { FormRegisterEsal } from './FormRegisterEsal';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {

@@ -7,6 +7,6 @@ describe('Esal', () => {
     const renderResult: RenderResult = render(
       <FormRegisterEsal/>,
     );
-    expect(renderResult.queryByText('Persona de Contacto')).toBeTruthy();
+    expect(renderResult.queryByText('Datos Entidad')).toBeTruthy();
   });
 });
