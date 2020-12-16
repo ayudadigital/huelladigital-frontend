@@ -18,6 +18,15 @@ export const FormRegisterEsal: React.FC<{}> = () => (
         rows={6}
         cols={2}
       />
+      <div className="formRadio">
+        <FieldForm
+          title={''}
+          type={'radio'}
+          name={'Gran Canaria'}
+          value={'Gran Canaria'}
+          checked={false}
+        />
+      </div>
     </section>
   </div>
 );

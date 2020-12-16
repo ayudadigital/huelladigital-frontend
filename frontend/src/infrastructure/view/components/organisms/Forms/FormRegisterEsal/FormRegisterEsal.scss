@@ -5,18 +5,18 @@
     margin-left: 0.5rem;
   }
 
-  .contactPerson {
-    display: grid;
-    grid-template-rows: repeat(auto-fit, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-
-
-  }
 
   .informationEsal {
     display: grid;
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-template-columns: repeat(2, 1fr);
+
+    .formRadio {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
   }
 
 
