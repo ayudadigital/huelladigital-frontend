@@ -1,15 +1,20 @@
 import * as React from 'react';
 import './ConvocatoryDetails.scss';
-import {Convocatory} from '../../../../../domain/models/Convocatory';
+import { Convocatory } from '../../../../../domain/models/Convocatory';
 import exampleConvocatory from './exampleConvocatory.json';
-import {Image} from '../../../components/atoms/Image';
-import {ConvocatoryListRequirements} from '../../../components/molecules/ConvocatoryListRequirements';
-import {ConvocatoryListSkills} from '../../../components/molecules/ConvocatoryListSkills';
-import {ConvocatoryTextSection} from '../../../components/molecules/ConvocatoryTextSection';
-import {ConvocatoryInformationDisplay} from '../../../components/molecules/ConvocatoryInformationDisplay'
+import { Image } from '../../../components/atoms/Image';
+import { ConvocatoryListRequirements } from '../../../components/molecules/ConvocatoryListRequirements';
+import { ConvocatoryListSkills } from '../../../components/molecules/ConvocatoryListSkills';
+import { ConvocatoryTextSection } from '../../../components/molecules/ConvocatoryTextSection';
+import { ConvocatoryInformationDisplay } from '../../../components/molecules/ConvocatoryInformationDisplay';
+import { Context } from '../../../../Context';
+import { FieldForm } from '../../../components/molecules/FieldForm';
+import { InputTextArea } from '../../../components/atoms/InputTextArea';
+import { SubmitButton } from '../../../components/atoms/SubmitButton';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
   const convocatory = exampleConvocatory.Convocatory as Convocatory;
+  const auth = React.useContext(Context);
   return (
     <div className="ConvocatoryDetails">
       <div className="Convocatory">
@@ -21,13 +26,49 @@ export const ConvocatoryDetails: React.FC<{}> = () => {
         </div>
         <div className="Content">
           <div className="TableContainer">
-            <ConvocatoryInformationDisplay convocatory={convocatory}/>
+            <ConvocatoryInformationDisplay convocatory={convocatory} />
           </div>
           <div className="ConvocatoryInfo">
-            <ConvocatoryTextSection title="¿Qué voy a hacer?" content = {convocatory.description}/>
-            <ConvocatoryListSkills title="¿Qué habilidades desarrollaré para mi CV?" skills={convocatory.skills}/>
-            <ConvocatoryListRequirements title="¿Qué necesito?" requirements = {convocatory.requirements}/>
-            <ConvocatoryTextSection title="¿Qué más necesito saber?" content={convocatory.extraInfo}/>
+            <ConvocatoryTextSection
+              title="¿Qué voy a hacer?"
+              content={convocatory.description}
+            />
+            <ConvocatoryListSkills
+              title="¿Qué habilidades desarrollaré para mi CV?"
+              skills={convocatory.skills}
+            />
+            <ConvocatoryListRequirements
+              title="¿Qué necesito?"
+              requirements={convocatory.requirements}
+            />
+            <ConvocatoryTextSection
+              title="¿Qué más necesito saber?"
+              content={convocatory.extraInfo}
+            />
+          </div>
+          <div className="convocatory-register">
+            <h3>Datos de inscripción</h3>
+            {auth && (
+              <div>
+                <FieldForm title="Correo" type="text" name="Correo" />
+                <FieldForm title="Contraseña" type="password" name="Contraseña" />
+                <FieldForm
+                  title="Repetir contraseña"
+                  type="password"
+                  name="Repetir contraseña"
+                />
+                <hr />
+              </div>
+            )}
+            <FieldForm title="Nombre" type="text" name="Nombre" />
+            <FieldForm title="Apellidos" type="text" name="Apellidos" />
+            <InputTextArea
+              name="Motivaciones"
+              placeholder="Motivaciones"
+              rows={10}
+              cols={8}
+            />
+            <SubmitButton text="Inscribirse" />
           </div>
         </div>
       </div>
