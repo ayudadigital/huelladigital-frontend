@@ -3,7 +3,7 @@ import './Label.scss';
 import { LabelProps } from './types';
 
 
-export const Label: React.FC<LabelProps> = ({text}) => (
+export const Label: React.FC<LabelProps> = ({ text }) => (
   <label className="Label">{text}</label>
 );
 
