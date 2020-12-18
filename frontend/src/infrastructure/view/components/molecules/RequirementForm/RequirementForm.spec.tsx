@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { render, RenderResult } from '@testing-library/react';
-import { RequirementForm} from './';
+import { RequirementForm } from './';
 
 describe('RequirementForm', () => {
-  it('should display the default message', () => {
+  it('should display the placeholder', () => {
+    const addRequirement = jest.fn((test: string) => { requirements.push(test) })
     const renderResult: RenderResult = render(
-      <RequirementForm/>,
+      <RequirementForm addRequirement={addRequirement} />,
     );
-    expect(renderResult.queryByText('Hello from RequirementForm!')).toBeTruthy();
+    expect(renderResult.queryByPlaceholderText("Nuevo requisito")).toBeTruthy();
   });
 });

@@ -19,7 +19,7 @@ export const RequirementForm: React.FC<RequirementFormProps> = ({ addRequirement
   return (
     <div className="RequirementForm">
       <div className="DotInput" />
-      <input type="text" onKeyPress={onKeyPress} />
+      <input type="text" onKeyPress={onKeyPress} placeholder="Nuevo requisito" />
     </div>
   );
 }
