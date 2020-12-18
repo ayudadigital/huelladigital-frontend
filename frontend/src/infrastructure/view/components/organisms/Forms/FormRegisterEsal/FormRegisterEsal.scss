@@ -15,15 +15,15 @@
 
   .row {
     display: flex;
-    flex-direction: row;
+    column-gap: 1rem;
     flex-wrap: wrap;
     width: calc(100% - 22px);
-    justify-content: space-around;
-    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 
 
     .col {
       width: calc(50% - 10px);
+
 
       .formRadio {
         display: grid;
@@ -40,6 +40,7 @@
         width: max-content;
 
       }
+
 
     }
 
@@ -65,10 +66,6 @@
 
     .postalCode {
       align-self: center;
-    }
-
-    .typeOrganization {
-      justify-content: end;
     }
 
   }

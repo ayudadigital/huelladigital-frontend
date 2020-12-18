@@ -36,14 +36,13 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 cols={2}
               />
             </div>
-
             <div className={'col'}>
+              <Label text={'Ubicación *'} />
               <div className={'row'}>
                 <div className={'col'}>
-                  <Label text={'Ubicación *'} />
-                  <section className={'locationSelect'}>
+                  <section>
                     <div className="formRadio">
-                      <section className="radioSelection">
+                      <section>
                         <FormRadio
                           title={''}
                           type={'radio'}
@@ -73,7 +72,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                           checked={false}
                         />
                       </section>
-                      <section className="radioSelection">
+                      <section>
                         <FormRadio
                           title={''}
                           type={'radio'}
@@ -129,47 +128,66 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </div>
           <div className={'col'}>
             <Label text={'Tipo de entidad *'} />
-            <div className="row typeOrganization">
-              <div className="col">
-                <div className="formOrganization">
-                  <FormRadio
-                    title={''}
-                    type={'radio'}
-                    name={'Asociación'}
-                    value={'Asociación'}
-                    checked={false}
-                  />
-                  <FormRadio
-                    title={''}
-                    type={'radio'}
-                    name={'Fundación'}
-                    value={'Fundación'}
-                    checked={false}
-                  />
+            <div className="row">
+              <div className="formOrganization">
+                <FormRadio
+                  title={''}
+                  type={'radio'}
+                  name={'Asociación'}
+                  value={'Asociación'}
+                  checked={false}
+                />
+                <FormRadio
+                  title={''}
+                  type={'radio'}
+                  name={'Fundación'}
+                  value={'Fundación'}
+                  checked={false}
+                />
 
-                  <FormRadio
-                    title={''}
-                    type={'radio'}
-                    name={'Club Deportivo'}
-                    value={'Club Deportivo'}
-                    checked={false}
-                  />
-                  <FormRadio
-                    title={''}
-                    type={'radio'}
-                    name={'Colegio Profesional'}
-                    value={'Colegio Profesional'}
-                    checked={false}
-                  />
-                  <FormRadio
-                    title={''}
-                    type={'radio'}
-                    name={'Federación Deportiva'}
-                    value={'Federación Deportiva'}
-                    checked={false}
-                  />
-                </div>
+                <FormRadio
+                  title={''}
+                  type={'radio'}
+                  name={'Club Deportivo'}
+                  value={'Club Deportivo'}
+                  checked={false}
+                />
+                <FormRadio
+                  title={''}
+                  type={'radio'}
+                  name={'Colegio Profesional'}
+                  value={'Colegio Profesional'}
+                  checked={false}
+                />
+                <FormRadio
+                  title={''}
+                  type={'radio'}
+                  name={'Federación Deportiva'}
+                  value={'Federación Deportiva'}
+                  checked={false}
+                />
               </div>
+            </div>
+            <Label
+              text={
+                'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
+              }
+            />
+            <div className={'row'}>
+              <FormRadio
+                title={''}
+                type={'checkbox'}
+                name={'Affirmative'}
+                value={'Sí'}
+                checked={false}
+              />
+              <FormRadio
+                title={''}
+                type={'checkbox'}
+                name={'Negative'}
+                value={'No'}
+                checked={false}
+              />
             </div>
           </div>
         </div>
