@@ -1,31 +1,77 @@
 .RegisterEsal {
+
   header {
     color: #7e254e;
     font-weight: bold;
     margin-left: 0.5rem;
   }
 
+  .Label {
+    color: #7e254e;
+    font-size: 20px;
+    font-weight: bold;
 
-  .informationEsal {
-    display: grid;
-    grid-template-rows: repeat(auto-fit, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .formRadio {
-      display: grid;
-      grid-template-rows: repeat(auto-fit, 1fr);
-      grid-template-columns: repeat(2, 1fr);
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 22px);
+    justify-content: space-around;
+    margin: 0.5rem 1rem;
+
+
+    .col {
+      width: calc(50% - 10px);
+
+      .formRadio {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+
+      }
+
+      .formOrganization {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        grid-column-gap: 2rem;
+        width: max-content;
+
+      }
+
+    }
+
+    .imageFileUpload {
+      border: solid 0.05px #7e254e;
+      border-radius: 4rem;
+      margin: 0.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+
+      img {
+        width: 400px;
+        height: 400px;
+        cursor: pointer;
+
+
+      }
+
+      #file {
+        display: none;
+      }
+    }
+
+    .postalCode {
+      align-self: center;
+    }
+
+    .typeOrganization {
+      justify-content: end;
     }
 
   }
 
-
 }
 
-.FieldForm, .TextAreaForm {
-  margin: 0.5rem 1rem;
-
-  .Label {
-    color: #7e254e;
-  }
-}
