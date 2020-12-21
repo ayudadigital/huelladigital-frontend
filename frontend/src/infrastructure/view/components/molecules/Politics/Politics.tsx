@@ -5,7 +5,7 @@ import { LinkText } from '../../atoms/LinkText';
 export const Politics: React.FC<{}> = () => (
   <ul className="Politics">
     <li>
-      <LinkText to={'#'} text={'Aviso legal'} />
+      <LinkText to={'legal-advice'} text={'Aviso legal'} />
     </li>
     <li>
       <LinkText to={'#'} text={'Política de Privacidad'} />
