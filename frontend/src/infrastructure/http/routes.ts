@@ -4,6 +4,7 @@ type typeRoute = {
   loginRegister: string;
   faq: string;
   cookiesPolicy: string;
+  legalAdvice: string;
   API: {
     volunteers: { register: string; login: string };
     email: { resendConfirmation: string };
@@ -54,6 +55,7 @@ export const ROUTE: typeRoute = {
   cookiesPolicy: '/cookies-policy',
   loginRegister: '/login-register',
   faq: '/frequently-asked-questions',
+  legalAdvice: '/legal-advice',
   API: {
     volunteers: {
       register: `${ENDPOINT_VOLUNTEERS}`,
