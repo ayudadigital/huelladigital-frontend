@@ -6,7 +6,6 @@ import { FormRadio } from '../../../molecules/FormRadio';
 import { Label } from '../../../atoms/Label';
 import { Image } from '../../../atoms/Image';
 import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
-import { LinkText } from '../../../atoms/LinkText';
 
 export const FormRegisterEsal: React.FC<{}> = () => {
   return (
@@ -107,7 +106,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   </section>
                 </div>
                 <div className={'col postalCode'}>
-                  <FieldForm title={'Código Postal'} type={'text'} name={'Otros'} />
+                  <FieldForm title={'Código Postal *'} type={'text'} name={'Otros'} />
                 </div>
               </div>
             </div>
@@ -190,20 +189,6 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 checked={false}
               />
             </div>
-          </div>
-        </div>
-        <div className={'row'}>
-          <Label text={'Consentimientos *'} />
-          <div className={'row'}>
-            <FormRadio
-              title={''}
-              type={'checkbox'}
-              name={'Affirmative'}
-              value={''}
-              checked={false}
-            />
-            <p>Estoy de acuerdo con la</p>
-            <LinkText to={'/'} text={'Política de Privacidad'} />
           </div>
         </div>
       </main>

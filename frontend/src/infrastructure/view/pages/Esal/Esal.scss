@@ -1,0 +1,53 @@
+.Esal {
+  padding: 2rem;
+  margin: 2rem;
+
+  .contactPersons {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.8rem;
+    width: calc(100% - 22px);
+
+
+  }
+
+  .registerEsal {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.8rem;
+    width: calc(100% - 22px);
+
+
+  }
+
+  .Label {
+    color: #7e254e;
+    font-size: 20px;
+    font-weight: bold;
+
+  }
+
+  .consentsCheck {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    width: calc(100% - 22px);
+    padding: 0.5rem 1rem;
+
+    .dataProtection {
+      display: flex;
+      align-items: center;
+    }
+
+    .buttonRegister {
+      text-align: center;
+
+      .SubmitButton {
+        background: #7e254e;
+      }
+    }
+
+  }
+}
