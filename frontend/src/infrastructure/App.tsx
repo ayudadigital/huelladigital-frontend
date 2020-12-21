@@ -12,7 +12,6 @@ import { ConvocatoryDetails } from './view/pages/Convocations/ConvocatoryDetails
 import { ConvocatoryList } from './view/pages/Convocations/ConvocatoryList';
 import { ConvocatoryRegister } from './view/pages/Convocations/ConvocatoryRegister';
 import { Context } from './Context';
-import { OrganizationRegister } from './view/pages/Organizations/OrganizationRegister';
 import { FrequentlyAskedQuestions } from './view/pages/FrequentlyAskedQuestions';
 import { CookiesPolicy } from './view/pages/CookiesPolicy';
 import { Esal } from './view/pages/Esal';
@@ -32,11 +31,11 @@ const App: React.FC = () => {
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />
+            <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
             <Route exact path={ROUTE.organizations.register} component={Esal} />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
-            <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
           </Switch>
           <Footer />
         </WrapperPages>
