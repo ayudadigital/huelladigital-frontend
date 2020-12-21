@@ -11,8 +11,8 @@ interface RequirementFormProps {
 export const RequirementForm: React.FC<RequirementFormProps> = ({ addRequirement }) => {
   const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      addRequirement(event.target.value);
-      event.target.value = '';
+      addRequirement((event.target as HTMLInputElement).value);
+      (event.target as HTMLInputElement).value = '';
     }
   }
 

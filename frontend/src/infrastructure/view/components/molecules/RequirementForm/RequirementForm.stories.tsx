@@ -7,8 +7,8 @@ export default {
   decorators: [withA11y],
 };
 
-const onKeyPressExample = (event: React.KeyboardEvent<HTMLInputElement>) => {
+const onKeyPressExample = (event: string) => {
   console.log(event)
 }
 
-export const withText = () => <RequirementForm onKeyPress={onKeyPressExample} />;
+export const withText = () => <RequirementForm addRequirement={onKeyPressExample} />;
