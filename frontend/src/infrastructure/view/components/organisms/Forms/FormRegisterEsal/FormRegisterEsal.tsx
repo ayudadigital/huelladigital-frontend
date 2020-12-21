@@ -28,7 +28,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           <div className={'col'}>
             <TextAreaForm
               title={'Descripción *'}
-              name={'Descripción'}
+              name={'Descripcion'}
               placeholder={'Breve descripción de la entidad'}
               rows={10}
               cols={2}
@@ -131,15 +131,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <FormRadio
                 title={''}
                 type={'radio'}
-                name={'Asociación'}
-                value={'Asociación'}
+                name={'Asociacion'}
+                value={'Asociacion'}
                 checked={false}
               />
               <FormRadio
                 title={''}
                 type={'radio'}
-                name={'Fundación'}
-                value={'Fundación'}
+                name={'Fundacion'}
+                value={'Fundacion'}
                 checked={false}
               />
 
@@ -160,8 +160,8 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <FormRadio
                 title={''}
                 type={'radio'}
-                name={'Federación Deportiva'}
-                value={'Federación Deportiva'}
+                name={'Federacion Deportiva'}
+                value={'Federacion Deportiva'}
                 checked={false}
               />
             </div>

@@ -33,7 +33,7 @@ export const Esal: React.FC<{}> = () => (
         </section>
         <section className={'dataProtection'}>
           <FormRadio
-            title={'Proteccion de datos'}
+            title={'Protección de datos'}
             type={'checkbox'}
             name={'Proteccion de datos'}
             value={''}
