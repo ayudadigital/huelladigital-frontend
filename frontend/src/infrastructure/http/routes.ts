@@ -51,9 +51,9 @@ export const ROUTE: typeRoute = {
     confirmation: '/email-confirmation-register',
     resendConfirmation: '/resend-email-confirmation',
   },
+  cookiesPolicy: '/cookies-policy',
   loginRegister: '/login-register',
   faq: '/frequently-asked-questions',
-  cookiesPolicy: '/cookies-policy',
   API: {
     volunteers: {
       register: `${ENDPOINT_VOLUNTEERS}`,
