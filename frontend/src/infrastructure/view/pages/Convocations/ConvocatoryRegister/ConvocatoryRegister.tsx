@@ -224,13 +224,18 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             text={'Categoría de voluntariado'}
             name={'category'}
             onChange={(e: any) => setData({ ...data, city: e.target.value })}
-            optionsList={['Santa Cruz de Tenerife', 'Las Palmas']}
+            optionsList={['Presencial', 'Virtual', 'Mixto']}
           />
           <FormSelect
             text={'Realización del voluntariado'}
             name={'localization'}
             onChange={(e) => setData({ ...data, localization: e.target.value })}
-            optionsList={islandTenerife}
+            optionsList={[
+              'Mañanas (Días laborales)',
+              'Fines de semana',
+              'Tarde',
+              'Flexible',
+            ]}
           />
           <FieldForm
             title={'Fecha cierre solicitudes'}
