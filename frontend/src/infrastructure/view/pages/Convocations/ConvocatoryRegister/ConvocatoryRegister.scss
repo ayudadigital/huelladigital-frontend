@@ -8,29 +8,61 @@
 .ConvocatoryRegister {
   padding: 10px;
   margin: 5%;
-  .ages {
-    @include displayRes;
 
-    .FormSelect {
-      width: 49%;
-    }
-  }
+  .ContainerForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
 
-  .dates {
-    @include displayRes;
 
     .FieldForm {
-      width: 49%;
+      width: calc(50% - 10px);
     }
-  }
 
-  h3 {
-    margin: 10px 0 0;
-    padding: 0;
-  }
+    .first-date-address {
+      display: flex;
+      column-gap: 1rem;
+      width: calc(100% - 22px);
 
-  span {
-    margin: 20px 15px 0;
+      .FormSelect, .FieldForm {
+        width: calc(25% - 5px);
+
+      }
+    }
+
+    .second-date-address {
+      display: flex;
+      column-gap: 1rem;;
+      width: calc(100% - 22px);
+
+      .FormSelect {
+        width: calc(25% - 5px);
+
+      }
+
+      .FieldForm {
+        width: calc(50% - 5px);
+
+      }
+
+      .ages, .dates {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 1rem;
+        width: calc(50% - 5px);
+
+
+      }
+    }
+
+
+    span {
+      margin: 20px 15px 0;
+    }
   }
 }
 

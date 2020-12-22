@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './ConvocatoryRegister.scss';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
@@ -11,6 +11,8 @@ import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
 import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
+  const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
+  const islandLasPalmas = ['Gran Canaria', 'Fuerteventura', 'Lanzarote', 'La Graciosa'];
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
@@ -102,7 +104,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
   return (
     <div className="ConvocatoryRegister">
-      <h2>Vista previa de la convocatoria</h2>
+      <h1>Vista previa de la convocatoria</h1>
       <ConvocatoryCard
         title={data.title}
         description={data.description}
@@ -113,86 +115,86 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
         startDay={data.startDay}
         finishDay={data.finishDay}
       />
-
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
         <FieldForm
-          title={'Título'}
+          title={'Nombre Entidad Convocante'}
+          type={'text'}
+          name={'title'}
+          onChange={(e) => setData({ ...data, title: e.target.value })}
+        />{' '}
+        <FieldForm
+          title={'Título de la Convocatoria'}
           type={'text'}
           name={'title'}
           onChange={(e) => setData({ ...data, title: e.target.value })}
         />
-        <FieldForm
-          title={'Descripción'}
-          type={'text'}
-          name={'description'}
-          onChange={(e) => setData({ ...data, description: e.target.value })}
-        />
-        <FieldForm
-          title={'Foto'}
-          type={'file'}
-          name={'photo'}
-          onChange={(e) => setData({ ...data, photo: e.target.value })}
-        />
-        <FormSelect
-          text={'Ciudad'}
-          name={'city'}
-          onChange={(e: any) => setData({ ...data, city: e.target.value })}
-          optionsList={LIST_MUNICIPALITY}
-        />
-        <FormSelect
-          text={'Ubicación'}
-          name={'localization'}
-          onChange={(e) => setData({ ...data, localization: e.target.value })}
-          optionsList={['Prueba 1', 'Prueba 2', 'Prueba 3', 'Prueba 4', 'Prueba 5']}
-        />
-        <h3>Edades</h3>
-        <div className={'ages'}>
+        <div className={'first-date-address'}>
           <FormSelect
-            text={'Mínima '}
-            name={'agesRangeMin'}
-            onChange={(e) => setData({ ...data, agesMin: e.target.value })}
-            optionsList={ages}
+            text={'Provincia'}
+            name={'city'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={['Santa Cruz de Tenerife', 'Las Palmas']}
           />
-
           <FormSelect
-            text={'Máxima '}
-            name={'agesRangeMax'}
-            onChange={(e) => setData({ ...data, agesMax: e.target.value })}
-            optionsList={ages}
+            text={'Isla'}
+            name={'localization'}
+            onChange={(e) => setData({ ...data, localization: e.target.value })}
+            optionsList={islandTenerife}
+          />
+          <FieldForm title={'Código Postal'} type={'text'} name={'Postal code'} />
+          <FormSelect
+            text={'Ciudad'}
+            name={'city'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={LIST_MUNICIPALITY}
           />
         </div>
-        <h3>Fechas</h3>
-        <div className={'dates'}>
-          <FieldForm
-            title={'Inicio'}
-            type={'date'}
-            name={'startDay'}
-            stateValidate={startDateIsCorrect}
-            onChange={(e) =>
-              setData({
-                ...data,
-                startDay: e.target.value
-                  .split('-')
-                  .reverse()
-                  .join(separatorDate),
-              })
-            }
-          />
-          <FieldForm
-            title={'Finalización'}
-            type={'date'}
-            name={'finishDay'}
-            stateValidate={finishDateIsCorrect}
-            onChange={(e) =>
-              setData({
-                ...data,
-                finishDay: e.target.value
-                  .split('-')
-                  .reverse()
-                  .join(separatorDate),
-              })
-            }
-          />
+        <div className={'second-date-address'}>
+          <FieldForm title={'Dirección'} type={'text'} name={'address'} />
+          <div className={'dates'}>
+            <FieldForm
+              title={'Inicio'}
+              type={'date'}
+              name={'startDay'}
+              stateValidate={startDateIsCorrect}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  startDay: e.target.value
+                    .split('-')
+                    .reverse()
+                    .join(separatorDate),
+                })
+              }
+            />
+            <FieldForm
+              title={'Finalización'}
+              type={'date'}
+              name={'finishDay'}
+              stateValidate={finishDateIsCorrect}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  finishDay: e.target.value
+                    .split('-')
+                    .reverse()
+                    .join(separatorDate),
+                })
+              }
+            />
+            <FormSelect
+              text={'Mínima '}
+              name={'agesRangeMin'}
+              onChange={(e) => setData({ ...data, agesMin: e.target.value })}
+              optionsList={ages}
+            />
+            <FormSelect
+              text={'Máxima '}
+              name={'agesRangeMax'}
+              onChange={(e) => setData({ ...data, agesMax: e.target.value })}
+              optionsList={ages}
+            />
+          </div>
         </div>
         <SubmitButton text={'Crear convocatoria'} />
       </form>
