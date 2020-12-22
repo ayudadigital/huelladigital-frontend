@@ -3,8 +3,8 @@ import { FormRegisterEsal } from './FormRegisterEsal';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'FormRegisterEsal',
+  title: 'Organisms | Forms',
   decorators: [withA11y],
 };
 
-export const withText = () => <FormRegisterEsal />;
+export const RegisterEsal = () => <FormRegisterEsal />;

@@ -7,7 +7,7 @@ export const FormRegisterContactPerson: React.FC<{}> = () => (
     <header>
       <h1>Persona de Contacto</h1>
     </header>
-    <section className="contactPerson">
+    <section className="contact-person">
       <FieldForm title={'Nombre *'} type={'text'} name={'Nombre'} />
       <FieldForm title={'Apellidos *'} type={'text'} name={'Apellidos'} />
       <FieldForm title={'Email *'} type={'email'} name={'Email'} />

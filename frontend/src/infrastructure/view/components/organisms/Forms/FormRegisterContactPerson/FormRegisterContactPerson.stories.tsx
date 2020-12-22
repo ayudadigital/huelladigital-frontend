@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {FormRegisterContactPerson} from './FormRegisterContactPerson';
+import { FormRegisterContactPerson } from './FormRegisterContactPerson';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'FormRegisterContactPerson',
+  title: 'Organisms | Forms',
   decorators: [withA11y],
 };
 
-export const withText = () => <FormRegisterContactPerson />;
+export const ContactPerson = () => <FormRegisterContactPerson />;

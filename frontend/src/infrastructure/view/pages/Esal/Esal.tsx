@@ -8,17 +8,17 @@ import { LinkText } from '../../components/atoms/LinkText';
 import { SubmitButton } from '../../components/atoms/SubmitButton';
 
 export const Esal: React.FC<{}> = () => (
-  <div className="Esal">
+  <div className="esal">
     <h1>Registro Entidad</h1>
-    <section className={'contactPersons'}>
+    <section className={'contact-persons'}>
       <FormRegisterContactPerson />
     </section>
-    <section className={'registerEsal'}>
+    <section className={'register-esals'}>
       <FormRegisterEsal />
 
-      <div className={'row consentsCheck'}>
+      <div className={'row consents-check'}>
         <Label text={'Consentimientos *'} />
-        <section className={'dataProtection'}>
+        <section className={'data-protection'}>
           <FormRadio
             title={'Política Privacidad'}
             type={'checkbox'}
@@ -28,10 +28,10 @@ export const Esal: React.FC<{}> = () => (
           />
           <p>
             Estoy de acuerdo de con la {''}
-            <LinkText to={'/'} text={'Política de Privacidad'} />
+            <LinkText to={'/'} text={'Política de Privacidad'} />.
           </p>
         </section>
-        <section className={'dataProtection'}>
+        <section className={'data-protection'}>
           <FormRadio
             title={'Protección de datos'}
             type={'checkbox'}
@@ -41,10 +41,10 @@ export const Esal: React.FC<{}> = () => (
           />
           <p>
             Estoy de acuerdo de con la {''}
-            <LinkText to={'/'} text={'Política de Protección de Datos'} />
+            <LinkText to={'/'} text={'Política de Protección de Datos'} />.
           </p>
         </section>
-        <section className={'buttonRegister'}>
+        <section className={'button-register'}>
           <SubmitButton text={'Registrar Entidad'} />
         </section>
       </div>

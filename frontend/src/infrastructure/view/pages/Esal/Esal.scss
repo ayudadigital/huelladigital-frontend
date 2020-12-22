@@ -1,8 +1,8 @@
-.Esal {
+.esal {
   padding: 2rem;
   margin: 2rem;
 
-  .contactPersons {
+  .contact-persons {
     padding: 1.5rem;
     background: white;
     border-radius: 0.8rem;
@@ -11,7 +11,7 @@
 
   }
 
-  .registerEsal {
+  .register-esals {
     margin-top: 2rem;
     padding: 1.5rem;
     background: white;
@@ -28,7 +28,7 @@
 
   }
 
-  .consentsCheck {
+  .consents-check {
     display: flex;
     flex-direction: column;
     column-gap: 1rem;
@@ -36,12 +36,12 @@
     width: calc(100% - 22px);
     padding: 0.5rem 1rem;
 
-    .dataProtection {
+    .data-protection {
       display: flex;
       align-items: center;
     }
 
-    .buttonRegister {
+    .button-register {
       text-align: center;
 
       .SubmitButton {

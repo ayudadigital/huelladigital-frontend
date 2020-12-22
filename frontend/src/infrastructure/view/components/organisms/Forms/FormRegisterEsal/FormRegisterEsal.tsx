@@ -9,7 +9,7 @@ import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
 
 export const FormRegisterEsal: React.FC<{}> = () => {
   return (
-    <div className="RegisterEsal">
+    <div className="register-esal">
       <header>
         <h1>Datos Entidad</h1>
       </header>
@@ -39,7 +39,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
             <div className={'row'}>
               <div className={'col'}>
                 <section>
-                  <div className="formRadio">
+                  <div className="form-radio">
                     <section>
                       <FormRadio
                         title={''}
@@ -103,7 +103,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   </div>
                 </section>
               </div>
-              <div className={'col postalCode'}>
+              <div className={'col postal-code'}>
                 <FieldForm title={'Código Postal *'} type={'text'} name={'Otros'} />
               </div>
             </div>
@@ -113,7 +113,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
       <div className={'row'}>
         <div className={'col'}>
           <Label text={'Logo *'} />
-          <div className="imageFileUpload">
+          <div className="image-upload">
             <label>
               <input type="file" className={'file'} />
               <Image
@@ -127,19 +127,19 @@ export const FormRegisterEsal: React.FC<{}> = () => {
         <div className={'col'}>
           <Label text={'Tipo de entidad *'} />
           <div className="row">
-            <div className="formOrganization">
+            <div className="form-organization">
               <FormRadio
                 title={''}
                 type={'radio'}
                 name={'Asociacion'}
-                value={'Asociacion'}
+                value={'Asociación'}
                 checked={false}
               />
               <FormRadio
                 title={''}
                 type={'radio'}
                 name={'Fundacion'}
-                value={'Fundacion'}
+                value={'Fundación'}
                 checked={false}
               />
 
@@ -161,12 +161,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 title={''}
                 type={'radio'}
                 name={'Federacion Deportiva'}
-                value={'Federacion Deportiva'}
+                value={'Federación Deportiva'}
                 checked={false}
               />
             </div>
           </div>
-          <div className={'registerIntoGovernment'}>
+          <div className={'register-government'}>
             <Label
               text={
                 'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
