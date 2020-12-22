@@ -9,6 +9,10 @@ import { LIST_MUNICIPALITY } from './assets/listMunicipality';
 import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
 import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
 import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
+import { TextAreaForm } from '../../../components/molecules/TextAreaForm';
+import { Label } from '../../../components/atoms/Label';
+import { Image } from '../../../components/atoms/Image';
+import superHeroes from '../../../components/atoms/Image/assets/superHeroes.svg';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
@@ -153,7 +157,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
           <FieldForm title={'Dirección'} type={'text'} name={'address'} />
           <div className={'dates'}>
             <FieldForm
-              title={'Inicio'}
+              title={'Fecha de Inicio'}
               type={'date'}
               name={'startDay'}
               stateValidate={startDateIsCorrect}
@@ -168,7 +172,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
               }
             />
             <FieldForm
-              title={'Finalización'}
+              title={'Fecha de Finalización'}
               type={'date'}
               name={'finishDay'}
               stateValidate={finishDateIsCorrect}
@@ -183,19 +187,67 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
               }
             />
             <FormSelect
-              text={'Mínima '}
+              text={'Edad Mínima'}
               name={'agesRangeMin'}
               onChange={(e) => setData({ ...data, agesMin: e.target.value })}
               optionsList={ages}
             />
             <FormSelect
-              text={'Máxima '}
+              text={'Edad Máxima'}
               name={'agesRangeMax'}
               onChange={(e) => setData({ ...data, agesMax: e.target.value })}
               optionsList={ages}
             />
           </div>
         </div>
+        <section className={'description-logo'}>
+          <TextAreaForm
+            title={'Descripción de la convocatoria'}
+            name={'drecription proposal'}
+            placeholder={'Descripción de lo que se realizará en la convocatoria'}
+            cols={2}
+            rows={20}
+          />
+
+          <div className={'logo'}>
+            <Label text={'Logo *'} />
+            <div className="image-upload">
+              <label>
+                <input type="file" className={'file'} />
+                <Image source={superHeroes} description={'super heroes logo register'} />
+              </label>
+            </div>
+          </div>
+        </section>
+        <section className={'fourst-row'}>
+          <FormSelect
+            text={'Categoría de voluntariado'}
+            name={'category'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={['Santa Cruz de Tenerife', 'Las Palmas']}
+          />
+          <FormSelect
+            text={'Realización del voluntariado'}
+            name={'localization'}
+            onChange={(e) => setData({ ...data, localization: e.target.value })}
+            optionsList={islandTenerife}
+          />
+          <FieldForm
+            title={'Fecha cierre solicitudes'}
+            type={'date'}
+            name={'finishDateInscription'}
+            stateValidate={startDateIsCorrect}
+            onChange={(e) =>
+              setData({
+                ...data,
+                startDay: e.target.value
+                  .split('-')
+                  .reverse()
+                  .join(separatorDate),
+              })
+            }
+          />
+        </section>
         <SubmitButton text={'Crear convocatoria'} />
       </form>
     </div>

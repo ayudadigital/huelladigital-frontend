@@ -6,14 +6,14 @@
 }
 
 .ConvocatoryRegister {
-  padding: 10px;
-  margin: 5%;
+  padding: 0.5rem 1rem;
 
   .ContainerForm {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 1rem;
+    row-gap: 1rem;
     align-items: center;
     padding: 0.5rem 1rem;
 
@@ -59,6 +59,51 @@
       }
     }
 
+    .description-logo {
+      display: flex;
+      justify-content: space-around;
+      column-gap: 1rem;;
+      width: calc(100% - 22px);
+
+      .TextAreaForm {
+        width: calc(50% - 10px);
+
+      }
+
+      .image-upload {
+        border: solid 0.05px #7e254e;
+        border-radius: 4rem;
+        margin: 0.5rem 1rem;
+        text-align: center;
+        cursor: pointer;
+
+        img {
+          width: 400px;
+          height: 400px;
+          cursor: pointer;
+
+
+        }
+
+        .file {
+          display: none;
+        }
+      }
+    }
+
+    .fourst-row {
+      display: flex;
+      justify-content: space-around;
+      width: calc(100% - 22px);
+
+      .FormSelect, .FieldForm {
+        width: calc(20% - 15px);
+        input{
+          width: fit-content;
+        }
+
+      }
+    }
 
     span {
       margin: 20px 15px 0;
