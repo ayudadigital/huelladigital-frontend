@@ -8,6 +8,24 @@ import { Image } from '../../../atoms/Image';
 import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
 
 export const FormRegisterEsal: React.FC<{}> = () => {
+  const island = [
+    'Gran Canaria',
+    'Fuerteventura',
+    'Lanzarote',
+    'La Graciosa',
+    'Tenerife',
+    'La Palma',
+    'La Gomera',
+    'El Hierro',
+  ];
+  const associationType = [
+    'Asociacion',
+    'Fundación',
+    'Club Deportivo',
+    'Colegio Profesional',
+    'Federación Deportiva',
+  ];
+
   return (
     <div className="register-esal">
       <header>
@@ -34,72 +52,25 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               cols={2}
             />
           </div>
-          <div className={'col'}>
+          <div className={'col localization'}>
             <Label text={'Ubicación *'} />
             <div className={'row'}>
               <div className={'col'}>
                 <section>
                   <div className="form-radio">
-                    <section>
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'Gran Canaria'}
-                        value={'Gran Canaria'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'Fuerteventura'}
-                        value={'Fuerteventura'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'Lanzarote'}
-                        value={'Lanzarote'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'La Graciosa'}
-                        value={'La Graciosa'}
-                        checked={false}
-                      />
-                    </section>
-                    <section>
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'Tenerife'}
-                        value={'Tenerife'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'La Palmas'}
-                        value={'La Palmas'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'La Gomera'}
-                        value={'La Gomera'}
-                        checked={false}
-                      />
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'El Hierro'}
-                        value={'El Hierro'}
-                        checked={false}
-                      />
-                    </section>
+                    {island.map((islands) => {
+                      return (
+                        <section>
+                          <FormRadio
+                            title={''}
+                            type={'radio'}
+                            name={islands}
+                            value={islands}
+                            checked={false}
+                          />
+                        </section>
+                      );
+                    })}
                   </div>
                 </section>
               </div>
@@ -124,46 +95,21 @@ export const FormRegisterEsal: React.FC<{}> = () => {
             </label>
           </div>
         </div>
-        <div className={'col'}>
+        <div className={'col organization'}>
           <Label text={'Tipo de entidad *'} />
           <div className="row">
             <div className="form-organization">
-              <FormRadio
-                title={''}
-                type={'radio'}
-                name={'Asociacion'}
-                value={'Asociación'}
-                checked={false}
-              />
-              <FormRadio
-                title={''}
-                type={'radio'}
-                name={'Fundacion'}
-                value={'Fundación'}
-                checked={false}
-              />
-
-              <FormRadio
-                title={''}
-                type={'radio'}
-                name={'Club Deportivo'}
-                value={'Club Deportivo'}
-                checked={false}
-              />
-              <FormRadio
-                title={''}
-                type={'radio'}
-                name={'Colegio Profesional'}
-                value={'Colegio Profesional'}
-                checked={false}
-              />
-              <FormRadio
-                title={''}
-                type={'radio'}
-                name={'Federacion Deportiva'}
-                value={'Federación Deportiva'}
-                checked={false}
-              />
+              {associationType.map((types) => {
+                return (
+                  <FormRadio
+                    title={''}
+                    type={'radio'}
+                    name={types}
+                    value={types}
+                    checked={false}
+                  />
+                );
+              })}
             </div>
           </div>
           <div className={'register-government'}>
