@@ -15,6 +15,7 @@ import { Context } from './Context';
 import { OrganizationRegister } from './view/pages/Organizations/OrganizationRegister';
 import { FrequentlyAskedQuestions } from './view/pages/FrequentlyAskedQuestions';
 import { CookiesPolicy } from './view/pages/CookiesPolicy'
+import { LegalAdvice } from './view/pages/LegalAdvice';
 
 const App: React.FC = () => {
   const { isAuth } = useContext(Context);
@@ -31,6 +32,8 @@ const App: React.FC = () => {
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />
+            <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
+            <Route path={ROUTE.legalAdvice} component={LegalAdvice} />
             <Route
               exact
               path={ROUTE.organizations.register}
@@ -39,7 +42,6 @@ const App: React.FC = () => {
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
-          <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
           </Switch>
           <Footer />
         </WrapperPages>
