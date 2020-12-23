@@ -37,6 +37,7 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
       `${BASE.API}${ROUTE.API.convocatories.register}`,
       content,
       'multipart/data-form',
+      true,
     )
     .then((response) => {
       console.log(response);
