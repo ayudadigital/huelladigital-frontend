@@ -13,10 +13,25 @@ import { TextAreaForm } from '../../../components/molecules/TextAreaForm';
 import { Label } from '../../../components/atoms/Label';
 import { Image } from '../../../components/atoms/Image';
 import superHeroes from '../../../components/atoms/Image/assets/superHeroes.svg';
+import { FormRadio } from '../../../components/molecules/FormRadio';
+import { RequirementDisplay } from '../../../components/organisms/Forms/RequirementsFormList/RequirementsFormList.stories';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
   const islandLasPalmas = ['Gran Canaria', 'Fuerteventura', 'Lanzarote', 'La Graciosa'];
+  const skillsWorkUpVolunteers = [
+    'Negociación',
+    'Optimismo y entusiasmo',
+    'Capacidad de aprendizaje',
+    'Tacto y prudencia',
+    'Fiabilidad técnica y persona',
+    'Iniciativa y autonomía',
+    'Organización y planificación',
+    'Comuinicación interpersonal',
+    'Liderar iniciativas',
+    'Flexibilidad (Adaptación)',
+    'Analaizar y resolver problemas',
+  ];
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
@@ -120,18 +135,20 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
         finishDay={data.finishDay}
       />
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
-        <FieldForm
-          title={'Nombre Entidad Convocante'}
-          type={'text'}
-          name={'title'}
-          onChange={(e) => setData({ ...data, title: e.target.value })}
-        />{' '}
-        <FieldForm
-          title={'Título de la Convocatoria'}
-          type={'text'}
-          name={'title'}
-          onChange={(e) => setData({ ...data, title: e.target.value })}
-        />
+        <div className={'data-esal'}>
+          <FieldForm
+            title={'Nombre Entidad Convocante'}
+            type={'text'}
+            name={'title'}
+            onChange={(e) => setData({ ...data, title: e.target.value })}
+          />{' '}
+          <FieldForm
+            title={'Título de la Convocatoria'}
+            type={'text'}
+            name={'title'}
+            onChange={(e) => setData({ ...data, title: e.target.value })}
+          />
+        </div>
         <div className={'first-date-address'}>
           <FormSelect
             text={'Provincia'}
@@ -253,6 +270,48 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             }
           />
         </section>
+
+        <section className={'activities'}>
+          <section>
+            <Label text={'Cinco actividades a realizar'} />
+          </section>
+          <section>
+            <form className={'activities-form'}>
+              <FieldForm title={'Actividad 1'} type={'text'} name={'activityOne'} />
+              <FieldForm title={'Actividad 2'} type={'text'} name={'activityTwo'} />
+              <FieldForm title={'Actividad 3'} type={'text'} name={'activityThree'} />
+              <FieldForm title={'Actividad 4'} type={'text'} name={'activityFour'} />
+              <FieldForm title={'Actividad 5'} type={'text'} name={'activityFive'} />
+            </form>
+          </section>
+        </section>
+
+        <section className={'fifth-row'}>
+          <section className={'types-skills'}>
+            <Label text={'¿Qué habilidades se desarrollarán?'} />
+            <div className="form-organization">
+              {skillsWorkUpVolunteers.map((types) => {
+                return (
+                  <FormRadio
+                    title={''}
+                    type={'radio'}
+                    name={types}
+                    value={types}
+                    checked={false}
+                  />
+                );
+              })}
+            </div>
+          </section>
+          <section className={'requirement-display'}>
+            <section>
+              <Label text={'¿Qué necesitas?'} />
+            </section>
+
+            <RequirementDisplay />
+          </section>
+        </section>
+
         <SubmitButton text={'Crear convocatoria'} />
       </form>
     </div>
