@@ -60,15 +60,13 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   <div className="form-radio">
                     {island.map((islands) => {
                       return (
-                        <section>
-                          <FormRadio
-                            title={''}
-                            type={'radio'}
-                            name={islands}
-                            value={islands}
-                            checked={false}
-                          />
-                        </section>
+                        <FormRadio
+                          title={''}
+                          type={'radio'}
+                          name={islands}
+                          value={islands}
+                          checked={false}
+                        />
                       );
                     })}
                   </div>
