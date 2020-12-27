@@ -17,7 +17,7 @@ describe('convocatoryRepository', () => {
     const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
     const proposal: Convocatory = {
       title: 'Example Title',
-      organizer: 'Example Esal',
+      organizer: 'Example FormRegisterEsal',
       province: 35,
       town: 'Example Twon',
       address: 'Example address',
@@ -42,7 +42,7 @@ describe('convocatoryRepository', () => {
 
     const proposalDto: ProposalDTO = {
       title: 'Example Title',
-      esalName: 'Example Esal',
+      esalName: 'Example FormRegisterEsal',
       province: 35,
       town: 'Example Twon',
       address: 'Example address',
