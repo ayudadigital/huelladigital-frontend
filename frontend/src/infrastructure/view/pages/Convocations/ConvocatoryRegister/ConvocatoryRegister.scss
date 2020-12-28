@@ -21,6 +21,7 @@
     .Label {
       color: #7e254e;
       font-weight: 500;
+      font-size: 20px;
     }
 
 
@@ -88,7 +89,7 @@
         }
 
         .FieldForm {
-          width: calc(20% - 5px);
+          width: calc(30% - 5px);
 
         }
 
@@ -156,6 +157,12 @@
         display: flex;
         justify-content: space-around;
 
+        .Label {
+          color: black;
+          font-size: 15px;
+          font-weight: inherit;
+        }
+
         .FieldForm {
           width: calc(100% - 22px);
 
@@ -218,6 +225,7 @@
       margin: 20px 15px 0;
     }
   }
+
   .SubmitButton {
     background: #7e254e;
   }
