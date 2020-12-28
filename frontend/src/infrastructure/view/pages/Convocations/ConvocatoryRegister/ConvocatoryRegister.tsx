@@ -236,7 +236,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             </div>
           </div>
         </section>
-        <section className={'fourst-row'}>
+        <section className={'fourth-row'}>
           <FormSelect
             text={'Categoría de voluntariado'}
             name={'category'}
@@ -272,9 +272,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
         </section>
 
         <section className={'activities'}>
-          <section>
-            <Label text={'Cinco actividades a realizar'} />
-          </section>
+          <Label text={'Cinco actividades a realizar'} />
           <section>
             <form className={'activities-form'}>
               <FieldForm title={'Actividad 1'} type={'text'} name={'activityOne'} />
@@ -310,6 +308,34 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
             <RequirementDisplay />
           </section>
+        </section>
+
+        <section className={'sixth-row'}>
+          <TextAreaForm
+            title={'¿Cómo se van a desarrollar las habilidades?'}
+            name={'work up Skills'}
+            placeholder={
+              'Descripción de como se desarrollaran las habilidades del voluntariado'
+            }
+            cols={2}
+            rows={10}
+          />
+          <TextAreaForm
+            title={'¿Qué más hace falta saber?'}
+            name={'extra information'}
+            placeholder={'Información extra del voluntariado'}
+            cols={2}
+            rows={10}
+          />
+          <TextAreaForm
+            title={'¿Qué pasa después?'}
+            name={'pass after'}
+            placeholder={
+              'Descripción de los procesos después de realizar el voluntariado'
+            }
+            cols={2}
+            rows={10}
+          />
         </section>
 
         <SubmitButton text={'Crear convocatoria'} />

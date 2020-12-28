@@ -18,6 +18,11 @@
     padding: 0.5rem 1rem;
     background: white;
 
+    .Label {
+      color: #7e254e;
+      font-weight: 500;
+    }
+
 
     .data-esal {
       display: flex;
@@ -33,11 +38,9 @@
 
     .first-date-address {
       display: flex;
-      column-gap: 1rem;
       width: calc(100% - 22px);
-      justify-content: center;
+      justify-content: space-around;
       padding: 0.5rem 1rem;
-
 
 
       .FormSelect, .FieldForm {
@@ -54,9 +57,8 @@
 
     .second-date-address {
       display: flex;
-      column-gap: 1rem;
       width: calc(100% - 22px);
-      justify-content: center;
+      justify-content: space-around;
       padding: 0.5rem 1rem;
 
 
@@ -66,20 +68,29 @@
       }
 
       .FieldForm {
-        width: calc(35% - 5px);
+        width: calc(40% - 5px);
 
         .InputFieldForm {
           padding: 5px;
         }
       }
 
-      .ages, .dates {
+      .dates {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         flex-direction: row;
-        column-gap: 1rem;
         width: calc(50% - 5px);
 
+        .FormSelect {
+          width: calc(15% - 5px);
+
+        }
+
+        .FieldForm {
+          width: calc(20% - 5px);
+
+        }
 
       }
     }
@@ -87,7 +98,6 @@
     .description-logo {
       display: flex;
       justify-content: space-around;
-      column-gap: 1rem;
       width: calc(100% - 22px);
       padding: 0.5rem 1rem;
 
@@ -118,7 +128,7 @@
       }
     }
 
-    .fourst-row {
+    .fourth-row {
       display: flex;
       justify-content: space-around;
       width: calc(100% - 22px);
@@ -144,11 +154,14 @@
 
       .activities-form {
         display: flex;
-        column-gap: 1rem;
-        margin-top: 1rem;
+        justify-content: space-around;
 
         .FieldForm {
           width: calc(100% - 22px);
+
+          .InputFieldForm {
+            padding: 5px;
+          }
 
         }
 
@@ -180,7 +193,7 @@
       }
 
       .requirement-display {
-        width: calc(50% - 10px);
+        width: calc(40% - 10px);
 
         .RequirementsFormList {
           margin-top: 1rem;
@@ -189,22 +202,29 @@
       }
     }
 
+    .sixth-row {
+      display: flex;
+      column-gap: 2rem;
+      width: calc(100% - 22px);
+      padding: 0.5rem 1rem;
+
+      .TextAreaForm {
+        width: calc(35% - 12px);
+
+      }
+    }
+
     span {
       margin: 20px 15px 0;
     }
+  }
+  .SubmitButton {
+    background: #7e254e;
   }
 }
 
 @media (min-width: 992px) {
   .ConvocatoryRegister {
-    .ages {
-      justify-content: flex-start;
-
-      .FormSelect {
-        margin-right: 15px;
-        width: initial;
-      }
-    }
 
     .dates {
       justify-content: flex-start;
