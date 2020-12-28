@@ -123,7 +123,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
   return (
     <div className="ConvocatoryRegister">
-      <h1>Vista previa de la convocatoria</h1>
+      <h1>Registro Convocatoria</h1>
       <ConvocatoryCard
         title={data.title}
         description={data.description}
