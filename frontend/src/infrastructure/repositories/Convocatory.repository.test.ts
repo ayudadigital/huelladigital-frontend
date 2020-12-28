@@ -72,6 +72,7 @@ describe('convocatoryRepository', () => {
       `${BASE.API}${ROUTE.API.convocatories.register}`,
       content,
       'multipart/data-form',
+      true
     );
   });
 });
