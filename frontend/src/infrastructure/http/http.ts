@@ -23,8 +23,11 @@ const post = async (
   url: string,
   body: string | FormData,
   contentType = 'application/json',
+  authentication = false,
 ) => {
-  const headers = { ...POST_HEADERS, 'Content-Type': contentType };
+  const headers = authentication
+    ? { ...POST_HEADERS, 'Content-Type': contentType }
+    : { 'Content-Type': contentType };
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
