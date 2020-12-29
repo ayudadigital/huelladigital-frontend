@@ -30,7 +30,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     'Comuinicación interpersonal',
     'Liderar iniciativas',
     'Flexibilidad (Adaptación)',
-    'Analaizar y resolver problemas',
+    'Analizar y resolver problemas',
   ];
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
