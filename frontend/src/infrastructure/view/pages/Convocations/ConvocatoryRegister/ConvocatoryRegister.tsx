@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './ConvocatoryRegister.scss';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
@@ -9,8 +9,29 @@ import { LIST_MUNICIPALITY } from './assets/listMunicipality';
 import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
 import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
 import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
+import { TextAreaForm } from '../../../components/molecules/TextAreaForm';
+import { Label } from '../../../components/atoms/Label';
+import { Image } from '../../../components/atoms/Image';
+import superHeroes from '../../../components/atoms/Image/assets/superHeroes.svg';
+import { FormRadio } from '../../../components/molecules/FormRadio';
+import { RequirementDisplay } from '../../../components/organisms/Forms/RequirementsFormList/RequirementsFormList.stories';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
+  const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
+  const islandLasPalmas = ['Gran Canaria', 'Fuerteventura', 'Lanzarote', 'La Graciosa'];
+  const skillsWorkUpVolunteers = [
+    'Negociación',
+    'Optimismo y entusiasmo',
+    'Capacidad de aprendizaje',
+    'Tacto y prudencia',
+    'Fiabilidad técnica y persona',
+    'Iniciativa y autonomía',
+    'Organización y planificación',
+    'Comuinicación interpersonal',
+    'Liderar iniciativas',
+    'Flexibilidad (Adaptación)',
+    'Analizar y resolver problemas',
+  ];
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
@@ -102,7 +123,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
   return (
     <div className="ConvocatoryRegister">
-      <h2>Vista previa de la convocatoria</h2>
+      <h1>Registro Convocatoria</h1>
       <ConvocatoryCard
         title={data.title}
         description={data.description}
@@ -113,60 +134,130 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
         startDay={data.startDay}
         finishDay={data.finishDay}
       />
-
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
-        <FieldForm
-          title={'Título'}
-          type={'text'}
-          name={'title'}
-          onChange={(e) => setData({ ...data, title: e.target.value })}
-        />
-        <FieldForm
-          title={'Descripción'}
-          type={'text'}
-          name={'description'}
-          onChange={(e) => setData({ ...data, description: e.target.value })}
-        />
-        <FieldForm
-          title={'Foto'}
-          type={'file'}
-          name={'photo'}
-          onChange={(e) => setData({ ...data, photo: e.target.value })}
-        />
-        <FormSelect
-          text={'Ciudad'}
-          name={'city'}
-          onChange={(e: any) => setData({ ...data, city: e.target.value })}
-          optionsList={LIST_MUNICIPALITY}
-        />
-        <FormSelect
-          text={'Ubicación'}
-          name={'localization'}
-          onChange={(e) => setData({ ...data, localization: e.target.value })}
-          optionsList={['Prueba 1', 'Prueba 2', 'Prueba 3', 'Prueba 4', 'Prueba 5']}
-        />
-        <h3>Edades</h3>
-        <div className={'ages'}>
-          <FormSelect
-            text={'Mínima '}
-            name={'agesRangeMin'}
-            onChange={(e) => setData({ ...data, agesMin: e.target.value })}
-            optionsList={ages}
-          />
-
-          <FormSelect
-            text={'Máxima '}
-            name={'agesRangeMax'}
-            onChange={(e) => setData({ ...data, agesMax: e.target.value })}
-            optionsList={ages}
+        <div className={'data-esal'}>
+          <FieldForm
+            title={'Nombre Entidad Convocante'}
+            type={'text'}
+            name={'title'}
+            onChange={(e) => setData({ ...data, title: e.target.value })}
+          />{' '}
+          <FieldForm
+            title={'Título de la Convocatoria'}
+            type={'text'}
+            name={'title'}
+            onChange={(e) => setData({ ...data, title: e.target.value })}
           />
         </div>
-        <h3>Fechas</h3>
-        <div className={'dates'}>
+        <div className={'first-date-address'}>
+          <FormSelect
+            text={'Provincia'}
+            name={'city'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={['Santa Cruz de Tenerife', 'Las Palmas']}
+          />
+          <FormSelect
+            text={'Isla'}
+            name={'localization'}
+            onChange={(e) => setData({ ...data, localization: e.target.value })}
+            optionsList={islandTenerife}
+          />
+          <FieldForm title={'Código Postal'} type={'text'} name={'Postal code'} />
+          <FormSelect
+            text={'Ciudad'}
+            name={'city'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={LIST_MUNICIPALITY}
+          />
+        </div>
+        <div className={'second-date-address'}>
+          <FieldForm title={'Dirección'} type={'text'} name={'address'} />
+          <div className={'dates'}>
+            <FieldForm
+              title={'Fecha de Inicio'}
+              type={'date'}
+              name={'startDay'}
+              stateValidate={startDateIsCorrect}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  startDay: e.target.value
+                    .split('-')
+                    .reverse()
+                    .join(separatorDate),
+                })
+              }
+            />
+            <FieldForm
+              title={'Fecha de Finalización'}
+              type={'date'}
+              name={'finishDay'}
+              stateValidate={finishDateIsCorrect}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  finishDay: e.target.value
+                    .split('-')
+                    .reverse()
+                    .join(separatorDate),
+                })
+              }
+            />
+            <FormSelect
+              text={'Edad Mínima'}
+              name={'agesRangeMin'}
+              onChange={(e) => setData({ ...data, agesMin: e.target.value })}
+              optionsList={ages}
+            />
+            <FormSelect
+              text={'Edad Máxima'}
+              name={'agesRangeMax'}
+              onChange={(e) => setData({ ...data, agesMax: e.target.value })}
+              optionsList={ages}
+            />
+          </div>
+        </div>
+        <section className={'description-logo'}>
+          <TextAreaForm
+            title={'Descripción de la convocatoria'}
+            name={'drecription proposal'}
+            placeholder={'Descripción de lo que se realizará en la convocatoria'}
+            cols={2}
+            rows={20}
+          />
+
+          <div className={'logo'}>
+            <Label text={'Logo *'} />
+            <div className="image-upload">
+              <label>
+                <input type="file" className={'file'} />
+                <Image source={superHeroes} description={'super heroes logo register'} />
+              </label>
+            </div>
+          </div>
+        </section>
+        <section className={'fourth-row'}>
+          <FormSelect
+            text={'Categoría de voluntariado'}
+            name={'category'}
+            onChange={(e: any) => setData({ ...data, city: e.target.value })}
+            optionsList={['Presencial', 'Virtual', 'Mixto']}
+          />
+          <FormSelect
+            text={'Realización del voluntariado'}
+            name={'localization'}
+            onChange={(e) => setData({ ...data, localization: e.target.value })}
+            optionsList={[
+              'Mañanas (Días laborales)',
+              'Fines de semana',
+              'Tarde',
+              'Flexible',
+            ]}
+          />
           <FieldForm
-            title={'Inicio'}
+            title={'Fecha cierre solicitudes'}
             type={'date'}
-            name={'startDay'}
+            name={'finishDateInscription'}
             stateValidate={startDateIsCorrect}
             onChange={(e) =>
               setData({
@@ -178,22 +269,75 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
               })
             }
           />
-          <FieldForm
-            title={'Finalización'}
-            type={'date'}
-            name={'finishDay'}
-            stateValidate={finishDateIsCorrect}
-            onChange={(e) =>
-              setData({
-                ...data,
-                finishDay: e.target.value
-                  .split('-')
-                  .reverse()
-                  .join(separatorDate),
-              })
+        </section>
+
+        <section className={'activities'}>
+          <Label text={'Cinco actividades a realizar'} />
+          <section>
+            <form className={'activities-form'}>
+              <FieldForm title={'Actividad 1'} type={'text'} name={'activityOne'} />
+              <FieldForm title={'Actividad 2'} type={'text'} name={'activityTwo'} />
+              <FieldForm title={'Actividad 3'} type={'text'} name={'activityThree'} />
+              <FieldForm title={'Actividad 4'} type={'text'} name={'activityFour'} />
+              <FieldForm title={'Actividad 5'} type={'text'} name={'activityFive'} />
+            </form>
+          </section>
+        </section>
+
+        <section className={'fifth-row'}>
+          <section className={'types-skills'}>
+            <Label text={'¿Qué habilidades se desarrollarán?'} />
+            <div className="form-organization">
+              {skillsWorkUpVolunteers.map((types) => {
+                return (
+                  <FormRadio
+                    title={''}
+                    type={'radio'}
+                    name={types}
+                    value={types}
+                    checked={false}
+                  />
+                );
+              })}
+            </div>
+          </section>
+          <section className={'requirement-display'}>
+            <section>
+              <Label text={'¿Qué necesitas?'} />
+            </section>
+
+            <RequirementDisplay />
+          </section>
+        </section>
+
+        <section className={'sixth-row'}>
+          <TextAreaForm
+            title={'¿Cómo se van a desarrollar las habilidades?'}
+            name={'work up Skills'}
+            placeholder={
+              'Descripción de como se desarrollaran las habilidades del voluntariado'
             }
+            cols={2}
+            rows={10}
           />
-        </div>
+          <TextAreaForm
+            title={'¿Qué más hace falta saber?'}
+            name={'extra information'}
+            placeholder={'Información extra del voluntariado'}
+            cols={2}
+            rows={10}
+          />
+          <TextAreaForm
+            title={'¿Qué pasa después?'}
+            name={'pass after'}
+            placeholder={
+              'Descripción de los procesos después de realizar el voluntariado'
+            }
+            cols={2}
+            rows={10}
+          />
+        </section>
+
         <SubmitButton text={'Crear convocatoria'} />
       </form>
     </div>

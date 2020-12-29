@@ -58,17 +58,16 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <div className={'col'}>
                 <section>
                   <div className="form-radio">
-                    {island.map((islands) => {
+                    {island.map((islands, index) => {
                       return (
-                        <section>
-                          <FormRadio
-                            title={''}
-                            type={'radio'}
-                            name={islands}
-                            value={islands}
-                            checked={false}
-                          />
-                        </section>
+                        <FormRadio
+                          title={''}
+                          type={'radio'}
+                          name={islands}
+                          value={islands}
+                          checked={false}
+                          key={index}
+                        />
                       );
                     })}
                   </div>
@@ -99,7 +98,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           <Label text={'Tipo de entidad *'} />
           <div className="row">
             <div className="form-organization">
-              {associationType.map((types) => {
+              {associationType.map((types, index) => {
                 return (
                   <FormRadio
                     title={''}
@@ -107,6 +106,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     name={types}
                     value={types}
                     checked={false}
+                    key={index}
                   />
                 );
               })}
