@@ -8,10 +8,11 @@ export const DescriptiveImage: React.FC<DescriptiveImageProps> = ({
   text,
   source,
   description,
-  width = '8%',
+  width,
+  cssClass,
 }) => (
   <div className="DescriptiveImage">
-    <Image source={source} description={description} width={width} />
+    <Image source={source} description={description} width={width} cssClass={cssClass} />
     <p className="title">{title}</p>
     <p>{text}</p>
   </div>

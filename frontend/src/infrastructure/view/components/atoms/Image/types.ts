@@ -3,4 +3,5 @@ export interface ImageProps {
   description: string;
   width?: string;
   height?: string;
+  cssClass?: string;
 }
