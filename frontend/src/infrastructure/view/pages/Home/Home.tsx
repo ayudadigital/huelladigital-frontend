@@ -151,7 +151,6 @@ export const Home: React.FC<{}> = () => {
               source={educationIcon}
               description=""
               width="50px"
-              cssClass="svg"
             />
             <DescriptiveImage
               title="APOYO VECINAL"
