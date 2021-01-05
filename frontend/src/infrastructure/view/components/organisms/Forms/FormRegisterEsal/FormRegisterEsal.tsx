@@ -28,103 +28,101 @@ export const FormRegisterEsal: React.FC<{}> = () => {
     'Federación Deportiva',
   ];
 
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className="FormRegisterEsal">
-      <form className={'register-esal'} method="post">
-        <div className="form-register-contact-person">
+    <form className="FormRegisterEsal" method={'POST'} id="form" onSubmit={handleSubmit}>
+      <div className={'register-esal'}>
+        <div className="div-register-contact-person">
           <header>
             <h1>Persona de Contacto</h1>
           </header>
-          <form className="row">
-            <form className={'col'}>
+          <div className="row">
+            <div className={'col'}>
               <FieldForm title={'Nombre *'} type={'text'} name={'Nombre'} />
-            </form>{' '}
-            <form className={'col'}>
+            </div>{' '}
+            <div className={'col'}>
               <FieldForm title={'Apellidos *'} type={'text'} name={'Apellidos'} />
-            </form>
-          </form>
-          <form className="row">
-            <form className={'col'}>
+            </div>
+          </div>
+          <div className="row">
+            <div className={'col'}>
               <FieldForm title={'Email *'} type={'email'} name={'Email'} />
-            </form>
-            <form className={'col'}>
+            </div>
+            <div className={'col'}>
               <FieldForm
                 title={'Confirmar email *'}
                 type={'email'}
                 name={'ConfirmarEmail'}
               />
-            </form>
-          </form>
-          <form className="row">
-            <form className={'col'}>
+            </div>
+          </div>
+          <div className="row">
+            <div className={'col'}>
               <FieldForm
                 title={'Teléfono de contacto *'}
                 type={'text'}
                 name={'Telefono'}
               />
-            </form>
-            <form className={'col'}>
+            </div>
+            <div className={'col'}>
               <FieldForm title={'Contraseña *'} type={'password'} name={'Password'} />
-            </form>
-          </form>
+            </div>
+          </div>
         </div>
-        <div className={'form-register-esal'}>
+        <div className={'div-register-esal'}>
           <header>
             <h1>Datos Entidad</h1>
           </header>
-          <section>
-            <form className={'row'}>
-              <form className={'col'}>
-                <FieldForm title={'Nombre entidad *'} type={'text'} name={'Entidad'} />
-              </form>
-              <form className={'col'}>
-                <FieldForm title={'Página web'} type={'text'} name={'Web'} />
-              </form>
-            </form>
-          </section>{' '}
-          <section>
-            <form className={'row'}>
-              <form className={'col'}>
-                <TextAreaForm
-                  title={'Descripción *'}
-                  name={'Descripcion'}
-                  placeholder={'Breve descripción de la entidad'}
-                  rows={10}
-                  cols={2}
-                />
-              </form>
-              <form className={'col localization'}>
-                <Label text={'Ubicación *'} />
-                <form className={'row'}>
-                  <form className={'col'}>
-                    <section>
-                      <form className="form-radio">
-                        {island.map((islands, index) => {
-                          return (
-                            <FormRadio
-                              title={''}
-                              type={'radio'}
-                              name={islands}
-                              value={islands}
-                              checked={false}
-                              key={index}
-                            />
-                          );
-                        })}
-                      </form>
-                    </section>
-                  </form>
-                  <form className={'col postal-code'}>
-                    <FieldForm title={'Código postal *'} type={'text'} name={'Otros'} />
-                  </form>
-                </form>
-              </form>
-            </form>
-          </section>
-          <form className={'row'}>
-            <form className={'col'}>
+          <div className={'row'}>
+            <div className={'col'}>
+              <FieldForm title={'Nombre entidad *'} type={'text'} name={'Entidad'} />
+            </div>
+            <div className={'col'}>
+              <FieldForm title={'Página web'} type={'text'} name={'Web'} />
+            </div>
+          </div>
+          <div className={'row'}>
+            <div className={'col'}>
+              <TextAreaForm
+                title={'Descripción *'}
+                name={'Descripcion'}
+                placeholder={'Breve descripción de la entidad'}
+                rows={10}
+                cols={2}
+              />
+            </div>
+            <div className={'col localization'}>
+              <Label text={'Ubicación *'} />
+              <div className={'row'}>
+                <div className={'col'}>
+                  <div className="div-radio">
+                    {island.map((islands, index) => {
+                      return (
+                        <FormRadio
+                          title={''}
+                          type={'radio'}
+                          name={islands}
+                          value={islands}
+                          checked={false}
+                          key={index}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={'col postal-code'}>
+                  <FieldForm title={'Código postal *'} type={'text'} name={'Otros'} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={'row'}>
+            <div className={'col'}>
               <Label text={'Logo *'} />
-              <form className="image-upload">
+              <div className="image-upload">
                 <label>
                   <input type="file" className={'file'} />
                   <Image
@@ -133,12 +131,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     width={'300px'}
                   />
                 </label>
-              </form>
-            </form>
-            <form className={'col organization'}>
+              </div>
+            </div>
+            <div className={'col organization'}>
               <Label text={'Tipo de entidad *'} />
-              <form className="row">
-                <form className="form-organization">
+              <div className="row">
+                <div className="div-organization">
                   {associationType.map((types, index) => {
                     return (
                       <FormRadio
@@ -151,15 +149,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                       />
                     );
                   })}
-                </form>
-              </form>
-              <form className={'register-government'}>
+                </div>
+              </div>
+              <div className={'register-government'}>
                 <Label
                   text={
                     'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
                   }
                 />
-                <form className={'row'}>
+                <div className={'row'}>
                   <FormRadio
                     title={''}
                     type={'checkbox'}
@@ -174,13 +172,13 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     value={'No'}
                     checked={false}
                   />
-                </form>
-              </form>
-            </form>
-          </form>
-          <form className={'row consents-check'}>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={'row consents-check'}>
             <Label text={'Consentimientos *'} />
-            <section className={'data-protection'}>
+            <div className={'data-protection'}>
               <FormRadio
                 title={'Política Privacidad'}
                 type={'checkbox'}
@@ -192,8 +190,8 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 Estoy de acuerdo de con la {''}
                 <LinkText to={'/'} text={'Política de privacidad'} />.
               </p>
-            </section>
-            <section className={'data-protection'}>
+            </div>
+            <div className={'data-protection'}>
               <FormRadio
                 title={'Protección de datos'}
                 type={'checkbox'}
@@ -205,14 +203,14 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 Estoy de acuerdo de con la {''}
                 <LinkText to={'/'} text={'Política de protección de datos'} />.
               </p>
-            </section>
-            <section className={'button-register'}>
+            </div>
+            <div className={'button-register'}>
               <SubmitButton text={'Registrar Entidad'} />
-            </section>
-          </form>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

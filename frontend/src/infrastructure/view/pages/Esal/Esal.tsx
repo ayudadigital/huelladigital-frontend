@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './Esal.scss';
-import { MixFormRegisterEsal } from '../../components/organisms/Forms/MixFormRegisterEsal';
+import { FormRegisterEsal } from '../../components/organisms/Forms/FormRegisterEsal';
 
 export const Esal: React.FC<{}> = () => (
   <div className="esal">
-    <MixFormRegisterEsal />
+    <FormRegisterEsal />
   </div>
 );
 
