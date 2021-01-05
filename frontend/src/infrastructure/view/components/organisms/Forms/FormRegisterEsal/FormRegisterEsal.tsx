@@ -27,23 +27,23 @@ export const FormRegisterEsal: React.FC<{}> = () => {
   ];
 
   return (
-    <div className="register-esal">
+    <form className="register-esal">
       <header>
         <h1>Datos Entidad</h1>
       </header>
       <section>
-        <div className={'row'}>
-          <div className={'col'}>
+        <form className={'row'}>
+          <form className={'col'}>
             <FieldForm title={'Nombre Entidad *'} type={'text'} name={'Entidad'} />
-          </div>
-          <div className={'col'}>
+          </form>
+          <form className={'col'}>
             <FieldForm title={'Página Web'} type={'text'} name={'Web'} />
-          </div>
-        </div>
+          </form>
+        </form>
       </section>{' '}
       <section>
-        <div className={'row'}>
-          <div className={'col'}>
+        <form className={'row'}>
+          <form className={'col'}>
             <TextAreaForm
               title={'Descripción *'}
               name={'Descripcion'}
@@ -51,13 +51,13 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               rows={10}
               cols={2}
             />
-          </div>
-          <div className={'col localization'}>
+          </form>
+          <form className={'col localization'}>
             <Label text={'Ubicación *'} />
-            <div className={'row'}>
-              <div className={'col'}>
+            <form className={'row'}>
+              <form className={'col'}>
                 <section>
-                  <div className="form-radio">
+                  <form className="form-radio">
                     {island.map((islands, index) => {
                       return (
                         <FormRadio
@@ -70,20 +70,20 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                         />
                       );
                     })}
-                  </div>
+                  </form>
                 </section>
-              </div>
-              <div className={'col postal-code'}>
+              </form>
+              <form className={'col postal-code'}>
                 <FieldForm title={'Código Postal *'} type={'text'} name={'Otros'} />
-              </div>
-            </div>
-          </div>
-        </div>
+              </form>
+            </form>
+          </form>
+        </form>
       </section>
-      <div className={'row'}>
-        <div className={'col'}>
+      <form className={'row'}>
+        <form className={'col'}>
           <Label text={'Logo *'} />
-          <div className="image-upload">
+          <form className="image-upload">
             <label>
               <input type="file" className={'file'} />
               <Image
@@ -92,12 +92,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 width={'300px'}
               />
             </label>
-          </div>
-        </div>
-        <div className={'col organization'}>
+          </form>
+        </form>
+        <form className={'col organization'}>
           <Label text={'Tipo de entidad *'} />
-          <div className="row">
-            <div className="form-organization">
+          <form className="row">
+            <form className="form-organization">
               {associationType.map((types, index) => {
                 return (
                   <FormRadio
@@ -110,15 +110,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   />
                 );
               })}
-            </div>
-          </div>
-          <div className={'register-government'}>
+            </form>
+          </form>
+          <form className={'register-government'}>
             <Label
               text={
                 'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
               }
             />
-            <div className={'row'}>
+            <form className={'row'}>
               <FormRadio
                 title={''}
                 type={'checkbox'}
@@ -133,11 +133,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 value={'No'}
                 checked={false}
               />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </form>
+          </form>
+        </form>
+      </form>
+    </form>
   );
 };
 
