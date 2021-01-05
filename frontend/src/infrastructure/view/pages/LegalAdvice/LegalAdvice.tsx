@@ -21,7 +21,7 @@ export const LegalAdvice: React.FC<{}> = () => (
       </div>
       <div>
         <div className="two-column-div">
-          <div className="column-border">
+          <div>
             <h3>
               Identificación y contacto
             </h3>
@@ -41,16 +41,11 @@ export const LegalAdvice: React.FC<{}> = () => (
               <LinkText to="#" text="Soy Mamut" />
             </div>
           </div>
+          <div className="column-border"></div>
           <div>
-            <h3>
-              GIF
-            </h3>
-            <div>
-              G76244565
-            </div>
-            <h3>
-              Correo electrónico
-            </h3>
+            <h3>GIF</h3>
+            <div>G76244565</div>
+            <h3>Correo electrónico</h3>
             <div>
               huellapositiva@SoyMamut.com
             </div>
