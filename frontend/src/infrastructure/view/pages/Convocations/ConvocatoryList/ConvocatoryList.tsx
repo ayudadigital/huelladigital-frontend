@@ -4,19 +4,17 @@ import './ConvocatoryList.scss';
 import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
 import exampleConvocatoryList from './exampleConvocatoryList.json';
 import { ConvocatoryCardProps } from '../../../components/organisms/ConvocatoryCard/types';
-import ConvocatoriesFetch from '../../../../repositories/convocatories';
+import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
+import { Convocatory } from '../../../../../domain/models/Convocatory'
 
 export const ConvocatoryList: React.FC<{}> = () => {
   const [page, changePage] = useState(1);
-  const [convocatories, setConvocatories] = useState([]);
-  const convocatoriesFetcher = new ConvocatoriesFetch();
+
+  const [convocatories, setConvocatories] = useState<Convocatory[]>([]);
+  const size = 5;
 
   React.useEffect(() => {
-    /*convocatoriesFetcher.getConvocatoriesPage(page,8).then(
-      (result) => {
-        setConvocatories(result.proposals);
-      }
-    );*/
+    setConvocatories(ConvocatoryService.getConvocatoryList(page, size));
   }, [page]);
 
   const nextPage = () => {

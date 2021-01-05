@@ -3,6 +3,7 @@ import { ProposalDTO } from '../http/dtos/ProposalDTO';
 import { http } from '../http/http';
 import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
+import {Skill} from '../../domain/models/Convocatory';
 
 const createConvocatory = (convocatory: Convocatory, file: string) => {
   const proposalDto: ProposalDTO = {
@@ -45,4 +46,41 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
   return response;
 };
 
-export const convocatoryRepository = { createConvocatory };
+const  getConvocatories  =  (page: number, size: number): Convocatory[] => {
+  const response =  http.get(`${BASE.API}${ROUTE.API.convocatories.fetchListOfConvocatories(page,size)}`)
+
+  const convocatory: Convocatory = {
+    id: 1,
+    title: "string",
+    organizer: "string",
+    category: "string",
+    endingDate: "string",
+    minimumAge: 1,
+    maximumAge: 1,
+    province: 1,
+    town: "string",
+    address: "string",
+    startingDate: "string",
+    closingDate: "string",
+    startingVolunteeringDate: "string",
+    status: 1,
+    description: "string",
+    instructions: "string", //¿Qué voy a hacer?
+    extraInfo: "string", //¿Qué más necesito saber?
+    duration: 1,
+    imageURL: "string",
+    inscribedVolunteers: null,
+    inscribedVolunteersCount: 1,
+    skills: [{
+      name: 'Javi',
+      description: 'Basket lover',
+    }],
+    requirements: ["string"],
+  };
+
+  console.log(response);
+  return [convocatory];
+
+};
+
+export const convocatoryRepository = { createConvocatory, getConvocatories };
