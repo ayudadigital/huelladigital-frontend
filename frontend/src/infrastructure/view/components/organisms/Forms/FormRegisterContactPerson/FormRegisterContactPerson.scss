@@ -2,18 +2,23 @@
   header {
     color: #7e254e;
     font-weight: bold;
-    margin-left: 0.5rem;
     font-size: 20px;
   }
 
+
   .Label {
     color: #7e254e;
+    font-size: 20px;
+    font-weight: bold;
+
   }
+
 
   .contact-person {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
 
 
   }

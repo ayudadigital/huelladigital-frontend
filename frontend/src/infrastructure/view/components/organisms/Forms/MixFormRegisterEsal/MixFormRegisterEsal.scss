@@ -1,39 +1,39 @@
 .MixFormRegisterEsal {
-
-  .FormRegisterContactPerson {
-    background: white;
-    border-radius: 0.8rem;
-    margin: 2rem;
-    padding: 2rem;
-  }
-
-  .FormRegisterEsal {
-    background: white;
-    border-radius: 0.8rem;
-    margin: 2rem;
-    padding: 2rem;
-
-    .consents-check {
-      display: flex;
-      flex-direction: column;
-      column-gap: 1rem;
-      flex-wrap: wrap;
-      width: calc(100% - 22px);
-      padding: 0.5rem 1rem;
-
-      .data-protection {
-        display: flex;
-        align-items: center;
-      }
-
-      .button-register {
-        text-align: center;
-
-        .SubmitButton {
-          background: #7e254e;
-        }
-      }
-
-    }
-  }
+  //
+  //.FormRegisterContactPerson {
+  //  background: white;
+  //  border-radius: 0.8rem;
+  //  margin: 2rem;
+  //  padding: 2rem;
+  //}
+  //
+  //.FormRegisterEsal {
+  //  background: white;
+  //  border-radius: 0.8rem;
+  //  margin: 2rem;
+  //  padding: 2rem;
+  //
+  //  .consents-check {
+  //    display: flex;
+  //    flex-direction: column;
+  //    column-gap: 1rem;
+  //    flex-wrap: wrap;
+  //    width: calc(100% - 22px);
+  //    padding: 0.5rem 1rem;
+  //
+  //    .data-protection {
+  //      display: flex;
+  //      align-items: center;
+  //    }
+  //
+  //    .button-register {
+  //      text-align: center;
+  //
+  //      .SubmitButton {
+  //        background: #7e254e;
+  //      }
+  //    }
+  //
+  //  }
+  //}
 }

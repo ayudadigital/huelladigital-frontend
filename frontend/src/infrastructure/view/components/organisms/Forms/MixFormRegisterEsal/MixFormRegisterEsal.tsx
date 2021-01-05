@@ -2,11 +2,16 @@ import * as React from 'react';
 import './MixFormRegisterEsal.scss';
 import { FormRegisterContactPerson } from '../FormRegisterContactPerson';
 import { FormRegisterEsal } from '../FormRegisterEsal';
+import { SubmitButton } from '../../../atoms/SubmitButton';
 
 export const MixFormRegisterEsal: React.FC<{}> = () => (
   <form className="MixFormRegisterEsal">
-    <FormRegisterContactPerson />
-    <FormRegisterEsal />
+    {/*<FormRegisterContactPerson />*/}
+    <section>
+      <FormRegisterEsal />
+
+      {/*<SubmitButton text={'Registrar Entidad'} />*/}
+    </section>
   </form>
 );
 

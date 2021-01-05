@@ -11,7 +11,7 @@ export const FormRegisterContactPerson: React.FC<{}> = () => (
       <FieldForm title={'Nombre *'} type={'text'} name={'Nombre'} />
       <FieldForm title={'Apellidos *'} type={'text'} name={'Apellidos'} />
       <FieldForm title={'Email *'} type={'email'} name={'Email'} />
-      <FieldForm title={'Confirmar Email *'} type={'email'} name={'ConfirmarEmail'} />
+      <FieldForm title={'Confirmar email *'} type={'email'} name={'ConfirmarEmail'} />
       <FieldForm title={'Teléfono de contacto *'} type={'text'} name={'Telefono'} />
       <FieldForm title={'Contraseña *'} type={'password'} name={'Password'} />
     </form>
