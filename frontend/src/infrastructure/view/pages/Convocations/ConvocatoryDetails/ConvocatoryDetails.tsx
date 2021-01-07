@@ -13,22 +13,22 @@ import { InputTextArea } from '../../../components/atoms/InputTextArea';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
-  const isRevision = true;
-  const isReviser = true;
+  const isReadyForRevision = true;
+  const isUserReviser = true;
   const convocatory = exampleConvocatory.Convocatory as Convocatory;
   const auth = React.useContext(Context);
   return (
     <div className="ConvocatoryDetails">
       {
-        (isRevision || isReviser) &&
+        (isReadyForRevision || isUserReviser) &&
         <div className="revision-extras">
           <h2>Convocatoria publicada por {convocatory.organizer}</h2>
           <div className="buttons">
             {
-              isRevision &&
+              isReadyForRevision &&
               <><button>Editar</button>
                 <button className="aprove">Aprobar</button></> ||
-              isReviser && <button>Voluntarios</button>
+              isUserReviser && <button>Voluntarios</button>
             }
             <button className="desestimate">Desestimar</button>
           </div>
