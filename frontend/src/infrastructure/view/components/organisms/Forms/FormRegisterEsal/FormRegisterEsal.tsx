@@ -42,7 +42,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           <div className="row">
             <div className={'col'}>
               <FieldForm title={'Nombre *'} type={'text'} name={'Nombre'} />
-            </div>{' '}
+            </div>
             <div className={'col'}>
               <FieldForm title={'Apellidos *'} type={'text'} name={'Apellidos'} />
             </div>
