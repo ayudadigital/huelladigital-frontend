@@ -137,19 +137,20 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
       <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
         <div className={'data-esal'}>
           <FieldForm
-            title={'Nombre Entidad Convocante'}
+            title={'Nombre entidad convocante'}
             type={'text'}
             name={'title'}
             onChange={(e) => setData({ ...data, title: e.target.value })}
           />{' '}
           <FieldForm
-            title={'Título de la Convocatoria'}
+            title={'Título de la convocatoria'}
             type={'text'}
             name={'title'}
             onChange={(e) => setData({ ...data, title: e.target.value })}
           />
         </div>
         <div className={'first-date-address'}>
+          <FieldForm title={'Código postal'} type={'text'} name={'Postal code'} />
           <FormSelect
             text={'Provincia'}
             name={'city'}
@@ -162,7 +163,6 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             onChange={(e) => setData({ ...data, localization: e.target.value })}
             optionsList={islandTenerife}
           />
-          <FieldForm title={'Código Postal'} type={'text'} name={'Postal code'} />
           <FormSelect
             text={'Ciudad'}
             name={'city'}
@@ -284,8 +284,8 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
           </section>
         </section>
 
-        <section className={'fifth-row'}>
-          <section className={'types-skills'}>
+        <div className={'row fifth-row'}>
+          <div className={'col types-skills'}>
             <Label text={'¿Qué habilidades se desarrollarán?'} />
             <div className="form-organization">
               {skillsWorkUpVolunteers.map((types) => {
@@ -300,15 +300,14 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
                 );
               })}
             </div>
-          </section>
-          <section className={'requirement-display'}>
+          </div>
+          <div className={'col requirement-display'}>
             <section>
               <Label text={'¿Qué necesitas?'} />
             </section>
-
             <RequirementDisplay />
-          </section>
-        </section>
+          </div>
+        </div>
 
         <section className={'sixth-row'}>
           <TextAreaForm

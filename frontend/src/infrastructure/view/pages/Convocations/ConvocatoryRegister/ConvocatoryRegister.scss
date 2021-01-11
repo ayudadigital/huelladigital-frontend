@@ -8,6 +8,10 @@
 .ConvocatoryRegister {
   padding: 0.5rem 1rem;
 
+  select {
+    background: #f2f2f2;
+  }
+
   .ContainerForm {
     display: flex;
     flex-direction: row;
@@ -181,13 +185,13 @@
 
     .fifth-row {
       display: flex;
-      column-gap: 1rem;
-      width: calc(100% - 22px);
+      justify-content: space-between;
       padding: 0.5rem 1rem;
+      width: calc(100% - 22px);
 
 
       .types-skills {
-        width: calc(50% - 10px);
+
 
         .form-organization {
           display: grid;
@@ -202,13 +206,15 @@
       }
 
       .requirement-display {
-        width: calc(40% - 10px);
+        width: calc(50% - 22px);
+
 
         .RequirementsFormList {
           margin-top: 1rem;
 
         }
       }
+
     }
 
     .sixth-row {
