@@ -1,6 +1,32 @@
 .ConvocatoryDetails {
   padding: 0% 10%;
   margin-top: 5rem;
+  .revision-extras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 2rem;
+        width: 8rem;
+        height: 2rem;
+        background-color: #7e254e;
+        margin-left: 4rem;
+      }
+      .aprove {
+        background-color: #05e200;
+      }
+      .desestimate {
+        background-color: #ff0000;
+      }
+    }
+  }
   .Convocatory {
     background-color: white;
     border: 1px solid #eaeaea;

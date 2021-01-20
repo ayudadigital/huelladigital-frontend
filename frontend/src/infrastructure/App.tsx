@@ -12,9 +12,10 @@ import { ConvocatoryDetails } from './view/pages/Convocations/ConvocatoryDetails
 import { ConvocatoryList } from './view/pages/Convocations/ConvocatoryList';
 import { ConvocatoryRegister } from './view/pages/Convocations/ConvocatoryRegister';
 import { Context } from './Context';
-import { OrganizationRegister } from './view/pages/Organizations/OrganizationRegister';
 import { FrequentlyAskedQuestions } from './view/pages/FrequentlyAskedQuestions';
+import { Esal } from './view/pages/Esal';
 import { CookiesPolicy } from './view/pages/CookiesPolicy'
+import { LegalAdvice } from './view/pages/LegalAdvice';
 
 const App: React.FC = () => {
   const { isAuth } = useContext(Context);
@@ -31,15 +32,12 @@ const App: React.FC = () => {
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />
-            <Route
-              exact
-              path={ROUTE.organizations.register}
-              component={OrganizationRegister}
-            />
+            <Route exact path={ROUTE.organizations.register} component={Esal} />
+            <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
+            <Route path={ROUTE.legalAdvice} component={LegalAdvice} />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
-          <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
           </Switch>
           <Footer />
         </WrapperPages>
