@@ -19,7 +19,8 @@ export function cleanCookies() {
   });
 }
 
-export function activateAuth(accessToken: string, refreshToken: string) {
+export function activateAuth(accessToken: string, refreshToken: string, roles: string) {
   setCookie('accessToken', accessToken);
   setCookie('refreshToken', refreshToken);
+  setCookie('roles', roles);
 }
