@@ -26,9 +26,9 @@ const App: React.FC = () => {
         <WrapperPages>
           <Header />
           <Switch>
-            <Route path={ROUTE.convocatories.list} component={ConvocatoryList} />
-            <Route path={ROUTE.convocatories.details} component={ConvocatoryDetails} />
-            <Route path={ROUTE.convocatories.register} component={ConvocatoryRegister} />
+            <Route path={ROUTE.proposals.list} component={ConvocatoryList} />
+            <Route path={ROUTE.proposals.details} component={ConvocatoryDetails} />
+            <Route path={ROUTE.proposals.register} component={ConvocatoryRegister} />
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />

@@ -69,10 +69,10 @@ describe('convocatoryRepository', () => {
     content.append('file', file);
     convocatoryRepository.createConvocatory(proposal, file);
     expect(spyFunction).toBeCalledWith(
-      `${BASE.API}${ROUTE.API.convocatories.register}`,
+      `${BASE.API}${ROUTE.API.proposals.register}`,
       content,
       'multipart/data-form',
-      true
+      true,
     );
   });
 });
