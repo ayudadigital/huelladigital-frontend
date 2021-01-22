@@ -14,7 +14,7 @@ type typeRoute = {
       profile: string;
     };
     email: { resendConfirmation: string; confirmEmail: (hash: string) => string };
-    propopsals: {
+    proposals: {
       register: string;
       fetchProposal: (id: number) => string;
       joinProposal: (id: number) => string;
@@ -56,7 +56,7 @@ const ENDPOINT_AUTHENTICATION = `/api/${V1}/authentication`;
 const ENDPOINT_PROPOSALS = `/api/${V1}/proposals`;
 const ENDPOINT_ORGANIZATIONS = `api/${V1}/esal`;
 const ENDPOINT_CONTACTPERSON = `api/${V1}/contactperson`;
-const ENDPOINT_RECOVERYPASSWORD = `api/${V1}/handling-password`
+const ENDPOINT_RECOVERYPASSWORD = `api/${V1}/handling-password`;
 
 export const ROUTE: typeRoute = {
   proposals: {
@@ -88,7 +88,7 @@ export const ROUTE: typeRoute = {
       resendConfirmation: `${ENDPOINT_EMAILCONFIRMATION}/resend-email-confirmation`,
       confirmEmail: (hash: string) => `${ENDPOINT_EMAILCONFIRMATION}/${hash}`,
     },
-    propopsals: {
+    proposals: {
       register: `${ENDPOINT_PROPOSALS}`,
       fetchProposal: (id: number) => `${ENDPOINT_PROPOSALS}/${id}`,
       joinProposal: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/join`,
@@ -111,11 +111,12 @@ export const ROUTE: typeRoute = {
       duda: (id: number) => `${ENDPOINT_CONTACTPERSON}/${id}`,
     },
     unLoggedUsers: {
-      sendEmailForRecoveringPassword: `${ENDPOINT_EMAILCONFIRMATION}/sendRecoveryPasswordEmail`;
-      updatePassword: (hash: string) => `${ENDPOINT_EMAILCONFIRMATION}/changePassword/${hash}`,
+      sendEmailForRecoveringPassword: `${ENDPOINT_EMAILCONFIRMATION}/sendRecoveryPasswordEmail`,
+      updatePassword: (hash: string) =>
+        `${ENDPOINT_EMAILCONFIRMATION}/changePassword/${hash}`,
     },
     users: {
-      updatePassword: `${ENDPOINT_EMAILCONFIRMATION}/editPassword`
+      updatePassword: `${ENDPOINT_EMAILCONFIRMATION}/editPassword`,
     },
     tokens: { refresh: `/api/${V1}/refresh` },
   },

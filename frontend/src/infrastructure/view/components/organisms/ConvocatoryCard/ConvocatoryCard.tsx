@@ -29,7 +29,7 @@ export const ConvocatoryCard: React.FC<ConvocatoryCardProps> = ({
         <ConvocatoryInfo imageURL={ages} title='Rango de edades' description={agesRange}></ConvocatoryInfo>
         <ConvocatoryInfo imageURL={ages} title='Icono fecha de inicio' description={startDay}></ConvocatoryInfo>
         <ConvocatoryInfo imageURL={ages} title='Icono fecha de fin' description={finishDay}></ConvocatoryInfo>
-        {<LinkButton path={ROUTE.convocatories.details} text={'Más información'} />}
+        {<LinkButton path={ROUTE.proposals.details} text={'Más información'} />}
       </div>
     </div>
   </div>
