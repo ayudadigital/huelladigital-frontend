@@ -4,6 +4,9 @@ import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
 import { activateAuth } from '../http/cookies';
 import { VolunteerCredential } from '../../domain/models/Credential';
+import { VolunteerDto } from '../http/dtos/VolunteerDTO';
+import UserProfileDTO from '../http/dtos/UserProfileDTO';
+import { profileEnd } from 'console';
 
 const login = (loginCredentials: VolunteerCredential) => {
   http
@@ -15,10 +18,15 @@ const login = (loginCredentials: VolunteerCredential) => {
             .json()
             .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
               activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
-              profile();
-              // routing logic.
-
-              //window.location.replace(`${BASE.URI}${ROUTE.home}`);
+              profile().then((profile) => {
+                if (isProfileComplete(profile)) {
+                  window.location.replace(`${BASE.URI}${ROUTE.home}`);
+                } else {
+                  // TODO: routing nueva página
+                  console.log('Perfil incompleto');
+                  // window.location.replace(`${BASE.URI}${ROUTE.(ruta de la nueva página para modificar el usuario)}`);
+                }
+              });
             }),
         );
         return 200;
@@ -55,13 +63,12 @@ const register = (registerCredentials: VolunteerCredentialsDTO) => {
 };
 
 const profile = () => {
-  console.log('Haciuendo el get');
-  http
+  return http
     .get(`${BASE.API}${ROUTE.API.volunteers.profile}`, true)
     .then((response) => {
       if (response.status === 201 || response.status === 200) {
-        response.json().then((res) => {
-          console.log(res);
+        return response.json().then((res) => {
+          return res;
         });
       } else if (response.status === 409) {
         return 409;
@@ -70,6 +77,17 @@ const profile = () => {
     .catch((error) => {
       console.log(error);
     });
+};
+
+const isProfileComplete = (profile: UserProfileDTO) => {
+  console.log(!profile.email && !profile.address && !profile.birthdate);
+  return (
+    !profile.email &&
+    !profile.name &&
+    !profile.zipCode &&
+    !profile.address &&
+    !profile.birthdate
+  );
 };
 
 export const volunteerRepository = {

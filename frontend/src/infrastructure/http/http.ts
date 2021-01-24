@@ -4,14 +4,16 @@ const GET_HEADERS = {
   'Content-Type': 'application/json',
 };
 
-const POST_HEADERS = {
-  Authorization: 'Bearer ' + getCookie('accessToken'),
-  'X-XSRF-TOKEN': '' + getCookie('XSRF-TOKEN'),
+const POST_HEADERS = () => {
+  return {
+    Authorization: 'Bearer ' + getCookie('accessToken'),
+    'X-XSRF-TOKEN': '' + getCookie('XSRF-TOKEN'),
+  };
 };
 
 const get = async (url: string, authentication = false) => {
   const headers = authentication
-    ? { ...POST_HEADERS, 'Content-Type': 'application/json' }
+    ? { ...POST_HEADERS(), 'Content-Type': 'application/json' }
     : GET_HEADERS;
   const response = await fetch(url, {
     method: 'GET',
