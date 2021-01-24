@@ -9,8 +9,10 @@ const POST_HEADERS = {
   'X-XSRF-TOKEN': '' + getCookie('XSRF-TOKEN'),
 };
 
-const get = async (url: string) => {
-  const headers = GET_HEADERS;
+const get = async (url: string, authentication = false) => {
+  const headers = authentication
+    ? { ...POST_HEADERS, 'Content-Type': 'application/json' }
+    : GET_HEADERS;
   const response = await fetch(url, {
     method: 'GET',
     mode: 'cors',

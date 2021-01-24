@@ -23,4 +23,5 @@ export function activateAuth(accessToken: string, refreshToken: string, roles: s
   setCookie('accessToken', accessToken);
   setCookie('refreshToken', refreshToken);
   setCookie('roles', roles);
+  console.log('completed');
 }

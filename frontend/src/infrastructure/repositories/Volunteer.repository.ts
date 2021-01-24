@@ -15,10 +15,12 @@ const login = (loginCredentials: VolunteerCredential) => {
             .json()
             .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
               activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
+              profile();
+              // routing logic.
+
+              //window.location.replace(`${BASE.URI}${ROUTE.home}`);
             }),
         );
-        window.location.replace(`${BASE.URI}${ROUTE.home}`);
-
         return 200;
       } else {
         return 403;
@@ -37,14 +39,30 @@ const register = (registerCredentials: VolunteerCredentialsDTO) => {
     )
     .then((response) => {
       if (response.status === 201 || response.status === 200) {
-        JSON.stringify(
-          response
-            .json()
-            .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
-              activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
-            }),
-        );
+        response
+          .json()
+          .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
+            activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
+          });
         window.location.replace(`${BASE.URI}${ROUTE.email.confirmation}`);
+      } else if (response.status === 409) {
+        return 409;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const profile = () => {
+  console.log('Haciuendo el get');
+  http
+    .get(`${BASE.API}${ROUTE.API.volunteers.profile}`, true)
+    .then((response) => {
+      if (response.status === 201 || response.status === 200) {
+        response.json().then((res) => {
+          console.log(res);
+        });
       } else if (response.status === 409) {
         return 409;
       }
