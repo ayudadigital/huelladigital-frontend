@@ -6,7 +6,6 @@ import { activateAuth } from '../http/cookies';
 import { VolunteerCredential } from '../../domain/models/Credential';
 import { VolunteerDto } from '../http/dtos/VolunteerDTO';
 import UserProfileDTO from '../http/dtos/UserProfileDTO';
-import { profileEnd } from 'console';
 
 const login = (loginCredentials: VolunteerCredential) => {
   http
@@ -23,6 +22,7 @@ const login = (loginCredentials: VolunteerCredential) => {
                   window.location.replace(`${BASE.URI}${ROUTE.home}`);
                 } else {
                   // TODO: routing nueva página
+                  window.location.reload();
                   console.log('Perfil incompleto');
                   // window.location.replace(`${BASE.URI}${ROUTE.(ruta de la nueva página para modificar el usuario)}`);
                 }
