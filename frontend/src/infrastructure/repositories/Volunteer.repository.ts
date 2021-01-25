@@ -80,7 +80,6 @@ const profile = () => {
 };
 
 const isProfileComplete = (profile: UserProfileDTO) => {
-  console.log(!profile.email && !profile.address && !profile.birthdate);
   return (
     !profile.email &&
     !profile.name &&

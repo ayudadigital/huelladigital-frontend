@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {ConvocatoryDetails} from './ConvocatoryDetails';
+import { ConvocatoryDetails } from './ConvocatoryDetails';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'ConvocatoryDetails',
+  title: 'Pages | ConvocatoryDetails',
   decorators: [withA11y],
 };
 
