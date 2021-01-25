@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {ConvocatoryListSkills} from './ConvocatoryListSkills';
+import { ConvocatoryListSkills } from './ConvocatoryListSkills';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'ConvocatoryListSkills',
+  title: 'Molecules | Convocatory/ConvocatoryListSkills',
   decorators: [withA11y],
 };
 
-export const withText = () => <ConvocatoryListSkills title="" skills={[]}/>;
+export const withText = () => <ConvocatoryListSkills title="" skills={[]} />;

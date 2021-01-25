@@ -38,11 +38,11 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
       <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
       <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
       {//@ts-ignore
-      isAuth ? (
-        <button onClick={onClickDisconnect}>Desconectar</button>
-      ) : (
-        <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
-      )}
+        isAuth ? (
+          <button onClick={onClickDisconnect} className="logoutButton">Desconectar</button>
+        ) : (
+            <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
+          )}
     </div>
   );
 };
