@@ -33,31 +33,62 @@
       }
     }
 
-    section {
+    .first-row-personal-data {
+      @extend %rowConfigurationData;
+      width: calc(100% - 22px);
       margin-top: 5rem;
+      padding: 1rem;
+
+
+      .FieldForm {
+        width: calc(50% - 10px);
+
+      }
+    }
+
+    .second-row-personal-data {
+      @extend %rowConfigurationData;
+      width: calc(100% - 22px);
+      padding: 1rem;
+
+
+      section {
+        width: calc(15% - 10px);
+
+        .FieldForm {
+          width: calc(100% - 5px);
+        }
+
+      }
+
+      .FieldForm {
+        width: calc(40% - 5px);
+      }
     }
   }
 
   .second-row {
     display: flex;
     flex-direction: row;
-    column-gap: 4rem;
-    border-radius: 1rem;
-    width: calc(90% - 22px);
+    justify-content: space-between;
     padding: 2rem;
-    margin: 2rem;
+
+    border-radius: 1rem;
+    width: calc(94% - 22px);
 
     .location-data {
       border-radius: 1rem;
-      width: calc(100% - 10px);
+      width: calc(40% - 10px);
       padding: 2rem;
       background: white;
 
       .location-data-first-row {
         @extend %rowConfigurationData;
+        width: calc(100% - 22px);
+        padding: 1rem;
 
         .FieldForm:first-child {
-          width: calc(25% - 10px);
+          width: calc(30% - 10px);
         }
 
         .FieldForm:last-child {
@@ -67,6 +98,8 @@
 
       .location-data-second-row {
         @extend %rowConfigurationData;
+        width: calc(100% - 22px);
+        padding: 1rem;
 
         .FieldForm {
           width: calc(50% - 10px);
@@ -78,19 +111,23 @@
 
     .additional-data {
       border-radius: 1rem;
-      width: calc(100% - 10px);
+      width: calc(40% - 10px);
       padding: 2rem;
+
       background: white;
 
       .additional-data-row {
         @extend %rowConfigurationData;
+        width: calc(100% - 22px);
 
         .additional-data-first-col {
           width: calc(50% - 10px);
+
         }
 
         .additional-data-second-col {
           width: calc(50% - 10px);
+
 
           .TextAreaForm {
             .Label {
@@ -105,15 +142,16 @@
     }
   }
 
-  .cv-div-class {
+  .third-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 1rem;
-    width: calc(90% - 22px);
+    width: calc(94% - 22px);
     padding: 1rem;
     background: white;
+    margin: 2rem;
 
 
     .cv-button-col {

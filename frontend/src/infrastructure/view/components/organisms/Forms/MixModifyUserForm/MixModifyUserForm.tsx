@@ -23,13 +23,21 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             <input type="file" />
           </label>
         </header>
-        <section>
+        <div className={'row first-row-personal-data'}>
           <FieldForm title="Nombre" name="Nombre" type="text" />
           <FieldForm title="Apellidos" name="Apellidos" type="text" />
-          <FieldForm title="Fecha de nacimiento" name="Fecha de nacimiento" type="date" />
+        </div>
+        <div className={'row second-row-personal-data'}>
+          <section>
+            <FieldForm
+              title="Fecha de nacimiento"
+              name="Fecha de nacimiento"
+              type="date"
+            />
+          </section>
           <FieldForm title="Teléfono" name="Teléfono" type="text" />
           <FieldForm title="Email" name="Email" type="email" />
-        </section>
+        </div>
       </div>
       <div className={'row second-row'}>
         <div className={'col location-data'}>
@@ -64,7 +72,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <div className="row cv-div-class">
+      <div className="row third-row">
         <div className={'col cv-button-col'}>
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
