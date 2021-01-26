@@ -1,57 +1,78 @@
+%divConfiguration {
+  border-radius: 1rem;
+  width: calc(90% - 22px);
+  padding: 2rem;
+  margin: 2rem;
+  background: white;
+}
+
 .main-div {
-  border-radius: 2px;
+  padding: 0.5rem 1rem;
 
-  div {
-    margin: 15px 15px 15px 15px;
 
-    h3 {
-      margin-top: 80px;
+  .personal-data {
+    @extend %divConfiguration;
+
+    header {
+      background: #eabd00;
+      border-radius: 2px;
+      height: 10rem;
+
+
+      label {
+        img {
+          position: absolute;
+          margin: 75px 40px 65px 40px;
+        }
+
+        input {
+          display: none;
+        }
+      }
     }
+
+    section {
+      margin-top: 5rem;
+    }
+  }
+
+  .location-data {
+    @extend %divConfiguration;
 
   }
 
-  header {
-    background: #eabd00;
-    border-radius: 2px;
-    height: 10rem;
+  .additional-data {
+    @extend %divConfiguration;
 
-    label {
-      img {
-        position: absolute;
-        margin: 75px 40px 65px 40px;
+    .additional-data-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+
+      .additional-data-first-col {
+        width: calc(50% - 10px);
       }
 
-      div {
-        position: absolute;
-        margin: 11% 0% 0% 3.6%;
-        font-size: 21px;
-        font-weight: bold;
-        color: #7e254e;
-        //-webkit-text-stroke: 0.5px white;
-        opacity: 0;
+      .additional-data-second-col {
+        width: calc(50% - 10px);
 
-        &:hover {
-          opacity: 0.85;
-          transition: opacity 0.5s;
+        .TextAreaForm {
+          .Label {
+            margin-bottom: 0;
+          }
         }
+
       }
 
-      input {
-        display: none;
-      }
     }
+
   }
 
   .cv-div-class {
     display: flex;
   }
 
-  hr {
-    padding: 1px;
-    background: #7e254e;
-    border-radius: 2px;
-    margin-top: 80px;
-  }
 
   .cv-button {
     display: inline-block;

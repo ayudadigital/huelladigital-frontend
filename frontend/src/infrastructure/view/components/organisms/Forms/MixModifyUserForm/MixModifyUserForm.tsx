@@ -14,42 +14,51 @@ export const MixModifyUserForm: React.FC<{}> = () => {
   };
 
   return (
-    <div className="main-div">
-      <header>
-        <label>
-          <Image source={profile_example} description="Profile image" />
-          <input type="file" />
-          <div>Cambiar foto</div>
-        </label>
-      </header>
-      <div>
-        <h3>Información personal</h3>
-        <FieldForm title="Nombre" name="Nombre" type="text" />
-        <FieldForm title="Apellidos" name="Apellidos" type="text" />
-        <FieldForm title="Fecha de nacimiento" name="Fecha de nacimiento" type="date" />
-        <FieldForm title="Teléfono" name="Teléfono" type="text" />
-        <FieldForm title="Email" name="Email" type="email" />
-        <hr />
+    <form className="main-div">
+      <div className={'personal-data'}>
+        <h2>Información personal</h2>
+        <header>
+          <label>
+            <Image source={profile_example} description="Profile image" />
+            <input type="file" />
+          </label>
+        </header>
+        <section>
+          <FieldForm title="Nombre" name="Nombre" type="text" />
+          <FieldForm title="Apellidos" name="Apellidos" type="text" />
+          <FieldForm title="Fecha de nacimiento" name="Fecha de nacimiento" type="date" />
+          <FieldForm title="Teléfono" name="Teléfono" type="text" />
+          <FieldForm title="Email" name="Email" type="email" />
+        </section>
       </div>
-      <div>
-        <h3>Localización</h3>
+
+      <div className={'location-data'}>
+        <h2>Localización</h2>
+
+        <FieldForm title="Código Postal" name="Postal Code" type="text" />
         <FieldForm title="Provincia" name="Provincia" type="text" />
-        <FieldForm title="Dirección" name="Dirección" type="text" />
         <FieldForm title="Ciudad" name="Ciudad" type="text" />
-        <hr />
+        <FieldForm title="Dirección" name="Dirección" type="text" />
       </div>
-      <div>
-        <h3>Información adicional</h3>
-        <FieldForm title="Twitter" name="Twitter" type="url" />
-        <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
-        <FieldForm title="Instagram" name="Instagram" type="url" />
-        <TextAreaForm
-          title="Información de interès"
-          name="Información-de-interes"
-          rows={10}
-          cols={3}
-          placeholder="Información de interés"
-        />
+
+      <div className={'additional-data'}>
+        <h2>Información adicional</h2>
+        <div className={'row additional-data-row'}>
+          <div className={'col additional-data-first-col'}>
+            <FieldForm title="Twitter" name="Twitter" type="url" />
+            <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
+            <FieldForm title="Instagram" name="Instagram" type="url" />
+          </div>
+          <div className={'col additional-data-second-col'}>
+            <TextAreaForm
+              title="Información de interès"
+              name="Información-de-interes"
+              rows={11}
+              cols={3}
+              placeholder="Información de interés"
+            />
+          </div>
+        </div>
         <div className="cv-div-class">
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
@@ -58,7 +67,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           <SubmitButton text="Actualizar perfil" />
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
