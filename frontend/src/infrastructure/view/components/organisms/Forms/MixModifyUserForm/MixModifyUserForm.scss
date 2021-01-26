@@ -1,17 +1,19 @@
-%divConfiguration {
-  border-radius: 1rem;
-  width: calc(90% - 22px);
-  padding: 2rem;
-  margin: 2rem;
-  background: white;
+
+%rowConfigurationData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .main-div {
   padding: 0.5rem 1rem;
 
-
   .personal-data {
-    @extend %divConfiguration;
+    border-radius: 1rem;
+    width: calc(90% - 22px);
+    padding: 2rem;
+    margin: 2rem;
+    background: white;
 
     header {
       background: #eabd00;
@@ -36,65 +38,120 @@
     }
   }
 
-  .location-data {
-    @extend %divConfiguration;
+  .second-row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+    border-radius: 1rem;
+    width: calc(90% - 22px);
+    padding: 2rem;
+    margin: 2rem;
 
-  }
+    .location-data {
+      border-radius: 1rem;
+      width: calc(100% - 10px);
+      padding: 2rem;
+      background: white;
 
-  .additional-data {
-    @extend %divConfiguration;
+      .location-data-first-row {
+        @extend %rowConfigurationData;
 
-    .additional-data-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+        .FieldForm:first-child {
+          width: calc(25% - 10px);
+        }
 
-
-      .additional-data-first-col {
-        width: calc(50% - 10px);
+        .FieldForm:last-child {
+          width: calc(50% - 10px);
+        }
       }
 
-      .additional-data-second-col {
-        width: calc(50% - 10px);
+      .location-data-second-row {
+        @extend %rowConfigurationData;
 
-        .TextAreaForm {
-          .Label {
-            margin-bottom: 0;
+        .FieldForm {
+          width: calc(50% - 10px);
+        }
+
+
+      }
+    }
+
+    .additional-data {
+      border-radius: 1rem;
+      width: calc(100% - 10px);
+      padding: 2rem;
+      background: white;
+
+      .additional-data-row {
+        @extend %rowConfigurationData;
+
+        .additional-data-first-col {
+          width: calc(50% - 10px);
+        }
+
+        .additional-data-second-col {
+          width: calc(50% - 10px);
+
+          .TextAreaForm {
+            .Label {
+              margin-bottom: 0;
+            }
           }
+
         }
 
       }
 
     }
-
   }
 
   .cv-div-class {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+    width: calc(90% - 22px);
+    padding: 1rem;
+    background: white;
+
+
+    .cv-button-col {
+      height: fit-content;
+      padding: 1rem 3.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+      color: white;
+      background: #7e254e;
+      font-size: 1rem;
+      text-align: center;
+
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      input {
+        display: none;
+      }
+
+      &.uploaded {
+        background: #eabd00;
+      }
+
+    }
+
+    .submit-button {
+      text-align: center;
+
+      .SubmitButton {
+        padding: 1rem 4rem;
+
+      }
+    }
+
+
   }
 
 
-  .cv-button {
-    display: inline-block;
-    padding: 10px 60px;
-    margin: 10px auto;
-    cursor: pointer;
-    border-radius: 5px;
-    min-height: 20px;
-    max-width: 300px;
-    color: white;
-    background: #7e254e;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    input {
-      display: none;
-    }
-
-    &.uploaded {
-      background: #eabd00;
-    }
-  }
 }

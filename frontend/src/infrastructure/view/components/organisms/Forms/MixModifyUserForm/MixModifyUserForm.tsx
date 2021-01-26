@@ -31,39 +31,47 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           <FieldForm title="Email" name="Email" type="email" />
         </section>
       </div>
-
-      <div className={'location-data'}>
-        <h2>Localización</h2>
-
-        <FieldForm title="Código Postal" name="Postal Code" type="text" />
-        <FieldForm title="Provincia" name="Provincia" type="text" />
-        <FieldForm title="Ciudad" name="Ciudad" type="text" />
-        <FieldForm title="Dirección" name="Dirección" type="text" />
-      </div>
-
-      <div className={'additional-data'}>
-        <h2>Información adicional</h2>
-        <div className={'row additional-data-row'}>
-          <div className={'col additional-data-first-col'}>
-            <FieldForm title="Twitter" name="Twitter" type="url" />
-            <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
-            <FieldForm title="Instagram" name="Instagram" type="url" />
+      <div className={'row second-row'}>
+        <div className={'col location-data'}>
+          <h2>Localización</h2>
+          <div className={'row location-data-first-row'}>
+            <FieldForm title="Código Postal" name="Postal Code" type="text" />
+            <FieldForm title="Dirección" name="Dirección" type="text" />
           </div>
-          <div className={'col additional-data-second-col'}>
-            <TextAreaForm
-              title="Información de interès"
-              name="Información-de-interes"
-              rows={11}
-              cols={3}
-              placeholder="Información de interés"
-            />
+          <div className={'row location-data-second-row'}>
+            <FieldForm title="Provincia" name="Provincia" type="text" />
+            <FieldForm title="Ciudad" name="Ciudad" type="text" />
           </div>
         </div>
-        <div className="cv-div-class">
+
+        <div className={'col additional-data'}>
+          <h2>Información adicional</h2>
+          <div className={'row additional-data-row'}>
+            <div className={'col additional-data-first-col'}>
+              <FieldForm title="Twitter" name="Twitter" type="url" />
+              <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
+              <FieldForm title="Instagram" name="Instagram" type="url" />
+            </div>
+            <div className={'col additional-data-second-col'}>
+              <TextAreaForm
+                title="Información de interès"
+                name="Información-de-interes"
+                rows={11}
+                cols={3}
+                placeholder="Información de interés"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row cv-div-class">
+        <div className={'col cv-button-col'}>
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
             Adjuntar CV
           </label>
+        </div>
+        <div className={'col submit-button'}>
           <SubmitButton text="Actualizar perfil" />
         </div>
       </div>
