@@ -37,7 +37,7 @@ const App: React.FC = () => {
             <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
             <Route path={ROUTE.legalAdvice} component={LegalAdvice} />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
-            <Route path={ROUTE.API.volunteers.profile} component={ModifyUser} />
+            <Route path={ROUTE.volunteers.profile} component={ModifyUser} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
           </Switch>
