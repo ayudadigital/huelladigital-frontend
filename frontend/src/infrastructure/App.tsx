@@ -14,8 +14,9 @@ import { ConvocatoryRegister } from './view/pages/Convocations/ConvocatoryRegist
 import { Context } from './Context';
 import { FrequentlyAskedQuestions } from './view/pages/FrequentlyAskedQuestions';
 import { Esal } from './view/pages/Esal';
-import { CookiesPolicy } from './view/pages/CookiesPolicy'
+import { CookiesPolicy } from './view/pages/CookiesPolicy';
 import { LegalAdvice } from './view/pages/LegalAdvice';
+import { ModifyUser } from './view/pages/User/ModifyUser';
 
 const App: React.FC = () => {
   const { isAuth } = useContext(Context);
@@ -36,6 +37,7 @@ const App: React.FC = () => {
             <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
             <Route path={ROUTE.legalAdvice} component={LegalAdvice} />
             <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
+            <Route path={ROUTE.volunteers.profile} component={ModifyUser} />
             {!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}
             {isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}
           </Switch>

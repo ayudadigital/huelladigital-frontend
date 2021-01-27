@@ -14,51 +14,76 @@ export const MixModifyUserForm: React.FC<{}> = () => {
   };
 
   return (
-    <div className="main-div">
-      <header>
-        <label>
-          <Image source={profile_example} description="Profile image" />
-          <input type="file" />
-          <div>Cambiar foto</div>
-        </label>
-      </header>
-      <div>
-        <h3>Información personal</h3>
-        <FieldForm title="Nombre" name="Nombre" type="text" />
-        <FieldForm title="Apellidos" name="Apellidos" type="text" />
-        <FieldForm title="Fecha de nacimiento" name="Fecha de nacimiento" type="date" />
-        <FieldForm title="Teléfono" name="Teléfono" type="text" />
-        <FieldForm title="Email" name="Email" type="email" />
-        <hr />
+    <form className="main-div">
+      <div className={'personal-data'}>
+        <h2>Información personal</h2>
+        <header>
+          <label>
+            <Image source={profile_example} description="Profile image" />
+            <input type="file" />
+          </label>
+        </header>
+        <div className={'row first-row-personal-data'}>
+          <FieldForm title="Nombre" name="Nombre" type="text" />
+          <FieldForm title="Apellidos" name="Apellidos" type="text" />
+        </div>
+        <div className={'row second-row-personal-data'}>
+          <section>
+            <FieldForm
+              title="Fecha de nacimiento"
+              name="Fecha de nacimiento"
+              type="date"
+            />
+          </section>
+          <FieldForm title="Teléfono" name="Teléfono" type="text" />
+          <FieldForm title="Email" name="Email" type="email" />
+        </div>
       </div>
-      <div>
-        <h3>Localización</h3>
-        <FieldForm title="Provincia" name="Provincia" type="text" />
-        <FieldForm title="Dirección" name="Dirección" type="text" />
-        <FieldForm title="Ciudad" name="Ciudad" type="text" />
-        <hr />
+      <div className={'row second-row'}>
+        <div className={'col location-data'}>
+          <h2>Localización</h2>
+          <div className={'row location-data-first-row'}>
+            <FieldForm title="Código Postal" name="Postal Code" type="text" />
+            <FieldForm title="Dirección" name="Dirección" type="text" />
+          </div>
+          <div className={'row location-data-second-row'}>
+            <FieldForm title="Provincia" name="Provincia" type="text" />
+            <FieldForm title="Ciudad" name="Ciudad" type="text" />
+          </div>
+        </div>
+
+        <div className={'col additional-data'}>
+          <h2>Información adicional</h2>
+          <div className={'row additional-data-row'}>
+            <div className={'col additional-data-first-col'}>
+              <FieldForm title="Twitter" name="Twitter" type="url" />
+              <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
+              <FieldForm title="Instagram" name="Instagram" type="url" />
+            </div>
+            <div className={'col additional-data-second-col'}>
+              <TextAreaForm
+                title="Información de interès"
+                name="Información-de-interes"
+                rows={11}
+                cols={3}
+                placeholder="Información de interés"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Información adicional</h3>
-        <FieldForm title="Twitter" name="Twitter" type="url" />
-        <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
-        <FieldForm title="Instagram" name="Instagram" type="url" />
-        <TextAreaForm
-          title="Información de interès"
-          name="Información-de-interes"
-          rows={10}
-          cols={3}
-          placeholder="Información de interés"
-        />
-        <div className="cv-div-class">
+      <div className="row third-row">
+        <div className={'col cv-button-col'}>
           <label className={cvButtonClass}>
             <input type="file" onChange={handleChange} />
             Adjuntar CV
           </label>
+        </div>
+        <div className={'col submit-button'}>
           <SubmitButton text="Actualizar perfil" />
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

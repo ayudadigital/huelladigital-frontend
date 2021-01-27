@@ -47,6 +47,7 @@ type typeRoute = {
     register: string;
   };
   proposals: { list: string; register: string; details: string };
+  volunteers: { profile: string };
 };
 
 const V1 = 'v1';
@@ -76,6 +77,9 @@ export const ROUTE: typeRoute = {
   loginRegister: '/login-register',
   faq: '/frequently-asked-questions',
   legalAdvice: '/legal-advice',
+  volunteers: {
+    profile: '/profile',
+  },
   API: {
     volunteers: {
       register: `${ENDPOINT_VOLUNTEERS}`,
