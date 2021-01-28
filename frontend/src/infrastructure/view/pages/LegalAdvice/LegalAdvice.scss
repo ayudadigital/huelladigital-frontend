@@ -1,6 +1,6 @@
 .LegalAdvice {
-  padding: 0 6rem;
-  text-align: justify;
+  padding: 0 4rem;
+  text-align:left;
   h2 {
     font-size: 1.4rem;
     color: #ad2d68;
@@ -8,8 +8,11 @@
   }
   h3 {
     color: #eabd00;
+    font-weight: normal;
   }
-
+  div{
+    padding: 0.2rem;
+  }
   .LinkText {
     color: #e34d92;
     text-decoration: none;
@@ -28,19 +31,7 @@
       min-width: 5rem;
     }
   }
-
-  .two-column-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    line-height: 160%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  .column-border {
-    border-right: 2px solid #7e254e;
-  }
-
+  
   .otherRows {
     margin-top: 2rem;
     line-height: 160%;
@@ -50,5 +41,34 @@
     border-radius: 0.8rem;
     font-size: 0.8rem;
     font-weight: 500;
+  }
+
+  .twoColumnDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 160%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    h3{
+      font-size:1.5rem;
+    }
+    .columnBorder {
+      border-right: 1.5px solid #7e254e;
+    }
+  }
+
+}
+
+@media (max-width: 600px){
+  .LegalAdvice{
+    padding: 0 0.5rem 0 0.5rem;
+    .twoColumnDiv{
+      display:flex;
+      flex-direction: column;
+      .columnBorder {
+        border-bottom: 1.5px solid #7e254e;
+      }
+    }
   }
 }
