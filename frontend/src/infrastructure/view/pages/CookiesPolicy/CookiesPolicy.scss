@@ -1,6 +1,6 @@
 .CookiesPolicy {
-  padding: 0 6rem;
-  text-align: justify;
+  padding: 0 4rem;
+  text-align:left;
   h2 {
     font-size: 1.4rem;
     color: #ad2d68;
@@ -8,6 +8,7 @@
   }
   h3 {
     color: #eabd00;
+    font-weight: normal;
   }
   .LinkText {
     color: #e34d92;
@@ -15,7 +16,7 @@
   }
   .FirstRow {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background-color: #7e254e;
     color: white;
     padding: 1.5rem;
@@ -36,5 +37,14 @@
     border-radius: 0.8rem;
     font-size: 0.8rem;
     font-weight: 500;
+    ul{
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .CookiesPolicy{
+    padding: 0 0.5rem 0 0.5rem;
   }
 }
