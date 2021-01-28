@@ -41,7 +41,7 @@ export const LegalAdvice: React.FC<{}> = () => (
               <LinkText to="https://soymamut.com/" text="Soy Mamut" />
             </p>
           </div>
-          <div className="columnBorder"></div>
+          <div className="columnBorder"> </div>
           <div>
             <h3>
               GIF

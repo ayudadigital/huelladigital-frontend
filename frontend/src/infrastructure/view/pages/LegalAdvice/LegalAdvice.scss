@@ -9,6 +9,7 @@
   h3 {
     color: #eabd00;
     font-weight: normal;
+    font-size: 1rem;
   }
   div{
     padding: 0.2rem;
@@ -54,7 +55,8 @@
       font-size:1.5rem;
     }
     .columnBorder {
-      border-right: 1.5px solid #7e254e;
+      border-left: 1px solid #7e254e;
+      margin: 0 2rem 0 2rem;
     }
   }
 
@@ -67,7 +69,7 @@
       display:flex;
       flex-direction: column;
       .columnBorder {
-        border-bottom: 1.5px solid #7e254e;
+        display: none;
       }
     }
   }
