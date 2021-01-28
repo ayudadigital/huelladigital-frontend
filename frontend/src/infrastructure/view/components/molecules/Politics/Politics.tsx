@@ -8,7 +8,7 @@ export const Politics: React.FC<{}> = () => (
       <LinkText to={'legal-advice'} text={'Aviso legal'} />
     </li>
     <li>
-      <LinkText to={'#'} text={'Política de Privacidad'} />
+      <LinkText to={'privacy-policy'} text={'Política de Privacidad'} />
     </li>
     <li>
       <LinkText to={'cookies-policy'} text={'Política de Cookies'} />
