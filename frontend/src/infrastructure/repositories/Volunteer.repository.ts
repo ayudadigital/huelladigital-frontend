@@ -17,16 +17,18 @@ const login = (loginCredentials: VolunteerCredential) => {
             .json()
             .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
               activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
-              profile().then((profile) => {
-                if (isProfileComplete(profile)) {
-                  window.location.replace(`${BASE.URI}${ROUTE.home}`);
-                } else {
-                  // TODO: routing nueva página
-                  window.location.reload();
-                  console.log('Perfil incompleto');
-                  // window.location.replace(`${BASE.URI}${ROUTE.(ruta de la nueva página para modificar el usuario)}`);
-                }
-              });
+              if (res.roles[0] !== 'VOLUNTEER') {
+                window.location.replace(`${BASE.URI}${ROUTE.home}`);
+              } else {
+                profile().then((profile) => {
+                  if (isProfileComplete(profile) || res.roles[0] !== 'VOLUNTEER') {
+                    window.location.replace(`${BASE.URI}${ROUTE.home}`);
+                  } else {
+                    window.location.reload();
+                    window.location.replace(`${BASE.URI}${ROUTE.volunteers.profile}`);
+                  }
+                });
+              }
             }),
         );
         return 200;
