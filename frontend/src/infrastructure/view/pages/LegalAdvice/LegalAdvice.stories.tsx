@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { BrowserRouter } from 'react-router-dom';
 
 export default {
-  title: 'LegalAdvice',
+  title: 'Pages | LegalAdvice',
   decorators: [withA11y, (storyFn: any) => <BrowserRouter>{storyFn()}</BrowserRouter>],
 };
 

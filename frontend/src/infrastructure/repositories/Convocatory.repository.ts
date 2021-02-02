@@ -34,7 +34,7 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
   content.append('file', file);
   const response = http
     .post(
-      `${BASE.API}${ROUTE.API.convocatories.register}`,
+      `${BASE.API}${ROUTE.API.proposals.register}`,
       content,
       'multipart/data-form',
       true,
