@@ -6,11 +6,10 @@ export type Profile = {
   zipCode: string;
   address: string;
   island: string;
-  photoURL?: string;
+  town: string;
   twitter?: string;
   linkedIn?: string;
   instagram?: string;
-  cv?: string;
   telephoneNumber?: string;
   birthDate: string;
   additionalInformation?: string;

@@ -30,7 +30,7 @@ const post = async (
   authentication = false,
 ) => {
   const headers = authentication
-    ? { ...POST_HEADERS, 'Content-Type': contentType }
+    ? { ...POST_HEADERS(), 'Content-Type': contentType }
     : { 'Content-Type': contentType };
   const response = await fetch(url, {
     method: 'POST',

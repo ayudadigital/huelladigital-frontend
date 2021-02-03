@@ -9,8 +9,6 @@ export default interface UserProfileDTO {
   town: string;
   address: string;
   island: string;
-  photo: string;
-  curriculumVitae: string;
   twitter: string;
   instagram: string;
   linkedin: string;

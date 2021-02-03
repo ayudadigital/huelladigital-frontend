@@ -5,6 +5,8 @@ import { Image } from '../../../atoms/Image';
 import profile_example from './assets/profile_example.svg';
 import './MixModifyUserForm.scss';
 import { TextAreaForm } from '../../../molecules/TextAreaForm';
+import { Profile } from '../../../../../../domain/models/Profile';
+import { profileService } from '../../../../../../domain/services/Profile.service';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
   const [cvButtonClass, setCvButtonClass] = useState('cv-button');
@@ -13,8 +15,31 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     setCvButtonClass('cv-button uploaded');
   };
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const mockProfile: Profile = {
+      name: 'Fernando Arnaldo',
+      surname: 'Santana Guajiro',
+      birthDate: '1990-06-27',
+      telephoneNumber: '+850 928825898',
+      email: 'sml@gmail.com',
+      province: 'Las Palmas',
+      zipCode: '35241',
+      town: 'Pepe',
+      address: 'Calle Guacimeta N2',
+      island: 'Gran Canaria',
+      twitter: 'https://twitter.com/foo-bar',
+      instagram: 'https://instagram.com/foo-bar',
+      linkedIn: 'https://linkedin.com/in/foo-bar',
+      additionalInformation: "I'm a happy volunteer!!",
+    };
+
+    profileService.editProfile(mockProfile);
+  };
+
   return (
-    <form className="main-div">
+    <form className="main-div" onSubmit={handleSubmit}>
       <div className={'personal-data'}>
         <h2>Información personal</h2>
         <header>

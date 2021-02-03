@@ -4,8 +4,7 @@ import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
 import { activateAuth } from '../http/cookies';
 import { VolunteerCredential } from '../../domain/models/Credential';
-import { VolunteerDto } from '../http/dtos/VolunteerDTO';
-import UserProfileDTO from '../http/dtos/UserProfileDTO';
+import { profileRepository } from './Profile.repository';
 
 const login = (loginCredentials: VolunteerCredential) => {
   http
@@ -21,8 +20,11 @@ const login = (loginCredentials: VolunteerCredential) => {
               if (res.roles[0] !== 'VOLUNTEER') {
                 window.location.replace(`${BASE.URI}${ROUTE.home}`);
               } else {
-                profile().then((profile) => {
-                  if (isProfileComplete(profile) || res.roles[0] !== 'VOLUNTEER') {
+                profileRepository.profile().then((profile) => {
+                  if (
+                    profileRepository.isProfileComplete(profile) ||
+                    res.roles[0] !== 'VOLUNTEER'
+                  ) {
                     window.location.replace(`${BASE.URI}${ROUTE.proposals.list}`);
                   } else {
                     window.location.replace(`${BASE.URI}${ROUTE.volunteers.profile}`);
@@ -62,33 +64,6 @@ const register = (registerCredentials: VolunteerCredentialsDTO) => {
     .catch((error) => {
       console.log(error);
     });
-};
-
-const profile = () => {
-  return http
-    .get(`${BASE.API}${ROUTE.API.volunteers.profile}`, true)
-    .then((response) => {
-      if (response.status === 201 || response.status === 200) {
-        return response.json().then((res) => {
-          return res;
-        });
-      } else if (response.status === 409) {
-        return 409;
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-const isProfileComplete = (profile: UserProfileDTO) => {
-  return (
-    !!profile.email &&
-    !!profile.name &&
-    !!profile.zipCode &&
-    !!profile.address &&
-    !!profile.birthDate
-  );
 };
 
 export const volunteerRepository = {
