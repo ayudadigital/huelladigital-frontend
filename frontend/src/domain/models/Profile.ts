@@ -10,7 +10,7 @@ export type Profile = {
   twitter?: string;
   linkedIn?: string;
   instagram?: string;
-  telephoneNumber?: string;
+  phoneNumber?: string;
   birthDate: string;
   additionalInformation?: string;
 };

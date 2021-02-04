@@ -9,33 +9,64 @@ import { Profile } from '../../../../../../domain/models/Profile';
 import { profileService } from '../../../../../../domain/services/Profile.service';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
+  const [data, setData] = useState({
+    name: '',
+    surname: '',
+    birthDate: '',
+    phoneNumber: '',
+    email: '',
+    province: '',
+    zipCode: '',
+    town: '',
+    address: '',
+    island: '',
+    twitter: '',
+    instagram: '',
+    linkedIn: '',
+    additionalInformation: '',
+  });
+
   const [cvButtonClass, setCvButtonClass] = useState('cv-button');
 
   const handleChange = () => {
     setCvButtonClass('cv-button uploaded');
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const mockProfile: Profile = {
-      name: 'Fernando Arnaldo',
-      surname: 'Santana Guajiro',
-      birthDate: '1990-06-27',
-      telephoneNumber: '+850 928825898',
-      email: 'sml@gmail.com',
-      province: 'Las Palmas',
-      zipCode: '35241',
-      town: 'Pepe',
-      address: 'Calle Guacimeta N2',
+    const formData: Profile = {
+      /*name: data.name,
+      surname: data.surname,
+      birthDate: data.birthDate,
+      phoneNumber: data.phoneNumber,
+      email: data.email,
+      province: data.province,
+      zipCode: data.zipCode,
+      town: data.town,
+      address: data.address,
       island: 'Gran Canaria',
-      twitter: 'https://twitter.com/foo-bar',
-      instagram: 'https://instagram.com/foo-bar',
-      linkedIn: 'https://linkedin.com/in/foo-bar',
-      additionalInformation: "I'm a happy volunteer!!",
+      twitter: data.twitter,
+      instagram: data.instagram,
+      linkedIn: data.linkedIn,
+      additionalInformation: data.additionalInformation,*/
+      name: data.name,
+      surname: data.surname,
+      birthDate: data.birthDate,
+      phoneNumber: data.phoneNumber,
+      email: data.email,
+      province: data.province,
+      zipCode: data.zipCode,
+      town: data.town,
+      address: data.address,
+      island: 'Gran Canaria',
+      twitter: data.twitter,
+      instagram: data.instagram,
+      linkedIn: data.linkedIn,
+      additionalInformation: data.additionalInformation,
     };
 
-    profileService.editProfile(mockProfile);
+    profileService.editProfile(formData);
   };
 
   return (
@@ -49,8 +80,18 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           </label>
         </header>
         <div className={'row first-row-personal-data'}>
-          <FieldForm title="Nombre" name="Nombre" type="text" />
-          <FieldForm title="Apellidos" name="Apellidos" type="text" />
+          <FieldForm
+            title="Nombre"
+            name="Nombre"
+            type="text"
+            onChange={(e) => setData({ ...data, name: e.target.value })}
+          />
+          <FieldForm
+            title="Apellidos"
+            name="Apellidos"
+            type="text"
+            onChange={(e) => setData({ ...data, surname: e.target.value })}
+          />
         </div>
         <div className={'row second-row-personal-data'}>
           <section>
@@ -58,22 +99,53 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Fecha de nacimiento"
               name="Fecha de nacimiento"
               type="date"
+              onChange={(e) => setData({ ...data, birthDate: e.target.value })}
             />
           </section>
-          <FieldForm title="Teléfono" name="Teléfono" type="text" />
-          <FieldForm title="Email" name="Email" type="email" />
+          <FieldForm
+            title="Teléfono"
+            name="Teléfono"
+            type="text"
+            onChange={(e) => setData({ ...data, phoneNumber: e.target.value })}
+          />
+          <FieldForm
+            title="Email"
+            name="Email"
+            type="email"
+            onChange={(e) => setData({ ...data, email: e.target.value })}
+          />
         </div>
       </div>
       <div className={'row second-row'}>
         <div className={'col location-data'}>
           <h2>Localización</h2>
           <div className={'row location-data-first-row'}>
-            <FieldForm title="Código Postal" name="Postal Code" type="text" />
-            <FieldForm title="Dirección" name="Dirección" type="text" />
+            <FieldForm
+              title="Código Postal"
+              name="Postal Code"
+              type="text"
+              onChange={(e) => setData({ ...data, zipCode: e.target.value })}
+            />
+            <FieldForm
+              title="Dirección"
+              name="Dirección"
+              type="text"
+              onChange={(e) => setData({ ...data, address: e.target.value })}
+            />
           </div>
           <div className={'row location-data-second-row'}>
-            <FieldForm title="Provincia" name="Provincia" type="text" />
-            <FieldForm title="Ciudad" name="Ciudad" type="text" />
+            <FieldForm
+              title="Provincia"
+              name="Provincia"
+              type="text"
+              onChange={(e) => setData({ ...data, province: e.target.value })}
+            />
+            <FieldForm
+              title="Ciudad"
+              name="Ciudad"
+              type="text"
+              onChange={(e) => setData({ ...data, town: e.target.value })}
+            />
           </div>
         </div>
 
@@ -81,9 +153,24 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           <h2>Información adicional</h2>
           <div className={'row additional-data-row'}>
             <div className={'col additional-data-first-col'}>
-              <FieldForm title="Twitter" name="Twitter" type="url" />
-              <FieldForm title="LinkedIn" name="LinkedIn" type="url" />
-              <FieldForm title="Instagram" name="Instagram" type="url" />
+              <FieldForm
+                title="Twitter"
+                name="Twitter"
+                type="url"
+                onChange={(e) => setData({ ...data, twitter: e.target.value })}
+              />
+              <FieldForm
+                title="LinkedIn"
+                name="LinkedIn"
+                type="url"
+                onChange={(e) => setData({ ...data, linkedIn: e.target.value })}
+              />
+              <FieldForm
+                title="Instagram"
+                name="Instagram"
+                type="url"
+                onChange={(e) => setData({ ...data, instagram: e.target.value })}
+              />
             </div>
             <div className={'col additional-data-second-col'}>
               <TextAreaForm
@@ -92,6 +179,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                 rows={11}
                 cols={3}
                 placeholder="Información de interés"
+                onChange={(e) =>
+                  setData({ ...data, additionalInformation: e.target.value })
+                }
               />
             </div>
           </div>

@@ -36,7 +36,7 @@ const editProfile = (profile: Profile) => {
     name: profile.name,
     surname: profile.surname,
     birthDate: profile.birthDate,
-    phoneNumber: profile.telephoneNumber ? profile.telephoneNumber : '',
+    phoneNumber: profile.phoneNumber ? profile.phoneNumber : '',
     email: profile.email,
     province: profile.province,
     zipCode: profile.zipCode,
