@@ -13,7 +13,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     name: '',
     surname: '',
     birthDate: '',
-    telephoneNumber: '',
+    phoneNumber: '',
     email: '',
     province: '',
     zipCode: '',
@@ -35,24 +35,38 @@ export const MixModifyUserForm: React.FC<{}> = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    /*const mockProfile: Profile = {
-      name: 'Fernando Arnaldo',
-      surname: 'Santana Guajiro',
-      birthDate: '1990-06-27',
-      telephoneNumber: '+850 928825898',
-      email: 'sml@gmail.com',
-      province: 'Las Palmas',
-      zipCode: '35241',
-      town: 'Pepe',
-      address: 'Calle Guacimeta N2',
+    const formData: Profile = {
+      /*name: data.name,
+      surname: data.surname,
+      birthDate: data.birthDate,
+      phoneNumber: data.phoneNumber,
+      email: data.email,
+      province: data.province,
+      zipCode: data.zipCode,
+      town: data.town,
+      address: data.address,
       island: 'Gran Canaria',
-      twitter: 'https://twitter.com/foo-bar',
-      instagram: 'https://instagram.com/foo-bar',
-      linkedIn: 'https://linkedin.com/in/foo-bar',
-      additionalInformation: "I'm a happy volunteer!!",
-    };*/
+      twitter: data.twitter,
+      instagram: data.instagram,
+      linkedIn: data.linkedIn,
+      additionalInformation: data.additionalInformation,*/
+      name: data.name,
+      surname: data.surname,
+      birthDate: data.birthDate,
+      phoneNumber: data.phoneNumber,
+      email: data.email,
+      province: data.province,
+      zipCode: data.zipCode,
+      town: data.town,
+      address: data.address,
+      island: 'Gran Canaria',
+      twitter: data.twitter,
+      instagram: data.instagram,
+      linkedIn: data.linkedIn,
+      additionalInformation: data.additionalInformation,
+    };
 
-    profileService.editProfile(data);
+    profileService.editProfile(formData);
   };
 
   return (
@@ -92,7 +106,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             title="Teléfono"
             name="Teléfono"
             type="text"
-            onChange={(e) => setData({ ...data, telephoneNumber: e.target.value })}
+            onChange={(e) => setData({ ...data, phoneNumber: e.target.value })}
           />
           <FieldForm
             title="Email"
