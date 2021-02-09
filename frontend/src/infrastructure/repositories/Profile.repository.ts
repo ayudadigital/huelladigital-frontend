@@ -31,23 +31,23 @@ const isProfileComplete = (profile: UserProfileDTO) => {
   );
 };
 
-const editProfile = (profile: Profile) => {
+const editProfile = (profiles: Profile) => {
   const profileDto: UserProfileDTO = {
-    name: profile.name,
-    surname: profile.surname,
-    birthDate: profile.birthDate,
-    phoneNumber: profile.phoneNumber ? profile.phoneNumber : '',
-    email: profile.email,
-    province: profile.province,
-    zipCode: profile.zipCode,
-    town: profile.town,
-    address: profile.address,
-    island: profile.island,
-    twitter: profile.twitter ? profile.twitter : '',
-    instagram: profile.instagram ? profile.instagram : '',
-    linkedin: profile.linkedIn ? profile.linkedIn : '',
-    additionalInformation: profile.additionalInformation
-      ? profile.additionalInformation
+    name: profiles.name,
+    surname: profiles.surname,
+    birthDate: profiles.birthDate,
+    phoneNumber: profiles.phoneNumber,
+    email: profiles.email,
+    province: profiles.province,
+    zipCode: profiles.zipCode,
+    town: profiles.town,
+    address: profiles.address,
+    island: profiles.island,
+    twitter: profiles.twitter ? profiles.twitter : '',
+    instagram: profiles.instagram ? profiles.instagram : '',
+    linkedin: profiles.linkedin ? profiles.linkedin : '',
+    additionalInformation: profiles.additionalInformation
+      ? profiles.additionalInformation
       : '',
   };
 

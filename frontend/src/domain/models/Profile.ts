@@ -1,16 +1,16 @@
 export type Profile = {
   name: string;
   surname: string;
-  email: string;
-  province: string;
-  zipCode: string;
-  address: string;
-  island: string;
-  town: string;
-  twitter?: string;
-  linkedIn?: string;
-  instagram?: string;
-  phoneNumber?: string;
   birthDate: string;
+  phoneNumber: string;
+  email: string;
+  province?: string;
+  zipCode: string;
+  town?: string;
+  address?: string;
+  island: string;
+  twitter?: string;
+  instagram?: string;
+  linkedin?: string;
   additionalInformation?: string;
 };

@@ -107,13 +107,23 @@
 
 
       }
+      .location-data-third-row {
+        @extend %rowConfigurationData;
+        width: calc(100% - 22px);
+        padding: 1rem;
+
+        .FieldForm {
+          width: calc(100% - 10px);
+        }
+
+
+      }
     }
 
     .additional-data {
       border-radius: 1rem;
       width: calc(40% - 10px);
       padding: 2rem;
-
       background: white;
 
       .additional-data-row {
@@ -122,6 +132,10 @@
 
         .additional-data-first-col {
           width: calc(50% - 10px);
+
+          .url-networks{
+            padding: 1rem;
+          }
 
         }
 

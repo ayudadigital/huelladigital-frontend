@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { Image } from '../../../atoms/Image';
@@ -32,41 +32,72 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     setCvButtonClass('cv-button uploaded');
   };
 
+  const checkIsAllowedValue: (event: ChangeEvent<HTMLInputElement>) => void = (
+    event: ChangeEvent<HTMLInputElement>,
+  ) => {
+    const minLength: number = 6;
+    const regexEmail = new RegExp(
+      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+    );
+    const regexNameAndSurname = new RegExp(/^[a-zA-Z]+/);
+    const regexPhone = new RegExp(/[+]?[0-9]{1,3}\s[0-9]+/);
+    const regexDate = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/);
+    const regexTwitter = new RegExp(
+      /^(?:http(s)?:\/\/)?[t T]+[w W]+(i|I{2})+(t|T{2})+[e E]+[r R]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
+    );
+    const regexInstagram = new RegExp(
+      /^(?:http(s)?:\/\/)?[i I]+[n N]+[s S]+[t T]+[a A]+[g G]+[r R]+[a A]+[m M]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
+    );
+    const regexLinkedin = new RegExp(
+      /^(?:http(s)?:\/\/)?[l L]+[i I]+[n N]+[k K]+[e E]+[d D]+[i I]+[n N]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
+    );
+    const inputValue = event.target.value;
+    const nameEvent = event.target.name;
+
+    console.log(nameEvent);
+
+    // switch (nameEvent) {
+    //   case 'email':
+    //     if (regexEmail.test(inputValue)) {
+    //       setCheck({ ...check, email: 'correct' });
+    //     } else {
+    //       setCheck({ ...check, email: 'incorrect' });
+    //     }
+    //     break;
+    //   case 'password':
+    //     if (inputValue.length >= minLength) {
+    //       setCheck({ ...check, password: 'correct' });
+    //     } else {
+    //       setCheck({ ...check, password: 'incorrect' });
+    //     }
+    //     break;
+    //   default:
+    //     break;
+    // }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const formData: Profile = {
-      /*name: data.name,
-      surname: data.surname,
-      birthDate: data.birthDate,
-      phoneNumber: data.phoneNumber,
-      email: data.email,
-      province: data.province,
-      zipCode: data.zipCode,
-      town: data.town,
-      address: data.address,
-      island: 'Gran Canaria',
-      twitter: data.twitter,
-      instagram: data.instagram,
-      linkedIn: data.linkedIn,
-      additionalInformation: data.additionalInformation,*/
-      name: data.name,
-      surname: data.surname,
-      birthDate: data.birthDate,
-      phoneNumber: data.phoneNumber,
-      email: data.email,
-      province: data.province,
-      zipCode: data.zipCode,
-      town: data.town,
-      address: data.address,
-      island: 'Gran Canaria',
-      twitter: data.twitter,
-      instagram: data.instagram,
-      linkedIn: data.linkedIn,
-      additionalInformation: data.additionalInformation,
-    };
-
-    profileService.editProfile(formData);
+    //
+    // const formData: Profile = {
+    //   name: data.name,
+    //   surname: data.surname,
+    //   birthDate: data.birthDate,
+    //   phoneNumber: data.phoneNumber,
+    //   email: data.email,
+    //   province: data.province,
+    //   zipCode: data.zipCode,
+    //   town: data.town,
+    //   address: data.address,
+    //   island: data.island,
+    //   twitter: data.twitter,
+    //   instagram: data.instagram,
+    //   linkedin: data.linkedIn,
+    //   additionalInformation: data.additionalInformation,
+    // };
+    //
+    // profileService.editProfile(formData);
   };
 
   return (
@@ -82,35 +113,41 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         <div className={'row first-row-personal-data'}>
           <FieldForm
             title="Nombre"
-            name="Nombre"
+            name="name"
             type="text"
-            onChange={(e) => setData({ ...data, name: e.target.value })}
+            onChange={(e) => {
+              checkIsAllowedValue(e);
+              setData({ ...data, name: e.target.value });
+            }}
           />
           <FieldForm
             title="Apellidos"
-            name="Apellidos"
+            name="surname"
             type="text"
-            onChange={(e) => setData({ ...data, surname: e.target.value })}
+            onChange={(e) => {
+              checkIsAllowedValue(e);
+              setData({ ...data, surname: e.target.value });
+            }}
           />
         </div>
         <div className={'row second-row-personal-data'}>
           <section>
             <FieldForm
               title="Fecha de nacimiento"
-              name="Fecha de nacimiento"
+              name="birthday"
               type="date"
               onChange={(e) => setData({ ...data, birthDate: e.target.value })}
             />
           </section>
           <FieldForm
             title="Teléfono"
-            name="Teléfono"
+            name="telefono"
             type="text"
             onChange={(e) => setData({ ...data, phoneNumber: e.target.value })}
           />
           <FieldForm
             title="Email"
-            name="Email"
+            name="email"
             type="email"
             onChange={(e) => setData({ ...data, email: e.target.value })}
           />
@@ -122,61 +159,75 @@ export const MixModifyUserForm: React.FC<{}> = () => {
           <div className={'row location-data-first-row'}>
             <FieldForm
               title="Código Postal"
-              name="Postal Code"
+              name="zipcode"
               type="text"
               onChange={(e) => setData({ ...data, zipCode: e.target.value })}
             />
             <FieldForm
-              title="Dirección"
-              name="Dirección"
+              title="Isla"
+              name="island"
               type="text"
-              onChange={(e) => setData({ ...data, address: e.target.value })}
+              onChange={(e) => setData({ ...data, island: e.target.value })}
             />
           </div>
           <div className={'row location-data-second-row'}>
             <FieldForm
               title="Provincia"
-              name="Provincia"
+              name="province"
               type="text"
               onChange={(e) => setData({ ...data, province: e.target.value })}
             />
             <FieldForm
               title="Ciudad"
-              name="Ciudad"
+              name="town"
               type="text"
               onChange={(e) => setData({ ...data, town: e.target.value })}
+            />
+          </div>
+          <div className={'row location-data-third-row'}>
+            <FieldForm
+              title="Dirección"
+              name="address"
+              type="text"
+              onChange={(e) => setData({ ...data, address: e.target.value })}
             />
           </div>
         </div>
 
         <div className={'col additional-data'}>
           <h2>Información adicional</h2>
-          <div className={'row additional-data-row'}>
+          <div className={'col additional-data-row'}>
             <div className={'col additional-data-first-col'}>
-              <FieldForm
-                title="Twitter"
-                name="Twitter"
-                type="url"
-                onChange={(e) => setData({ ...data, twitter: e.target.value })}
-              />
-              <FieldForm
-                title="LinkedIn"
-                name="LinkedIn"
-                type="url"
-                onChange={(e) => setData({ ...data, linkedIn: e.target.value })}
-              />
-              <FieldForm
-                title="Instagram"
-                name="Instagram"
-                type="url"
-                onChange={(e) => setData({ ...data, instagram: e.target.value })}
-              />
+              <div className={'row url-networks'}>
+                <FieldForm
+                  title="Twitter"
+                  name="twitter"
+                  type="url"
+                  onChange={(e) => setData({ ...data, twitter: e.target.value })}
+                />
+              </div>
+              <div className={'row url-networks'}>
+                <FieldForm
+                  title="LinkedIn"
+                  name="linkedIn"
+                  type="url"
+                  onChange={(e) => setData({ ...data, linkedIn: e.target.value })}
+                />
+              </div>
+              <div className={'row url-networks'}>
+                <FieldForm
+                  title="Instagram"
+                  name="instagram"
+                  type="url"
+                  onChange={(e) => setData({ ...data, instagram: e.target.value })}
+                />
+              </div>
             </div>
             <div className={'col additional-data-second-col'}>
               <TextAreaForm
                 title="Información de interès"
-                name="Información-de-interes"
-                rows={11}
+                name="information"
+                rows={16}
                 cols={3}
                 placeholder="Información de interés"
                 onChange={(e) =>

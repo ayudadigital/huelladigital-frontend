@@ -4,13 +4,13 @@ export default interface UserProfileDTO {
   birthDate: string;
   phoneNumber: string;
   email: string;
-  province: string;
+  province?: string;
   zipCode: string;
-  town: string;
-  address: string;
+  town?: string;
+  address?: string;
   island: string;
-  twitter: string;
-  instagram: string;
-  linkedin: string;
-  additionalInformation: string;
+  twitter?: string;
+  instagram?: string;
+  linkedin?: string;
+  additionalInformation?: string;
 }
