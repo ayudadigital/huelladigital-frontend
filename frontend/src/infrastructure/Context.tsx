@@ -23,6 +23,7 @@ export const Provider = ({ children }) => {
     removeAuth: () => {
       setIsAuth(false);
       cleanCookies();
+      window.location.reload() // could be replace() with home route
     },
 
   };
