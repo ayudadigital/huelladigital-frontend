@@ -51,19 +51,19 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
           to={ROUTE.API.volunteers.profile}
         />
       )}
-      {role === Role.CONTACT_PERSON && (
-        <LinkText
-          key={`createProposal`}
-          text={'Crear convocatoria'}
-          to={ROUTE.API.volunteers.profile}
-        />
-      )}
-      {role === Role.CONTACT_PERSON_NOT_CONFIRMED && (
-        <LinkText
-          key={`createProposal`}
-          text={'Crear convocatoria'}
-          to={ROUTE.API.volunteers.profile}
-        />
+      {(role === Role.CONTACT_PERSON || role === Role.CONTACT_PERSON_NOT_CONFIRMED) && (
+        <div>
+          <LinkText
+            key={`createProposal`}
+            text={'Crear convocatoria'}
+            to={ROUTE.proposals.register}
+          />
+          <LinkText
+            key={`convocatories`}
+            text={'Convocatorias'}
+            to={ROUTE.proposals.list}
+          />
+        </div>
       )}
       <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
       <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
