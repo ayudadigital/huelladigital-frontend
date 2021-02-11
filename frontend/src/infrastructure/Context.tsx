@@ -32,6 +32,7 @@ export const Provider = ({ children }) => {
       setIsAuth(false);
       setRole(null);
       cleanCookies();
+      window.location.reload() // could be replace() with home route
     },
 
   };
