@@ -29,9 +29,9 @@ export const Header: React.FC<{}> = () => {
         // @ts-ignore
         size.width < 992
           // @ts-ignore
-          ? <NavBarDesktop isAuth={auth.isAuth} show={showModal} onClick={handleModal} onClickDisconnect={auth.removeAuth} />
+          ? <NavBarDesktop isAuth={auth.isAuth} show={showModal} role={auth.role} onClick={handleModal} onClickDisconnect={auth.removeAuth} />
           // @ts-ignore
-          : <NavBarDesktop isAuth={auth.isAuth} show={showModal} onClickDisconnect={auth.removeAuth} />
+          : <NavBarDesktop isAuth={auth.isAuth} show={showModal} role={auth.role} onClickDisconnect={auth.removeAuth} />
       }
       <HamburguerMenu onClick={handleModal} show={showModal} />
     </div>
