@@ -3,11 +3,12 @@ import { Fragment } from 'react';
 import './NavBar.scss';
 import { LinkText } from '../../atoms/LinkText';
 import { ROUTE } from '../../../../http/routes';
-import { button } from '@storybook/addon-knobs';
+import { Role } from '../../../../../domain/models/Roles'
 
 interface NavBarDesktopProps {
   onClick?: () => void;
   onClickDisconnect?: () => void;
+  role?: Role;
   isAuth: boolean | unknown;
   show?: boolean;
 }
@@ -16,6 +17,7 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
   onClick,
   onClickDisconnect,
   isAuth,
+  role,
   show,
 }) => {
   return (
@@ -35,6 +37,11 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
           />
         </Fragment>
       )}
+      {
+        (role === Role.REVISER) && (
+          <LinkText key={`convocatories`} text={'Convocatorias'} to={ROUTE.proposals.list} />
+        )
+      }
       <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
       <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
       {//@ts-ignore
