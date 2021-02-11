@@ -1,9 +1,11 @@
 import React, { createContext, useState } from 'react';
+import { Role } from '../domain/models/Roles';
 import { cleanCookies, getCookie } from './http/cookies';
 
 
 export interface ContextParams {
-  isAuth: boolean;
+  role: string | null;
+  isAuth: boolean | null;
   removeAuth?: () => void;
 }
 
@@ -18,10 +20,17 @@ export const Provider = ({ children }) => {
       getCookie('accessToken') !== '';
   });
 
+  const [role, setRole] = useState<Role | null>(() => {
+    const roleName = getCookie('roles') || "NONE";
+    return roleName as Role;
+  });
+
   const value = {
+    role,
     isAuth,
     removeAuth: () => {
       setIsAuth(false);
+      setRole(null);
       cleanCookies();
       window.location.reload() // could be replace() with home route
     },
