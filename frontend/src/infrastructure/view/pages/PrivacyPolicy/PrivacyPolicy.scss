@@ -1,67 +1,95 @@
 .PrivacyPolicy{
-    padding: 0 4rem;
-    text-align: left;
-    h2 {
-        font-size: 1.4rem;
-        color: #ad2d68;
-        font-weight: 700;
+  padding: 0 4rem;
+  text-align: left;
+  color: #7e7e7e;
+  
+  .LinkText {
+    color: #e34d92;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  h1{
+    color: black;
+    font-weight: normal
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: #ad2d68;
+    font-weight: 700;
+  }
+
+  h3 {
+    color: #eabd00;
+    font-weight: normal;
+    font-size: large;
+  }
+
+  .first-row {
+    display: flex;
+    align-items: flex-start;
+    background-color: #7e254e;
+    color: white;
+    margin-bottom: 5rem;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    font-size: 0.9rem;
+
+    &__svg {
+      margin-right: 2rem;
+      min-width: 5rem;
+      width: 15rem;
+    }
+
+  }
+
+  .other-rows {
+    background-color: white;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    font-weight: normal;
+    font-size: 0.8rem;
+    padding: 1rem;
+
+    .LinkText {
+      color: #eabd00;
+    }
+
+    &__div{
+      width: 50%;
+    }
+    
+  }
+
+  .main{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3rem;
+    
+    .LinkText {
+      color: #741340;
+    }
+
+    &__element{
+
+      background-color: white;
+      border-radius: 0.8rem;
+      margin-top: 5rem;
+      padding: 1rem;
+      width: 50%;
+
+      &__p{
+        font-size: 1rem;
+        line-height: 1.5em;
       }
-      h3 {
-        color: #eabd00;
-        font-weight: normal;
+
+      &:nth-child(2){
+        margin-left: 5rem;
       }
-      .LinkText {
-        color: #e34d92;
-        text-decoration: none;
-      }
-      .FirstRow {
-        display: flex;
-        align-items: flex-start;
-        background-color: #7e254e;
-        color: white;
-        padding: 1.5rem;
-        border-radius: 0.8rem;
-        font-size: 0.9rem;
-        svg {
-          width: 15rem;
-          margin-right: 2rem;
-          min-width: 5rem;
-        }
-      }
-      .OtherRows {
-        // column-count: 2;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding-right: 10rem;
-        background-color: white;
-        color: #7e7e7e;
-        padding: 1rem;
-        border-radius: 0.8rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-        div{
-          width: 50%;
-        }
-      }
-      .main{
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 3rem;
-        .element{
-          &:nth-child(2){
-            margin-left: 5rem;
-          }
-          width: 50%;
-          background-color: white;
-          border-radius: 0.8rem;
-          margin-top: 5rem;
-          padding: 1rem;
-          p{
-            font-size: 20px;
-            line-height: 1.5em;
-          }
-        }
-      }
+
+    }
+  }
       
 }
