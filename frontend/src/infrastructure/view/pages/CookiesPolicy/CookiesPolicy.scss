@@ -2,9 +2,9 @@
   padding: 0 4rem;
   text-align:left;
   h2 {
-    font-size: 1.4rem;
     color: #ad2d68;
     font-weight: 700;
+    font-size: 1.4rem;
   }
   h3 {
     color: #eabd00;
@@ -14,29 +14,29 @@
     color: #e34d92;
     text-decoration: none;
   }
-  .FirstRow {
-    display: flex;
+  .first-row {
     align-items: flex-start;
     background-color: #7e254e;
-    color: white;
-    padding: 1.5rem;
     border-radius: 0.8rem;
+    color: white;
+    display: flex;
     font-size: 0.9rem;
-    svg {
-      width: 15rem;
+    padding: 1.5rem;
+    &__svg {
       margin-right: 2rem;
       min-width: 5rem;
+      width: 15rem;
     }
   }
-  .OtherRows {
-    margin-top: 2rem;
-    line-height: 160%;
+  .other-rows {
     background-color: white;
-    color: #7e7e7e;
-    padding: 1rem;
     border-radius: 0.8rem;
-    font-size: 0.8rem;
+    color: #7e7e7e;
     font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 160%;
+    margin-top: 2rem;
+    padding: 1rem;
     ul{
       padding-left: 1rem;
     }
