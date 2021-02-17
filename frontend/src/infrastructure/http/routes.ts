@@ -5,6 +5,16 @@ type typeRoute = {
   faq: string;
   cookiesPolicy: string;
   legalAdvice: string;
+  organizations: {
+    register: string;
+  };
+  proposals: {
+    list: string;
+    register: string;
+    details: string;
+    volunteers: (id: string) => string;
+  };
+  volunteers: { profile: string };
   API: {
     volunteers: {
       register: string;
@@ -16,23 +26,23 @@ type typeRoute = {
     email: { resendConfirmation: string; confirmEmail: (hash: string) => string };
     proposals: {
       register: string;
-      fetchProposal: (id: number) => string;
-      joinProposal: (id: number) => string;
+      fetchProposal: (id: string) => string;
+      joinProposal: (id: string) => string;
       registerAsReviser: string;
       fetchListOfProposals: (page: number, size: number) => string;
       fetchListOfProposalsAsReviser: (page: number, size: number) => string;
-      submitRevision: (id: number) => string;
-      fetchVolunteers: (id: number) => string;
-      fetchProposalsAndVolunteers: (id: number) => string;
-      cancelProposal: (id: number) => string;
+      submitRevision: (id: string) => string;
+      fetchVolunteers: (id: string) => string;
+      fetchProposalsAndVolunteers: (id: string) => string;
+      cancelProposal: (id: string) => string;
       changeStatusOfVolunteerInProposal: string;
     };
     organizations: {
       register: string;
-      delete: (id: number) => string;
+      delete: (id: string) => string;
       registerAsReviser: string;
       registerEsalEmployee: string;
-      duda: (id: number) => string;
+      duda: (id: string) => string;
     };
     tokens: { refresh: string };
     unLoggedUsers: {
@@ -43,11 +53,6 @@ type typeRoute = {
       updatePassword: string;
     };
   };
-  organizations: {
-    register: string;
-  };
-  proposals: { list: string; register: string; details: string };
-  volunteers: { profile: string };
 };
 
 const V1 = 'v1';
@@ -64,6 +69,7 @@ export const ROUTE: typeRoute = {
     details: '/proposal-details',
     list: '/proposals-list',
     register: '/proposal-register',
+    volunteers: (id) => `/proposal-volunteers/${id}`,
   },
   organizations: {
     register: '/organization-register',
@@ -94,25 +100,25 @@ export const ROUTE: typeRoute = {
     },
     proposals: {
       register: `${ENDPOINT_PROPOSALS}`,
-      fetchProposal: (id: number) => `${ENDPOINT_PROPOSALS}/${id}`,
-      joinProposal: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/join`,
+      fetchProposal: (id: string) => `${ENDPOINT_PROPOSALS}/${id}`,
+      joinProposal: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/join`,
       registerAsReviser: `${ENDPOINT_PROPOSALS}/reviser`,
       fetchListOfProposals: (page: number, size: number) =>
         `${ENDPOINT_PROPOSALS}/${page}/${size}`,
       fetchListOfProposalsAsReviser: (page: number, size: number) =>
         `${ENDPOINT_PROPOSALS}/${page}/${size}/reviser`,
-      submitRevision: (id: number) => `${ENDPOINT_PROPOSALS}/revision/${id}`,
-      fetchVolunteers: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/volunteers`,
-      fetchProposalsAndVolunteers: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/proposal`,
-      cancelProposal: (id: number) => `${ENDPOINT_PROPOSALS}/${id}/cancel`,
+      submitRevision: (id: string) => `${ENDPOINT_PROPOSALS}/revision/${id}`,
+      fetchVolunteers: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/volunteers`,
+      fetchProposalsAndVolunteers: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/proposal`,
+      cancelProposal: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/cancel`,
       changeStatusOfVolunteerInProposal: `${ENDPOINT_PROPOSALS}/changeStatusVolunteerProposal`,
     },
     organizations: {
       register: `${ENDPOINT_ORGANIZATIONS}`,
-      delete: (id: number) => `${ENDPOINT_ORGANIZATIONS}/${id}`,
+      delete: (id: string) => `${ENDPOINT_ORGANIZATIONS}/${id}`,
       registerAsReviser: `${ENDPOINT_ORGANIZATIONS}/reviser`,
       registerEsalEmployee: `${ENDPOINT_CONTACTPERSON}`,
-      duda: (id: number) => `${ENDPOINT_CONTACTPERSON}/${id}`,
+      duda: (id: string) => `${ENDPOINT_CONTACTPERSON}/${id}`,
     },
     unLoggedUsers: {
       sendEmailForRecoveringPassword: `${ENDPOINT_EMAILCONFIRMATION}/sendRecoveryPasswordEmail`,

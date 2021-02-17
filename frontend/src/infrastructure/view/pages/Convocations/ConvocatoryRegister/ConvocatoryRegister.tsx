@@ -92,6 +92,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     event.preventDefault();
 
     const convocatoryTemp: Convocatory = {
+      id: '',
       title: data.title,
       organizer: '',
       category: '',
