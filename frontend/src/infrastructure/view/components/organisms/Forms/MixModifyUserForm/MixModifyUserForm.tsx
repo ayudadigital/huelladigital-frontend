@@ -54,8 +54,6 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     const inputValue = event.target.value;
     const nameEvent = event.target.name;
 
-    console.log(nameEvent);
-
     // switch (nameEvent) {
     //   case 'email':
     //     if (regexEmail.test(inputValue)) {
@@ -74,6 +72,15 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     //   default:
     //     break;
     // }
+    switch (nameEvent) {
+      case 'email':
+        if (regexEmail.test(inputValue)) {
+          // setCheck({ ...check, email: 'correct' });
+        } else {
+          // setCheck({ ...check, email: 'incorrect' });
+        }
+        break;
+    }
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -136,20 +143,29 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Fecha de nacimiento"
               name="birthday"
               type="date"
-              onChange={(e) => setData({ ...data, birthDate: e.target.value })}
+              onChange={(e) => {
+                checkIsAllowedValue(e);
+                setData({ ...data, birthDate: e.target.value });
+              }}
             />
           </section>
           <FieldForm
             title="Teléfono"
             name="telefono"
             type="text"
-            onChange={(e) => setData({ ...data, phoneNumber: e.target.value })}
+            onChange={(e) => {
+              checkIsAllowedValue(e);
+              setData({ ...data, phoneNumber: e.target.value });
+            }}
           />
           <FieldForm
             title="Email"
             name="email"
             type="email"
-            onChange={(e) => setData({ ...data, email: e.target.value })}
+            onChange={(e) => {
+              checkIsAllowedValue(e);
+              setData({ ...data, email: e.target.value });
+            }}
           />
         </div>
       </div>
@@ -161,7 +177,10 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Código Postal"
               name="zipcode"
               type="text"
-              onChange={(e) => setData({ ...data, zipCode: e.target.value })}
+              onChange={(e) => {
+                checkIsAllowedValue(e);
+                setData({ ...data, zipCode: e.target.value });
+              }}
             />
             <FieldForm
               title="Isla"
@@ -189,7 +208,10 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Dirección"
               name="address"
               type="text"
-              onChange={(e) => setData({ ...data, address: e.target.value })}
+              onChange={(e) => {
+                checkIsAllowedValue(e);
+                setData({ ...data, address: e.target.value });
+              }}
             />
           </div>
         </div>
@@ -203,7 +225,10 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   title="Twitter"
                   name="twitter"
                   type="url"
-                  onChange={(e) => setData({ ...data, twitter: e.target.value })}
+                  onChange={(e) => {
+                    checkIsAllowedValue(e);
+                    setData({ ...data, twitter: e.target.value });
+                  }}
                 />
               </div>
               <div className={'row url-networks'}>
@@ -211,7 +236,10 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   title="LinkedIn"
                   name="linkedIn"
                   type="url"
-                  onChange={(e) => setData({ ...data, linkedIn: e.target.value })}
+                  onChange={(e) => {
+                    checkIsAllowedValue(e);
+                    setData({ ...data, linkedIn: e.target.value });
+                  }}
                 />
               </div>
               <div className={'row url-networks'}>
@@ -219,7 +247,10 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   title="Instagram"
                   name="instagram"
                   type="url"
-                  onChange={(e) => setData({ ...data, instagram: e.target.value })}
+                  onChange={(e) => {
+                    checkIsAllowedValue(e);
+                    setData({ ...data, instagram: e.target.value });
+                  }}
                 />
               </div>
             </div>

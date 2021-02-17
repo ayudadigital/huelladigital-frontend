@@ -11,6 +11,7 @@ import { LoginRegister } from './view/pages/User/LoginRegister';
 import { ConvocatoryDetails } from './view/pages/Convocations/ConvocatoryDetails';
 import { ConvocatoryList } from './view/pages/Convocations/ConvocatoryList';
 import { ConvocatoryRegister } from './view/pages/Convocations/ConvocatoryRegister';
+import { ConvocatoryVolunteers } from './view/pages/Convocations/ConvocatoryVolunteers';
 import { Context } from './Context';
 import { FrequentlyAskedQuestions } from './view/pages/FrequentlyAskedQuestions';
 import { Esal } from './view/pages/Esal';
@@ -30,6 +31,7 @@ const App: React.FC = () => {
             <Route path={ROUTE.proposals.list} component={ConvocatoryList} />
             <Route path={ROUTE.proposals.details} component={ConvocatoryDetails} />
             <Route path={ROUTE.proposals.register} component={ConvocatoryRegister} />
+            <Route path={ROUTE.proposals.volunteers(':id')} component={ConvocatoryVolunteers} />
             <Route exact path={ROUTE.home} component={Home} />
             <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
             <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />
