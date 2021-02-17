@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import './NavBar.scss';
 import { LinkText } from '../../atoms/LinkText';
 import { ROUTE } from '../../../../http/routes';
-import { Role } from '../../../../../domain/models/Roles'
+import { Role } from '../../../../../domain/models/Roles';
 
 interface NavBarDesktopProps {
   onClick?: () => void;
@@ -37,19 +37,44 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
           />
         </Fragment>
       )}
-      {
-        (role === Role.REVISER) && (
-          <LinkText key={`convocatories`} text={'Convocatorias'} to={ROUTE.proposals.list} />
-        )
-      }
+      {(role === Role.REVISER || role === Role.VOLUNTEER) && (
+        <LinkText
+          key={`convocatories`}
+          text={'Convocatorias'}
+          to={ROUTE.proposals.list}
+        />
+      )}
+      {role === Role.VOLUNTEER_NOT_CONFIRMED && (
+        <LinkText
+          key={`modifyProfile`}
+          text={'Modificar perfil'}
+          to={ROUTE.API.volunteers.profile}
+        />
+      )}
+      {(role === Role.CONTACT_PERSON || role === Role.CONTACT_PERSON_NOT_CONFIRMED) && (
+        <div>
+          <LinkText
+            key={`createProposal`}
+            text={'Crear convocatoria'}
+            to={ROUTE.proposals.register}
+          />
+          <LinkText
+            key={`convocatories`}
+            text={'Convocatorias'}
+            to={ROUTE.proposals.list}
+          />
+        </div>
+      )}
       <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
       <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
       {//@ts-ignore
-        isAuth ? (
-          <button onClick={onClickDisconnect} className="logoutButton">Desconectar</button>
-        ) : (
-            <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
-          )}
+      isAuth ? (
+        <button onClick={onClickDisconnect} className="logoutButton">
+          Desconectar
+        </button>
+      ) : (
+        <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
+      )}
     </div>
   );
 };

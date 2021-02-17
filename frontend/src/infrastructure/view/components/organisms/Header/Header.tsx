@@ -18,7 +18,6 @@ export const Header: React.FC<{}> = () => {
     setShowModal(!showModal);
   }
 
-
   return (
     <div className="Header">
       <Image
