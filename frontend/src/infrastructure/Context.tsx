@@ -27,11 +27,6 @@ export const Provider = ({ children }) => {
     return roleName as Role;
   });
 
-  const [role, setRole] = useState<Role | null>(() => {
-    const roleName = getCookie('roles') || "NONE";
-    return roleName as Role;
-  });
-
   const value = {
     role,
     isAuth,

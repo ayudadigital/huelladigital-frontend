@@ -11,13 +11,20 @@
       align-items: center;
       button {
         border: none;
+        color: white;
         outline: none;
         cursor: pointer;
         border-radius: 2rem;
         width: 8rem;
         height: 2rem;
+        font-size: 0.8rem;
         background-color: #7e254e;
         margin-left: 4rem;
+      }
+      .LinkButton {
+        margin: 0;
+        padding: 0;
+        min-height: 0;
       }
       .aprove {
         background-color: #05e200;
@@ -125,6 +132,8 @@
     .container {
       position: relative;
       background-color: white;
+      display: flex;
+      flex-direction: column;
       padding: 1.5rem;
       border-radius: 1em;
       border: 1px solid #575757;
@@ -151,10 +160,15 @@
         resize: vertical;
         outline: none;
         color: #363636;
+        font-family: inherit;
         &:focus {
           border-color: #485fc7;
           box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
         }
+      }
+      .solicitar {
+        margin: 2rem 0 0 0;
+        align-self: center;
       }
     }
   }
