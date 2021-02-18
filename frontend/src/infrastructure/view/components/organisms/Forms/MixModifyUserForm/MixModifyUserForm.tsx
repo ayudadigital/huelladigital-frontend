@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { Image } from '../../../atoms/Image';
@@ -7,9 +7,10 @@ import './MixModifyUserForm.scss';
 import { TextAreaForm } from '../../../molecules/TextAreaForm';
 import { Profile } from '../../../../../../domain/models/Profile';
 import { profileService } from '../../../../../../domain/services/Profile.service';
+import { CheckInterface, FormatRoles } from './types';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
-  const [data, setData] = useState({
+  const [data, setData] = useState<Profile>({
     name: '',
     surname: '',
     birthDate: '',
@@ -22,7 +23,23 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     island: '',
     twitter: '',
     instagram: '',
-    linkedIn: '',
+    linkedin: '',
+    additionalInformation: '',
+  });
+  const [check, setCheck] = useState<CheckInterface>({
+    name: '',
+    surname: '',
+    birthDate: '',
+    phoneNumber: '',
+    email: '',
+    province: '',
+    zipCode: '',
+    town: '',
+    address: '',
+    island: '',
+    twitter: '',
+    instagram: '',
+    linkedin: '',
     additionalInformation: '',
   });
 
@@ -32,52 +49,144 @@ export const MixModifyUserForm: React.FC<{}> = () => {
     setCvButtonClass('cv-button uploaded');
   };
 
-  const checkIsAllowedValue: (event: ChangeEvent<HTMLInputElement>) => void = (
-    event: ChangeEvent<HTMLInputElement>,
-  ) => {
-    const minLength: number = 6;
-    const regexEmail = new RegExp(
-      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-    );
-    const regexNameAndSurname = new RegExp(/^[a-zA-Z]+/);
-    const regexPhone = new RegExp(/[+]?[0-9]{1,3}\s[0-9]+/);
-    const regexDate = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/);
-    const regexTwitter = new RegExp(
-      /^(?:http(s)?:\/\/)?[t T]+[w W]+(i|I{2})+(t|T{2})+[e E]+[r R]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
-    );
-    const regexInstagram = new RegExp(
-      /^(?:http(s)?:\/\/)?[i I]+[n N]+[s S]+[t T]+[a A]+[g G]+[r R]+[a A]+[m M]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
-    );
-    const regexLinkedin = new RegExp(
-      /^(?:http(s)?:\/\/)?[l L]+[i I]+[n N]+[k K]+[e E]+[d D]+[i I]+[n N]+\.+[c C]+[o O]+[m M]+\/+[\w\-._~:/?#[\\]@!\$&'\(\)\*\+,;=.]+/,
-    );
+  const checkIsAllowedValue: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const {
+      regexEmail,
+      regexOnlyText,
+      regexDate,
+      regexPhone,
+      regexZipcode,
+      regexAddress,
+      regexTwitter,
+      regexInstagram,
+      regexLinkedin,
+    } = FormatRoles.formatRoles();
+    const minLength: number = 3;
+    const maxLength: number = 30;
     const inputValue = event.target.value;
     const nameEvent = event.target.name;
 
-    // switch (nameEvent) {
-    //   case 'email':
-    //     if (regexEmail.test(inputValue)) {
-    //       setCheck({ ...check, email: 'correct' });
-    //     } else {
-    //       setCheck({ ...check, email: 'incorrect' });
-    //     }
-    //     break;
-    //   case 'password':
-    //     if (inputValue.length >= minLength) {
-    //       setCheck({ ...check, password: 'correct' });
-    //     } else {
-    //       setCheck({ ...check, password: 'incorrect' });
-    //     }
-    //     break;
-    //   default:
-    //     break;
-    // }
     switch (nameEvent) {
       case 'email':
         if (regexEmail.test(inputValue)) {
-          // setCheck({ ...check, email: 'correct' });
+          setCheck({ ...check, email: 'correct' });
+          setData({ ...data, email: inputValue });
         } else {
-          // setCheck({ ...check, email: 'incorrect' });
+          setCheck({ ...check, email: 'incorrect' });
+        }
+        break;
+      case 'name':
+        if (
+          regexOnlyText.test(inputValue) &&
+          inputValue.length >= minLength &&
+          inputValue.length <= maxLength
+        ) {
+          setCheck({ ...check, name: 'correct' });
+          setData({ ...data, name: inputValue });
+        } else {
+          setCheck({ ...check, name: 'incorrect' });
+        }
+        break;
+      case 'surname':
+        if (
+          regexOnlyText.test(inputValue) &&
+          inputValue.length >= minLength &&
+          inputValue.length <= maxLength
+        ) {
+          setCheck({ ...check, surname: 'correct' });
+          setData({ ...data, surname: inputValue });
+        } else {
+          setCheck({ ...check, surname: 'incorrect' });
+        }
+        break;
+      case 'birthday':
+        if (regexDate.test(inputValue)) {
+          setCheck({ ...check, birthDate: 'correct' });
+          setData({ ...data, birthDate: inputValue });
+        } else {
+          setCheck({ ...check, birthDate: 'incorrect' });
+        }
+        break;
+      case 'phoneNumber':
+        if (regexPhone.test(inputValue)) {
+          setCheck({ ...check, phoneNumber: 'correct' });
+          setData({ ...data, phoneNumber: inputValue });
+        } else {
+          setCheck({ ...check, phoneNumber: 'incorrect' });
+        }
+        break;
+      case 'zipcode':
+        if (regexZipcode.test(inputValue)) {
+          setCheck({ ...check, zipCode: 'correct' });
+          setData({ ...data, zipCode: inputValue });
+        } else {
+          setCheck({ ...check, zipCode: 'incorrect' });
+        }
+        break;
+      case 'island':
+        if (regexOnlyText.test(inputValue)) {
+          setCheck({ ...check, island: 'correct' });
+          setData({ ...data, island: inputValue });
+        } else {
+          setCheck({ ...check, island: 'incorrect' });
+        }
+        break;
+      case 'province':
+        if (regexOnlyText.test(inputValue)) {
+          setCheck({ ...check, province: 'correct' });
+          setData({ ...data, province: inputValue });
+        } else {
+          setCheck({ ...check, province: 'incorrect' });
+        }
+        break;
+      case 'town':
+        if (regexOnlyText.test(inputValue)) {
+          setCheck({ ...check, town: 'correct' });
+          setData({ ...data, town: inputValue });
+        } else {
+          setCheck({ ...check, town: 'incorrect' });
+        }
+        break;
+      case 'address':
+        if (regexAddress.test(inputValue)) {
+          setCheck({ ...check, address: 'correct' });
+          setData({ ...data, address: inputValue });
+        } else {
+          setCheck({ ...check, address: 'incorrect' });
+        }
+        break;
+      case 'twitter':
+        if (regexTwitter.test(inputValue)) {
+          setCheck({ ...check, twitter: 'correct' });
+          setData({ ...data, twitter: inputValue });
+        } else {
+          setCheck({ ...check, twitter: 'incorrect' });
+        }
+        break;
+      case 'instagram':
+        if (regexInstagram.test(inputValue)) {
+          setCheck({ ...check, instagram: 'correct' });
+          setData({ ...data, instagram: inputValue });
+        } else {
+          setCheck({ ...check, instagram: 'incorrect' });
+        }
+        break;
+      case 'linkedin':
+        if (regexLinkedin.test(inputValue)) {
+          setCheck({ ...check, linkedin: 'correct' });
+          setData({ ...data, linkedin: inputValue });
+        } else {
+          setCheck({ ...check, linkedin: 'incorrect' });
+        }
+        break;
+      case 'information':
+        if (regexOnlyText.test(inputValue) && inputValue.length <= 500) {
+          setCheck({ ...check, additionalInformation: 'correct' });
+          setData({ ...data, additionalInformation: inputValue });
+        } else {
+          setCheck({ ...check, additionalInformation: 'incorrect' });
         }
         break;
     }
@@ -85,26 +194,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
-    //
-    // const formData: Profile = {
-    //   name: data.name,
-    //   surname: data.surname,
-    //   birthDate: data.birthDate,
-    //   phoneNumber: data.phoneNumber,
-    //   email: data.email,
-    //   province: data.province,
-    //   zipCode: data.zipCode,
-    //   town: data.town,
-    //   address: data.address,
-    //   island: data.island,
-    //   twitter: data.twitter,
-    //   instagram: data.instagram,
-    //   linkedin: data.linkedIn,
-    //   additionalInformation: data.additionalInformation,
-    // };
-    //
-    // profileService.editProfile(formData);
+    profileService.editProfile(data);
   };
 
   return (
@@ -122,18 +212,18 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             title="Nombre"
             name="name"
             type="text"
+            stateValidate={check.name}
             onChange={(e) => {
               checkIsAllowedValue(e);
-              setData({ ...data, name: e.target.value });
             }}
           />
           <FieldForm
             title="Apellidos"
             name="surname"
             type="text"
+            stateValidate={check.surname}
             onChange={(e) => {
               checkIsAllowedValue(e);
-              setData({ ...data, surname: e.target.value });
             }}
           />
         </div>
@@ -143,28 +233,28 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Fecha de nacimiento"
               name="birthday"
               type="date"
+              stateValidate={check.birthDate}
               onChange={(e) => {
                 checkIsAllowedValue(e);
-                setData({ ...data, birthDate: e.target.value });
               }}
             />
           </section>
           <FieldForm
             title="Teléfono"
-            name="telefono"
+            name="phoneNumber"
             type="text"
+            stateValidate={check.phoneNumber}
             onChange={(e) => {
               checkIsAllowedValue(e);
-              setData({ ...data, phoneNumber: e.target.value });
             }}
           />
           <FieldForm
             title="Email"
             name="email"
             type="email"
+            stateValidate={check.email}
             onChange={(e) => {
               checkIsAllowedValue(e);
-              setData({ ...data, email: e.target.value });
             }}
           />
         </div>
@@ -177,16 +267,17 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Código Postal"
               name="zipcode"
               type="text"
+              stateValidate={check.zipCode}
               onChange={(e) => {
                 checkIsAllowedValue(e);
-                setData({ ...data, zipCode: e.target.value });
               }}
             />
             <FieldForm
               title="Isla"
               name="island"
               type="text"
-              onChange={(e) => setData({ ...data, island: e.target.value })}
+              stateValidate={check.island}
+              onChange={(e) => checkIsAllowedValue(e)}
             />
           </div>
           <div className={'row location-data-second-row'}>
@@ -194,13 +285,15 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Provincia"
               name="province"
               type="text"
-              onChange={(e) => setData({ ...data, province: e.target.value })}
+              stateValidate={check.province}
+              onChange={(e) => checkIsAllowedValue(e)}
             />
             <FieldForm
               title="Ciudad"
               name="town"
               type="text"
-              onChange={(e) => setData({ ...data, town: e.target.value })}
+              stateValidate={check.town}
+              onChange={(e) => checkIsAllowedValue(e)}
             />
           </div>
           <div className={'row location-data-third-row'}>
@@ -208,9 +301,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Dirección"
               name="address"
               type="text"
+              stateValidate={check.address}
               onChange={(e) => {
                 checkIsAllowedValue(e);
-                setData({ ...data, address: e.target.value });
               }}
             />
           </div>
@@ -225,20 +318,20 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   title="Twitter"
                   name="twitter"
                   type="url"
+                  stateValidate={check.twitter}
                   onChange={(e) => {
                     checkIsAllowedValue(e);
-                    setData({ ...data, twitter: e.target.value });
                   }}
                 />
               </div>
               <div className={'row url-networks'}>
                 <FieldForm
                   title="LinkedIn"
-                  name="linkedIn"
+                  name="linkedin"
                   type="url"
+                  stateValidate={check.linkedin}
                   onChange={(e) => {
                     checkIsAllowedValue(e);
-                    setData({ ...data, linkedIn: e.target.value });
                   }}
                 />
               </div>
@@ -247,9 +340,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   title="Instagram"
                   name="instagram"
                   type="url"
+                  stateValidate={check.instagram}
                   onChange={(e) => {
                     checkIsAllowedValue(e);
-                    setData({ ...data, instagram: e.target.value });
                   }}
                 />
               </div>
@@ -261,9 +354,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                 rows={16}
                 cols={3}
                 placeholder="Información de interés"
-                onChange={(e) =>
-                  setData({ ...data, additionalInformation: e.target.value })
-                }
+                onChange={(e) => {
+                  checkIsAllowedValue(e);
+                }}
               />
             </div>
           </div>
