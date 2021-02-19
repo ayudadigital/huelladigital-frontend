@@ -1,32 +1,35 @@
 .CookiesPolicy {
   padding: 0 4rem;
   text-align:left;
+  font-size: 1rem;
+
   h2 {
     font-size: 1.4rem;
     color: #ad2d68;
     font-weight: 700;
   }
+
   h3 {
     color: #eabd00;
     font-weight: normal;
   }
+
   .LinkText {
     color: #e34d92;
     text-decoration: none;
   }
-  .firstRow {
-    display: flex;
+  
+  .first-row {
     align-items: flex-start;
     background-color: #7e254e;
     color: white;
     padding: 1.5rem;
-    border-radius: 0.8rem;
-    font-size: 0.9rem;
-    svg {
-      width: 15rem;
+
+    &__svg {
       margin-right: 2rem;
       min-width: 5rem;
     }
+
   }
   .otherRows {
     margin-top: 2rem;
@@ -43,8 +46,30 @@
   }
 }
 
+@media (max-width: 1000px){
+  .CookiesPolicy{
+    padding: 0 3rem 0 3rem;
+
+  }
+}
+@media (max-width: 900px){
+  .CookiesPolicy{
+    padding: 0 2rem 0 2rem;
+  }
+}
+
 @media (max-width: 600px){
   .CookiesPolicy{
-    padding: 0 0.5rem 0 0.5rem;
+    padding: 0 1.5rem 0 1.5rem;
+    .first-row{
+      display: inline-flex;
+      flex-direction: column;
+
+      &__svg{
+        width: 8rem;
+        margin-bottom: 0.5rem;
+      }
+      
+    }
   }
 }
