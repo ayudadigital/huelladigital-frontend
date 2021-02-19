@@ -4,9 +4,9 @@
   font-size: 1rem;
 
   h2 {
-    font-size: 1.4rem;
     color: #ad2d68;
     font-weight: 700;
+    font-size: 1.4rem;
   }
 
   h3 {
@@ -24,23 +24,26 @@
     background-color: #7e254e;
     border-radius: 0.8rem;
     color: white;
+    display: flex;
+    font-size: 0.9rem;
     padding: 1.5rem;
 
     &__svg {
       margin-right: 2rem;
       min-width: 5rem;
+      width: 15rem;
     }
 
   }
   .other-rows {
-    margin-top: 2rem;
-    line-height: 160%;
     background-color: white;
-    color: #7e7e7e;
-    padding: 1rem;
     border-radius: 0.8rem;
-    font-size: 0.8rem;
+    color: #7e7e7e;
     font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 160%;
+    margin-top: 2rem;
+    padding: 1rem;
     ul{
       padding-left: 1rem;
     }
