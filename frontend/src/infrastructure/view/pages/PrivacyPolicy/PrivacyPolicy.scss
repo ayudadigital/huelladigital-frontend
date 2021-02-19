@@ -2,6 +2,7 @@
   padding: 0 4rem;
   text-align: left;
   color: #7e7e7e;
+  font-size: 1rem;
   
   .LinkText {
     color: #e34d92;
@@ -92,4 +93,60 @@
     }
   }
       
+}
+
+@media (max-width: 1200px){
+  .PrivacyPolicy{
+    padding: 0 4rem;
+
+    .other-rows{
+      display:flex;
+      flex-direction: column;
+
+      &__div{
+        width: 100%;
+      }
+
+    }
+
+    .main{
+      display: flex;
+      flex-direction: column;
+
+      &__element{
+        margin-top: 3rem;
+        padding: 1rem;
+        width: auto;
+        
+        &:nth-child(2){
+          margin-left: 0rem;
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (max-width: 700px){
+  .PrivacyPolicy{
+    padding: 0 2rem;
+
+    .first-row{
+      display: flex;
+      flex-direction: column;
+      &__svg {
+        margin-right: 0rem;
+        min-width: 3rem;
+        width: auto;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 600px){
+  .PrivacyPolicy{
+    padding: 0 1.5rem;
+  }
 }
