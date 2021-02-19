@@ -2,7 +2,6 @@
   text-align:left;
   padding: 0 4rem;
   font-size: 1rem;
-
   h2 {
     color: #ad2d68;
     font-weight: 700;
@@ -14,11 +13,10 @@
     font-weight: normal;
     font-size: 1rem;
   }
-
+  
   div{
     padding: 0.2rem;
   }
-
   .LinkText {
     color: #e34d92;
     text-decoration: none;
@@ -84,7 +82,7 @@
       &__separator {
         display: none;
       }
-
+      
     }
   }
 }

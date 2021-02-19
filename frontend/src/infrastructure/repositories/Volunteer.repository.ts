@@ -4,7 +4,6 @@ import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
 import { activateAuth } from '../http/cookies';
 import { VolunteerCredential } from '../../domain/models/Credential';
-import { VolunteerDto } from '../http/dtos/VolunteerDTO';
 import UserProfileDTO from '../http/dtos/UserProfileDTO';
 
 const login = (loginCredentials: VolunteerCredential) => {
@@ -17,14 +16,14 @@ const login = (loginCredentials: VolunteerCredential) => {
             .json()
             .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
               activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
+
               if (res.roles[0] !== 'VOLUNTEER') {
                 window.location.replace(`${BASE.URI}${ROUTE.home}`);
               } else {
                 profile().then((profile) => {
                   if (isProfileComplete(profile) || res.roles[0] !== 'VOLUNTEER') {
-                    window.location.replace(`${BASE.URI}${ROUTE.home}`);
+                    window.location.replace(`${BASE.URI}${ROUTE.proposals.list}`);
                   } else {
-                    window.location.reload();
                     window.location.replace(`${BASE.URI}${ROUTE.volunteers.profile}`);
                   }
                 });
@@ -83,11 +82,11 @@ const profile = () => {
 
 const isProfileComplete = (profile: UserProfileDTO) => {
   return (
-    !profile.email &&
-    !profile.name &&
-    !profile.zipCode &&
-    !profile.address &&
-    !profile.birthdate
+    !!profile.email &&
+    !!profile.name &&
+    !!profile.zipCode &&
+    !!profile.address &&
+    !!profile.birthDate
   );
 };
 

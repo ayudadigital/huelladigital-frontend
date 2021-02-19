@@ -1,7 +1,7 @@
 $base-div-padding: 2% 5% 2% 5%;
 $base-radius: 10px;
 $image-radius: 20%;
-$base-div-margin: 2.5% 0 2.5% 0;
+$base-div-margin: 2% 4% 2% 4%;
 $line-space: 1.5;
 $title-font-size: 50px;
 $purple-tone: #7e254e;
@@ -260,6 +260,7 @@ $purple-tone: #7e254e;
       'who image'
       'ecosystem image';
     line-height: $line-space;
+    margin: $base-div-margin;
 
     .title {
       font-size: $title-font-size;
