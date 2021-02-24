@@ -3,6 +3,7 @@ import { ProposalDTO } from '../http/dtos/ProposalDTO';
 import { http } from '../http/http';
 import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
+import { StringifyOptions } from 'querystring';
 
 const createConvocatory = (convocatory: Convocatory, file: string) => {
   const proposalDto: ProposalDTO = {
@@ -57,6 +58,10 @@ const submitForRevision = (id: string, feedback: string | null) => {
     'application/json',
     true,
   );
+};
+
+const fetchVolunteers = (id: string) => {
+  return http.get(`${BASE.API}${ROUTE.API.proposals.fetchVolunteers(id)}`, true);
 };
 
 export const convocatoryRepository = { createConvocatory, submitForRevision };

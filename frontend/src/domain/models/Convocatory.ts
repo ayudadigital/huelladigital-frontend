@@ -30,3 +30,9 @@ export type Skill = {
   name: string;
   description: string;
 };
+
+export type InscribedVolunteer = {
+  id: string;
+  emailAddress: string;
+  confirmed: boolean;
+};
