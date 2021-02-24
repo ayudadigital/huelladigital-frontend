@@ -45,4 +45,18 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
   return response;
 };
 
-export const convocatoryRepository = { createConvocatory };
+const submitForRevision = (id: string, feedback: string | null) => {
+  const hasFeedBack = !!feedback;
+  const body = {
+    feedback: feedback,
+    hasFeedback: hasFeedBack,
+  };
+  return http.post(
+    `${BASE.API}${ROUTE.API.proposals.submitRevision(id)}`,
+    JSON.stringify(body),
+    'application/json',
+    true,
+  );
+};
+
+export const convocatoryRepository = { createConvocatory, submitForRevision };
