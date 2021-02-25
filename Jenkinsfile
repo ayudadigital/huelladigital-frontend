@@ -84,9 +84,8 @@ pipeline {
                     sh """
                         echo 'Deploying to AWS -> Docker tag: ${env.DOCKER_TAG}'
                         echo 'Deploying ... ======================================================='
-                        TASK_DEFINITION=\$(cat aws/frontend_task_definition.json | jq -c .)
                         export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
-                        bin/deploy-aws-ibai.sh dev \${TASK_DEFINITION} ${env.DOCKER_TAG}
+                        bin/deploy-aws-ibai.sh dev ${env.DOCKER_TAG}
                     """
                 }
             }
