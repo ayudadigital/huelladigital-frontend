@@ -6,7 +6,7 @@ DOCKER_TAG=$2
 DOCKER_IMAGE=ayudadigital/huelladigital-frontend:${DOCKER_TAG}
 CLUSTER_NAME="${env}-ecs-cluster"
 TASK_FAMILY="${env}-huellapositiva-frontend-td"
-SERVICE_NAME=huellapositiva-backend-ecs-service
+SERVICE_NAME=huellapositiva-frontend-ecs-service
 
 TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "${TASK_FAMILY}" --region "us-east-1")
 echo "======================================"
