@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { InscribedVolunteer } from '../../../../../domain/models/Convocatory';
 import { VolunteerService } from '../../../../../domain/services/Volunteer.service';
+import { VolunteerList } from '../../../components/organisms/VolunteerList';
 import './ConvocatoryVolunteers.scss';
 
 interface ParamsTypes {
@@ -48,54 +49,8 @@ export const ConvocatoryVolunteers: React.FC<{}> = () => {
   return (
     <div className="ConvocatoryVolunteers">
       <main className="container">
-        <h2>
-          Voluntarios inscritos
-        </h2>
-        <table>
-          <tr>
-            <th>Dirección de correo</th>
-            <th>Desestimar</th>
-          </tr>
-          {
-            volunteers &&
-            volunteers.map((volunteer: InscribedVolunteer, id: number) => {
-              return (
-                <tr>
-                  <td>
-                    {volunteer.emailAddress}
-                  </td>
-                  <td>
-                    <button onClick={() => desestimateVolunteer(id)}>Desestimar</button>
-                  </td>
-                </tr>
-              )
-            })
-          }
-        </table>
-        <h2>
-          Voluntarios desestimados
-        </h2>
-        <table id="desestimados">
-          <tr>
-            <th>Dirección de correo</th>
-            <th>Aceptar</th>
-          </tr>
-          {
-            desestimatedVolunteers &&
-            desestimatedVolunteers.map((volunteer: InscribedVolunteer, id: number) => {
-              return (
-                <tr>
-                  <td>
-                    {volunteer.emailAddress}
-                  </td>
-                  <td>
-                    <button onClick={() => undesestimateVolunteer(id)}>Aceptar</button>
-                  </td>
-                </tr>
-              )
-            })
-          }
-        </table>
+        <VolunteerList title="Voluntarios inscritos" clickAction={desestimateVolunteer} volunteers={volunteers} buttonText="Desestimar" />
+        <VolunteerList title="Voluntarios desestimados" clickAction={undesestimateVolunteer} volunteers={desestimatedVolunteers} buttonText="Aceptar" />
       </main>
     </div>);
 };

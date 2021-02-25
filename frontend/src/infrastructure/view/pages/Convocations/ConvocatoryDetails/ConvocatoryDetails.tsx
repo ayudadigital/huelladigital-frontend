@@ -15,7 +15,6 @@ import { SubmitButton } from '../../../components/atoms/SubmitButton';
 import { Role } from '../../../../../domain/models/Roles';
 import { ConvocatoryService } from './../../../../../domain/services/Convocatory.service';
 import { ROUTE } from '../../../../http/routes';
-import { BASE } from '../../../../base';
 import { LinkButton } from '../../../components/atoms/LinkButton/LinkButton';
 
 export const ConvocatoryDetails: React.FC<{}> = () => {
