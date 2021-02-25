@@ -6,13 +6,13 @@ import { ReactComponent as CHAT } from './assets/comment_check.svg';
 export const LegalAdvice: React.FC<{}> = () => (
   <div className="LegalAdvice">
     <h1>Aviso Legal</h1>
-    <div className="firstRow">
-      <CHAT />
+    <div className="first-row">
+      <CHAT className="first-row__svg"/>
       <p>
         Las presentes condiciones legales de la Asociación Cultural SoyMamut son establecidas bajo la denominación comercial Soy Mamut con el fin de determinar los criterios y condiciones de uso de la página web: <LinkText to="www.huellapositiva.com" text="www.huellapositiva.com" />
       </p>
     </div>
-    <div className="otherRows">
+    <div className="other-rows">
       <h2>
         Datos del titular
       </h2>
@@ -20,7 +20,7 @@ export const LegalAdvice: React.FC<{}> = () => (
         Según lo establecido en la ley de Sociedad de la información y comercio electrónico, LSSICE 34/2002, Soy Mamut, pone a disposición los datos del titular de la presente página web.
       </p>
       <div>
-        <div className="twoColumnDiv">
+        <div className="two-column-div">
           <div>
             <h3>
               Identificación y contacto
@@ -41,7 +41,7 @@ export const LegalAdvice: React.FC<{}> = () => (
               <LinkText to="https://soymamut.com/" text="Soy Mamut" />
             </p>
           </div>
-          <div className="columnBorder"> </div>
+          <div className="two-column-div__separator"> </div>
           <div>
             <h3>
               GIF
@@ -71,7 +71,7 @@ export const LegalAdvice: React.FC<{}> = () => (
         En cumplimiento Ley Orgánica de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPD-GDD 3/2018) y con el Reglamento General de Protección de Datos (RGPD UE 2016/679) para poder atender sus consultas, cumplimente los campos obligatorios. No se ceden datos a terceros salvo obligación legal o en el supuesto que sea necesario para atender su solicitud, en caso de cambios y modificaciones en sus datos deberá comunicarlo. Pueden ejercitar sus derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad a la siguiente dirección: Calle Viñátigo nº11, Visvique, Arucas. Las Palmas (Islas Canarias) CP 35412.
       </p>
     </div>
-    <div className="otherRows">
+    <div className="other-rows">
       <h2>
         Política de enlaces
       </h2>

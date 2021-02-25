@@ -5,6 +5,7 @@ type typeRoute = {
   faq: string;
   cookiesPolicy: string;
   legalAdvice: string;
+  privacyPolicy: string;
   organizations: {
     register: string;
   };
@@ -83,6 +84,7 @@ export const ROUTE: typeRoute = {
   loginRegister: '/login-register',
   faq: '/frequently-asked-questions',
   legalAdvice: '/legal-advice',
+  privacyPolicy: '/privacy-policy',
   volunteers: {
     profile: '/profile',
   },

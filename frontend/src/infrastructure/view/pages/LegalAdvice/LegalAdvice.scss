@@ -1,11 +1,14 @@
 .LegalAdvice {
-  padding: 0 4rem;
   text-align:left;
+  padding: 0 4rem;
+  font-size: 1rem;
+
   h2 {
-    font-size: 1.4rem;
     color: #ad2d68;
     font-weight: 700;
+    font-size: 1.4rem;
   }
+
   h3 {
     color: #eabd00;
     font-weight: normal;
@@ -18,22 +21,25 @@
     color: #e34d92;
     text-decoration: none;
   }
-  .firstRow {
-    display: flex;
+
+  .first-row {
     align-items: center;
     background-color: #7e254e;
-    color: white;
-    padding: 1.5rem;
     border-radius: 0.8rem;
+    color: white;
+    display: flex;
     font-size: 0.9rem;
-    svg {
-      width: 15rem;
+    padding: 1.5rem;
+
+    &__svg {
       margin-right: 2rem;
       min-width: 5rem;
+      width: 15rem;
     }
+
   }
   
-  .otherRows {
+  .other-rows {
     margin-top: 2rem;
     line-height: 160%;
     background-color: white;
@@ -44,20 +50,23 @@
     font-weight: 500;
   }
 
-  .twoColumnDiv {
+  .two-column-div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     line-height: 160%;
-    margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+
     h3{
       font-size:1.5rem;
     }
-    .columnBorder {
+
+    &__separator {
       border-left: 1px solid #7e254e;
       margin: 0 2rem 0 2rem;
     }
+
   }
 
 }
@@ -65,12 +74,15 @@
 @media (max-width: 600px){
   .LegalAdvice{
     padding: 0 0.5rem 0 0.5rem;
-    .twoColumnDiv{
+
+    .two-column-div{
       display:flex;
       flex-direction: column;
-      .columnBorder {
+
+      &__separator {
         display: none;
       }
+
     }
   }
 }
