@@ -3,7 +3,7 @@
 env=$1
 DOCKER_TAG=$2
 
-DOCKER_IMAGE=ayudadigital/huelladigital-backend:${DOCKER_TAG}
+DOCKER_IMAGE=ayudadigital/huelladigital-frontend:${DOCKER_TAG}
 CLUSTER_NAME="${env}-ecs-cluster"
 TASK_FAMILY="${env}-huellapositiva-frontend-td"
 SERVICE_NAME=huellapositiva-backend-ecs-service
