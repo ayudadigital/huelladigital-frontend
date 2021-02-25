@@ -1,5 +1,5 @@
 # review when someone opens a pull request.
-*                 @RubenZagon
+#*                 @RubenZagon
 
 Jenkinsfile       @ci @devops
 devcontrol/       @ci @devops
