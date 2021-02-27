@@ -5,7 +5,13 @@ import { createMemoryHistory } from "history";
 import { Route, Router } from 'react-router-dom';
 
 describe('ConvocatoryVolunteers', () => {
-  it('should display the default message', () => {
-    //Need to work on these tests.
+  it('renders 2 volunteersList components', () => {
+    const history = createMemoryHistory();
+    const renderResult: RenderResult = render(
+      <Router history={history}>
+        <ConvocatoryVolunteers />
+      </Router>
+    )
+    expect(renderResult.getAllByRole('table').length).toEqual(2);
   });
 });
