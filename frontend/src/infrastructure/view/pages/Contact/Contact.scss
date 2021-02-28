@@ -1,0 +1,32 @@
+$purple-tone: #7e254e;
+
+div {
+  .info-div {
+    .title {
+      text-align: center;
+      color: $purple-tone;
+      font-size: 35px;
+    }
+    div {
+      font-size: 18px;
+      margin: 0% 10% 0%;
+      li {
+        margin-top: 2%;
+      }
+    }
+
+    .faq {
+      color: black;
+      text-align: center;
+    }
+
+    .slogan {
+      text-align: center;
+      color: $purple-tone;
+      font-size: 35px;
+    }
+  }
+
+  .contact-form-div {
+  }
+}
