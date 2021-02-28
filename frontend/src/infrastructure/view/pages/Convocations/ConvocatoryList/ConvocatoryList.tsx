@@ -31,8 +31,9 @@ export const ConvocatoryList: React.FC<{}> = () => {
     <div className="ConvocatoryList">
       <h2 className="Title">Convocatorias</h2>
       {/* Change exampleConvocatoryList for convocatories for backend integration*/}
-      {exampleConvocatoryList.map((convocatory: ConvocatoryCardProps) => (
+      {exampleConvocatoryList.map((convocatory: ConvocatoryCardProps, index) => (
         <ConvocatoryCard
+          key={index}
           title={convocatory.title}
           description={convocatory.description}
           photo={convocatory.photo}

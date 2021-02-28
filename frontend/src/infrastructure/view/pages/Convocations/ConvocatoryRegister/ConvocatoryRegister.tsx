@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './ConvocatoryRegister.scss';
 import { FieldForm } from '../../../components/molecules/FieldForm';
 import { SubmitButton } from '../../../components/atoms/SubmitButton';
@@ -15,6 +15,11 @@ import { Image } from '../../../components/atoms/Image';
 import superHeroes from '../../../components/atoms/Image/assets/superHeroes.svg';
 import { FormRadio } from '../../../components/molecules/FormRadio';
 import { RequirementDisplay } from '../../../components/organisms/Forms/RequirementsFormList/RequirementsFormList.stories';
+import { Role } from '../../../../../domain/models/Roles';
+import { Context } from '../../../../Context';
+import { LinkText } from '../../../components/atoms/LinkText';
+import { ROUTE } from '../../../../http/routes';
+import { LinkButton } from '../../../components/atoms/LinkButton/LinkButton';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
@@ -32,6 +37,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     'Flexibilidad (Adaptación)',
     'Analizar y resolver problemas',
   ];
+
   // @ts-ignore
   const ages = [...Array(85).keys()].map((item) => (15 + item).toString());
   const exampleSkill: Skill = { name: 'Nombre skill', description: 'description' };
@@ -92,6 +98,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     event.preventDefault();
 
     const convocatoryTemp: Convocatory = {
+      id: '',
       title: data.title,
       organizer: '',
       category: '',
@@ -119,6 +126,12 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     if (checkDateIsCorrect()) {
       ConvocatoryService.registerConvocatory(convocatoryTemp, '');
     }
+  }
+
+  const auth = useContext(Context);
+  // @ts-ignore
+  if (auth.isAuth && auth.role == Role.CONTACT_PERSON_NOT_CONFIRMED) {
+    return showNotConfirmedView();
   }
 
   return (
@@ -342,5 +355,29 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     </div>
   );
 };
+
+function showNotConfirmedView() {
+  return (
+    <div className="mainDiv">
+      <div className="textDiv">
+        <h2>MENSAJE IMPORTANTE</h2>
+        <p>
+          Con el fin de poder crear una convocatoria le recordamos que debe confirmar su
+          correo. Si no ha recibido el correo de confirmación de la cuenta o no lo
+          encuentra haga click en <b>"Reenviar correo"</b> y le enviaremos otro al correo
+          con el cual se registró.
+        </p>
+      </div>
+      <div className="linksDiv">
+        <div>
+          <LinkButton path={ROUTE.home} text="Volver al inicio" />
+        </div>
+        <div>
+          <LinkButton path="/" text="Reenviar correo" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 ConvocatoryRegister.displayName = 'ConvocatoryRegister';

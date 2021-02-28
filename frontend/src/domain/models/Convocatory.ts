@@ -1,7 +1,7 @@
 import { Volunteer } from './Volunteer';
 
 export type Convocatory = {
-  id?: number;
+  id: string;
   title: string;
   organizer: string;
   category: string;
@@ -29,4 +29,10 @@ export type Convocatory = {
 export type Skill = {
   name: string;
   description: string;
+};
+
+export type InscribedVolunteer = {
+  id: string;
+  emailAddress: string;
+  confirmed: boolean;
 };
