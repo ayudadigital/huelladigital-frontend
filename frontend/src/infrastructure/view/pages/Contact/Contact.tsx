@@ -1,5 +1,6 @@
 import React from 'react';
 import { ROUTE } from '../../../http/routes';
+import { InputTextArea } from '../../components/atoms/InputTextArea';
 import { LinkButton } from '../../components/atoms/LinkButton/LinkButton';
 import { LinkText } from '../../components/atoms/LinkText';
 import { FieldForm } from '../../components/molecules/FieldForm';
@@ -46,17 +47,32 @@ export const Contact: React.FC<{}> = () => {
       </div>
       <div className="contact-form-div">
         <p>Contacta con nosotros</p>
-        <div className="form-fields">
-          <FieldForm type="text" title="Nombre" name="name" />
-          <FieldForm type="text" title="Apellidos" name="surname" />
-          <FieldForm type="email" title="Correo electrónico" name="email" />
-          <FieldForm type="email" title="Confirmar correo" name="email-confirmation" />
-          <FieldForm type="text" title="Teléfono" name="phone-number" />
-          <FieldForm type="text" title="Asunto" name="subject" />
-          <FieldForm type="text-area" title="Mensaje" name="message" />
-          <FormSelect text="Consentimiento *" name="consent" optionsList={['']} />
-          <p>Acepto la política de privacidad del sitio</p>
-          <p>CAPTCHA</p>
+        <div className="form-fields-div">
+          <div className="fields">
+            <FieldForm type="text" title="Nombre *" name="name" />
+            <FieldForm type="text" title="Apellidos *" name="surname" />
+            <FieldForm type="email" title="Correo electrónico *" name="email" />
+            <FieldForm
+              type="email"
+              title="Confirmar correo *"
+              name="email-confirmation"
+            />
+            <FieldForm type="text" title="Teléfono *" name="phone-number" />
+            <FieldForm type="text" title="Asunto *" name="subject" />
+          </div>
+          <div className="text-area">
+            <InputTextArea name="message" cols={115} rows={10} placeholder="Mensaje *" />
+          </div>
+          <div className="consent-captcha">
+            <div className="consent">
+              <p>Consentimiento *</p>
+              <label>Acepto la política de privacidad del sitio</label>
+              <input type="checkbox"></input>
+            </div>
+            <div className="captcha">
+              <p>CAPTCHA</p>
+            </div>
+          </div>
           <LinkButton path="" text="Enviar" />
         </div>
       </div>
