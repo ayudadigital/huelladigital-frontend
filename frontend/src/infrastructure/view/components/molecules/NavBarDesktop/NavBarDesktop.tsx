@@ -66,15 +66,15 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
         </div>
       )}
       <LinkText key={`menu-blog`} text={'Blog'} to={ROUTE.home} />
-      <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.home} />
+      <LinkText key={`menu-contacto`} text={'Contacto'} to={ROUTE.contact} />
       {//@ts-ignore
-        isAuth ? (
-          <button onClick={onClickDisconnect} className="logoutButton">
-            Desconectar
-          </button>
-        ) : (
-            <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
-          )}
+      isAuth ? (
+        <button onClick={onClickDisconnect} className="logoutButton">
+          Desconectar
+        </button>
+      ) : (
+        <LinkText key={`menu-login`} text={'Acceder'} to={ROUTE.loginRegister} />
+      )}
     </div>
   );
 };
