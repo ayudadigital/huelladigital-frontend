@@ -7,7 +7,7 @@ import './MixModifyUserForm.scss';
 import { TextAreaForm } from '../../../molecules/TextAreaForm';
 import { Profile } from '../../../../../../domain/models/Profile';
 import { profileService } from '../../../../../../domain/services/Profile.service';
-import { CheckInterface, FormatRoles } from './types';
+import formatRoles, { CheckInterface } from './types';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
   const [data, setData] = useState<Profile>({
@@ -52,17 +52,6 @@ export const MixModifyUserForm: React.FC<{}> = () => {
   const checkIsAllowedValue: (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      regexEmail,
-      regexOnlyText,
-      regexDate,
-      regexPhone,
-      regexZipcode,
-      regexAddress,
-      regexTwitter,
-      regexInstagram,
-      regexLinkedin,
-    } = FormatRoles.formatRoles();
     const minLength: number = 3;
     const maxLength: number = 30;
     const inputValue = event.target.value;
@@ -70,7 +59,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
 
     switch (nameEvent) {
       case 'email':
-        if (regexEmail.test(inputValue)) {
+        if (formatRoles.regexEmail.test(inputValue)) {
           setCheck({ ...check, email: 'correct' });
           setData({ ...data, email: inputValue });
         } else {
@@ -79,7 +68,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         break;
       case 'name':
         if (
-          regexOnlyText.test(inputValue) &&
+          formatRoles.regexOnlyText.test(inputValue) &&
           inputValue.length >= minLength &&
           inputValue.length <= maxLength
         ) {
@@ -91,7 +80,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         break;
       case 'surname':
         if (
-          regexOnlyText.test(inputValue) &&
+          formatRoles.regexOnlyText.test(inputValue) &&
           inputValue.length >= minLength &&
           inputValue.length <= maxLength
         ) {
@@ -102,7 +91,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'birthday':
-        if (regexDate.test(inputValue)) {
+        if (formatRoles.regexDate.test(inputValue)) {
           setCheck({ ...check, birthDate: 'correct' });
           setData({ ...data, birthDate: inputValue });
         } else {
@@ -110,7 +99,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'phoneNumber':
-        if (regexPhone.test(inputValue)) {
+        if (formatRoles.regexPhone.test(inputValue)) {
           setCheck({ ...check, phoneNumber: 'correct' });
           setData({ ...data, phoneNumber: inputValue });
         } else {
@@ -118,7 +107,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'zipcode':
-        if (regexZipcode.test(inputValue)) {
+        if (formatRoles.regexZipcode.test(inputValue)) {
           setCheck({ ...check, zipCode: 'correct' });
           setData({ ...data, zipCode: inputValue });
         } else {
@@ -126,7 +115,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'island':
-        if (regexOnlyText.test(inputValue)) {
+        if (formatRoles.regexOnlyText.test(inputValue)) {
           setCheck({ ...check, island: 'correct' });
           setData({ ...data, island: inputValue });
         } else {
@@ -134,7 +123,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'province':
-        if (regexOnlyText.test(inputValue)) {
+        if (formatRoles.regexOnlyText.test(inputValue)) {
           setCheck({ ...check, province: 'correct' });
           setData({ ...data, province: inputValue });
         } else {
@@ -142,7 +131,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'town':
-        if (regexOnlyText.test(inputValue)) {
+        if (formatRoles.regexOnlyText.test(inputValue)) {
           setCheck({ ...check, town: 'correct' });
           setData({ ...data, town: inputValue });
         } else {
@@ -150,7 +139,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'address':
-        if (regexAddress.test(inputValue)) {
+        if (formatRoles.regexAddress.test(inputValue)) {
           setCheck({ ...check, address: 'correct' });
           setData({ ...data, address: inputValue });
         } else {
@@ -158,7 +147,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'twitter':
-        if (regexTwitter.test(inputValue)) {
+        if (formatRoles.regexTwitter.test(inputValue)) {
           setCheck({ ...check, twitter: 'correct' });
           setData({ ...data, twitter: inputValue });
         } else {
@@ -166,7 +155,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'instagram':
-        if (regexInstagram.test(inputValue)) {
+        if (formatRoles.regexInstagram.test(inputValue)) {
           setCheck({ ...check, instagram: 'correct' });
           setData({ ...data, instagram: inputValue });
         } else {
@@ -174,7 +163,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'linkedin':
-        if (regexLinkedin.test(inputValue)) {
+        if (formatRoles.regexLinkedin.test(inputValue)) {
           setCheck({ ...check, linkedin: 'correct' });
           setData({ ...data, linkedin: inputValue });
         } else {
@@ -182,7 +171,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
         }
         break;
       case 'information':
-        if (regexOnlyText.test(inputValue) && inputValue.length <= 500) {
+        if (formatRoles.regexOnlyText.test(inputValue) && inputValue.length <= 500) {
           setCheck({ ...check, additionalInformation: 'correct' });
           setData({ ...data, additionalInformation: inputValue });
         } else {
@@ -216,6 +205,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             onChange={(e) => {
               checkIsAllowedValue(e);
             }}
+            messageInfoUser={
+              'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30'
+            }
           />
           <FieldForm
             title="Apellidos"
@@ -225,6 +217,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             onChange={(e) => {
               checkIsAllowedValue(e);
             }}
+            messageInfoUser={
+              'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30'
+            }
           />
         </div>
         <div className={'row second-row-personal-data'}>
@@ -247,6 +242,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             onChange={(e) => {
               checkIsAllowedValue(e);
             }}
+            messageInfoUser={'Formato incorrecto Ej: +XX XXXXXXXXX o +XXX'}
           />
           <FieldForm
             title="Email"
@@ -256,6 +252,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
             onChange={(e) => {
               checkIsAllowedValue(e);
             }}
+            messageInfoUser={'Formato incorrecto'}
           />
         </div>
       </div>
@@ -271,6 +268,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               onChange={(e) => {
                 checkIsAllowedValue(e);
               }}
+              messageInfoUser={
+                'Formato incorrecto, solamente puede contener número con un máximo de cinco dígitos'
+              }
             />
             <FieldForm
               title="Isla"
@@ -287,6 +287,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               type="text"
               stateValidate={check.province}
               onChange={(e) => checkIsAllowedValue(e)}
+              messageInfoUser={'Formato incorrecto solamente puede contener letras'}
             />
             <FieldForm
               title="Ciudad"
@@ -294,6 +295,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               type="text"
               stateValidate={check.town}
               onChange={(e) => checkIsAllowedValue(e)}
+              messageInfoUser={'Formato incorrecto solamente puede contener letras'}
             />
           </div>
           <div className={'row location-data-third-row'}>
@@ -305,6 +307,7 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               onChange={(e) => {
                 checkIsAllowedValue(e);
               }}
+              messageInfoUser={'Formato incorrecto Ej: Calle Nombre de la calle X'}
             />
           </div>
         </div>
@@ -322,6 +325,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   onChange={(e) => {
                     checkIsAllowedValue(e);
                   }}
+                  messageInfoUser={
+                    'Formato incorrecto Ej: "https://twitter.com/nombre_de_usuario"'
+                  }
                 />
               </div>
               <div className={'row url-networks'}>
@@ -333,6 +339,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   onChange={(e) => {
                     checkIsAllowedValue(e);
                   }}
+                  messageInfoUser={
+                    'Formato incorrecto Ej: "https://linkedin.com/in/nombre_de_usuario"'
+                  }
                 />
               </div>
               <div className={'row url-networks'}>
@@ -344,6 +353,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                   onChange={(e) => {
                     checkIsAllowedValue(e);
                   }}
+                  messageInfoUser={
+                    'Formato incorrecto Ej: "https://instagram.com/nombre_de_usuario"'
+                  }
                 />
               </div>
             </div>
@@ -357,6 +369,9 @@ export const MixModifyUserForm: React.FC<{}> = () => {
                 onChange={(e) => {
                   checkIsAllowedValue(e);
                 }}
+                messageInfoUser={
+                  'Formato incorrecto solamente puede contener texto con un máximo de 500 carácteres'
+                }
               />
             </div>
           </div>

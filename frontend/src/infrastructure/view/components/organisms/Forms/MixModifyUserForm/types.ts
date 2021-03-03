@@ -17,34 +17,20 @@ export interface CheckInterface {
   additionalInformation: stateValidateTypes;
 }
 
-const formatRoles = () => {
-  const regexEmail = new RegExp(
+const formatRoles = {
+  regexPhone: new RegExp(/[+]?[0-9]{1,3}\s\d+$/),
+  regexEmail: new RegExp(
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-  );
-  const regexOnlyText = new RegExp(/^[a-zA-Z]+/);
-  const regexPhone = new RegExp(/[+]?[0-9]{1,3}\s\d+$/);
-  const regexDate = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/);
-  const regexTwitter = new RegExp(/(https):\/\/(twitter)\.(com)\/[-a-zA-Z0-9+&@#%=~_|]+/);
-  const regexInstagram = new RegExp(
-    /(https):\/\/(instagram)\.(com)\/[-a-zA-Z0-9+&@#%=~_|]+/,
-  );
-  const regexLinkedin = new RegExp(
+  ),
+  regexOnlyText: new RegExp(/^[a-zA-Z]+/),
+  regexDate: new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/),
+  regexTwitter: new RegExp(/(https):\/\/(twitter)\.(com)\/[-a-zA-Z0-9+&@#%=~_|]+/),
+  regexInstagram: new RegExp(/(https):\/\/(instagram)\.(com)\/[-a-zA-Z0-9+&@#%=~_|]+/),
+  regexLinkedin: new RegExp(
     /(https):\/\/(www\.)(linkedin)\.(com)\/(in)\/[-a-zA-Z0-9+&@#%=~_|]+/,
-  );
-  const regexZipcode = new RegExp(/\d{5}/);
-  const regexAddress = new RegExp(/^[a-z A-Z]+\s[0-9]+$/);
-
-  return {
-    regexEmail,
-    regexOnlyText,
-    regexDate,
-    regexPhone,
-    regexZipcode,
-    regexAddress,
-    regexTwitter,
-    regexInstagram,
-    regexLinkedin,
-  };
+  ),
+  regexZipcode: new RegExp(/\d{5}/),
+  regexAddress: new RegExp(/^[a-z A-Z]+\s[0-9]+$/),
 };
 
-export const FormatRoles = { formatRoles };
+export default formatRoles;
