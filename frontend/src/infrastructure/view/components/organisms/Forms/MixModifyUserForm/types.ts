@@ -18,7 +18,7 @@ export interface CheckInterface {
 }
 
 const formatRoles = {
-  regexPhone: new RegExp(/[+]?[0-9]{1,3}\s\d+$/),
+  regexPhone: new RegExp(/[+][0-9]{1,3}\s\d+$/),
   regexEmail: new RegExp(
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
   ),
