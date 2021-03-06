@@ -1,5 +1,5 @@
 ---
-to: src/hooks/<%= name %>/<%= name %>.ts
+to: src/infrastructure/hooks/<%= name %>/<%= name %>.ts
 ---
 import React from 'react';
 
