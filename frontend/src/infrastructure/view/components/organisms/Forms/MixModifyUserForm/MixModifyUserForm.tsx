@@ -18,7 +18,6 @@ export const MixModifyUserForm: React.FC<{}> = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(data);
     profileService.editProfile(data);
   };
 
