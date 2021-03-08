@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { useCorrectFormat } from './useCorrectFormat';
 
 describe('useCorrectFormat', () => {
-  it('should display the default message', () => {
+  it('check correct format into data', () => {
     const { result } = renderHook(() => useCorrectFormat());
     expect(result).toBeTruthy();
   });
