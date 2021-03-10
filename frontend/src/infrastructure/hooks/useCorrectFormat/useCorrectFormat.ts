@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import formatRoles, {
-  CheckInterface,
-} from '../../view/components/organisms/Forms/MixModifyUserForm/types';
+import { CheckInterface } from '../../view/components/organisms/Forms/MixModifyUserForm/types';
+import formatRoles from '../../../infrastructure/view/components/atoms/InputFieldForm/types';
 import { Profile } from '../../../domain/models/Profile';
 
 export const useCorrectFormat = () => {
