@@ -178,7 +178,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             type={'text'}
             name={'title'}
             onChange={(e) => setData({ ...data, title: e.target.value })}
-          />{' '}
+          />
           <FieldForm
             title={'Título de la convocatoria'}
             type={'text'}
