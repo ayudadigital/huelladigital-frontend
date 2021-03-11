@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { CheckInterface } from '../../view/components/organisms/Forms/MixModifyUserForm/types';
 import formatRoles from '../../../infrastructure/view/components/atoms/InputFieldForm/types';
 import { Profile } from '../../../domain/models/Profile';
+import provinceLasPalmas from '../../../infrastructure/assets/Las_Palmas.json';
+import provinceTenerife from '../../../infrastructure/assets/Tenerife.json';
 
 export const useCorrectFormat = () => {
   const [data, setData] = useState<Profile>({
@@ -39,10 +41,16 @@ export const useCorrectFormat = () => {
 
   const [inputValue, setInputValue] = useState<string>();
   const [nameEvent, setNameEvent] = useState<string>();
+  const [town, setTown] = useState<string[]>([]);
   const calculateAge = (ageDate: Date) => {
     const diffAge = Date.now() - ageDate.getTime();
     const ageCheck = new Date(diffAge);
     return Math.abs(ageCheck.getUTCFullYear() - 1970);
+  };
+
+  const province = {
+    35: 'Las Palmas',
+    38: 'Santa Cruz de Tenerife',
   };
 
   useEffect(() => {
@@ -108,22 +116,14 @@ export const useCorrectFormat = () => {
             setCheck({ ...check, zipCode: 'incorrect' });
           }
           break;
-        case 'island':
-          if (formatRoles.regexOnlyText.test(inputValue)) {
-            setCheck({ ...check, island: 'correct' });
-            setData({ ...data, island: inputValue });
-          } else {
-            setCheck({ ...check, island: 'incorrect' });
-          }
-          break;
-        case 'province':
-          if (formatRoles.regexOnlyText.test(inputValue)) {
-            setCheck({ ...check, province: 'correct' });
-            setData({ ...data, province: inputValue });
-          } else {
-            setCheck({ ...check, province: 'incorrect' });
-          }
-          break;
+        // case 'island':
+        //   if (formatRoles.regexOnlyText.test(inputValue)) {
+        //     setCheck({ ...check, island: 'correct' });
+        //     setData({ ...data, island: inputValue });
+        //   } else {
+        //     setCheck({ ...check, island: 'incorrect' });
+        //   }
+        //   break;
         case 'town':
           if (formatRoles.regexOnlyText.test(inputValue)) {
             setCheck({ ...check, town: 'correct' });
@@ -175,5 +175,25 @@ export const useCorrectFormat = () => {
       }
     }
   }, [inputValue, nameEvent]);
-  return { check, data, setInputValue, setNameEvent };
+
+  useEffect(() => {
+    if (data.zipCode.startsWith('35')) {
+      const items = provinceLasPalmas.filter(
+        (postalCode) => postalCode.postal_code === data.zipCode,
+      );
+      const [{ island: islandName, population_name: populationName }] = items;
+      setData({
+        ...data,
+        province: province['35'],
+        island: islandName,
+        town: populationName,
+      });
+      const towns = items.map((townName) => townName.population_name);
+      setTown(towns);
+    } else if (data.zipCode.startsWith('38')) {
+      setData({ ...data, province: province['38'] });
+    }
+  }, [data.zipCode]);
+
+  return { check, data, town, setInputValue, setNameEvent };
 };

@@ -1,0 +1,4475 @@
+[
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0001701",
+    "population_name": "AGAETE",
+    "postal_code": "35480"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0002201",
+    "population_name": "VALLE DE AGAETE",
+    "postal_code": "35489"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0004399",
+    "population_name": "GUAYEDRA",
+    "postal_code": "35480"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0005601",
+    "population_name": "HORNILLO (EL)",
+    "postal_code": "35489"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0006999",
+    "population_name": "LLANOS (LOS)",
+    "postal_code": "35489"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0007501",
+    "population_name": "PUERTO DE LAS NIEVES",
+    "postal_code": "35480"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0008101",
+    "population_name": "RISCO (EL)",
+    "postal_code": "35480"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGAETE",
+    "municipality_code": "001",
+    "population_code": "0010899",
+    "population_name": "SAO (EL)",
+    "postal_code": "35489"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0001701",
+    "population_name": "AGÜIMES",
+    "postal_code": "35260"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0002201",
+    "population_name": "PLAYA DE ARINAGA",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0003801",
+    "population_name": "BANDA (LA)",
+    "postal_code": "35269"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0004301",
+    "population_name": "CORRALILLOS LOS",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0005601",
+    "population_name": "CRUCE DE ARINAGA",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0006901",
+    "population_name": "GOLETA (LA)",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0007501",
+    "population_name": "ROSAS (LAS)",
+    "postal_code": "35260"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0008101",
+    "population_name": "TEMISAS",
+    "postal_code": "35270"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0009401",
+    "population_name": "VARGAS",
+    "postal_code": "35269"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0012001",
+    "population_name": "CUARTERIA EL UNO",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0018901",
+    "population_name": "MONTAÑA SAN FRANCISCO",
+    "postal_code": "35118"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0019201",
+    "population_name": "MONTAÑA LOS VELEZ",
+    "postal_code": "35269"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "AGÜIMES",
+    "municipality_code": "002",
+    "population_code": "0023402",
+    "population_name": "POLIGONO DE ARINAGA",
+    "postal_code": "35118"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0001701",
+    "population_name": "AGUA DE BUEYES",
+    "postal_code": "35638"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0002201",
+    "population_name": "ANTIGUA",
+    "postal_code": "35630"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0003801",
+    "population_name": "CASILLAS DE MORALES",
+    "postal_code": "35638"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0004301",
+    "population_name": "TRIQUIVIJATE",
+    "postal_code": "35369"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0005601",
+    "population_name": "VALLES DE ORTEGA",
+    "postal_code": "35638"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "ANTIGUA",
+    "municipality_code": "003",
+    "population_code": "0006901",
+    "population_name": "CASTILLO (EL)",
+    "postal_code": "35610"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "ARRECIFE",
+    "municipality_code": "004",
+    "population_code": "0003801",
+    "population_name": "ARRECIFE",
+    "postal_code": "35500"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0001701",
+    "population_name": "ACUSA VERDE",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0002201",
+    "population_name": "ARTENARA",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0003801",
+    "population_name": "CORUÑA",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0005601",
+    "population_name": "LUGAREJOS",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0006901",
+    "population_name": "ARBEJAS (LAS)",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0007501",
+    "population_name": "CANDELARIA",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARTENARA",
+    "municipality_code": "005",
+    "population_code": "0008101",
+    "population_name": "CUEVAS (LAS)",
+    "postal_code": "35350"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0002201",
+    "population_name": "ARUCAS",
+    "postal_code": "35400"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0003801",
+    "population_name": "BAÑADEROS",
+    "postal_code": "35414"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0005601",
+    "population_name": "CARDONES",
+    "postal_code": "35415"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0006901",
+    "population_name": "CASTILLOS (LOS)",
+    "postal_code": "35412"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0011501",
+    "population_name": "PORTALES (LOS)",
+    "postal_code": "35412"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0012001",
+    "population_name": "SAN ANDRES",
+    "postal_code": "35414"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0013601",
+    "population_name": "SANTIDAD",
+    "postal_code": "35411"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0020601",
+    "population_name": "TRAPICHE",
+    "postal_code": "35432"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0017301",
+    "population_name": "TINOCAS",
+    "postal_code": "35413"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0018901",
+    "population_name": "PUERTILLO (EL)",
+    "postal_code": "35414"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ARUCAS",
+    "municipality_code": "006",
+    "population_code": "0019201",
+    "population_name": "TRES BARRIOS",
+    "postal_code": "35412"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "BETANCURIA",
+    "municipality_code": "007",
+    "population_code": "0001701",
+    "population_name": "BETANCURIA",
+    "postal_code": "35637"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "BETANCURIA",
+    "municipality_code": "007",
+    "population_code": "0002201",
+    "population_name": "VALLE DE SANTA INES",
+    "postal_code": "35637"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "BETANCURIA",
+    "municipality_code": "007",
+    "population_code": "0003801",
+    "population_name": "VEGA DE RIO PALMAS",
+    "postal_code": "35637"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0001799",
+    "population_name": "BARRANCO DE LAS MADRES",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0002201",
+    "population_name": "BUENLUGAR",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0003801",
+    "population_name": "CALDERA (LA)",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0004301",
+    "population_name": "CAMBALUD",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0005601",
+    "population_name": "CASABLANCA",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0006901",
+    "population_name": "CORTIJO (EL)",
+    "postal_code": "35432"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0007501",
+    "population_name": "DOLORES (LOS)",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0008101",
+    "population_name": "FIRGAS",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0010801",
+    "population_name": "PADILLA",
+    "postal_code": "35432"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0011501",
+    "population_name": "PELLAS (LAS)",
+    "postal_code": "35432"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0014101",
+    "population_name": "ROSALES (LOS)",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0016799",
+    "population_name": "SAN ANTON",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0017399",
+    "population_name": "ZUMACAL (EL)",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0018901",
+    "population_name": "CRUZ (LA)",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "FIRGAS",
+    "municipality_code": "008",
+    "population_code": "0019201",
+    "population_name": "LOMO QUINTANILLA",
+    "postal_code": "35430"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0001701",
+    "population_name": "CAIDEROS",
+    "postal_code": "35468"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0002201",
+    "population_name": "FAGAJESTO",
+    "postal_code": "35460"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0003803",
+    "population_name": "GALDAR",
+    "postal_code": "35460"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0005601",
+    "population_name": "JUNCALILLO",
+    "postal_code": "35468"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0006901",
+    "population_name": "PUERTO DE SARDINA",
+    "postal_code": "35469"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0008101",
+    "population_name": "SAN ISIDRO",
+    "postal_code": "35488"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0010801",
+    "population_name": "SAUCILLO",
+    "postal_code": "35468"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0012001",
+    "population_name": "HOYA DE PINEDA",
+    "postal_code": "35188"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0013601",
+    "population_name": "QUINTANAS Y PISO FIRME LOS",
+    "postal_code": "35460"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0014101",
+    "population_name": "BARRIAL",
+    "postal_code": "35460"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "GÁLDAR",
+    "municipality_code": "009",
+    "population_code": "0015401",
+    "population_name": "MARMOLEJOS",
+    "postal_code": "35460"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0001701",
+    "population_name": "ARRIETA",
+    "postal_code": "35542"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0002201",
+    "population_name": "CHARCO DEL PALO",
+    "postal_code": "35542"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0003801",
+    "population_name": "GUINATE",
+    "postal_code": "35541"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0004301",
+    "population_name": "HARIA",
+    "postal_code": "35520"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0005601",
+    "population_name": "MAGUEZ",
+    "postal_code": "35541"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0006901",
+    "population_name": "MALA",
+    "postal_code": "35541"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0007501",
+    "population_name": "ORZOLA",
+    "postal_code": "35541"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0008101",
+    "population_name": "PUNTA MUJERES",
+    "postal_code": "35542"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0009401",
+    "population_name": "TABAYESCO",
+    "postal_code": "35542"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "HARÍA",
+    "municipality_code": "010",
+    "population_code": "0010801",
+    "population_name": "YE",
+    "postal_code": "35541"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0001701",
+    "population_name": "CARRIZAL",
+    "postal_code": "35240"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0002201",
+    "population_name": "INGENIO",
+    "postal_code": "35240"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0003801",
+    "population_name": "AGUATONA",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0004399",
+    "population_name": "BARRANCO DE GUAYADEQUE",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0005601",
+    "population_name": "BURRERO (EL)",
+    "postal_code": "35240"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0006901",
+    "population_name": "CARRION (EL)",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0007501",
+    "population_name": "LOMO DEL HOSPITAL",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0008199",
+    "population_name": "MARFU",
+    "postal_code": "35259"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0009401",
+    "population_name": "MEJIAS (LAS)",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0010801",
+    "population_name": "MONDRAGON",
+    "postal_code": "35000"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0011599",
+    "population_name": "MORISCOS (LOS)",
+    "postal_code": "35259"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0012001",
+    "population_name": "PASADILLA-ROQUE",
+    "postal_code": "35250"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "INGENIO",
+    "municipality_code": "011",
+    "population_code": "0013601",
+    "population_name": "PUNTILLAS (LAS)",
+    "postal_code": "35259"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0001701",
+    "population_name": "ALMACIGOS (LOS)",
+    "postal_code": "35140"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0002201",
+    "population_name": "AQUAMARINA",
+    "postal_code": "35129"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0003801",
+    "population_name": "ARGUINEGUIN",
+    "postal_code": "35120"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0004301",
+    "population_name": "BARRANQUILLO ANDRES",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0005699",
+    "population_name": "BURRILLAS (LAS)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0006901",
+    "population_name": "CAIDERO (EL)",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0009401",
+    "population_name": "CASAS BLANCAS",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0010801",
+    "population_name": "CASAS DE VENEGUERA",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0011501",
+    "population_name": "CASILLAS (LAS)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0012001",
+    "population_name": "CERCADO (EL)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0048399",
+    "population_name": "FILIPINAS (LAS)",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0017301",
+    "population_name": "HORNO (EL)",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0018999",
+    "population_name": "HORNO DE LA TEJA",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0019201",
+    "population_name": "HUMBRIDILLA (LA)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0020601",
+    "population_name": "LOMOQUIEBRE",
+    "postal_code": "35139"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0022801",
+    "population_name": "MOGAN",
+    "postal_code": "35140"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0023401",
+    "population_name": "MOLINO DE VIENTO (EL)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0024901",
+    "population_name": "NAVARROS (LOS)",
+    "postal_code": "35140"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0025201",
+    "population_name": "PALMITO (EL)",
+    "postal_code": "35140"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0026599",
+    "population_name": "PASITOS (LOS)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0027101",
+    "population_name": "PATALAVACA",
+    "postal_code": "35129"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0028701",
+    "population_name": "PEÑONES (LOS)",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0029001",
+    "population_name": "PIE DE LA CUESTA",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0030401",
+    "population_name": "PLATERO",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0031101",
+    "population_name": "PLAYA DE MOGAN",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0032601",
+    "population_name": "PLAYA DE TAURO (LA)",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0034701",
+    "population_name": "PLAYA DEL CURA (LA)",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0035001",
+    "population_name": "PUEBLO DE TAURO",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0036301",
+    "population_name": "PUERTO RICO",
+    "postal_code": "35130"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0038501",
+    "population_name": "SORIA",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0039801",
+    "population_name": "TABAIBALES",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0040201",
+    "population_name": "TAURITO",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0041901",
+    "population_name": "VERGA (LA)",
+    "postal_code": "35129"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0043001",
+    "population_name": "CHARCA (LA)",
+    "postal_code": "35120"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0044501",
+    "population_name": "VENTO (EL)",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0045801",
+    "population_name": "BALITO",
+    "postal_code": "35129"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0046101",
+    "population_name": "BARRANCO DEL CURA",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0048301",
+    "population_name": "CANARIOS I",
+    "postal_code": "35120"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0049601",
+    "population_name": "CANARIOS II,III,IV Y V",
+    "postal_code": "35129"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0050901",
+    "population_name": "CORNISA DEL SUROESTE",
+    "postal_code": "35120"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0051601",
+    "population_name": "CORTADORES DE PUERTO RICO",
+    "postal_code": "35130"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0052101",
+    "population_name": "PLAYA DE VENEGUERA (LA)",
+    "postal_code": "35149"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0053701",
+    "population_name": "VISTILLA (LA)",
+    "postal_code": "35140"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOGÁN",
+    "municipality_code": "012",
+    "population_code": "0054201",
+    "population_name": "MORRO DEL GUINCHO",
+    "postal_code": "35138"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0001799",
+    "population_name": "BARRANCO DEL LAUREL",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0002299",
+    "population_name": "BARRANCO DEL PINAR",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0003801",
+    "population_name": "CABO VERDE",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0004301",
+    "population_name": "CARRETERIA",
+    "postal_code": "35423"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0005601",
+    "population_name": "COSTA (LA)",
+    "postal_code": "35413"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0006999",
+    "population_name": "DORAMAS",
+    "postal_code": "35423"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0007501",
+    "population_name": "DRAGOS (LOS)",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0008101",
+    "population_name": "FRONTON",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0009499",
+    "population_name": "HOYAS DEL CAVADERO",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0011501",
+    "population_name": "LANCE",
+    "postal_code": "35423"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0012001",
+    "population_name": "LOMO BLANCO",
+    "postal_code": "35423"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0013699",
+    "population_name": "LOMO DEL PEÑON",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0014101",
+    "population_name": "VILLA DE MOYA",
+    "postal_code": "35420"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0015401",
+    "population_name": "PALMITO",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0016701",
+    "population_name": "PALO",
+    "postal_code": "35423"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0017301",
+    "population_name": "FONTANALES",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0018901",
+    "population_name": "SAN FERNANDO",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0019299",
+    "population_name": "TABLERO (EL)",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0020699",
+    "population_name": "TILES (LOS)",
+    "postal_code": "35421"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0021301",
+    "population_name": "TRUJILLO",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0022899",
+    "population_name": "MORETO",
+    "postal_code": "35422"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "MOYA",
+    "municipality_code": "013",
+    "population_code": "0023401",
+    "population_name": "TOSCALES (LOS)",
+    "postal_code": "35422"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0001701",
+    "population_name": "CALDERETA",
+    "postal_code": "35649"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0002201",
+    "population_name": "CORRALEJO",
+    "postal_code": "35660"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0003801",
+    "population_name": "COTILLO EL",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0004301",
+    "population_name": "LAJARES",
+    "postal_code": "35650"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0005601",
+    "population_name": "OLIVA (LA)",
+    "postal_code": "35640"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0006901",
+    "population_name": "ROQUE EL",
+    "postal_code": "35650"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0007501",
+    "population_name": "TINDAYA",
+    "postal_code": "35469"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0008101",
+    "population_name": "VALLEBRON",
+    "postal_code": "35649"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0009401",
+    "population_name": "VILLAVERDE",
+    "postal_code": "35640"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0010899",
+    "population_name": "ISLA DE LOBOS",
+    "postal_code": "35660"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0011599",
+    "population_name": "MAJANICHO",
+    "postal_code": "35650"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "OLIVA (LA)",
+    "municipality_code": "014",
+    "population_code": "0012001",
+    "population_name": "PARQUE HOLANDES",
+    "postal_code": "35469"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0001701",
+    "population_name": "CARDON",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0003801",
+    "population_name": "LAJITA (LA)",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0004301",
+    "population_name": "MORRO JABLE",
+    "postal_code": "35625"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0005601",
+    "population_name": "PAJARA",
+    "postal_code": "35625"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0006901",
+    "population_name": "TOTO",
+    "postal_code": "35628"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0007501",
+    "population_name": "AJUY",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0008102",
+    "population_name": "COSTA CALMA",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0009401",
+    "population_name": "ESQUINZO",
+    "postal_code": "35626"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0010801",
+    "population_name": "MAL NOMBRE",
+    "postal_code": "35626"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0011501",
+    "population_name": "PARED (LA)",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0012001",
+    "population_name": "PIEDRAS CAIDAS",
+    "postal_code": "35626"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0013601",
+    "population_name": "SOLANA MATORRAL",
+    "postal_code": "35625"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PÁJARA",
+    "municipality_code": "015",
+    "population_code": "0014101",
+    "population_name": "PUNTA JANDIA",
+    "postal_code": "35625"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0001701",
+    "population_name": "ALMATRICHE",
+    "postal_code": "35018"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0012001",
+    "population_name": "GILES (LOS)",
+    "postal_code": "35018"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0014101",
+    "population_name": "HOYOS (LOS)",
+    "postal_code": "35017"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0019201",
+    "population_name": "MARZAGAN",
+    "postal_code": "35016"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0024901",
+    "population_name": "PALMAS DE GRAN CANARIA (LAS)",
+    "postal_code": "35001"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0030401",
+    "population_name": "SAN LORENZO",
+    "postal_code": "35018"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0036301",
+    "population_name": "TAMARACEITE",
+    "postal_code": "35018"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0037901",
+    "population_name": "TENOYA",
+    "postal_code": "35018"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0049601",
+    "population_name": "MONTAÑETA (LA)",
+    "postal_code": "35017"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "PALMAS DE GRAN CANARIA (LAS)",
+    "municipality_code": "016",
+    "population_code": "0050901",
+    "population_name": "TAFIRA",
+    "postal_code": "35017"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0001701",
+    "population_name": "AMPUYENTA (LA)",
+    "postal_code": "35600"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0002201",
+    "population_name": "ASOMADA (LA)",
+    "postal_code": "35613"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0003801",
+    "population_name": "CASILLAS DEL ANGEL",
+    "postal_code": "35611"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0005601",
+    "population_name": "GUISGUEY",
+    "postal_code": "35612"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0006901",
+    "population_name": "LLANOS DE LA CONCEPCION",
+    "postal_code": "35637"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0007501",
+    "population_name": "MATILLA (LA)",
+    "postal_code": "35613"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0008101",
+    "population_name": "MATORRAL (EL)",
+    "postal_code": "35610"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0009401",
+    "population_name": "PUERTO DEL ROSARIO",
+    "postal_code": "35500"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0010801",
+    "population_name": "PUERTO LAJAS",
+    "postal_code": "35612"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0011501",
+    "population_name": "TEFIA",
+    "postal_code": "35611"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0012002",
+    "population_name": "TESJUATES",
+    "postal_code": "35611"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0013601",
+    "population_name": "TETIR",
+    "postal_code": "35600"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0014101",
+    "population_name": "TIME (EL)",
+    "postal_code": "35613"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0015401",
+    "population_name": "ESTANCOS (LOS)",
+    "postal_code": "35613"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0016701",
+    "population_name": "PARCELAS LAS",
+    "postal_code": "35611"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "PUERTO DEL ROSARIO",
+    "municipality_code": "017",
+    "population_code": "0017301",
+    "population_name": "PUERTITO DE LOS MOLINOS",
+    "postal_code": "35611"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ",
+    "municipality_code": "018",
+    "population_code": "0002201",
+    "population_name": "GUIME",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ",
+    "municipality_code": "018",
+    "population_code": "0003801",
+    "population_name": "ISLOTE (EL)",
+    "postal_code": "35550"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ",
+    "municipality_code": "018",
+    "population_code": "0004301",
+    "population_name": "MONTAÑA BLANCA",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ",
+    "municipality_code": "018",
+    "population_code": "0005601",
+    "population_name": "PLAYA HONDA",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ",
+    "municipality_code": "018",
+    "population_code": "0006901",
+    "population_name": "SAN BARTOLOME",
+    "postal_code": "35550"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0001799",
+    "population_name": "AGUALATENTE",
+    "postal_code": "35299"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0002201",
+    "population_name": "ALDEA BLANCA",
+    "postal_code": "35119"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0004399",
+    "population_name": "ARTEARA",
+    "postal_code": "35108"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0005601",
+    "population_name": "AYACATA",
+    "postal_code": "35369"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0006901",
+    "population_name": "AYAGAURES",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0009401",
+    "population_name": "CASTILLO DEL ROMERAL",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0010801",
+    "population_name": "CERCADOS DE ARAÑA",
+    "postal_code": "35369"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0011501",
+    "population_name": "CERCADOS DE ESPINOS",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0012099",
+    "population_name": "CULATA (LA)",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0013601",
+    "population_name": "FATAGA",
+    "postal_code": "35108"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0014199",
+    "population_name": "FLORIDA (LA)",
+    "postal_code": "35119"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0015499",
+    "population_name": "HOYA GARCIA",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0016701",
+    "population_name": "JUAN GRANDE",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0017399",
+    "population_name": "LOMITO DE TAIDIA",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0018999",
+    "population_name": "LOMO DE LA PALMA",
+    "postal_code": "35369"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0020602",
+    "population_name": "MASPALOMAS",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0022899",
+    "population_name": "MONTAÑA (LA)",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0024901",
+    "population_name": "MONTAÑA LA DATA",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0026599",
+    "population_name": "PLATA (LA)",
+    "postal_code": "35369"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0027101",
+    "population_name": "PLAYA DEL INGLES",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0028701",
+    "population_name": "RISCO BLANCO",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0029001",
+    "population_name": "SAN AGUSTIN",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0030401",
+    "population_name": "TUNTE",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0031199",
+    "population_name": "SEQUERO (EL)",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0032601",
+    "population_name": "SITIOS (LOS)",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0034701",
+    "population_name": "TAIDIA",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0036399",
+    "population_name": "HOYA GRANDE",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0037999",
+    "population_name": "HOYA DE TUNTE",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0039801",
+    "population_name": "BAHIA FELIZ",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0040299",
+    "population_name": "BERRIEL",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0041999",
+    "population_name": "CANALIZO (EL)",
+    "postal_code": "35108"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0042499",
+    "population_name": "CASERONES DE FATAGA (LOS)",
+    "postal_code": "35108"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0045899",
+    "population_name": "CIUDAD DE LIMA",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0046199",
+    "population_name": "CHIRA",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0049699",
+    "population_name": "HORTIGONES (LOS)",
+    "postal_code": "35108"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0050999",
+    "population_name": "HUESA BERMEJA",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0051699",
+    "population_name": "HUMBRIA (LA)",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0052199",
+    "population_name": "MEDIA FANEGA",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0053799",
+    "population_name": "MIMBRE (LA)",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0054299",
+    "population_name": "MONTAÑA DE ROSIANA",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0056899",
+    "population_name": "PAJAR (EL)",
+    "postal_code": "35120"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0057499",
+    "population_name": "PALMITOS (LOS)",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0058001",
+    "population_name": "PASITO BLANCO",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0059301",
+    "population_name": "PEDRAZO",
+    "postal_code": "35106"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0061401",
+    "population_name": "PLAYA DEL AGUILA",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0062999",
+    "population_name": "RISCO LA CANDELILLA",
+    "postal_code": "35369"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0063599",
+    "population_name": "RODEOS (LOS)",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0064001",
+    "population_name": "SALOBRE (EL)",
+    "postal_code": "35106"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0065301",
+    "population_name": "SANTA AGUEDA",
+    "postal_code": "35128"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0066601",
+    "population_name": "SONNENLAND",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0067299",
+    "population_name": "TARAJALILLO",
+    "postal_code": "35107"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0068899",
+    "population_name": "TEDERAS (LAS)",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0069199",
+    "population_name": "TREJO",
+    "postal_code": "35290"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0070501",
+    "population_name": "CAMPO INTERNACIONAL",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0071201",
+    "population_name": "CALDERIN",
+    "postal_code": "35106"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0072701",
+    "population_name": "MELONERAS (LAS)",
+    "postal_code": "35100"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SAN BARTOLOMÉ DE TIRAJANA",
+    "municipality_code": "019",
+    "population_code": "0073301",
+    "population_name": "MONTELEON",
+    "postal_code": "35109"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0001701",
+    "population_name": "ALBERCON",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0002201",
+    "population_name": "ARTEJEVEZ",
+    "postal_code": "35478"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0003801",
+    "population_name": "ESPINOS (LOS)",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0004301",
+    "population_name": "HOYO (EL)",
+    "postal_code": "35478"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0005601",
+    "population_name": "MARCIEGAS (LAS)",
+    "postal_code": "35479"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0006901",
+    "population_name": "MEDEROS",
+    "postal_code": "35479"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0007501",
+    "population_name": "MOLINOS (LOS)",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0008101",
+    "population_name": "ALDEA DE SAN NICOLAS (LA)",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0009401",
+    "population_name": "TASARTE",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0010801",
+    "population_name": "TASARTICO",
+    "postal_code": "35478"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0011501",
+    "population_name": "TOCODOMAN",
+    "postal_code": "35478"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0012001",
+    "population_name": "CARDONERA (LA)",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0013601",
+    "population_name": "CERCADILLOS",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0014101",
+    "population_name": "MOLINO DE AGUA",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0015401",
+    "population_name": "MOLINO DE VIENTO",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0016701",
+    "population_name": "PINILLO (EL)",
+    "postal_code": "35470"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "ALDEA DE SAN NICOLÁS (LA)",
+    "municipality_code": "020",
+    "population_code": "0017301",
+    "population_name": "PLAYA DE SAN NICOLAS",
+    "postal_code": "35479"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0001701",
+    "population_name": "ANGOSTURA (LA)",
+    "postal_code": "35300"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0002201",
+    "population_name": "ATALAYA (LA)",
+    "postal_code": "35307"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0003801",
+    "population_name": "GAMONAL (EL)",
+    "postal_code": "35300"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0004301",
+    "population_name": "MONTE LENTISCAL",
+    "postal_code": "35310"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0005601",
+    "population_name": "PINO SANTO",
+    "postal_code": "35309"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0007501",
+    "population_name": "SANTA BRIGIDA",
+    "postal_code": "35300"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0008101",
+    "population_name": "VEGA DE ENMEDIO",
+    "postal_code": "35308"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0009401",
+    "population_name": "LENTISCOS (LOS)",
+    "postal_code": "35310"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0010801",
+    "population_name": "OLIVOS (LOS)",
+    "postal_code": "35308"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA BRÍGIDA",
+    "municipality_code": "021",
+    "population_code": "0011501",
+    "population_name": "SAN JOSE DE LAS VEGAS",
+    "postal_code": "35300"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0001701",
+    "population_name": "CRUCE DE SARDINA",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0002201",
+    "population_name": "DOCTORAL (EL)",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0003801",
+    "population_name": "CASA PASTORES",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0010801",
+    "population_name": "SANTA LUCIA",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0011501",
+    "population_name": "SARDINA",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0013601",
+    "population_name": "VECINDARIO",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0023401",
+    "population_name": "INGENIO (EL)",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0024901",
+    "population_name": "LAGUNAS (LAS)",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0025201",
+    "population_name": "MORISCO (EL)",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0026501",
+    "population_name": "PARRAL GRANDE",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0027102",
+    "population_name": "POZO IZQUIERDO",
+    "postal_code": "35110"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0028702",
+    "population_name": "ROSIANA",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA LUCÍA DE TIRAJANA",
+    "municipality_code": "022",
+    "population_code": "0030401",
+    "population_name": "SORRUEDA (LA)",
+    "postal_code": "35280"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0002299",
+    "population_name": "BARRANQUILLO FRIO",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0004301",
+    "population_name": "CALABOZO (EL)",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0005601",
+    "population_name": "CASAS DE AGUILAR",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0006999",
+    "population_name": "JUNQUILLO (EL)",
+    "postal_code": "35457"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0007501",
+    "population_name": "MONDRAGONES",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0008101",
+    "population_name": "MONTAÑA ALTA",
+    "postal_code": "35457"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0009401",
+    "population_name": "PALMITAL (EL)",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0010801",
+    "population_name": "PASO MARIA DE LOS SANTOS",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0011501",
+    "population_name": "SAN FELIPE",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0012001",
+    "population_name": "SAN JUAN",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0013601",
+    "population_name": "SANTA MARIA DE GUIA",
+    "postal_code": "35450"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0014101",
+    "population_name": "TRES PALMAS",
+    "postal_code": "35458"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0015499",
+    "population_name": "VERDEJO",
+    "postal_code": "35457"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "SANTA MARÍA DE GUÍA DE GRAN CANARIA",
+    "municipality_code": "023",
+    "population_code": "0016701",
+    "population_name": "VERGARA",
+    "postal_code": "35458"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0001799",
+    "population_name": "CABRERAS (LAS)",
+    "postal_code": "35507"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0002201",
+    "population_name": "CALETA DE FAMARA",
+    "postal_code": "35530"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0004301",
+    "population_name": "CALETAS (LAS)",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0005601",
+    "population_name": "COSTA TEGUISE",
+    "postal_code": "35508"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0006901",
+    "population_name": "GUATIZA",
+    "postal_code": "35544"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0008199",
+    "population_name": "LADERAS (LAS)",
+    "postal_code": "35530"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0009401",
+    "population_name": "MOJON (EL)",
+    "postal_code": "35539"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0010801",
+    "population_name": "MOZAGA",
+    "postal_code": "35561"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0011501",
+    "population_name": "MUÑIQUE",
+    "postal_code": "35558"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0012001",
+    "population_name": "NAZARET",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0014101",
+    "population_name": "SOO",
+    "postal_code": "35558"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0015401",
+    "population_name": "TAHICHE",
+    "postal_code": "35507"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0016701",
+    "population_name": "TAO",
+    "postal_code": "35558"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0017301",
+    "population_name": "VILLA DE TEGUISE",
+    "postal_code": "35509"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0018901",
+    "population_name": "TESEGUITE",
+    "postal_code": "35539"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0019201",
+    "population_name": "TIAGUA",
+    "postal_code": "35558"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0020601",
+    "population_name": "VALLES (LOS)",
+    "postal_code": "35539"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0021399",
+    "population_name": "ANCONES (LOS)",
+    "postal_code": "35508"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0022801",
+    "population_name": "CALETA DE CABALLO",
+    "postal_code": "35558"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0023401",
+    "population_name": "COCOTEROS (LOS)",
+    "postal_code": "35544"
+  },
+  {
+    "island": "GRACIOSA (LA)",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0025201",
+    "population_name": "CALETA DE SEBO",
+    "postal_code": "35540"
+  },
+  {
+    "island": "GRACIOSA (LA)",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0025201",
+    "population_name": "PEDRO BARBA",
+    "postal_code": "35540"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TEGUISE",
+    "municipality_code": "024",
+    "population_code": "0027199",
+    "population_name": "TOMAREN",
+    "postal_code": "35561"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0001799",
+    "population_name": "CARRIZAL (EL)",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0002299",
+    "population_name": "CUEVAS CAIDAS",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0004399",
+    "population_name": "CHORRILLO (EL)",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0005699",
+    "population_name": "DEGOLLADA (LA)",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0006999",
+    "population_name": "ESPINILLO (EL)",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0008199",
+    "population_name": "JUNCAL (EL)",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0009401",
+    "population_name": "LOMO DE LOS SANTOS",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0010899",
+    "population_name": "MAJUELO (EL)",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0016701",
+    "population_name": "RINCON (EL)",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0019201",
+    "population_name": "SOLANA (LA)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0013601",
+    "population_name": "TEJEDA",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0014199",
+    "population_name": "TIMAGADA",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0015499",
+    "population_name": "TOSCON (EL)",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0016799",
+    "population_name": "CASAS DEL LOMO",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0017399",
+    "population_name": "CRUCITAS (LAS)",
+    "postal_code": "35360"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEJEDA",
+    "municipality_code": "025",
+    "population_code": "0019299",
+    "population_name": "ROQUE (EL)",
+    "postal_code": "35368"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0002201",
+    "population_name": "BREÑA (LA)",
+    "postal_code": "35211"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0003801",
+    "population_name": "CALERO (EL)",
+    "postal_code": "35212"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0004301",
+    "population_name": "CALLEJON DEL CASTILLO",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0005601",
+    "population_name": "CARACOL (EL)",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0006901",
+    "population_name": "CASAS NUEVAS",
+    "postal_code": "35214"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0007501",
+    "population_name": "CASERONES (LOS)",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0008101",
+    "population_name": "CAZADORES",
+    "postal_code": "35211"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0009401",
+    "population_name": "CENDRO",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0011501",
+    "population_name": "CUATRO PUERTAS",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0012001",
+    "population_name": "GANDO",
+    "postal_code": "35219"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0014102",
+    "population_name": "GARITA (LA)",
+    "postal_code": "35212"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0015401",
+    "population_name": "GAVIA (LA)",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0016701",
+    "population_name": "GORO (EL)",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0017301",
+    "population_name": "GOTERAS (LAS)",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0018901",
+    "population_name": "HIGUERA CANARIA (LA)",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0019201",
+    "population_name": "HORNOS DEL REY (LOS)",
+    "postal_code": "35220"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0020601",
+    "population_name": "HUESAS (LAS)",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0021301",
+    "population_name": "JEREZ",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0022801",
+    "population_name": "JINAMAR",
+    "postal_code": "35220"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0024901",
+    "population_name": "LOMO DE LA HERRADURA",
+    "postal_code": "35210"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0025201",
+    "population_name": "LOMO MAGULLO",
+    "postal_code": "35211"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0026501",
+    "population_name": "LOMO DEL CEMENTERIO",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0027101",
+    "population_name": "MAJADILLA (LA)",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0028701",
+    "population_name": "MARPEQUEÑA",
+    "postal_code": "35212"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0029099",
+    "population_name": "MATANZA (LA)",
+    "postal_code": "35220"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0030401",
+    "population_name": "MEDIANIAS (LAS)",
+    "postal_code": "35215"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0032601",
+    "population_name": "OJOS DE GARZA",
+    "postal_code": "35219"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0034701",
+    "population_name": "PARDILLA (LA)",
+    "postal_code": "35213"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0036301",
+    "population_name": "PLAYA DE MELENARA",
+    "postal_code": "35214"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0037901",
+    "population_name": "PLAYA DE SALINETAS",
+    "postal_code": "35214"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0038501",
+    "population_name": "PLAYA DEL HOMBRE",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0039801",
+    "population_name": "REMUDAS (LAS)",
+    "postal_code": "35213"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0040201",
+    "population_name": "SAN ANTONIO",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0042401",
+    "population_name": "SAN JOSE DE LAS LONGUERAS",
+    "postal_code": "35210"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0043001",
+    "population_name": "TARA",
+    "postal_code": "35210"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0044501",
+    "population_name": "TELDE",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0045801",
+    "population_name": "VALLE DE CASARES Y SOLANA",
+    "postal_code": "35218"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0046101",
+    "population_name": "VALLE DE LOS NUEVE",
+    "postal_code": "35211"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0047799",
+    "population_name": "TECEN",
+    "postal_code": "35211"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TELDE",
+    "municipality_code": "026",
+    "population_code": "0048301",
+    "population_name": "VALLE DE JINAMAR",
+    "postal_code": "35200"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0001701",
+    "population_name": "ALAMO (EL)",
+    "postal_code": "35330"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0002201",
+    "population_name": "ARBEJALES",
+    "postal_code": "35333"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0003801",
+    "population_name": "ESPARTERO",
+    "postal_code": "35338"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0005601",
+    "population_name": "PALMAR (EL)",
+    "postal_code": "35339"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0006901",
+    "population_name": "MIRAFLOR",
+    "postal_code": "35338"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0008101",
+    "population_name": "TEROR",
+    "postal_code": "35330"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0009401",
+    "population_name": "ROSADAS (LAS)",
+    "postal_code": "35330"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0010801",
+    "population_name": "SAN JOSE DEL ALAMO",
+    "postal_code": "35338"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "TEROR",
+    "municipality_code": "027",
+    "population_code": "0011501",
+    "population_name": "BLANCO (LO)",
+    "postal_code": "35338"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0002201",
+    "population_name": "CONIL",
+    "postal_code": "35572"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0003801",
+    "population_name": "MACHER",
+    "postal_code": "35571"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0004301",
+    "population_name": "MASDACHE",
+    "postal_code": "35572"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0007501",
+    "population_name": "PUERTO DEL CARMEN",
+    "postal_code": "35510"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0008101",
+    "population_name": "TIAS",
+    "postal_code": "35572"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TÍAS",
+    "municipality_code": "028",
+    "population_code": "0009401",
+    "population_name": "VEGA DE TEGOYO",
+    "postal_code": "35572"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TINAJO",
+    "municipality_code": "029",
+    "population_code": "0001701",
+    "population_name": "CUCHILLO (EL)",
+    "postal_code": "35560"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TINAJO",
+    "municipality_code": "029",
+    "population_code": "0002201",
+    "population_name": "MANCHA BLANCA",
+    "postal_code": "35560"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TINAJO",
+    "municipality_code": "029",
+    "population_code": "0003801",
+    "population_name": "SANTA (LA)",
+    "postal_code": "35560"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TINAJO",
+    "municipality_code": "029",
+    "population_code": "0004301",
+    "population_name": "TINAJO",
+    "postal_code": "35560"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "TINAJO",
+    "municipality_code": "029",
+    "population_code": "0005601",
+    "population_name": "VEGUETA (LA)",
+    "postal_code": "35560"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0008199",
+    "population_name": "CASITAS (LAS)",
+    "postal_code": "35570"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0003801",
+    "population_name": "GINIGINAMAR",
+    "postal_code": "35620"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0004301",
+    "population_name": "GRAN TARAJAL",
+    "postal_code": "35620"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0005601",
+    "population_name": "PLAYITAS (LAS)",
+    "postal_code": "35620"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0006901",
+    "population_name": "TARAJALEJO",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0008101",
+    "population_name": "TESEJERAGUE",
+    "postal_code": "35627"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0009401",
+    "population_name": "TISCAMANITA",
+    "postal_code": "35628"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0010801",
+    "population_name": "TUINEJE",
+    "postal_code": "35628"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0012001",
+    "population_name": "JUAN GOPAR",
+    "postal_code": "35628"
+  },
+  {
+    "island": "FUERTEVENTURA",
+    "province": "35",
+    "municipality": "TUINEJE",
+    "municipality_code": "030",
+    "population_code": "0013601",
+    "population_name": "TEQUITAL",
+    "postal_code": "35620"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0005601",
+    "population_name": "ERA DE MOTA",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0006901",
+    "population_name": "HELECHAL (EL)",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0009401",
+    "population_name": "LOMITOS DE CORREA",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0011501",
+    "population_name": "LLANETES (LOS)",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0014199",
+    "population_name": "MONTAÑON (EL)",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0018901",
+    "population_name": "TECEN DE VALSEQUILLO",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0019201",
+    "population_name": "TENTENIGUADA",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0020601",
+    "population_name": "VALSEQUILLO",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0021301",
+    "population_name": "VALLE DE SAN ROQUE DE VALSEQUILLO",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0022801",
+    "population_name": "VEGAS (LAS)",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0024901",
+    "population_name": "BARRERA (LA)",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0026501",
+    "population_name": "LLANOS DEL CONDE",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0027101",
+    "population_name": "CANTERA (LA)",
+    "postal_code": "35217"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0028701",
+    "population_name": "PEDREGAL (EL)",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALSEQUILLO DE GRAN CANARIA",
+    "municipality_code": "031",
+    "population_code": "0029001",
+    "population_name": "TRONCON (EL)",
+    "postal_code": "35216"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0001799",
+    "population_name": "BARRANCO",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0002299",
+    "population_name": "BARRANQUILLO",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0003899",
+    "population_name": "CARPINTERAS",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0004399",
+    "population_name": "CASERON",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0005601",
+    "population_name": "LANZAROTE",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0006901",
+    "population_name": "MADRELAGUA",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0007501",
+    "population_name": "MONAGAS",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0008199",
+    "population_name": "TROYANAS",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0009401",
+    "population_name": "VALSENDERO",
+    "postal_code": "35349"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0010801",
+    "population_name": "VALLESECO",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0011501",
+    "population_name": "ZAMORA",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0012001",
+    "population_name": "ZUMACAL",
+    "postal_code": "35000"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VALLESECO",
+    "municipality_code": "032",
+    "population_code": "0013601",
+    "population_name": "LOMO (EL)",
+    "postal_code": "35340"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0001701",
+    "population_name": "ARIÑEZ",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0002201",
+    "population_name": "BODEGUILLA (LA)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0003899",
+    "population_name": "CAMARETAS",
+    "postal_code": "35329"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0004301",
+    "population_name": "CUEVA GRANDE",
+    "postal_code": "35329"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0005699",
+    "population_name": "HOYA DEL GAMONAL",
+    "postal_code": "35329"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0006901",
+    "population_name": "LAGUNETAS (LAS)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0007501",
+    "population_name": "LECHUCILLA (LA)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0008101",
+    "population_name": "LECHUZA (LA)",
+    "postal_code": "35329"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0010801",
+    "population_name": "UTIACA",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0011501",
+    "population_name": "VEGA DE SAN MATEO",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0012099",
+    "population_name": "YEDRA (LA)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0013699",
+    "population_name": "CRUZ DE TEJEDA",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0014199",
+    "population_name": "CRUZ DEL HERRERO",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0015499",
+    "population_name": "CRUZ DEL SAUCILLO",
+    "postal_code": "35329"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0016799",
+    "population_name": "GALAS",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0017399",
+    "population_name": "GALLEGO (EL)",
+    "postal_code": "35328"
+  },
+  {
+    "island": "GRAN CANARIA",
+    "province": "35",
+    "municipality": "VEGA DE SAN MATEO",
+    "municipality_code": "033",
+    "population_code": "0018901",
+    "population_name": "LOMO CARBONERO",
+    "postal_code": "35328"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0001701",
+    "population_name": "BREÑAS (LAS)",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0002201",
+    "population_name": "FEMES",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0003801",
+    "population_name": "GOLFO (EL)",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0004301",
+    "population_name": "PLAYA BLANCA",
+    "postal_code": "35580"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0005601",
+    "population_name": "UGA",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0007501",
+    "population_name": "YAIZA",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0009499",
+    "population_name": "HOYA (LA)",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0010801",
+    "population_name": "PLAYA QUEMADA",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0011501",
+    "population_name": "CORTIJO VIEJO",
+    "postal_code": "35370"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0013699",
+    "population_name": "GERIA (LA)",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0015499",
+    "population_name": "MACIOT",
+    "postal_code": "35570"
+  },
+  {
+    "island": "LANZAROTE",
+    "province": "35",
+    "municipality": "YAIZA",
+    "municipality_code": "034",
+    "population_code": "0016701",
+    "population_name": "PUERTO CALERO",
+    "postal_code": "35570"
+  }
+]

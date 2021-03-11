@@ -8,10 +8,12 @@ export interface InputFieldFormProps {
   onBlur?: any;
   stateValidate?: stateValidateTypes;
   checked?: boolean;
+  disabled?: disableType;
 }
 
 export type inputTypes = 'email' | 'password' | 'text' | 'radio' | 'checkbox';
 export type stateValidateTypes = '' | 'correct' | 'incorrect';
+export type disableType = true | false;
 
 const formatRoles = {
   regexPhone: new RegExp(/[+][0-9]{1,3}\s\d+$/),

@@ -7,9 +7,10 @@ import './MixModifyUserForm.scss';
 import { TextAreaForm } from '../../../molecules/TextAreaForm';
 import { profileService } from '../../../../../../domain/services/Profile.service';
 import { useCorrectFormat } from '../../../../../hooks/useCorrectFormat';
+import { FormSelect } from '../../../molecules/FormSelect';
 
 export const MixModifyUserForm: React.FC<{}> = () => {
-  const { check, data, setInputValue, setNameEvent } = useCorrectFormat();
+  const { check, data, town, setInputValue, setNameEvent } = useCorrectFormat();
   const [cvButtonClass, setCvButtonClass] = useState('cv-button');
 
   const handleChange = () => {
@@ -118,10 +119,8 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               name="island"
               type="text"
               stateValidate={check.island}
-              onChange={(e) => {
-                setInputValue(e.target.value);
-                setNameEvent(e.target.name);
-              }}
+              disabled={true}
+              value={data.island}
             />
           </div>
           <div className={'row location-data-second-row'}>
@@ -129,23 +128,17 @@ export const MixModifyUserForm: React.FC<{}> = () => {
               title="Provincia"
               name="province"
               type="text"
-              stateValidate={check.province}
-              onChange={(e) => {
-                setInputValue(e.target.value);
-                setNameEvent(e.target.name);
-              }}
-              messageInfoUser={'Formato incorrecto solamente puede contener letras'}
+              value={data.province}
+              disabled={true}
             />
-            <FieldForm
-              title="Ciudad"
-              name="town"
-              type="text"
-              stateValidate={check.town}
+            <FormSelect
+              name={'town'}
+              optionsList={town}
+              text={'Ciudad'}
               onChange={(e) => {
                 setInputValue(e.target.value);
                 setNameEvent(e.target.name);
               }}
-              messageInfoUser={'Formato incorrecto solamente puede contener letras'}
             />
           </div>
           <div className={'row location-data-third-row'}>

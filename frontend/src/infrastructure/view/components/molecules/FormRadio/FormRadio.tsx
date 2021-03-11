@@ -11,7 +11,7 @@ export const FormRadio: React.FC<FormRadioProps> = ({
   onChange,
   onBlur,
   stateValidate,
-  messageInfoUser,
+  disabled,
 }) => (
   <div className="FormRadio">
     <InputFieldForm
@@ -21,6 +21,7 @@ export const FormRadio: React.FC<FormRadioProps> = ({
       onChange={onChange}
       onBlur={onBlur}
       stateValidate={stateValidate}
+      disabled={disabled}
     />
     {value}
   </div>
