@@ -8,8 +8,31 @@ import { Image } from '../../../atoms/Image';
 import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
 import { LinkText } from '../../../atoms/LinkText';
 import { SubmitButton } from '../../../atoms/SubmitButton';
+import { Esal, EsalEmployee } from '../../../../../../domain/models/Esal';
+import { EsalService } from '../../../../../../domain/services/Esal.service';
+import { isTypeQueryNode } from 'typescript';
+
+
+
 
 export const FormRegisterEsal: React.FC<{}> = () => {
+
+  const [state, setState] = React.useState<any>({
+    Name: "",
+    Surname: "",
+    Email: "",
+    PhoneNumber: "",
+    Password: "",
+    Entity: "",
+    Web: "",
+    Descripcion: "",
+    Island: "",
+    PostalCode: "",
+    EntityType: "",
+    PrivacyPolicy: "",
+    DataProtection: "",
+    RegisteredAsVolunteeringEntity: "",
+  });
   const island = [
     'Gran Canaria',
     'Fuerteventura',
@@ -30,7 +53,40 @@ export const FormRegisterEsal: React.FC<{}> = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const esalEmployee: EsalEmployee = {
+      name: state.Name,
+      surname: state.Surname,
+      phoneNumber: state.PhoneNumber,
+      email: state.Email,
+      password: state.Password
+    };
+    const esal: Esal = {
+      name: "Test",
+      description: state.Description,
+      website: state.Web,
+      registeredEntity: state.RegisteredAsVolunteeringEntity === 'Si',
+      entityType: state.EntityType,
+      privacyPolicy: state.PrivacyPolicy,
+      dataProtectionPolicy: state.DataProtection,
+      island: state.Island,
+      zipCode: state.ZipCode
+    };
+    EsalService.regsiterBunch(esalEmployee, esal);
   };
+
+  const handleCheckChange = (event: React.FormEvent<HTMLInputElement>) => {
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.checked
+    })
+  }
+
+  const handleChange = (event: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
 
   return (
     <form className="FormRegisterEsal" method={'POST'} id="form" onSubmit={handleSubmit}>
@@ -41,21 +97,22 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </header>
           <div className="row">
             <div className={'col'}>
-              <FieldForm title={'Nombre *'} type={'text'} name={'Nombre'} />
+              <FieldForm title={'Nombre *'} type={'text'} name={'Name'} onChange={handleChange} />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Apellidos *'} type={'text'} name={'Apellidos'} />
+              <FieldForm title={'Apellidos *'} type={'text'} name={'Surname'} onChange={handleChange} />
             </div>
           </div>
           <div className="row">
             <div className={'col'}>
-              <FieldForm title={'Email *'} type={'email'} name={'Email'} />
+              <FieldForm title={'Email *'} type={'email'} name={'Email'} onChange={handleChange} />
             </div>
             <div className={'col'}>
               <FieldForm
                 title={'Confirmar email *'}
                 type={'email'}
                 name={'ConfirmarEmail'}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -64,11 +121,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <FieldForm
                 title={'Teléfono de contacto *'}
                 type={'text'}
-                name={'Telefono'}
+                name={'PhoneNumber'}
+                onChange={handleChange}
               />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Contraseña *'} type={'password'} name={'Password'} />
+              <FieldForm title={'Contraseña *'} type={'password'} name={'Password'} onChange={handleChange} />
             </div>
           </div>
         </div>
@@ -78,20 +136,21 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </header>
           <div className={'row'}>
             <div className={'col'}>
-              <FieldForm title={'Nombre entidad *'} type={'text'} name={'Entidad'} />
+              <FieldForm title={'Nombre entidad *'} type={'text'} name={'Entity'} onChange={handleChange} />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Página web'} type={'text'} name={'Web'} />
+              <FieldForm title={'Página web'} type={'text'} name={'Web'} onChange={handleChange} />
             </div>
           </div>
           <div className={'row'}>
             <div className={'col'}>
               <TextAreaForm
                 title={'Descripción *'}
-                name={'Descripcion'}
+                name={'Description'}
                 placeholder={'Breve descripción de la entidad'}
                 rows={10}
                 cols={2}
+                onChange={handleChange}
               />
             </div>
             <div className={'col localization'}>
@@ -104,17 +163,18 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                         <FormRadio
                           title={''}
                           type={'radio'}
-                          name={islands}
+                          name={'Island'}
                           value={islands}
                           checked={false}
                           key={index}
+                          onChange={handleChange}
                         />
                       );
                     })}
                   </div>
                 </div>
                 <div className={'col postal-code'}>
-                  <FieldForm title={'Código postal *'} type={'text'} name={'Otros'} />
+                  <FieldForm title={'Código postal *'} type={'text'} name={'ZipCode'} onChange={handleChange} />
                 </div>
               </div>
             </div>
@@ -142,10 +202,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                       <FormRadio
                         title={''}
                         type={'radio'}
-                        name={types}
+                        name={'EntityType'}
                         value={types}
                         checked={false}
                         key={index}
+                        onChange={handleChange}
                       />
                     );
                   })}
@@ -161,16 +222,18 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   <FormRadio
                     title={''}
                     type={'checkbox'}
-                    name={'Affirmative'}
-                    value={'Sí'}
+                    name={'RegisteredAsVolunteeringEntity'}
+                    value={'Si'}
                     checked={false}
+                    onChange={handleChange}
                   />
                   <FormRadio
                     title={''}
                     type={'checkbox'}
-                    name={'Negative'}
+                    name={'RegisteredAsVolunteeringEntity'}
                     value={'No'}
                     checked={false}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -182,9 +245,10 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <FormRadio
                 title={'Política Privacidad'}
                 type={'checkbox'}
-                name={'Política Privacidad'}
+                name={'PrivacyPolicy'}
                 value={''}
                 checked={false}
+                onChange={handleCheckChange}
               />
               <p>
                 Estoy de acuerdo de con la {''}
@@ -195,9 +259,10 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <FormRadio
                 title={'Protección de datos'}
                 type={'checkbox'}
-                name={'Proteccion de datos'}
+                name={'DataProtection'}
                 value={''}
                 checked={false}
+                onChange={handleCheckChange}
               />
               <p>
                 Estoy de acuerdo de con la {''}
