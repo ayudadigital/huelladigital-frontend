@@ -61,7 +61,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
       password: state.Password
     };
     const esal: Esal = {
-      name: "Test",
+      name: state.EntityName,
       description: state.Description,
       website: state.Web,
       registeredEntity: state.RegisteredAsVolunteeringEntity === 'Si',
@@ -136,7 +136,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </header>
           <div className={'row'}>
             <div className={'col'}>
-              <FieldForm title={'Nombre entidad *'} type={'text'} name={'Entity'} onChange={handleChange} />
+              <FieldForm title={'Nombre entidad *'} type={'text'} name={'EntityName'} onChange={handleChange} />
             </div>
             <div className={'col'}>
               <FieldForm title={'Página web'} type={'text'} name={'Web'} onChange={handleChange} />

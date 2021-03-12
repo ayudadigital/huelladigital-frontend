@@ -11,7 +11,12 @@ const regsiterBunch = (esalEmployee: EsalEmployee, esal: Esal) => {
           .then((res: { accessToken: string; refreshToken: string; roles: string }) => {
             activateAuth(res.accessToken, res.refreshToken, res.roles[0]);
             console.log(res);
-            ESALRepository.registerEsal(esal).then((response: any) => {});
+            ESALRepository.registerEsal(esal).then((response: any) => {
+              if (response.status === 201) {
+                //Añadir logo si existe
+                //Routing (¿Qué pagina se muestra a continuación?)
+              }
+            });
           }),
       );
     }
