@@ -116,14 +116,6 @@ export const useCorrectFormat = () => {
             setCheck({ ...check, zipCode: 'incorrect' });
           }
           break;
-        // case 'island':
-        //   if (formatRoles.regexOnlyText.test(inputValue)) {
-        //     setCheck({ ...check, island: 'correct' });
-        //     setData({ ...data, island: inputValue });
-        //   } else {
-        //     setCheck({ ...check, island: 'incorrect' });
-        //   }
-        //   break;
         case 'town':
           if (formatRoles.regexOnlyText.test(inputValue)) {
             setCheck({ ...check, town: 'correct' });
@@ -182,18 +174,49 @@ export const useCorrectFormat = () => {
         (postalCode) => postalCode.postal_code === data.zipCode,
       );
       const [{ island: islandName, population_name: populationName }] = items;
+      formatString(islandName);
+      // setData({
+      //   ...data,
+      //   province: province['35'],
+      //   island: islandName,
+      //   town: populationName,
+      // });
+      const towns = items.map((townName) => townName.population_name);
+      setTown(towns);
+    } else if (data.zipCode.startsWith('38')) {
+      const items = provinceTenerife.filter(
+        (postalCode) => postalCode.postal_code === data.zipCode,
+      );
+      const [{ island: islandName, population_name: populationName }] = items;
+
       setData({
         ...data,
-        province: province['35'],
+        province: province['38'],
         island: islandName,
         town: populationName,
       });
       const towns = items.map((townName) => townName.population_name);
       setTown(towns);
-    } else if (data.zipCode.startsWith('38')) {
-      setData({ ...data, province: province['38'] });
     }
   }, [data.zipCode]);
+
+  // TODO solamente dejar en Mayusculas la primera letra y la que va después de un espacio en blanco
+  const formatString = (stringItem: string) => {
+    // let correctName: string = '';
+    for (let character = 0; character < stringItem.length; character++) {
+      if (character === 0) {
+        // correctName = stringItem[character].toUpperCase();
+      } else if (stringItem.substring(character, character) === '') {
+        console.log(stringItem.substring(character - 1, character - 1) === '');
+        // correctName = stringItem[character + 1].toUpperCase();
+
+        // correctName += stringItem[character + 1].toUpperCase();
+      } else {
+        // correctName += stringItem[character].toLowerCase();
+      }
+    }
+    // console.log(correctName);
+  };
 
   return { check, data, town, setInputValue, setNameEvent };
 };
