@@ -38,6 +38,22 @@ export const useCorrectFormat = () => {
         linkedin: '',
         additionalInformation: '',
     });
+    const [messageInfoUser, setMessageInfoUser] = useState({
+        name: '',
+        surname: '',
+        birthDate: '',
+        phoneNumber: '',
+        email: '',
+        province: '',
+        zipCode: '',
+        town: '',
+        address: '',
+        island: '',
+        twitter: '',
+        instagram: '',
+        linkedin: '',
+        additionalInformation: '',
+    });
 
     const [inputValue, setInputValue] = useState<string>();
     const [nameEvent, setNameEvent] = useState<string>();
@@ -64,6 +80,7 @@ export const useCorrectFormat = () => {
                         setData({...data, email: inputValue});
                     } else {
                         setCheck({...check, email: 'incorrect'});
+                        setMessageInfoUser({...messageInfoUser, email: 'Formato incorrecto'});
                     }
                     break;
                 case 'name':
@@ -76,6 +93,10 @@ export const useCorrectFormat = () => {
                         setData({...data, name: inputValue});
                     } else {
                         setCheck({...check, name: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            name: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30'
+                        });
                     }
                     break;
                 case 'surname':
@@ -86,6 +107,11 @@ export const useCorrectFormat = () => {
                     ) {
                         setCheck({...check, surname: 'correct'});
                         setData({...data, surname: inputValue});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            surname: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30'
+                        });
+
                     } else {
                         setCheck({...check, surname: 'incorrect'});
                     }
@@ -98,6 +124,7 @@ export const useCorrectFormat = () => {
                         setData({...data, birthDate: inputValue});
                     } else {
                         setCheck({...check, birthDate: 'incorrect'});
+                        setMessageInfoUser({...messageInfoUser, birthDate: 'No puede ser menor de 16 años'});
                     }
                     break;
                 case 'phoneNumber':
@@ -106,6 +133,10 @@ export const useCorrectFormat = () => {
                         setData({...data, phoneNumber: inputValue});
                     } else {
                         setCheck({...check, phoneNumber: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            phoneNumber: 'Formato incorrecto Ej: +XX XXXXXXXXX o +XXX'
+                        });
                     }
                     break;
                 case 'zipcode':
@@ -114,6 +145,7 @@ export const useCorrectFormat = () => {
                         setData({...data, zipCode: inputValue});
                     } else {
                         setCheck({...check, zipCode: 'incorrect'});
+                        setMessageInfoUser({...messageInfoUser, zipCode: 'Código postal incorrecto o no existe'});
                     }
                     break;
                 case 'town':
@@ -130,6 +162,10 @@ export const useCorrectFormat = () => {
                         setData({...data, address: inputValue});
                     } else {
                         setCheck({...check, address: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            address: 'Formato incorrecto Ej: Calle Nombre de la calle X'
+                        });
                     }
                     break;
                 case 'twitter':
@@ -138,14 +174,10 @@ export const useCorrectFormat = () => {
                         setData({...data, twitter: inputValue});
                     } else {
                         setCheck({...check, twitter: 'incorrect'});
-                    }
-                    break;
-                case 'instagram':
-                    if (formatRoles.regexInstagram.test(inputValue)) {
-                        setCheck({...check, instagram: 'correct'});
-                        setData({...data, instagram: inputValue});
-                    } else {
-                        setCheck({...check, instagram: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            twitter: 'Formato incorrecto Ej: "https://twitter.com/nombre_de_usuario"'
+                        });
                     }
                     break;
                 case 'linkedin':
@@ -154,6 +186,22 @@ export const useCorrectFormat = () => {
                         setData({...data, linkedin: inputValue});
                     } else {
                         setCheck({...check, linkedin: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            linkedin: 'Formato incorrecto Ej: "https://linkedin.com/in/nombre_de_usuario"'
+                        });
+                    }
+                    break;
+                case 'instagram':
+                    if (formatRoles.regexInstagram.test(inputValue)) {
+                        setCheck({...check, instagram: 'correct'});
+                        setData({...data, instagram: inputValue});
+                    } else {
+                        setCheck({...check, instagram: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            instagram: 'Formato incorrecto Ej: "https://instagram.com/nombre_de_usuario"'
+                        });
                     }
                     break;
                 case 'information':
@@ -162,6 +210,10 @@ export const useCorrectFormat = () => {
                         setData({...data, additionalInformation: inputValue});
                     } else {
                         setCheck({...check, additionalInformation: 'incorrect'});
+                        setMessageInfoUser({
+                            ...messageInfoUser,
+                            additionalInformation: 'Formato incorrecto solamente puede contener texto con un máximo de 500 caracteres'
+                        });
                     }
                     break;
             }
@@ -227,47 +279,74 @@ export const useCorrectFormat = () => {
                 (postalCode) => postalCode.postal_code === data.zipCode,
             );
 
-            items.map((names) => {
-                if (names.island) {
-                    const [{island: islandName}] = items;
-
-                    islandCorrectNameFormat = formatString(islandName.toLowerCase());
+            switch (items.length) {
+                case 0:
                     setData({
                         ...data,
-                        province: province['35'],
-                        island: islandCorrectNameFormat,
+                        island: 'No existe el código postal',
+                        province: 'No existe el código postal',
                     });
+                    setTown([]);
+                    setCheck({...check, zipCode: 'incorrect'});
+                    setMessageInfoUser({...messageInfoUser, zipCode: 'No existe'});
 
-                    const towns = items.map((townName) =>formatString(townName.population_name.toLowerCase()));
+                    break;
+                default:
+                    items.map((names) => {
+                        if (names.island) {
+                            const [{island: islandName}] = items;
 
-                    setTown(towns);
-                }
-            });
+                            islandCorrectNameFormat = formatString(islandName.toLowerCase());
+                            setData({
+                                ...data,
+                                province: province['35'],
+                                island: islandCorrectNameFormat,
+                            });
 
+                            const towns = items.map((townName) => formatString(townName.population_name.toLowerCase()));
+                            setTown(towns);
+                        }
+                    });
+            }
 
         } else if (data.zipCode.startsWith('38')) {
             const items = provinceTenerife.filter(
                 (postalCode) => postalCode.postal_code === data.zipCode,
             );
 
-            items.map((names) => {
-                if (names.island) {
-                    const [{island: islandName}] = items;
-                    islandCorrectNameFormat = formatString(islandName.toLowerCase());
+            switch (items.length) {
+                case 0:
                     setData({
                         ...data,
-                        province: province['38'],
-                        island: islandCorrectNameFormat,
+                        island: 'No existe el código postal',
+                        province: 'No existe el código postal',
                     });
-                    const towns = items.map((townName) =>formatString(townName.population_name.toLowerCase()));
-                    setTown(towns);
-                }
-            });
+                    setTown([]);
+                    setCheck({...check, zipCode: 'incorrect'});
+                    setMessageInfoUser({...messageInfoUser, zipCode: 'Código poral no existe'});
+                    break;
+                default:
+                    items.map((names) => {
+                        if (names.island) {
+                            const [{island: islandName}] = items;
+
+                            islandCorrectNameFormat = formatString(islandName.toLowerCase());
+                            setData({
+                                ...data,
+                                province: province['38'],
+                                island: islandCorrectNameFormat,
+                            });
+
+                            const towns = items.map((townName) => formatString(townName.population_name.toLowerCase()));
+                            setTown(towns);
+                        }
+                    });
+            }
 
 
         }
     }, [data.zipCode]);
 
 
-    return {check, data, town, setInputValue, setNameEvent};
+    return {check, data, town, messageInfoUser, setInputValue, setNameEvent};
 };
