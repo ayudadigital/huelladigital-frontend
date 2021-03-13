@@ -167,61 +167,125 @@ export const useCorrectFormat = () => {
             }
         }
     }, [inputValue, nameEvent]);
+
+    function formatTown(townName: string) {
+        let correctFormatName: string = '';
+        const whiteSpace = ' ';
+        let searchBlank = townName.indexOf(' ');
+        let searchBlankFromLast = townName.lastIndexOf(' ');
+        let firstSubstr: string;
+        let secondSubstr: string;
+        let thirdSubstr: string;
+        const searchFirstParenthesis = townName.indexOf('(');
+        const searchSecondParenthesis = townName.indexOf(')');
+        const searchDash = townName.indexOf('-');
+
+
+        if (searchBlank === searchBlankFromLast && searchBlank !== -1) {
+
+            if (searchFirstParenthesis !== searchSecondParenthesis && searchFirstParenthesis !== -1) {
+                correctFormatName = townName.substring(searchFirstParenthesis + 1, searchFirstParenthesis + 2).toUpperCase() +
+                    townName.substring(searchFirstParenthesis + 2, searchSecondParenthesis) + whiteSpace + townName.substring(0, 1).toUpperCase() +
+                    townName.substring(1, searchFirstParenthesis - 1);
+            } else {
+                correctFormatName = townName.substring(0, 1).toUpperCase() + townName.substring(1, searchBlank).toLowerCase()
+                    + townName.substring(searchBlank, searchBlank + 2).toUpperCase()
+                    + townName.substring(searchBlank + 2).toLowerCase();
+            }
+
+        } else if (searchBlank !== searchBlankFromLast && searchBlank !== -1) {
+            firstSubstr = townName.substring(0, searchBlank);
+            secondSubstr = townName.substring(searchBlankFromLast);
+            thirdSubstr = townName.substring(searchBlank, searchBlankFromLast);
+            searchBlank = thirdSubstr.indexOf(' ');
+            searchBlankFromLast = thirdSubstr.lastIndexOf(' ');
+
+            if (searchBlank === searchBlankFromLast && thirdSubstr.substring(1).startsWith('d')) {
+                correctFormatName = firstSubstr.substring(0, 1).toUpperCase() + firstSubstr.substring(1) + thirdSubstr + secondSubstr.substring(0, 2).toUpperCase() + secondSubstr.substring(2);
+
+            } else if (!thirdSubstr.substring(1).startsWith('d')) {
+                correctFormatName = firstSubstr.substring(0, 1).toUpperCase() + firstSubstr.substring(1) + thirdSubstr.substring(0, 2).toUpperCase()
+                    + thirdSubstr.substring(2) + secondSubstr.substring(0, 2).toUpperCase() + secondSubstr.substring(2);
+
+            }
+
+        } else {
+            if (searchDash!==-1){
+                correctFormatName = townName.substring(0, 1).toUpperCase() + townName.substring(1,searchDash)+townName.substring(searchDash,searchDash+1)+
+                townName.substring(searchDash+1,searchDash+2).toUpperCase()+townName.substring(searchDash+2);
+
+            }else {
+                correctFormatName = townName.substring(0, 1).toUpperCase() + townName.substring(1);
+
+            }
+        }
+        console.log(correctFormatName);
+    }
+
+    const pruebas = 'PASADILLA-ROQUE"';
     useEffect(() => {
         let islandCorrectNameFormat: string;
         if (data.zipCode.startsWith('35')) {
             const items = provinceLasPalmas.filter(
                 (postalCode) => postalCode.postal_code === data.zipCode,
             );
-            const [{island: islandName, population_name: populationName}] = items;
 
-            islandCorrectNameFormat=    formatString(islandName.toLowerCase());
-            setData({
-                ...data,
-                province: province['35'],
-                island: islandCorrectNameFormat,
+            items.map((names) => {
+                if (names.island) {
+                    const [{island: islandName, population_name: populationName}] = items;
+
+                    islandCorrectNameFormat = formatString(islandName.toLowerCase());
+                    formatTown(pruebas.toLowerCase());
+                    setData({
+                        ...data,
+                        province: province['35'],
+                        island: islandCorrectNameFormat,
+                    });
+                    // setData({
+                    //   ...data,
+                    //   province: province['35'],
+                    //   island: islandName,
+                    //   town: populationName,
+                    // });
+                    // const towns = items.map((townName) => {
+                    //     console.log(formatTown(townName.population_name.toLowerCase()))
+                    // });
+
+
+                    // setTown(towns);
+                }
             });
-            // setData({
-            //   ...data,
-            //   province: province['35'],
-            //   island: islandName,
-            //   town: populationName,
-            // });
-            const towns = items.map((townName) => townName.population_name);
-            setTown(towns);
+
+
         } else if (data.zipCode.startsWith('38')) {
             const items = provinceTenerife.filter(
                 (postalCode) => postalCode.postal_code === data.zipCode,
             );
-            const [{island: islandName, population_name: populationName}] = items;
-            islandCorrectNameFormat = formatString(islandName.toLowerCase());
 
-            // formatString(prueba.toLowerCase());
-            setData({
-                ...data,
-                province: province['38'],
-                island: islandCorrectNameFormat,
+            items.map((names) => {
+                if (names.island) {
+                    const [{island: islandName, population_name: populationName}] = items;
+                    islandCorrectNameFormat = formatString(islandName.toLowerCase());
+                    setData({
+                        ...data,
+                        province: province['38'],
+                        island: islandCorrectNameFormat,
+                    });
+
+                    // setData({
+                    //     ...data,
+                    //     province: province['38'],
+                    //     island: islandName,
+                    //     town: populationName,
+                    // });
+                    const towns = items.map((townName) => townName.population_name);
+                    setTown(towns);
+                }
             });
 
-            // setData({
-            //     ...data,
-            //     province: province['38'],
-            //     island: islandName,
-            //     town: populationName,
-            // });
-            const towns = items.map((townName) => townName.population_name);
-            setTown(towns);
+
         }
     }, [data.zipCode]);
-
-    function searchBlankCharacter(searchBlank: number, stringItem: string) {
-        let cont = 0;
-        while (searchBlank !== -1) {
-            cont++;
-            searchBlank = stringItem.indexOf(' ', searchBlank + 1);
-        }
-        return cont;
-    }
 
     const formatString = (stringItem: string) => {
         let correctName: string = '';
@@ -230,12 +294,11 @@ export const useCorrectFormat = () => {
         let firstSubstr: string;
         let secondSubstr: string;
         let thirdSubstr: string;
-        if (searchBlank === searchBlankFromLast && searchBlank!==-1) {
+        if (searchBlank === searchBlankFromLast && searchBlank !== -1) {
             correctName = stringItem.substring(0, 1).toUpperCase() + stringItem.substring(1, searchBlank).toLowerCase()
                 + stringItem.substring(searchBlank, searchBlank + 2).toUpperCase()
                 + stringItem.substring(searchBlank + 2).toLowerCase();
-        }
-        else if(searchBlank !== searchBlankFromLast && searchBlank!==-1)  {
+        } else if (searchBlank !== searchBlankFromLast && searchBlank !== -1) {
             firstSubstr = stringItem.substring(0, searchBlank);
             secondSubstr = stringItem.substring(searchBlankFromLast);
             thirdSubstr = stringItem.substring(searchBlank, searchBlankFromLast);
@@ -251,8 +314,8 @@ export const useCorrectFormat = () => {
 
             }
 
-        }else {
-            correctName=stringItem.substring(0,1).toUpperCase()+stringItem.substring(1);
+        } else {
+            correctName = stringItem.substring(0, 1).toUpperCase() + stringItem.substring(1);
         }
         return correctName;
     };
