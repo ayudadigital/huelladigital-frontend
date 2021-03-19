@@ -1,0 +1,53 @@
+$purple-tone: #7e254e;
+
+div {
+  .info-div {
+    .title {
+      text-align: center;
+      color: $purple-tone;
+      font-size: 35px;
+    }
+    div {
+      font-size: 18px;
+      margin: 0% 10% 0%;
+      li {
+        margin-top: 2%;
+      }
+    }
+
+    .faq {
+      color: black;
+      text-align: center;
+    }
+
+    .slogan {
+      text-align: center;
+      color: $purple-tone;
+      font-size: 35px;
+    }
+  }
+
+  .contact-form-div {
+    .form-fields-div {
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(2, 25em);
+        grid-gap: 5%;
+      }
+
+      .text-area {
+        margin-top: 5%;
+      }
+
+      .consent-captcha {
+        display: flex;
+        flex-direction: row;
+        gap: 20%;
+      }
+
+      button {
+        margin: 5% 0% 5% 0%;
+      }
+    }
+  }
+}

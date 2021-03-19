@@ -4,6 +4,7 @@ type typeRoute = {
   loginRegister: string;
   faq: string;
   cookiesPolicy: string;
+  contact: string;
   legalAdvice: string;
   privacyPolicy: string;
   organizations: {
@@ -81,6 +82,7 @@ export const ROUTE: typeRoute = {
     resendConfirmation: '/resend-email-confirmation',
   },
   cookiesPolicy: '/cookies-policy',
+  contact: '/contact',
   loginRegister: '/login-register',
   faq: '/frequently-asked-questions',
   legalAdvice: '/legal-advice',

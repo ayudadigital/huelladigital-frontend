@@ -34,3 +34,9 @@ export interface SkillDto {
 export interface ProposalListDTO {
   proposals: ProposalDTO[];
 }
+
+export interface InscribedVolunteer {
+  id: string;
+  emailAddress: string;
+  confirmed: boolean;
+}

@@ -1,4 +1,4 @@
-export default interface UserProfileDTO {
+export type Profile = {
   name: string;
   surname: string;
   birthDate: string;
@@ -13,4 +13,4 @@ export default interface UserProfileDTO {
   instagram?: string;
   linkedin?: string;
   additionalInformation?: string;
-}
+};

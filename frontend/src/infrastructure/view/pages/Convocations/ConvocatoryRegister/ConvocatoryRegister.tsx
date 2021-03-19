@@ -62,6 +62,30 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     skills: exampleSkill,
   });
 
+  const showNotConfirmedView = () => {
+    return (
+      <div className="mainDiv">
+        <div className="textDiv">
+          <h2>MENSAJE IMPORTANTE</h2>
+          <p>
+            Con el fin de poder crear una convocatoria le recordamos que debe confirmar su
+            correo. Si no ha recibido el correo de confirmación de la cuenta o no lo
+            encuentra haga click en <b>"Reenviar correo"</b> y le enviaremos otro al
+            correo con el cual se registró.
+          </p>
+        </div>
+        <div className="linksDiv">
+          <div>
+            <LinkButton path={ROUTE.home} text="Volver al inicio" />
+          </div>
+          <div>
+            <LinkButton path="/" text="Reenviar correo" />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const checkDateIsCorrect = (dateIsCorrect: boolean) => {
     const checkDate: Date = new Date();
     const toDay = {
@@ -154,7 +178,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
             type={'text'}
             name={'title'}
             onChange={(e) => setData({ ...data, title: e.target.value })}
-          />{' '}
+          />
           <FieldForm
             title={'Título de la convocatoria'}
             type={'text'}
@@ -355,29 +379,5 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     </div>
   );
 };
-
-function showNotConfirmedView() {
-  return (
-    <div className="mainDiv">
-      <div className="textDiv">
-        <h2>MENSAJE IMPORTANTE</h2>
-        <p>
-          Con el fin de poder crear una convocatoria le recordamos que debe confirmar su
-          correo. Si no ha recibido el correo de confirmación de la cuenta o no lo
-          encuentra haga click en <b>"Reenviar correo"</b> y le enviaremos otro al correo
-          con el cual se registró.
-        </p>
-      </div>
-      <div className="linksDiv">
-        <div>
-          <LinkButton path={ROUTE.home} text="Volver al inicio" />
-        </div>
-        <div>
-          <LinkButton path="/" text="Reenviar correo" />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 ConvocatoryRegister.displayName = 'ConvocatoryRegister';

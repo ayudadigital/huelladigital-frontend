@@ -1,5 +1,5 @@
 ---
-to: src/hooks/<%= name %>/<%= name %>.spec.ts
+to: src/infrastructure/hooks/<%= name %>/<%= name %>.spec.ts
 ---
 import { act, renderHook } from '@testing-library/react-hooks';
 import { <%= name %> } from './<%= name %>';
