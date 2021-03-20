@@ -9,6 +9,7 @@ RUN npm install
 RUN npm run build
 # FIXME: To refactor when the frontend uses dinamic endpoint through variables instead static "localhost" endpoint
 RUN sed -i "s#http://localhost:8080#https://dev.huellapositiva.ayudadigital.org#g" $(grep -r -l "http://localhost:8080" *)
+RUN sed -i "s#http://localhost:3000#https://dev.huellapositiva.ayudadigital.org#g" $(grep -r -l "http://localhost:3000" *)
 
 # Serve build
 FROM node:12.18.0-alpine3.9
