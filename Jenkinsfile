@@ -58,14 +58,14 @@ pipeline {
         }
         stage("Docker Publish") {
             agent { label 'docker' }
-//            when { branch 'develop' }
+            when { branch 'develop' }
             steps {
                 script {
                     env.DOCKER_TAG = "${GIT_COMMIT}"
                 }
                 sh "echo \"Building tag: ${env.DOCKER_TAG}\""
                 buildAndPublishDockerImages("${env.DOCKER_TAG}", "https://dev.huellapositiva.ayudadigital.org")
-//                buildAndPublishDockerImages("beta", "https://dev.huelladigital.ayudadigital.org")
+                buildAndPublishDockerImages("beta", "https://dev.huelladigital.ayudadigital.org")
             }
         }
         stage("Remote deploy") {
@@ -84,7 +84,7 @@ pipeline {
                     dir 'frontend/docker/build/aws'
                 }
             }
-//            when { branch 'develop' }
+            when { branch 'develop' }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-huellapositiva', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     sh """
