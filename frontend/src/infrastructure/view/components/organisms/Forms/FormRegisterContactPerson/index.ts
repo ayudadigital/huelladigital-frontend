@@ -1,0 +1,1 @@
+export { FormRegisterContactPerson } from './FormRegisterContactPerson';

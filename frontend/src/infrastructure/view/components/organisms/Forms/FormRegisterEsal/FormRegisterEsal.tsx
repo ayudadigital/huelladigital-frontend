@@ -12,26 +12,22 @@ import { Esal, EsalEmployee } from '../../../../../../domain/models/Esal';
 import { EsalService } from '../../../../../../domain/services/Esal.service';
 import { isTypeQueryNode } from 'typescript';
 
-
-
-
 export const FormRegisterEsal: React.FC<{}> = () => {
-
   const [state, setState] = React.useState<any>({
-    Name: "",
-    Surname: "",
-    Email: "",
-    PhoneNumber: "",
-    Password: "",
-    Entity: "",
-    Web: "",
-    Descripcion: "",
-    Island: "",
-    PostalCode: "",
-    EntityType: "",
-    PrivacyPolicy: "",
-    DataProtection: "",
-    RegisteredAsVolunteeringEntity: "",
+    Name: '',
+    Surname: '',
+    Email: '',
+    PhoneNumber: '',
+    Password: '',
+    Entity: '',
+    Web: '',
+    Description: '',
+    Island: '',
+    PostalCode: '',
+    EntityType: '',
+    PrivacyPolicy: '',
+    DataProtection: '',
+    RegisteredAsVolunteeringEntity: '',
   });
   const island = [
     'Gran Canaria',
@@ -58,7 +54,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
       surname: state.Surname,
       phoneNumber: state.PhoneNumber,
       email: state.Email,
-      password: state.Password
+      password: state.Password,
     };
     const esal: Esal = {
       name: state.EntityName,
@@ -69,7 +65,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
       privacyPolicy: state.PrivacyPolicy,
       dataProtectionPolicy: state.DataProtection,
       island: state.Island,
-      zipCode: state.ZipCode
+      zipCode: state.ZipCode,
     };
     EsalService.regsiterBunch(esalEmployee, esal);
   };
@@ -77,16 +73,18 @@ export const FormRegisterEsal: React.FC<{}> = () => {
   const handleCheckChange = (event: React.FormEvent<HTMLInputElement>) => {
     setState({
       ...state,
-      [event.currentTarget.name]: event.currentTarget.checked
-    })
-  }
+      [event.currentTarget.name]: event.currentTarget.checked,
+    });
+  };
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     setState({
       ...state,
-      [event.currentTarget.name]: event.currentTarget.value
-    })
-  }
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
 
   return (
     <form className="FormRegisterEsal" method={'POST'} id="form" onSubmit={handleSubmit}>
@@ -97,15 +95,30 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </header>
           <div className="row">
             <div className={'col'}>
-              <FieldForm title={'Nombre *'} type={'text'} name={'Name'} onChange={handleChange} />
+              <FieldForm
+                title={'Nombre *'}
+                type={'text'}
+                name={'Name'}
+                onChange={handleChange}
+              />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Apellidos *'} type={'text'} name={'Surname'} onChange={handleChange} />
+              <FieldForm
+                title={'Apellidos *'}
+                type={'text'}
+                name={'Surname'}
+                onChange={handleChange}
+              />
             </div>
           </div>
           <div className="row">
             <div className={'col'}>
-              <FieldForm title={'Email *'} type={'email'} name={'Email'} onChange={handleChange} />
+              <FieldForm
+                title={'Email *'}
+                type={'email'}
+                name={'Email'}
+                onChange={handleChange}
+              />
             </div>
             <div className={'col'}>
               <FieldForm
@@ -126,7 +139,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Contraseña *'} type={'password'} name={'Password'} onChange={handleChange} />
+              <FieldForm
+                title={'Contraseña *'}
+                type={'password'}
+                name={'Password'}
+                onChange={handleChange}
+              />
             </div>
           </div>
         </div>
@@ -136,10 +154,20 @@ export const FormRegisterEsal: React.FC<{}> = () => {
           </header>
           <div className={'row'}>
             <div className={'col'}>
-              <FieldForm title={'Nombre entidad *'} type={'text'} name={'EntityName'} onChange={handleChange} />
+              <FieldForm
+                title={'Nombre entidad *'}
+                type={'text'}
+                name={'EntityName'}
+                onChange={handleChange}
+              />
             </div>
             <div className={'col'}>
-              <FieldForm title={'Página web'} type={'text'} name={'Web'} onChange={handleChange} />
+              <FieldForm
+                title={'Página web'}
+                type={'text'}
+                name={'Web'}
+                onChange={handleChange}
+              />
             </div>
           </div>
           <div className={'row'}>
@@ -174,7 +202,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   </div>
                 </div>
                 <div className={'col postal-code'}>
-                  <FieldForm title={'Código postal *'} type={'text'} name={'ZipCode'} onChange={handleChange} />
+                  <FieldForm
+                    title={'Código postal *'}
+                    type={'text'}
+                    name={'ZipCode'}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
             </div>
