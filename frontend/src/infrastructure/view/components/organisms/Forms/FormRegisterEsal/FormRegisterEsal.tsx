@@ -11,6 +11,7 @@ import { SubmitButton } from '../../../atoms/SubmitButton';
 import { Esal, EsalEmployee } from '../../../../../../domain/models/Esal';
 import { EsalService } from '../../../../../../domain/services/Esal.service';
 import { isTypeQueryNode } from 'typescript';
+import { FormRegisterContactPerson } from '../FormRegisterContactPerson';
 
 export const FormRegisterEsal: React.FC<{}> = () => {
   const [state, setState] = React.useState<any>({
@@ -89,65 +90,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
   return (
     <form className="FormRegisterEsal" method={'POST'} id="form" onSubmit={handleSubmit}>
       <div className={'register-esal'}>
-        <div className="div-register-contact-person">
-          <header>
-            <h1>Persona de Contacto</h1>
-          </header>
-          <div className="row">
-            <div className={'col'}>
-              <FieldForm
-                title={'Nombre *'}
-                type={'text'}
-                name={'Name'}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={'col'}>
-              <FieldForm
-                title={'Apellidos *'}
-                type={'text'}
-                name={'Surname'}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className={'col'}>
-              <FieldForm
-                title={'Email *'}
-                type={'email'}
-                name={'Email'}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={'col'}>
-              <FieldForm
-                title={'Confirmar email *'}
-                type={'email'}
-                name={'ConfirmarEmail'}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className={'col'}>
-              <FieldForm
-                title={'Teléfono de contacto *'}
-                type={'text'}
-                name={'PhoneNumber'}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={'col'}>
-              <FieldForm
-                title={'Contraseña *'}
-                type={'password'}
-                name={'Password'}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        </div>
+        <FormRegisterContactPerson />
         <div className={'div-register-esal'}>
           <header>
             <h1>Datos Entidad</h1>
