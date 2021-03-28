@@ -2,8 +2,7 @@ import {useEffect, useState} from 'react';
 import {CheckInterface} from '../../view/components/organisms/Forms/MixModifyUserForm/types';
 import formatRoles from '../../../infrastructure/view/components/atoms/InputFieldForm/types';
 import {Profile} from '../../../domain/models/Profile';
-import provinceLasPalmas from '../../../infrastructure/assets/Las_Palmas.json';
-import provinceTenerife from '../../../infrastructure/assets/Tenerife.json';
+import Canary_Postal_Codes from '../../../infrastructure/assets/Canary_Postal_Codes.json';
 
 export const useCorrectFormat = () => {
     const [data, setData] = useState<Profile>({
@@ -219,63 +218,11 @@ export const useCorrectFormat = () => {
             }
         }
     }, [inputValue, nameEvent]);
-    const formatString = (name: string) => {
-        let correctFormatName: string = '';
-        const whiteSpace = ' ';
-        let searchBlank = name.indexOf(' ');
-        let searchBlankFromLast = name.lastIndexOf(' ');
-        let firstSubstr: string;
-        let secondSubstr: string;
-        let thirdSubstr: string;
-        const searchFirstParenthesis = name.indexOf('(');
-        const searchSecondParenthesis = name.indexOf(')');
-        const searchDash = name.indexOf('-');
 
 
-        if (searchBlank === searchBlankFromLast && searchBlank !== -1) {
-
-            if (searchFirstParenthesis !== searchSecondParenthesis && searchFirstParenthesis !== -1) {
-                correctFormatName = name.substring(searchFirstParenthesis + 1, searchFirstParenthesis + 2).toUpperCase() +
-                    name.substring(searchFirstParenthesis + 2, searchSecondParenthesis) + whiteSpace + name.substring(0, 1).toUpperCase() +
-                    name.substring(1, searchFirstParenthesis - 1);
-            } else {
-                correctFormatName = name.substring(0, 1).toUpperCase() + name.substring(1, searchBlank).toLowerCase()
-                    + name.substring(searchBlank, searchBlank + 2).toUpperCase()
-                    + name.substring(searchBlank + 2).toLowerCase();
-            }
-
-        } else if (searchBlank !== searchBlankFromLast && searchBlank !== -1) {
-            firstSubstr = name.substring(0, searchBlank);
-            secondSubstr = name.substring(searchBlankFromLast);
-            thirdSubstr = name.substring(searchBlank, searchBlankFromLast);
-            searchBlank = thirdSubstr.indexOf(' ');
-            searchBlankFromLast = thirdSubstr.lastIndexOf(' ');
-
-            if (searchBlank === searchBlankFromLast && thirdSubstr.substring(1).startsWith('d')) {
-                correctFormatName = firstSubstr.substring(0, 1).toUpperCase() + firstSubstr.substring(1) + thirdSubstr + secondSubstr.substring(0, 2).toUpperCase() + secondSubstr.substring(2);
-
-            } else if (!thirdSubstr.substring(1).startsWith('d')) {
-                correctFormatName = firstSubstr.substring(0, 1).toUpperCase() + firstSubstr.substring(1) + thirdSubstr.substring(0, 2).toUpperCase()
-                    + thirdSubstr.substring(2) + secondSubstr.substring(0, 2).toUpperCase() + secondSubstr.substring(2);
-
-            }
-
-        } else {
-            if (searchDash !== -1) {
-                correctFormatName = name.substring(0, 1).toUpperCase() + name.substring(1, searchDash) + name.substring(searchDash, searchDash + 1) +
-                    name.substring(searchDash + 1, searchDash + 2).toUpperCase() + name.substring(searchDash + 2);
-
-            } else {
-                correctFormatName = name.substring(0, 1).toUpperCase() + name.substring(1);
-
-            }
-        }
-        return correctFormatName;
-    };
     useEffect(() => {
-        let islandCorrectNameFormat: string;
-        if (data.zipCode.startsWith('35')) {
-            const items = provinceLasPalmas.filter(
+        if (data.zipCode) {
+            const items = Canary_Postal_Codes.filter(
                 (postalCode) => postalCode.postal_code === data.zipCode,
             );
 
@@ -292,61 +239,25 @@ export const useCorrectFormat = () => {
 
                     break;
                 default:
-                    items.map((names) => {
-                        if (names.island) {
-                            const [{island: islandName}] = items;
+                    const provinceNumber: string = data.zipCode.slice(0, 2);
+                    const [{island: islandName}] = items;
 
-                            islandCorrectNameFormat = formatString(islandName.toLowerCase());
-                            setData({
-                                ...data,
-                                province: province['35'],
-                                island: islandCorrectNameFormat,
-                            });
-
-                            const towns = items.map((townName) => formatString(townName.population_name.toLowerCase()));
-                            setTown(towns);
-                        }
-                    });
-            }
-
-        } else if (data.zipCode.startsWith('38')) {
-            const items = provinceTenerife.filter(
-                (postalCode) => postalCode.postal_code === data.zipCode,
-            );
-
-            switch (items.length) {
-                case 0:
                     setData({
                         ...data,
-                        island: 'No existe el código postal',
-                        province: 'No existe el código postal',
+                        province: provinceNumber === '35' ? province[`35`] : province[`38`],
+                        island: islandName,
                     });
-                    setTown([]);
-                    setCheck({...check, zipCode: 'incorrect'});
-                    setMessageInfoUser({...messageInfoUser, zipCode: 'Código poral no existe'});
-                    break;
-                default:
-                    items.map((names) => {
-                        if (names.island) {
-                            const [{island: islandName}] = items;
 
-                            islandCorrectNameFormat = formatString(islandName.toLowerCase());
-                            setData({
-                                ...data,
-                                province: province['38'],
-                                island: islandCorrectNameFormat,
-                            });
+                    const towns = items.map((townName) => townName.population_name);
+                    setTown(towns);
 
-                            const towns = items.map((townName) => formatString(townName.population_name.toLowerCase()));
-                            setTown(towns);
-                        }
-                    });
             }
 
-
         }
+
     }, [data.zipCode]);
 
 
     return {check, data, town, messageInfoUser, setInputValue, setNameEvent};
 };
+
