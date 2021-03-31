@@ -1,12 +1,42 @@
 .FormRegisterContactPerson {
+  .div-register-contact-person, {
+    header {
+      color: #7e254e;
+      font-weight: bold;
+      font-size: 20px;
+    }
 
-  .button-register {
-    text-align: center;
+    .Label {
+      color: #7e254e;
+      font-size: 20px;
+      font-weight: bold;
 
-    .SubmitButton {
-      background: #7e254e;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 1rem;
+      padding: 1rem;
+
+
+      .col {
+        width: calc(50% - 10px);
+
+        .register-government {
+          margin-top: 2rem;
+        }
+      }
+
+    }
+
+    .button-register {
+      text-align: center;
+
+      .SubmitButton {
+        background: #7e254e;
+      }
     }
   }
-
 
 }

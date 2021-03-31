@@ -50,13 +50,6 @@ export const FormRegisterEsal: React.FC<{}> = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const esalEmployee: EsalEmployee = {
-      name: state.Name,
-      surname: state.Surname,
-      phoneNumber: state.PhoneNumber,
-      email: state.Email,
-      password: state.Password,
-    };
     const esal: Esal = {
       name: state.EntityName,
       description: state.Description,
@@ -68,7 +61,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
       island: state.Island,
       zipCode: state.ZipCode,
     };
-    EsalService.regsiterBunch(esalEmployee, esal);
+    EsalService.regsiterBunch(esal);
   };
 
   const handleCheckChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -88,54 +81,105 @@ export const FormRegisterEsal: React.FC<{}> = () => {
   };
 
   return (
-    <form className="FormRegisterEsal" method={'POST'} id="form" onSubmit={handleSubmit}>
-      <div className={'register-esal'}>
-        <FormRegisterContactPerson />
-        <div className={'div-register-esal'}>
-          <header>
-            <h1>Datos Entidad</h1>
-          </header>
-          <div className={'row'}>
-            <div className={'col'}>
-              <FieldForm
-                title={'Nombre entidad *'}
-                type={'text'}
-                name={'EntityName'}
-                onChange={handleChange}
-              />
+    <>
+      <FormRegisterContactPerson />
+
+      <form
+        className="FormRegisterEsal"
+        method={'POST'}
+        id="form"
+        onSubmit={handleSubmit}
+      >
+        <div className={'register-esal'}>
+          <div className={'div-register-esal'}>
+            <header>
+              <h1>Datos Entidad</h1>
+            </header>
+            <div className={'row'}>
+              <div className={'col'}>
+                <FieldForm
+                  title={'Nombre entidad *'}
+                  type={'text'}
+                  name={'EntityName'}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={'col'}>
+                <FieldForm
+                  title={'Página web'}
+                  type={'text'}
+                  name={'Web'}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
-            <div className={'col'}>
-              <FieldForm
-                title={'Página web'}
-                type={'text'}
-                name={'Web'}
-                onChange={handleChange}
-              />
+            <div className={'row'}>
+              <div className={'col'}>
+                <TextAreaForm
+                  title={'Descripción *'}
+                  name={'Description'}
+                  placeholder={'Breve descripción de la entidad'}
+                  rows={10}
+                  cols={2}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={'col localization'}>
+                <Label text={'Ubicación *'} />
+                <div className={'row'}>
+                  <div className={'col'}>
+                    <div className="div-radio">
+                      {island.map((islands, index) => {
+                        return (
+                          <FormRadio
+                            title={''}
+                            type={'radio'}
+                            name={'Island'}
+                            value={islands}
+                            checked={false}
+                            key={index}
+                            onChange={handleChange}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className={'col postal-code'}>
+                    <FieldForm
+                      title={'Código postal *'}
+                      type={'text'}
+                      name={'ZipCode'}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={'row'}>
-            <div className={'col'}>
-              <TextAreaForm
-                title={'Descripción *'}
-                name={'Description'}
-                placeholder={'Breve descripción de la entidad'}
-                rows={10}
-                cols={2}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={'col localization'}>
-              <Label text={'Ubicación *'} />
-              <div className={'row'}>
-                <div className={'col'}>
-                  <div className="div-radio">
-                    {island.map((islands, index) => {
+            <div className={'row'}>
+              <div className={'col'}>
+                <Label text={'Logo *'} />
+                <div className="image-upload">
+                  <label>
+                    <input type="file" className={'file'} />
+                    <Image
+                      source={superHeroes}
+                      description={'super heroes logo register'}
+                      width={'300px'}
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className={'col organization'}>
+                <Label text={'Tipo de entidad *'} />
+                <div className="row">
+                  <div className="div-organization">
+                    {associationType.map((types, index) => {
                       return (
                         <FormRadio
                           title={''}
                           type={'radio'}
-                          name={'Island'}
-                          value={islands}
+                          name={'EntityType'}
+                          value={types}
                           checked={false}
                           key={index}
                           onChange={handleChange}
@@ -144,114 +188,71 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     })}
                   </div>
                 </div>
-                <div className={'col postal-code'}>
-                  <FieldForm
-                    title={'Código postal *'}
-                    type={'text'}
-                    name={'ZipCode'}
-                    onChange={handleChange}
+                <div className={'register-government'}>
+                  <Label
+                    text={
+                      'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
+                    }
                   />
+                  <div className={'row'}>
+                    <FormRadio
+                      title={''}
+                      type={'checkbox'}
+                      name={'RegisteredAsVolunteeringEntity'}
+                      value={'Si'}
+                      checked={false}
+                      onChange={handleChange}
+                    />
+                    <FormRadio
+                      title={''}
+                      type={'checkbox'}
+                      name={'RegisteredAsVolunteeringEntity'}
+                      value={'No'}
+                      checked={false}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className={'row'}>
-            <div className={'col'}>
-              <Label text={'Logo *'} />
-              <div className="image-upload">
-                <label>
-                  <input type="file" className={'file'} />
-                  <Image
-                    source={superHeroes}
-                    description={'super heroes logo register'}
-                    width={'300px'}
-                  />
-                </label>
-              </div>
-            </div>
-            <div className={'col organization'}>
-              <Label text={'Tipo de entidad *'} />
-              <div className="row">
-                <div className="div-organization">
-                  {associationType.map((types, index) => {
-                    return (
-                      <FormRadio
-                        title={''}
-                        type={'radio'}
-                        name={'EntityType'}
-                        value={types}
-                        checked={false}
-                        key={index}
-                        onChange={handleChange}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-              <div className={'register-government'}>
-                <Label
-                  text={
-                    'Registrada como entidad de voluntariado en el Gobierno de Canarias *'
-                  }
+            <div className={'row consents-check'}>
+              <Label text={'Consentimientos *'} />
+              <div className={'data-protection'}>
+                <FormRadio
+                  title={'Política Privacidad'}
+                  type={'checkbox'}
+                  name={'PrivacyPolicy'}
+                  value={''}
+                  checked={false}
+                  onChange={handleCheckChange}
                 />
-                <div className={'row'}>
-                  <FormRadio
-                    title={''}
-                    type={'checkbox'}
-                    name={'RegisteredAsVolunteeringEntity'}
-                    value={'Si'}
-                    checked={false}
-                    onChange={handleChange}
-                  />
-                  <FormRadio
-                    title={''}
-                    type={'checkbox'}
-                    name={'RegisteredAsVolunteeringEntity'}
-                    value={'No'}
-                    checked={false}
-                    onChange={handleChange}
-                  />
-                </div>
+                <p>
+                  Estoy de acuerdo de con la {''}
+                  <LinkText to={'/'} text={'Política de privacidad'} />.
+                </p>
               </div>
-            </div>
-          </div>
-          <div className={'row consents-check'}>
-            <Label text={'Consentimientos *'} />
-            <div className={'data-protection'}>
-              <FormRadio
-                title={'Política Privacidad'}
-                type={'checkbox'}
-                name={'PrivacyPolicy'}
-                value={''}
-                checked={false}
-                onChange={handleCheckChange}
-              />
-              <p>
-                Estoy de acuerdo de con la {''}
-                <LinkText to={'/'} text={'Política de privacidad'} />.
-              </p>
-            </div>
-            <div className={'data-protection'}>
-              <FormRadio
-                title={'Protección de datos'}
-                type={'checkbox'}
-                name={'DataProtection'}
-                value={''}
-                checked={false}
-                onChange={handleCheckChange}
-              />
-              <p>
-                Estoy de acuerdo de con la {''}
-                <LinkText to={'/'} text={'Política de protección de datos'} />.
-              </p>
-            </div>
-            <div className={'button-register'}>
-              <SubmitButton text={'Registrar Entidad'} />
+              <div className={'data-protection'}>
+                <FormRadio
+                  title={'Protección de datos'}
+                  type={'checkbox'}
+                  name={'DataProtection'}
+                  value={''}
+                  checked={false}
+                  onChange={handleCheckChange}
+                />
+                <p>
+                  Estoy de acuerdo de con la {''}
+                  <LinkText to={'/'} text={'Política de protección de datos'} />.
+                </p>
+              </div>
+              <div className={'button-register'}>
+                <SubmitButton text={'Registrar Entidad'} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 

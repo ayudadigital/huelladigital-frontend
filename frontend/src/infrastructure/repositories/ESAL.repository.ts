@@ -4,28 +4,6 @@ import { EsalDTO, EsalEmployeeDTO } from '../http/dtos/EsalDTO';
 import { http } from '../http/http';
 import { ROUTE } from '../http/routes';
 
-const registerEsalEmployee = (newEmployee: EsalEmployee) => {
-  const esalEmployeeDTO: EsalEmployeeDTO = {
-    name: newEmployee.name,
-    surname: newEmployee.surname,
-    phoneNumber: newEmployee.phoneNumber,
-    email: newEmployee.email,
-    password: newEmployee.password,
-  };
-  return new Promise((resolve, reject) =>
-    http
-      .post(
-        `${BASE.API}/${ROUTE.API.organizations.registerEsalEmployee}`,
-        JSON.stringify(esalEmployeeDTO),
-        'application/json',
-        false,
-      )
-      .then((response) => {
-        resolve(response);
-      }),
-  );
-};
-
 const registerEsal = (newEsal: Esal) => {
   const newEsalDTO: EsalDTO = {
     name: newEsal.name,
@@ -56,5 +34,4 @@ const uploadLogo = () => {};
 
 export const ESALRepository = {
   registerEsal,
-  registerEsalEmployee,
 };
