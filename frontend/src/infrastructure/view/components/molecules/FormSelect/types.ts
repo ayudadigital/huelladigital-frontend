@@ -6,4 +6,7 @@ export interface FormSelectProps extends LabelProps {
   onChange?: (event: any) => void;
   onBlur?: () => void;
   optionsList: string[];
+  disabled?: disableType;
+
 }
+export type disableType = true | false;
