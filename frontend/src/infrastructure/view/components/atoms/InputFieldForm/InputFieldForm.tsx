@@ -9,8 +9,8 @@ export const InputFieldForm: React.FC<InputFieldFormProps> = ({
   onChange,
   onBlur,
   stateValidate,
+  disabled,
 }) => {
-
   return (
     <input
       className={`InputFieldForm ${stateValidate}`}
@@ -20,6 +20,7 @@ export const InputFieldForm: React.FC<InputFieldFormProps> = ({
       value={value}
       onChange={onChange}
       onBlur={onBlur}
+      disabled={disabled}
     />
   );
 };

@@ -48,7 +48,7 @@ export const NavBarDesktop: React.FC<NavBarDesktopProps> = ({
         <LinkText
           key={`modifyProfile`}
           text={'Modificar perfil'}
-          to={ROUTE.API.volunteers.profile}
+          to={ROUTE.volunteers.profile}
         />
       )}
       {(role === Role.CONTACT_PERSON || role === Role.CONTACT_PERSON_NOT_CONFIRMED) && (
