@@ -26,7 +26,8 @@ const registerEsal = (newEsal: Esal) => {
       )
       .then((response) => {
         resolve(response);
-      });
+      })
+      .catch((rej) => reject(rej));
   });
 };
 
