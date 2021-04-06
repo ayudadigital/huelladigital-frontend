@@ -8,76 +8,27 @@ import { Image } from '../../../atoms/Image';
 import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
 import { LinkText } from '../../../atoms/LinkText';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import { Esal, EsalEmployee } from '../../../../../../domain/models/Esal';
 import { EsalService } from '../../../../../../domain/services/Esal.service';
-import { isTypeQueryNode } from 'typescript';
 import { FormRegisterContactPerson } from '../FormRegisterContactPerson';
+import { ROUTE } from '../../../../../http/routes';
+import { useCheckEsal } from '../../../../../hooks/useCheckEsal';
 
 export const FormRegisterEsal: React.FC<{}> = () => {
-  const [state, setState] = React.useState<any>({
-    Name: '',
-    Surname: '',
-    Email: '',
-    PhoneNumber: '',
-    Password: '',
-    Entity: '',
-    Web: '',
-    Description: '',
-    Island: '',
-    PostalCode: '',
-    EntityType: '',
-    PrivacyPolicy: '',
-    DataProtection: '',
-    RegisteredAsVolunteeringEntity: '',
-  });
-  const island = [
-    'Gran Canaria',
-    'Fuerteventura',
-    'Lanzarote',
-    'La Graciosa',
-    'Tenerife',
-    'La Palma',
-    'La Gomera',
-    'El Hierro',
-  ];
-  const associationType = [
-    'Asociacion',
-    'Fundación',
-    'Club Deportivo',
-    'Colegio Profesional',
-    'Federación Deportiva',
-  ];
+  const {
+    data,
+    island,
+    associationType,
+    check,
+    setNameEvent,
+    setInputValue,
+    messageInfoUser,
+    registered,
+  } = useCheckEsal();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const esal: Esal = {
-      name: state.EntityName,
-      description: state.Description,
-      website: state.Web,
-      registeredEntity: state.RegisteredAsVolunteeringEntity === 'Si',
-      entityType: state.EntityType,
-      privacyPolicy: state.PrivacyPolicy,
-      dataProtectionPolicy: state.DataProtection,
-      island: state.Island,
-      zipCode: state.ZipCode,
-    };
-    EsalService.regsiterBunch(esal);
-  };
 
-  const handleCheckChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.checked,
-    });
-  };
-
-  const handleChange = (
-    event: React.FormEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>,
-  ) => {
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
+    EsalService.regsiterBunch(data);
   };
 
   return (
@@ -100,16 +51,26 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 <FieldForm
                   title={'Nombre entidad *'}
                   type={'text'}
-                  name={'EntityName'}
-                  onChange={handleChange}
+                  name={'nameEntity'}
+                  stateValidate={check.name}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                    setNameEvent(e.target.name);
+                  }}
+                  messageInfoUser={messageInfoUser.name}
                 />
               </div>
               <div className={'col'}>
                 <FieldForm
                   title={'Página web'}
                   type={'text'}
-                  name={'Web'}
-                  onChange={handleChange}
+                  name={'website'}
+                  stateValidate={check.website}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                    setNameEvent(e.target.name);
+                  }}
+                  messageInfoUser={messageInfoUser.website}
                 />
               </div>
             </div>
@@ -117,11 +78,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
               <div className={'col'}>
                 <TextAreaForm
                   title={'Descripción *'}
-                  name={'Description'}
+                  name={'description'}
                   placeholder={'Breve descripción de la entidad'}
                   rows={10}
                   cols={2}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                    setNameEvent(e.target.name);
+                  }}
+                  messageInfoUser={messageInfoUser.description}
                 />
               </div>
               <div className={'col localization'}>
@@ -134,11 +99,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                           <FormRadio
                             title={''}
                             type={'radio'}
-                            name={'Island'}
+                            name={'island'}
                             value={islands}
                             checked={false}
                             key={index}
-                            onChange={handleChange}
+                            onChange={(e) => {
+                              setInputValue(e.target.value);
+                              setNameEvent(e.target.name);
+                            }}
+                            messageInfoUser={messageInfoUser.island}
                           />
                         );
                       })}
@@ -148,8 +117,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     <FieldForm
                       title={'Código postal *'}
                       type={'text'}
-                      name={'ZipCode'}
-                      onChange={handleChange}
+                      name={'zipCode'}
+                      onChange={(e) => {
+                        setInputValue(e.target.value);
+                        setNameEvent(e.target.name);
+                      }}
+                      messageInfoUser={messageInfoUser.zipCode}
                     />
                   </div>
                 </div>
@@ -178,11 +151,15 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                         <FormRadio
                           title={''}
                           type={'radio'}
-                          name={'EntityType'}
+                          name={'entityType'}
                           value={types}
                           checked={false}
                           key={index}
-                          onChange={handleChange}
+                          onChange={(e) => {
+                            setInputValue(e.target.value);
+                            setNameEvent(e.target.name);
+                          }}
+                          messageInfoUser={messageInfoUser.entityType}
                         />
                       );
                     })}
@@ -195,22 +172,23 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     }
                   />
                   <div className={'row'}>
-                    <FormRadio
-                      title={''}
-                      type={'checkbox'}
-                      name={'RegisteredAsVolunteeringEntity'}
-                      value={'Si'}
-                      checked={false}
-                      onChange={handleChange}
-                    />
-                    <FormRadio
-                      title={''}
-                      type={'checkbox'}
-                      name={'RegisteredAsVolunteeringEntity'}
-                      value={'No'}
-                      checked={false}
-                      onChange={handleChange}
-                    />
+                    {registered.map((items: string, index: number) => {
+                      return (
+                        <FormRadio
+                          title={''}
+                          type={'radio'}
+                          name={'registeredEntity'}
+                          value={items}
+                          checked={false}
+                          key={index}
+                          onChange={(e) => {
+                            setInputValue(e.target.value);
+                            setNameEvent(e.target.name);
+                          }}
+                          messageInfoUser={messageInfoUser.registeredEntity}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -221,24 +199,32 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 <FormRadio
                   title={'Política Privacidad'}
                   type={'checkbox'}
-                  name={'PrivacyPolicy'}
+                  name={'privacyPolicy'}
                   value={''}
                   checked={false}
-                  onChange={handleCheckChange}
+                  onChange={(e) => {
+                    e.target.checked ? setInputValue(true) : setInputValue(false);
+                    setNameEvent(e.target.name);
+                  }}
+                  messageInfoUser={messageInfoUser.privacyPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}
-                  <LinkText to={'/'} text={'Política de privacidad'} />.
+                  <LinkText to={ROUTE.privacyPolicy} text={'Política de privacidad'} />.
                 </p>
               </div>
               <div className={'data-protection'}>
                 <FormRadio
                   title={'Protección de datos'}
                   type={'checkbox'}
-                  name={'DataProtection'}
+                  name={'dataProtectionPolicy'}
                   value={''}
                   checked={false}
-                  onChange={handleCheckChange}
+                  onChange={(e) => {
+                    e.target.checked ? setInputValue(true) : setInputValue(false);
+                    setNameEvent(e.target.name);
+                  }}
+                  messageInfoUser={messageInfoUser.dataProtectionPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}
