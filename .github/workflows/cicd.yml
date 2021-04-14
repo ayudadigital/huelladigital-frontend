@@ -70,7 +70,7 @@ jobs:
           .github/actions/deploy/deploy.sh ${SSH_USER} ${SSH_HOST} ${SSH_KEY_PATH}
 
       - name: Deploy AWS (dev)
-#        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         uses: ./.github/actions/deploy-aws/
         id: deploy-aws
         with:
