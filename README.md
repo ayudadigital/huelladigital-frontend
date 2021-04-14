@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/ayudadigital/huelladigital-frontend/actions/workflows/cicd.yml/badge.svg?branch=develop)](https://github.com/ayudadigital/huelladigital-frontend/actions/workflows/cicd.yml)
+
 # Huella Digital
 
 Plataforma huellapositiva.com de gestión de voluntariado.
