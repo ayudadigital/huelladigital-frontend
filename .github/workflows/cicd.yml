@@ -1,0 +1,85 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches: [ develop ]
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          bin/devcontrol.sh frontend install
+
+      - name: Test
+        run: |
+          bin/devcontrol.sh frontend test
+
+      - name: Build
+        run: |
+          bin/devcontrol.sh frontend build
+
+      - name: Login to DockerHub
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
+
+      - name: Docker Publish
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        uses: docker/build-push-action@v2
+        env:
+          IMAGE_NAME: ayudadigital/huelladigital-frontend
+        with:
+          build-args: BASE_URL=https://dev.huelladigital.ayudadigital.org
+          tags: ${{ env.IMAGE_NAME }}:beta
+          context: frontend
+          push: true
+
+      - name: Docker Publish AWS
+#          if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+          uses: docker/build-push-action@v2
+          env:
+            IMAGE_NAME: ayudadigital/huelladigital-frontend
+          with:
+            build-args: BASE_URL=https://dev.huellapositiva.ayudadigital.org
+            tags: ${{ env.IMAGE_NAME }}:${{ github.sha }},${{ env.IMAGE_NAME }}:latest
+            context: frontend
+            push: true
+
+      - name: Deploy (dev)
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          mkdir -p ~/.ssh/
+          SSH_KEY_PATH=~/.ssh/peter.key
+          echo "$SSH_KEY" > "$SSH_KEY_PATH"
+          chmod 600 "$SSH_KEY_PATH"
+          .github/actions/deploy/deploy.sh ${SSH_USER} ${SSH_HOST} ${SSH_KEY_PATH}
+
+      - name: Deploy AWS (dev)
+#        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        uses: ./.github/actions/deploy-aws/
+        id: deploy-aws
+        with:
+          cluster-name: 'dev-ecs-cluster'
+          service-name: 'huellapositiva-frontend-ecs-service'
+          task-family: 'dev-huellapositiva-frontend-td'
+          docker-image: 'ayudadigital/huelladigital-frontend:${{ github.sha }}'
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-access-key-secret: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+
+# TODO
+# Send email alerts if failure to deploy
+# Release pipeline
