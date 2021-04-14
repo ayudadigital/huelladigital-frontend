@@ -56,7 +56,7 @@ jobs:
           push: true
 
       - name: Deploy (dev)
-        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+#        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         env:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
@@ -84,4 +84,3 @@ jobs:
 # Cache npm dependencies
 # Send email alerts if failure to deploy
 # Release pipeline
-
