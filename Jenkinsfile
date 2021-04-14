@@ -56,46 +56,6 @@ pipeline {
                 sh "bin/devcontrol.sh frontend build"
             }
         }
-        stage("Docker Publish") {
-            agent { label 'docker' }
-            when { branch 'develop' }
-            steps {
-                script {
-                    env.DOCKER_TAG = "${GIT_COMMIT}"
-                }
-                sh "echo \"Building tag: ${env.DOCKER_TAG}\""
-                buildAndPublishDockerImages("${env.DOCKER_TAG}", "https://dev.huellapositiva.ayudadigital.org")
-                buildAndPublishDockerImages("beta", "https://dev.huelladigital.ayudadigital.org")
-            }
-        }
-        stage("Remote deploy") {
-            agent { label 'docker' }
-            when { branch 'develop' }
-            steps {
-                sshagent (credentials: ['jpl-ssh-credentials']) {
-                    sh "bin/deploy.sh dev"
-                }
-            }
-        }
-        stage("AWS deploy") {
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    dir 'frontend/docker/build/aws'
-                }
-            }
-            when { branch 'develop' }
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'aws-huellapositiva', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    sh """
-                        echo 'Deploying to AWS -> Docker tag: ${env.DOCKER_TAG}'
-                        echo '======================================================='
-                        export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
-                        bin/deploy-aws.sh dev ${env.DOCKER_TAG}
-                    """
-                }
-            }
-        }
         // Close release
         stage ('Make release') {
             agent { label 'docker' }
