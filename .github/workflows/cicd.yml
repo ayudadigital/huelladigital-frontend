@@ -46,14 +46,14 @@ jobs:
 
       - name: Docker Publish AWS
 #          if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-          uses: docker/build-push-action@v2
-          env:
-            IMAGE_NAME: ayudadigital/huelladigital-frontend
-          with:
-            build-args: BASE_URL=https://dev.huellapositiva.ayudadigital.org
-            tags: ${{ env.IMAGE_NAME }}:${{ github.sha }},${{ env.IMAGE_NAME }}:latest
-            context: frontend
-            push: true
+        uses: docker/build-push-action@v2
+        env:
+          IMAGE_NAME: ayudadigital/huelladigital-frontend
+        with:
+          build-args: BASE_URL=https://dev.huellapositiva.ayudadigital.org
+          tags: ${{ env.IMAGE_NAME }}:${{ github.sha }},${{ env.IMAGE_NAME }}:latest
+          context: frontend
+          push: true
 
       - name: Deploy (dev)
         if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
@@ -69,7 +69,6 @@ jobs:
           .github/actions/deploy/deploy.sh ${SSH_USER} ${SSH_HOST} ${SSH_KEY_PATH}
 
       - name: Deploy AWS (dev)
-#        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         uses: ./.github/actions/deploy-aws/
         id: deploy-aws
         with:
