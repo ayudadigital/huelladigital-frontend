@@ -4,7 +4,6 @@ import { InputFieldForm } from '../../atoms/InputFieldForm';
 import { FormRadioProps } from './types';
 
 export const FormRadio: React.FC<FormRadioProps> = ({
-  title = '',
   type = 'radio',
   name = '',
   value = 'Radio Button',
