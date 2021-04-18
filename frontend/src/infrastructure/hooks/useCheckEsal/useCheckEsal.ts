@@ -1,12 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { CheckInterface } from './types';
-import { Esal } from '../../../domain/models/Esal';
 import { isText } from '../../utils/valitadors/isText';
 import { isUrl } from '../../utils/valitadors/isUrl';
 import { isZipCode } from '../../utils/valitadors/isZipCode';
+import { ENTITY_TYPES, ISLANDS } from './constans';
+
+const minLength: number = 3;
+const maxLength: number = 30;
+
+const validators: { [key: string]: (value: string | boolean) => boolean } = {
+  name: (value) =>
+    isText(String(value)) &&
+    String(value).length > minLength &&
+    String(value).length < maxLength,
+  description: (value) => isText(String(value)),
+  website: (value) => isUrl(String(value)),
+  entityType: (value) => ENTITY_TYPES.includes(String(value)),
+  privacyPolicy: (value) => Boolean(value),
+  dataProtectionPolicy: (value) => Boolean(value),
+  island: (value) => ISLANDS.includes(String(value)),
+  zipCode: (value) => isZipCode(String(value)),
+};
 
 export const useCheckEsal = () => {
-  const [data, setData] = React.useState<Esal>({
+  const [data, setData] = React.useState({
     name: '',
     description: '',
     website: '',
@@ -17,41 +34,11 @@ export const useCheckEsal = () => {
     island: '',
     zipCode: '',
   });
-  const [checked, setChecked] = React.useState<boolean>(false);
-  const island = [
-    'Gran Canaria',
-    'Fuerteventura',
-    'Lanzarote',
-    'La Graciosa',
-    'Tenerife',
-    'La Palma',
-    'La Gomera',
-    'El Hierro',
-  ];
-  const associationType = [
-    'Asociación',
-    'Fundación',
-    'Club Deportivo',
-    'Colegio Profesional',
-    'Federación Deportiva',
-  ];
-  const registered = ['Sí', 'No'];
+
   const [check, setCheck] = useState<CheckInterface>({
     name: '',
     description: '',
     website: '',
-    registeredEntity: '',
-    entityType: '',
-    privacyPolicy: '',
-    dataProtectionPolicy: '',
-    island: '',
-    zipCode: '',
-  });
-  const [messageInfoUser, setMessageInfoUser] = useState({
-    name: '',
-    description: '',
-    website: '',
-    registeredEntity: '',
     entityType: '',
     privacyPolicy: '',
     dataProtectionPolicy: '',
@@ -59,166 +46,26 @@ export const useCheckEsal = () => {
     zipCode: '',
   });
 
-  const [inputValue, setInputValue] = useState<any>();
-  const [nameEvent, setNameEvent] = useState<string>();
+  const validate = (): boolean => {
+    // We must cast Object.keys return because it method do not have a generic interface
+    // Object.keys<MyType>(data)
+    const keys = Object.keys(check).map((key) => key as keyof CheckInterface);
 
-  const typeAssociation = (select: string) => {
-    switch (select) {
-      case 'Asociación':
-        select = 'ASSOCIATION';
-        break;
-      case 'Fundación':
-        select = 'FOUNDATION';
-        break;
+    const newChecks: CheckInterface = { ...check };
 
-      case 'Club Deportivo':
-        select = 'SPORTS CLUB';
-        break;
-
-      case 'Colegio Profesional':
-        select = 'COLLEGE PROFESSIONAL';
-        break;
-
-      case 'Federacion Deportiva':
-        select = 'SPORTS FEDERATION';
-        break;
+    for (const key of keys) {
+      newChecks[key] = validators[key](data[key]) ? 'correct' : 'incorrect';
     }
-    return select;
+
+    setCheck(newChecks);
+
+    return keys.every((key) => newChecks[key] !== 'incorrect');
   };
-
-  useEffect(() => {
-    const minLength: number = 3;
-    const maxLength: number = 30;
-
-    if (inputValue) {
-      switch (nameEvent) {
-        case 'nameEntity':
-          if (
-            isText(inputValue) &&
-            inputValue.length >= minLength &&
-            inputValue.length <= maxLength
-          ) {
-            setCheck({ ...check, name: 'correct' });
-            setData({ ...data, name: inputValue });
-          } else {
-            setCheck({ ...check, name: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              name: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30',
-            });
-          }
-          break;
-
-        case 'website':
-          if (isUrl(inputValue)) {
-            setCheck({ ...check, website: 'correct' });
-            setData({ ...data, website: inputValue });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              website: 'Formato incorrecto',
-            });
-          }
-          break;
-        case 'description':
-          if (isText(inputValue) && inputValue.length >= 20 && inputValue.length <= 500) {
-            setCheck({ ...check, description: 'correct' });
-            setData({ ...data, description: inputValue });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              description:
-                'Sólo puede contener letras, con un mínimo de 20 y un máximo de 500',
-            });
-          }
-          break;
-        case 'island':
-          if (isText(inputValue)) {
-            setCheck({ ...check, island: 'correct' });
-            setData({ ...data, island: inputValue });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              island: 'Debe seleccionar una isla',
-            });
-          }
-          break;
-        case 'zipCode':
-          if (isZipCode(inputValue)) {
-            setCheck({ ...check, zipCode: 'correct' });
-            setData({ ...data, zipCode: inputValue });
-          } else {
-            setCheck({ ...check, zipCode: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              zipCode: 'Código postal incorrecto o no existe',
-            });
-          }
-          break;
-        case 'entityType':
-          if (isText(inputValue)) {
-            setCheck({ ...check, entityType: 'correct' });
-            setData({ ...data, entityType: typeAssociation(inputValue) });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              entityType: 'Debe seleccionar un tipo',
-            });
-          }
-          break;
-        case 'registeredEntity':
-          if (inputValue) {
-            setCheck({ ...check, registeredEntity: 'correct' });
-            setData({ ...data, registeredEntity: inputValue === 'Sí' });
-          } else {
-            setMessageInfoUser({
-              ...messageInfoUser,
-              registeredEntity: 'Debe seleccionar uno',
-            });
-            setCheck({ ...check, description: 'incorrect' });
-          }
-          break;
-        case 'privacyPolicy':
-          if (inputValue) {
-            setCheck({ ...check, privacyPolicy: 'correct' });
-            setData({ ...data, privacyPolicy: inputValue });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              privacyPolicy: 'Debe aceptar para poder registrarse',
-            });
-          }
-          break;
-
-        case 'dataProtectionPolicy':
-          if (inputValue) {
-            setCheck({ ...check, dataProtectionPolicy: 'correct' });
-            setData({ ...data, dataProtectionPolicy: inputValue });
-          } else {
-            setCheck({ ...check, description: 'incorrect' });
-            setMessageInfoUser({
-              ...messageInfoUser,
-              dataProtectionPolicy: 'Debe aceptar para poder registrarse',
-            });
-          }
-          break;
-      }
-    }
-  }, [nameEvent, inputValue]);
 
   return {
     data,
-    island,
-    associationType,
     check,
-    registered,
-    setNameEvent,
-    setInputValue,
-    messageInfoUser,
+    setData,
+    validate,
   };
 };

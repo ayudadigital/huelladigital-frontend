@@ -8,29 +8,34 @@ import { Image } from '../../../atoms/Image';
 import superHeroes from '../../../atoms/Image/assets/superHeroes.svg';
 import { LinkText } from '../../../atoms/LinkText';
 import { SubmitButton } from '../../../atoms/SubmitButton';
-import { EsalService } from '../../../../../../domain/services/Esal.service';
 import { FormRegisterContactPerson } from '../FormRegisterContactPerson';
 import { ROUTE } from '../../../../../http/routes';
 import { useCheckEsal } from '../../../../../hooks/useCheckEsal';
+import { ENTITY_TYPES, ISLANDS } from '../../../../../hooks/useCheckEsal/constans';
+
+const ERROR_MESSAGES = {
+  name: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30',
+  description: 'Mínimo 20 carácteres y un máximo de 500',
+  website: 'Formato incorrecto',
+  registeredEntity: 'Debe aceptar las condiciones',
+  entityType: 'Debe seleccionar uno',
+  privacyPolicy: 'Debe aceptar las condiciones',
+  dataProtectionPolicy: 'Debe aceptar las condiciones',
+  island: 'Debe seleccionar uno',
+  zipCode: 'Formato incorrecto',
+};
 
 export const FormRegisterEsal: React.FC<{}> = () => {
-  const {
-    data,
-    island,
-    associationType,
-    check,
-    setNameEvent,
-    setInputValue,
-    messageInfoUser,
-    registered,
-  } = useCheckEsal();
+  const { data, check, setData, validate } = useCheckEsal();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const isValid = validate();
 
-    EsalService.regsiterBunch(data);
+    if (isValid) {
+      // EsalService.regsiterBunch(data);
+    }
   };
-
   return (
     <>
       <FormRegisterContactPerson />
@@ -51,13 +56,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 <FieldForm
                   title={'Nombre entidad *'}
                   type={'text'}
-                  name={'nameEntity'}
+                  name={'name'}
                   stateValidate={check.name}
                   onChange={(e) => {
-                    setInputValue(e.target.value);
-                    setNameEvent(e.target.name);
+                    setData({ ...data, name: e.target.value });
                   }}
-                  messageInfoUser={messageInfoUser.name}
+                  messageInfoUser={ERROR_MESSAGES.name}
                 />
               </div>
               <div className={'col'}>
@@ -67,10 +71,9 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   name={'website'}
                   stateValidate={check.website}
                   onChange={(e) => {
-                    setInputValue(e.target.value);
-                    setNameEvent(e.target.name);
+                    setData({ ...data, website: e.target.value });
                   }}
-                  messageInfoUser={messageInfoUser.website}
+                  messageInfoUser={ERROR_MESSAGES.website}
                 />
               </div>
             </div>
@@ -83,10 +86,8 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   rows={10}
                   cols={2}
                   onChange={(e) => {
-                    setInputValue(e.target.value);
-                    setNameEvent(e.target.name);
+                    setData({ ...data, description: e.target.value });
                   }}
-                  messageInfoUser={messageInfoUser.description}
                 />
               </div>
               <div className={'col localization'}>
@@ -94,20 +95,17 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 <div className={'row'}>
                   <div className={'col'}>
                     <div className="div-radio">
-                      {island.map((islands, index) => {
+                      {ISLANDS.map((islands: string, index: number) => {
                         return (
                           <FormRadio
-                            title={''}
-                            type={'radio'}
                             name={'island'}
                             value={islands}
                             checked={false}
                             key={index}
                             onChange={(e) => {
-                              setInputValue(e.target.value);
-                              setNameEvent(e.target.name);
+                              setData({ ...data, island: e.target.value });
                             }}
-                            messageInfoUser={messageInfoUser.island}
+                            messageInfoUser={ERROR_MESSAGES.island}
                           />
                         );
                       })}
@@ -118,11 +116,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                       title={'Código postal *'}
                       type={'text'}
                       name={'zipCode'}
+                      stateValidate={check.zipCode}
                       onChange={(e) => {
-                        setInputValue(e.target.value);
-                        setNameEvent(e.target.name);
+                        setData({ ...data, zipCode: e.target.value });
                       }}
-                      messageInfoUser={messageInfoUser.zipCode}
+                      messageInfoUser={ERROR_MESSAGES.zipCode}
                     />
                   </div>
                 </div>
@@ -146,7 +144,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                 <Label text={'Tipo de entidad *'} />
                 <div className="row">
                   <div className="div-organization">
-                    {associationType.map((types, index) => {
+                    {ENTITY_TYPES.map((types, index) => {
                       return (
                         <FormRadio
                           name={'entityType'}
@@ -154,10 +152,9 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                           checked={false}
                           key={index}
                           onChange={(e) => {
-                            setInputValue(e.target.value);
-                            setNameEvent(e.target.name);
+                            setData({ ...data, entityType: e.target.value });
                           }}
-                          messageInfoUser={messageInfoUser.entityType}
+                          messageInfoUser={ERROR_MESSAGES.entityType}
                         />
                       );
                     })}
@@ -170,23 +167,24 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     }
                   />
                   <div className={'row'}>
-                    {registered.map((items: string, index: number) => {
-                      return (
-                        <FormRadio
-                          title={''}
-                          type={'radio'}
-                          name={'registeredEntity'}
-                          value={items}
-                          checked={false}
-                          key={index}
-                          onChange={(e) => {
-                            setInputValue(e.target.value);
-                            setNameEvent(e.target.name);
-                          }}
-                          messageInfoUser={messageInfoUser.registeredEntity}
-                        />
-                      );
-                    })}
+                    <FormRadio
+                      name={'registeredEntity'}
+                      value={'Sí'}
+                      checked={false}
+                      onChange={() => {
+                        setData({ ...data, registeredEntity: true });
+                      }}
+                      messageInfoUser={ERROR_MESSAGES.registeredEntity}
+                    />
+                    <FormRadio
+                      name={'registeredEntity'}
+                      value={'No'}
+                      checked={false}
+                      onChange={() => {
+                        setData({ ...data, registeredEntity: false });
+                      }}
+                      messageInfoUser={ERROR_MESSAGES.registeredEntity}
+                    />
                   </div>
                 </div>
               </div>
@@ -201,10 +199,9 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   value={''}
                   checked={false}
                   onChange={(e) => {
-                    e.target.checked ? setInputValue(true) : setInputValue(false);
-                    setNameEvent(e.target.name);
+                    setData({ ...data, privacyPolicy: e.target.checked });
                   }}
-                  messageInfoUser={messageInfoUser.privacyPolicy}
+                  messageInfoUser={ERROR_MESSAGES.privacyPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}
@@ -219,10 +216,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   value={''}
                   checked={false}
                   onChange={(e) => {
-                    e.target.checked ? setInputValue(true) : setInputValue(false);
-                    setNameEvent(e.target.name);
+                    setData({
+                      ...data,
+                      dataProtectionPolicy: e.target.checked,
+                    });
                   }}
-                  messageInfoUser={messageInfoUser.dataProtectionPolicy}
+                  messageInfoUser={ERROR_MESSAGES.dataProtectionPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}

@@ -4,7 +4,6 @@ export interface CheckInterface {
   name: stateValidateTypes;
   description: stateValidateTypes;
   website: stateValidateTypes;
-  registeredEntity: stateValidateTypes;
   entityType: stateValidateTypes;
   privacyPolicy: stateValidateTypes;
   dataProtectionPolicy: stateValidateTypes;
