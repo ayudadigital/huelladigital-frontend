@@ -149,8 +149,6 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                     {associationType.map((types, index) => {
                       return (
                         <FormRadio
-                          title={''}
-                          type={'radio'}
                           name={'entityType'}
                           value={types}
                           checked={false}

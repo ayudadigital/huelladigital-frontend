@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface InputFieldFormProps {
-  type: inputTypes | string;
+  type?: inputTypes | string;
   name: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => string | void;

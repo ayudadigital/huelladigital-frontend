@@ -5,7 +5,7 @@ import { FormRadioProps } from './types';
 
 export const FormRadio: React.FC<FormRadioProps> = ({
   title = '',
-  type = 'text',
+  type = 'radio',
   name = '',
   value = 'Radio Button',
   onChange,
