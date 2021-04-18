@@ -16,7 +16,6 @@ export const TextAreaForm: React.FC<TextAreaFormProps> = ({
   onBlur,
   onChange,
   readonly,
-  messageInfoUser,
 }) => {
   return (
     <div className="TextAreaForm">
