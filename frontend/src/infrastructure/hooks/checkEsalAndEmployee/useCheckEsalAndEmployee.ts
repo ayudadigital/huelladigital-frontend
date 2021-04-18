@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { EsalEmployee } from '../../../domain/models/Esal';
-import formatRoles from '../../view/components/atoms/InputFieldForm/types';
 import { CheckInterface } from './types';
+import { isText } from '../../utils/valitadors/isText';
+import { isEmail } from '../../utils/valitadors/isEmail';
+import { isPhone } from '../../utils/valitadors/isPhone';
+import { isPassword } from '../../utils/valitadors/isPassword';
 
 export const useCheckEsalAndEmployee = () => {
   const [dataEmployee, setDataEmployee] = useState<EsalEmployee>({
@@ -38,7 +41,7 @@ export const useCheckEsalAndEmployee = () => {
       switch (nameEvent) {
         case 'name':
           if (
-            formatRoles.regexOnlyText.test(inputValue) &&
+            isText(inputValue) &&
             inputValue.length >= minLength &&
             inputValue.length <= maxLength
           ) {
@@ -54,7 +57,7 @@ export const useCheckEsalAndEmployee = () => {
           break;
         case 'surname':
           if (
-            formatRoles.regexOnlyText.test(inputValue) &&
+            isText(inputValue) &&
             inputValue.length >= minLength &&
             inputValue.length <= maxLength
           ) {
@@ -69,7 +72,7 @@ export const useCheckEsalAndEmployee = () => {
           }
           break;
         case 'email':
-          if (formatRoles.regexEmail.test(inputValue)) {
+          if (isEmail(inputValue)) {
             setCheck({ ...check, email: 'correct' });
             setDataEmployee({ ...dataEmployee, email: inputValue });
           } else {
@@ -78,7 +81,7 @@ export const useCheckEsalAndEmployee = () => {
           }
           break;
         case 'repeatEmail':
-          if (formatRoles.regexEmail.test(inputValue)) {
+          if (isEmail(inputValue)) {
             if (dataEmployee.email === inputValue) {
               setCheck({ ...check, repeatEmail: 'correct' });
             } else {
@@ -91,7 +94,7 @@ export const useCheckEsalAndEmployee = () => {
           }
           break;
         case 'phoneNumber':
-          if (formatRoles.regexPhone.test(inputValue)) {
+          if (isPhone(inputValue)) {
             setCheck({ ...check, phoneNumber: 'correct' });
             setDataEmployee({ ...dataEmployee, phoneNumber: inputValue });
           } else {
@@ -103,7 +106,7 @@ export const useCheckEsalAndEmployee = () => {
           }
           break;
         case 'password':
-          if (formatRoles.regexPassword.test(inputValue)) {
+          if (isPassword(inputValue)) {
             setCheck({ ...check, password: 'correct' });
             setDataEmployee({ ...dataEmployee, password: inputValue });
           } else {

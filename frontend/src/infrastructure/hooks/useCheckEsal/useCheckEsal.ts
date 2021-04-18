@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import formatRoles from '../../view/components/atoms/InputFieldForm/types';
 import { CheckInterface } from './types';
 import { Esal } from '../../../domain/models/Esal';
+import { isText } from '../../utils/valitadors/isText';
+import { isUrl } from '../../utils/valitadors/isUrl';
+import { isZipCode } from '../../utils/valitadors/isZipCode';
 
 export const useCheckEsal = () => {
   const [data, setData] = React.useState<Esal>({
@@ -92,7 +94,7 @@ export const useCheckEsal = () => {
       switch (nameEvent) {
         case 'nameEntity':
           if (
-            formatRoles.regexOnlyText.test(inputValue) &&
+            isText(inputValue) &&
             inputValue.length >= minLength &&
             inputValue.length <= maxLength
           ) {
@@ -108,7 +110,7 @@ export const useCheckEsal = () => {
           break;
 
         case 'website':
-          if (formatRoles.regexOnlyText.test(inputValue)) {
+          if (isUrl(inputValue)) {
             setCheck({ ...check, website: 'correct' });
             setData({ ...data, website: inputValue });
           } else {
@@ -120,11 +122,7 @@ export const useCheckEsal = () => {
           }
           break;
         case 'description':
-          if (
-            formatRoles.regexOnlyText.test(inputValue) &&
-            inputValue.length >= 20 &&
-            inputValue.length <= 500
-          ) {
+          if (isText(inputValue) && inputValue.length >= 20 && inputValue.length <= 500) {
             setCheck({ ...check, description: 'correct' });
             setData({ ...data, description: inputValue });
           } else {
@@ -137,7 +135,7 @@ export const useCheckEsal = () => {
           }
           break;
         case 'island':
-          if (formatRoles.regexOnlyText.test(inputValue)) {
+          if (isText(inputValue)) {
             setCheck({ ...check, island: 'correct' });
             setData({ ...data, island: inputValue });
           } else {
@@ -149,7 +147,7 @@ export const useCheckEsal = () => {
           }
           break;
         case 'zipCode':
-          if (formatRoles.regexZipcode.test(inputValue)) {
+          if (isZipCode(inputValue)) {
             setCheck({ ...check, zipCode: 'correct' });
             setData({ ...data, zipCode: inputValue });
           } else {
@@ -161,7 +159,7 @@ export const useCheckEsal = () => {
           }
           break;
         case 'entityType':
-          if (formatRoles.regexOnlyText.test(inputValue)) {
+          if (isText(inputValue)) {
             setCheck({ ...check, entityType: 'correct' });
             setData({ ...data, entityType: typeAssociation(inputValue) });
           } else {
