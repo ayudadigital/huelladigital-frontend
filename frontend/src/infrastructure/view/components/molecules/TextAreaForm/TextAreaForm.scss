@@ -3,4 +3,9 @@
   flex-direction: column;
   margin: 10px 0;
 
+  & p {
+    margin-top: 5px;
+    color: red;
+  }
+
 }

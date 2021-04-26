@@ -11,6 +11,8 @@ export interface InputTextAreaProps {
   onBlur?: any;
   maxlength?: number;
   wrap?: wrapSpecifies;
+  stateValidate?: stateValidateTypes;
 }
 
 export type wrapSpecifies = 'hard' | 'soft';
+export type stateValidateTypes = '' | 'correct' | 'incorrect';
