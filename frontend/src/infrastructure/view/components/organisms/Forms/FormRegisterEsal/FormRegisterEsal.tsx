@@ -16,13 +16,13 @@ import { ENTITY_TYPES, ISLANDS } from '../../../../../hooks/useCheckEsal/constan
 const ERROR_MESSAGES = {
   name: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30',
   description: 'Mínimo 20 carácteres y un máximo de 500',
-  website: 'Formato incorrecto',
-  registeredEntity: 'Debe aceptar las condiciones',
-  entityType: 'Debe seleccionar uno',
+  website: 'Formato web incorrecto',
+  registeredEntity: 'Debe seleccionar una opción',
+  entityType: 'Debe seleccionar un tipo',
   privacyPolicy: 'Debe aceptar las condiciones',
   dataProtectionPolicy: 'Debe aceptar las condiciones',
-  island: 'Debe seleccionar uno',
-  zipCode: 'Formato incorrecto',
+  island: 'Debe seleccionar una isla',
+  zipCode: 'Formato del código postal incorrecto',
 };
 
 export const FormRegisterEsal: React.FC<{}> = () => {
@@ -83,11 +83,13 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   title={'Descripción *'}
                   name={'description'}
                   placeholder={'Breve descripción de la entidad'}
+                  stateValidate={check.description}
                   rows={10}
                   cols={2}
                   onChange={(e) => {
                     setData({ ...data, description: e.target.value });
                   }}
+                  messageInfoUser={ERROR_MESSAGES.description}
                 />
               </div>
               <div className={'col localization'}>
@@ -105,10 +107,12 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                             onChange={(e) => {
                               setData({ ...data, island: e.target.value });
                             }}
-                            messageInfoUser={ERROR_MESSAGES.island}
                           />
                         );
                       })}
+                    </div>
+                    <div className={'error-message'}>
+                      {check.island === 'incorrect' && <p>{ERROR_MESSAGES.island}</p>}
                     </div>
                   </div>
                   <div className={'col postal-code'}>
@@ -154,10 +158,14 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                           onChange={(e) => {
                             setData({ ...data, entityType: e.target.value });
                           }}
-                          messageInfoUser={ERROR_MESSAGES.entityType}
                         />
                       );
                     })}
+                    <div className={'error-message'}>
+                      {check.entityType === 'incorrect' && (
+                        <p>{ERROR_MESSAGES.entityType}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div className={'register-government'}>
@@ -174,18 +182,21 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                       onChange={() => {
                         setData({ ...data, registeredEntity: true });
                       }}
-                      messageInfoUser={ERROR_MESSAGES.registeredEntity}
                     />
                     <FormRadio
                       name={'registeredEntity'}
                       value={'No'}
                       checked={false}
                       onChange={() => {
-                        setData({ ...data, registeredEntity: false });
+                        setData({ ...data, registeredEntity: true });
                       }}
-                      messageInfoUser={ERROR_MESSAGES.registeredEntity}
                     />
                   </div>
+                </div>
+                <div className={'error-message'}>
+                  {check.registeredEntity === 'incorrect' && (
+                    <p>{ERROR_MESSAGES.registeredEntity}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -201,7 +212,6 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                   onChange={(e) => {
                     setData({ ...data, privacyPolicy: e.target.checked });
                   }}
-                  messageInfoUser={ERROR_MESSAGES.privacyPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}
@@ -221,12 +231,20 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                       dataProtectionPolicy: e.target.checked,
                     });
                   }}
-                  messageInfoUser={ERROR_MESSAGES.dataProtectionPolicy}
                 />
                 <p>
                   Estoy de acuerdo de con la {''}
-                  <LinkText to={'/'} text={'Política de protección de datos'} />.
+                  <LinkText
+                    to={ROUTE.legalAdvice}
+                    text={'Política de protección de datos'}
+                  />
+                  .
                 </p>
+              </div>
+              <div className={'error-message'}>
+                {check.dataProtectionPolicy === 'incorrect' && (
+                  <p>{ERROR_MESSAGES.dataProtectionPolicy}</p>
+                )}
               </div>
               <div className={'button-register'}>
                 <SubmitButton text={'Registrar Entidad'} />

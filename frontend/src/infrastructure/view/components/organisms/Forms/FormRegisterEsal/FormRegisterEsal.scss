@@ -4,6 +4,14 @@
   margin: 2rem;
   padding: 2rem;
 
+  .error-message {
+
+    p {
+      margin-top: 5px;
+      color: red;
+    }
+  }
+
   .div-register-esal, {
 
 
@@ -33,6 +41,8 @@
         .register-government {
           margin-top: 2rem;
         }
+
+
       }
 
 
@@ -101,6 +111,7 @@
         display: flex;
         align-items: center;
       }
+
 
       .button-register {
         text-align: center;
