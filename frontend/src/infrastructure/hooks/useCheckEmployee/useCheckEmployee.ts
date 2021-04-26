@@ -6,7 +6,7 @@ import { isEmail } from '../../utils/valitadors/isEmail';
 import { isPhone } from '../../utils/valitadors/isPhone';
 import { isPassword } from '../../utils/valitadors/isPassword';
 
-export const useCheckEsalAndEmployee = () => {
+export const useCheckEmployee = () => {
   const [dataEmployee, setDataEmployee] = useState<EsalEmployee>({
     name: '',
     surname: '',
@@ -106,7 +106,7 @@ export const useCheckEsalAndEmployee = () => {
           }
           break;
         case 'password':
-          if (isPassword(inputValue)) {
+          if (isPassword(inputValue) && inputValue.length > 6) {
             setCheck({ ...check, password: 'correct' });
             setDataEmployee({ ...dataEmployee, password: inputValue });
           } else {

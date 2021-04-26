@@ -3,7 +3,7 @@ import './FormRegisterContactPerson.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { ContactPersonService } from '../../../../../../domain/services/ContactPerson.service';
-import { useCheckEsalAndEmployee } from '../../../../../hooks/checkEsalAndEmployee';
+import { useCheckEmployee } from '../../../../../hooks/useCheckEmployee';
 
 export const FormRegisterContactPerson: React.FC<{}> = () => {
   const {
@@ -12,7 +12,7 @@ export const FormRegisterContactPerson: React.FC<{}> = () => {
     messageInfoUser,
     setInputValue,
     setNameEvent,
-  } = useCheckEsalAndEmployee();
+  } = useCheckEmployee();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
