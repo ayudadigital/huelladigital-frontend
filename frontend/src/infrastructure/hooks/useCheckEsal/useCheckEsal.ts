@@ -5,18 +5,24 @@ import { isUrl } from '../../utils/valitadors/isUrl';
 import { isZipCode } from '../../utils/valitadors/isZipCode';
 import { ENTITY_TYPES, ISLANDS } from './constans';
 
-const minLength: number = 3;
-const maxLength: number = 30;
+const minLengthName: number = 3;
+const maxLengthName: number = 30;
+const minLengthDescription: number = 20;
+const maxLengthDescription: number = 500;
 
 const validators: { [key: string]: (value: string | boolean) => boolean } = {
   name: (value) =>
     isText(String(value)) &&
-    String(value).length > minLength &&
-    String(value).length < maxLength,
-  description: (value) => isText(String(value)),
+    String(value).length > minLengthName &&
+    String(value).length < maxLengthName,
+  description: (value) =>
+    isText(String(value)) &&
+    String(value).length > minLengthDescription &&
+    String(value).length < maxLengthDescription,
   website: (value) => isUrl(String(value)),
   entityType: (value) => ENTITY_TYPES.includes(String(value)),
   privacyPolicy: (value) => Boolean(value),
+  registeredEntity: (value) => Boolean(value),
   dataProtectionPolicy: (value) => Boolean(value),
   island: (value) => ISLANDS.includes(String(value)),
   zipCode: (value) => isZipCode(String(value)),
@@ -39,6 +45,7 @@ export const useCheckEsal = () => {
     name: '',
     description: '',
     website: '',
+    registeredEntity: '',
     entityType: '',
     privacyPolicy: '',
     dataProtectionPolicy: '',
