@@ -1,6 +1,6 @@
 import {stateValidateTypes} from '../../view/components/atoms/InputFieldForm/types';
 
-export interface CheckInterface {
+export interface CheckInterfaceEsal {
   name: stateValidateTypes;
   description: stateValidateTypes;
   website: stateValidateTypes;
@@ -10,4 +10,12 @@ export interface CheckInterface {
   dataProtectionPolicy: stateValidateTypes;
   island: stateValidateTypes;
   zipCode: stateValidateTypes;
+}
+export interface CheckInterfaceEmployee {
+    name: stateValidateTypes;
+    surname: stateValidateTypes;
+    phoneNumber: stateValidateTypes;
+    email: stateValidateTypes;
+    repeatEmail: stateValidateTypes;
+    password: stateValidateTypes;
 }
