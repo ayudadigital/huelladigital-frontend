@@ -11,10 +11,11 @@ import {SubmitButton} from '../../../atoms/SubmitButton';
 import {ROUTE} from '../../../../../http/routes';
 import {useCheckEsal} from '../../../../../hooks/useCheckEsal';
 import {ENTITY_TYPES, ISLANDS} from '../../../../../hooks/useCheckEsal/constans';
-import {useCheckEmployee} from '../../../../../hooks/useCheckEmployee';
+import {EsalService} from '../../../../../../domain/services/Esal.service';
 
 const ERROR_MESSAGES = {
     name: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30',
+    surname: 'Sólo puede contener letras, con un mínimo de 3 y un máximo de 30',
     description: 'Mínimo 20 carácteres y un máximo de 500',
     website: 'Formato web incorrecto',
     registeredEntity: 'Debe seleccionar una opción',
@@ -23,24 +24,21 @@ const ERROR_MESSAGES = {
     dataProtectionPolicy: 'Debe aceptar las condiciones',
     island: 'Debe seleccionar una isla',
     zipCode: 'Formato del código postal incorrecto',
+    email: 'Formato incorrecto',
+    repeatEmail: 'Email no coincide',
+    phoneNumber: 'Formato incorrecto Ej: +XX XXXXXXXXX o +XXX',
+    password: 'Debe empezar por al menos una letra y ser mayor de seis caracteres',
 };
 
 export const FormRegisterEsal: React.FC<{}> = () => {
-    const {data, check, setData, validate} = useCheckEsal();
-    const {
-        checks,
-        dataEmployee,
-        messageInfoUser,
-        setInputValue,
-        setNameEvent,
-    } = useCheckEmployee();
-
+    const {data, dataEmployee, checkEsal, checkEmployee, setData, setDataEmployee, validateEsal, validateEmployee} = useCheckEsal();
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        const isValid = validate();
+        const isValidEsal = validateEsal();
+        const isValidEmployee = validateEmployee();
 
-        if (isValid) {
-            // EsalService.regsiterBunch(data);
+        if (isValidEmployee && isValidEsal) {
+            await EsalService.registerBunch(data, dataEmployee);
         }
     };
     return (
@@ -61,12 +59,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Nombre *'}
                                 type={'text'}
                                 name={'name'}
-                                stateValidate={checks.name}
+                                stateValidate={checkEmployee.name}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, name: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.name}
+                                messageInfoUser={ERROR_MESSAGES.name}
                             />
                         </div>
                         <div className={'col'}>
@@ -74,12 +71,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Apellidos *'}
                                 type={'text'}
                                 name={'surname'}
-                                stateValidate={checks.surname}
+                                stateValidate={checkEmployee.surname}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, surname: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.surname}
+                                messageInfoUser={ERROR_MESSAGES.surname}
                             />
                         </div>
                     </div>
@@ -89,12 +85,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Email *'}
                                 type={'email'}
                                 name={'email'}
-                                stateValidate={checks.email}
+                                stateValidate={checkEmployee.email}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, email: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.email}
+                                messageInfoUser={ERROR_MESSAGES.email}
                             />
                         </div>
                         <div className={'col'}>
@@ -102,12 +97,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Confirmar email *'}
                                 type={'email'}
                                 name={'repeatEmail'}
-                                stateValidate={checks.repeatEmail}
+                                stateValidate={checkEmployee.repeatEmail}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, repeatEmail: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.repeatEmail}
+                                messageInfoUser={ERROR_MESSAGES.repeatEmail}
                             />
                         </div>
                     </div>
@@ -117,12 +111,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Teléfono de contacto *'}
                                 type={'text'}
                                 name={'phoneNumber'}
-                                stateValidate={checks.phoneNumber}
+                                stateValidate={checkEmployee.phoneNumber}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, phoneNumber: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.phoneNumber}
+                                messageInfoUser={ERROR_MESSAGES.phoneNumber}
                             />
                         </div>
                         <div className={'col'}>
@@ -130,12 +123,11 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 title={'Contraseña *'}
                                 type={'password'}
                                 name={'password'}
-                                stateValidate={checks.password}
+                                stateValidate={checkEmployee.password}
                                 onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    setNameEvent(e.target.name);
+                                    setDataEmployee({...dataEmployee, password: e.target.value});
                                 }}
-                                messageInfoUser={messageInfoUser.password}
+                                messageInfoUser={ERROR_MESSAGES.password}
                             />
                         </div>
                     </div>
@@ -151,7 +143,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                     title={'Nombre entidad *'}
                                     type={'text'}
                                     name={'name'}
-                                    stateValidate={check.name}
+                                    stateValidate={checkEsal.name}
                                     onChange={(e) => {
                                         setData({...data, name: e.target.value});
                                     }}
@@ -163,7 +155,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                     title={'Página web'}
                                     type={'text'}
                                     name={'website'}
-                                    stateValidate={check.website}
+                                    stateValidate={checkEsal.website}
                                     onChange={(e) => {
                                         setData({...data, website: e.target.value});
                                     }}
@@ -177,7 +169,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                     title={'Descripción *'}
                                     name={'description'}
                                     placeholder={'Breve descripción de la entidad'}
-                                    stateValidate={check.description}
+                                    stateValidate={checkEsal.description}
                                     rows={10}
                                     cols={2}
                                     onChange={(e) => {
@@ -206,7 +198,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                             })}
                                         </div>
                                         <div className={'error-message'}>
-                                            {check.island === 'incorrect' && <p>{ERROR_MESSAGES.island}</p>}
+                                            {checkEsal.island === 'incorrect' && <p>{ERROR_MESSAGES.island}</p>}
                                         </div>
                                     </div>
                                     <div className={'col postal-code'}>
@@ -214,7 +206,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                             title={'Código postal *'}
                                             type={'text'}
                                             name={'zipCode'}
-                                            stateValidate={check.zipCode}
+                                            stateValidate={checkEsal.zipCode}
                                             onChange={(e) => {
                                                 setData({...data, zipCode: e.target.value});
                                             }}
@@ -256,7 +248,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                             );
                                         })}
                                         <div className={'error-message'}>
-                                            {check.entityType === 'incorrect' && (
+                                            {checkEsal.entityType === 'incorrect' && (
                                                 <p>{ERROR_MESSAGES.entityType}</p>
                                             )}
                                         </div>
@@ -288,7 +280,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                     </div>
                                 </div>
                                 <div className={'error-message'}>
-                                    {check.registeredEntity === 'incorrect' && (
+                                    {checkEsal.registeredEntity === 'incorrect' && (
                                         <p>{ERROR_MESSAGES.registeredEntity}</p>
                                     )}
                                 </div>
@@ -336,7 +328,7 @@ export const FormRegisterEsal: React.FC<{}> = () => {
                                 </p>
                             </div>
                             <div className={'error-message'}>
-                                {check.dataProtectionPolicy === 'incorrect' && (
+                                {checkEsal.dataProtectionPolicy === 'incorrect' && (
                                     <p>{ERROR_MESSAGES.dataProtectionPolicy}</p>
                                 )}
                             </div>
