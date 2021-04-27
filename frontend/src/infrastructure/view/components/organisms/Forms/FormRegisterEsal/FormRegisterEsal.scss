@@ -1,19 +1,10 @@
-.FormRegisterEsal, .FormRegisterContactPerson {
-  background: white;
-  border-radius: 0.8rem;
-  margin: 2rem;
-  padding: 2rem;
+.FormRegisterEsal {
 
-  .error-message {
-
-    p {
-      margin-top: 5px;
-      color: red;
-    }
-  }
-
-  .div-register-esal, {
-
+  .div-register-esal, .div-register-contact-person {
+    background: white;
+    border-radius: 0.8rem;
+    margin: 2rem;
+    padding: 2rem;
 
     header {
       color: #7e254e;
@@ -41,8 +32,6 @@
         .register-government {
           margin-top: 2rem;
         }
-
-
       }
 
 
@@ -112,7 +101,6 @@
         align-items: center;
       }
 
-
       .button-register {
         text-align: center;
 
@@ -125,4 +113,5 @@
   }
 
 }
+
 
