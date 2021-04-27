@@ -1,1 +1,0 @@
-export { useCheckEmployee } from './useCheckEmployee';
