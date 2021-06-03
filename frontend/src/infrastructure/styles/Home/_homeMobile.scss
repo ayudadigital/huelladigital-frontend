@@ -134,4 +134,14 @@ $basic-mobile-font-size: 0.9375rem;
       width: 100%;
     }
   }
+
+  .work-areas-div {
+    .primary-title {
+      font-size: $title-mobile-font-size;
+    }
+
+    .secondary-title {
+      font-size: $subtitle-mobile-font-size;
+    }
+  }
 }
