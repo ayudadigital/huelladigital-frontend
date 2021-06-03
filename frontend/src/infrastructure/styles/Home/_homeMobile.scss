@@ -201,4 +201,23 @@ $basic-mobile-font-size: 0.9375rem;
       }
     }
   }
+
+  .other-info {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-areas:
+      "left"
+      "title"
+      "experts"
+      "info"
+      "button";
+
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    .button-section {
+      margin: auto;
+    }
+  }
 }
