@@ -46,7 +46,7 @@ $basic-mobile-font-size: 0.9375rem;
       "title"
       "media"
       "info";
-      gap:0;
+    gap: 0;
 
     .title {
       font-size: $title-mobile-font-size;
@@ -77,6 +77,20 @@ $basic-mobile-font-size: 0.9375rem;
           width: 100%;
         }
       }
+    }
+  }
+
+  .volunteer-info-div {
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    .content {
+      font-size: $basic-mobile-font-size;
+    }
+
+    .hashtag {
+      font-size: $basic-mobile-font-size;
     }
   }
 }
