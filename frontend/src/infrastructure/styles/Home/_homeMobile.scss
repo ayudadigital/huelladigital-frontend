@@ -117,4 +117,21 @@ $basic-mobile-font-size: 0.9375rem;
       }
     }
   }
+
+  .how-it-works-div {
+    display: inline;
+
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    img {
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+  }
 }
