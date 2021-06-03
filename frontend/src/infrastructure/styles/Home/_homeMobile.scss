@@ -93,4 +93,14 @@ $basic-mobile-font-size: 0.9375rem;
       font-size: $basic-mobile-font-size;
     }
   }
+
+  .porpose-info-div {
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    p {
+      font-size: $basic-mobile-font-size;
+    }
+  }
 }
