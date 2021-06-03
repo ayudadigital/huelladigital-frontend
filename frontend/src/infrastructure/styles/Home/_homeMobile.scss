@@ -184,4 +184,21 @@ $basic-mobile-font-size: 0.9375rem;
       }
     }
   }
+
+  .collaborators-div {
+    p {
+      font-size: $title-mobile-font-size;
+    }
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      img {
+        padding: 0.5rem;
+        width: 50vw;
+      }
+    }
+  }
 }
