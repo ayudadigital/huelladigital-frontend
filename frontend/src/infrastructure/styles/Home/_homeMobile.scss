@@ -103,4 +103,18 @@ $basic-mobile-font-size: 0.9375rem;
       font-size: $basic-mobile-font-size;
     }
   }
+
+  .answers-div {
+    display: initial;
+
+    .DescriptiveImage {
+      p {
+        font-size: $basic-mobile-font-size;
+      }
+
+      .title {
+        font-size: $title-mobile-font-size;
+      }
+    }
+  }
 }
