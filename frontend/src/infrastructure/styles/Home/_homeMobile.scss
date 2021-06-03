@@ -163,4 +163,25 @@ $basic-mobile-font-size: 0.9375rem;
       }
     }
   }
+
+  .platform-description-div {
+    display: grid;
+    grid-template-areas:
+      "image"
+      "what"
+      "who"
+      "ecosystem";
+
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    .huella-image-div {
+      padding: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
