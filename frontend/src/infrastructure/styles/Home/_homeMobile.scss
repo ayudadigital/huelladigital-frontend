@@ -1,0 +1,44 @@
+$title-mobile-font-size: 1.4375rem;
+$subtitle-mobile-font-size: 1.25rem;
+$basic-mobile-font-size: 0.9375rem;
+
+.main-div {
+  font-size: $basic-mobile-font-size;
+
+  .LinkButton {
+    padding: 0.5rem;
+    font-size: $basic-mobile-font-size;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-div {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "info"
+      "firstButton"
+      "secondButton";
+    padding: 0px 4% 0px 4%;
+    gap: 0;
+
+    .title {
+      font-size: $title-mobile-font-size;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      font-size: $basic-mobile-font-size;
+      margin-bottom: 1rem;
+    }
+
+    .first-button {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .second-button {
+      margin-bottom: 0;
+    }
+  }
+
+}
