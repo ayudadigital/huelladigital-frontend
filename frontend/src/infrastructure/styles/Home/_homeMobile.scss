@@ -144,4 +144,23 @@ $basic-mobile-font-size: 0.9375rem;
       font-size: $subtitle-mobile-font-size;
     }
   }
+
+  .why-volunteer-div {
+    .title {
+      font-size: $title-mobile-font-size;
+    }
+
+    .content {
+      display: inline;
+
+      div {
+        padding: 0.4rem;
+
+        p {
+          padding-left: 0.4rem;
+          text-align: left;
+        }
+      }
+    }
+  }
 }
