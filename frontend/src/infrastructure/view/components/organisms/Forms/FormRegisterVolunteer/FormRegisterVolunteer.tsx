@@ -150,6 +150,18 @@ export const FormRegisterVolunteer: React.FC = () => {
         messageInfoUser={'Las contraseñas no coinciden'}
       />
       <SubmitButton text={'Registrarse'} disabled={submitState} />
+
+      <div>
+        <p>
+          Consentimiento
+        </p>
+        <p>
+          <input type="checkbox"/> Estoy de acuerdo con la Política de Privacidad del sitio.
+        </p>
+        <p>
+          <input type="checkbox"/> Para poder ayudar es imprescindible conocer las convocatorias del voluntarioado. Quiero suscribirme al newsletter de huellapositiva.com
+        </p>
+      </div>
     </form>
   );
 };
