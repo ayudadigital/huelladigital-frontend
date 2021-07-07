@@ -9,6 +9,7 @@ import {VolunteerCredentialsDTO } from '../../../../../http/dtos/CredentialsDTO'
 import {volunteerRepository} from '../../../../../repositories/Volunteer.repository';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
+import { LinkText } from '../../../atoms/LinkText/LinkText';
 
 export const FormRegisterVolunteer: React.FC = () => {
   const [data, setData] = useState<DataInterface>({
@@ -153,13 +154,13 @@ export const FormRegisterVolunteer: React.FC = () => {
 
       <div>
         <p>
-          Consentimiento
+          Consentimiento <span style={{color: "red"}}> *</span>
         </p>
         <p>
-          <input type="checkbox"/> Estoy de acuerdo con la Política de Privacidad del sitio.
+          <input type="checkbox" required/> Estoy de acuerdo con la <LinkText to="privacy-policy" text="Política de Privacidad"/> del sitio.
         </p>
         <p>
-          <input type="checkbox"/> Para poder ayudar es imprescindible conocer las convocatorias del voluntarioado. Quiero suscribirme al newsletter de huellapositiva.com
+          <input type="checkbox" required/> Para poder ayudar es imprescindible conocer las convocatorias del voluntarioado. Quiero suscribirme al newsletter de huellapositiva.com
         </p>
       </div>
     </form>
