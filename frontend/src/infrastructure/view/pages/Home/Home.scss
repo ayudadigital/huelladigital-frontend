@@ -368,10 +368,8 @@ $purple-tone: #7e254e;
   }
 }
 
-@media (min-width: 576px) {
-  .Home {
-    padding: 0;
-  }
+@media (max-width: 576px) {
+  @import "../../../styles/Home/homeMobile";
 }
 
 @media (min-width: 992px) {
