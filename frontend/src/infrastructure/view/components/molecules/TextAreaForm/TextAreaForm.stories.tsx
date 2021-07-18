@@ -15,6 +15,5 @@ export const withText = () => (
     cols={10}
     rows={5}
     title={text('Label', 'Label Text')}
-    messageInfoUser={''}
   />
 );

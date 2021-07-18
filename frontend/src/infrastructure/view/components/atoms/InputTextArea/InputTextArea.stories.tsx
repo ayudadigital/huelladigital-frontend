@@ -7,4 +7,6 @@ export default {
   decorators: [withA11y],
 };
 
-export const withText = () => <InputTextArea name="Input Text Area" placeholder="Input Text area" />;
+export const withText = () => (
+  <InputTextArea title="" name="Input Text Area" placeholder="Input Text area" />
+);
