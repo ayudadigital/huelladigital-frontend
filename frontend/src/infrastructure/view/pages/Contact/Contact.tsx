@@ -41,7 +41,7 @@ export const Contact: React.FC<{}> = () => {
 
         <p className="faq">
           Si tienes alguna duda consulta nuestras{' '}
-          <LinkText to={ROUTE.faq} text="preguntas frecuentes" />
+          <LinkText to={ROUTE.faq} text="preguntas frecuentes." />
         </p>
         <p className="slogan">¡Cada persona suma!</p>
       </div>

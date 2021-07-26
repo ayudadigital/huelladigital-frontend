@@ -160,6 +160,7 @@ export const FormRegisterVolunteer: React.FC = () => {
           <input type="checkbox" required/> Estoy de acuerdo con la <LinkText to="privacy-policy" text="Política de Privacidad"/> del sitio.
         </p>
         <p>
+          {/* Debe de hacer un POST a /api/v1/volunteers/profile/newsletter setteandoa  true */}
           <input type="checkbox" required/> Para poder ayudar es imprescindible conocer las convocatorias del voluntarioado. Quiero suscribirme al newsletter de huellapositiva.com
         </p>
       </div>
