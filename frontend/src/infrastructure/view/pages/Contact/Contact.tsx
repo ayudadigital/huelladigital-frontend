@@ -57,17 +57,20 @@ export const Contact: React.FC<{}> = () => {
               title="Confirmar correo *"
               name="email-confirmation"
             />
-            <FieldForm type="text" title="Teléfono *" name="phone-number" />
-            <FieldForm type="text" title="Asunto *" name="subject" />
+              <FieldForm type="text" title="Teléfono *" name="phone-number" />
+            <div className="prueba">
+              <FieldForm type="text" title="Asunto *" name="subject" />
+            </div>
           </div>
           <div className="text-area">
-            <InputTextArea name="message" cols={115} rows={10} placeholder="Mensaje *" />
+            <p>Mensaje *</p>
+            <InputTextArea name="message" cols={115} rows={10} placeholder="" />
           </div>
           <div className="consent-captcha">
             <div className="consent">
               <p>Consentimiento *</p>
-              <label>Acepto la política de privacidad del sitio</label>
               <input type="checkbox"></input>
+              <label> Acepto la <LinkText to={ROUTE.privacyPolicy} text="política de privacidad" /> del sitio</label>
             </div>
             <div className="captcha">
               <p>CAPTCHA</p>

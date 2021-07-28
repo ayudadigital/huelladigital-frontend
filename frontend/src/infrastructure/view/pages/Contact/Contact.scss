@@ -1,11 +1,11 @@
 $purple-tone: #7e254e;
 
 div {
-  .main-div{
-    padding: 0 15rem;
+  .main-div {
+    padding: 0 20rem;
     text-align: left;
   }
-  
+
   .info-div {
     .title {
       text-align: center;
@@ -28,11 +28,10 @@ div {
         color: #eabd00;
         text-decoration: none;
         font-weight: normal;
-        &:hover{
-          color: $purple-tone
+        &:hover {
+          color: $purple-tone;
         }
       }
-      
     }
 
     .slogan {
@@ -45,28 +44,46 @@ div {
   .contact-form-div {
     color: black;
     .form-fields-div {
+      font-size: 15px;
       .fields {
         display: grid;
-        // grid-template-columns: repeat(2, 25em);
-        // grid-gap: 5%;
-        resize: vertical;
-        input{
-          border: 1px solid $purple-tone
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5%;
+        .prueba{
+          grid-column: 1/2;
+        }
+        input {
+          border: 1px solid $purple-tone;
         }
       }
-      
+
       .text-area {
-        margin-top: 5%;
-        textarea{
-          border: 1px solid $purple-tone
+        margin-top: 7%;
+        p{
+          margin: 0;
+        }
+        textarea {
+          resize: none;
+          border: 1px solid $purple-tone;
         }
       }
 
       .consent-captcha {
         color: black;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20%;
+        .LinkText {
+          color: #eabd00;
+          text-decoration: none;
+          font-weight: normal;
+          &:hover {
+            color: $purple-tone;
+          }
+        }
+        .captcha{
+          grid-column: 1/2;
+        }
       }
 
       button {
@@ -74,7 +91,10 @@ div {
       }
     }
   }
-  ul{
+
+  ul {
     list-style-type: none;
   }
+
+  
 }
