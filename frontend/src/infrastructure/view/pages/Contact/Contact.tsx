@@ -52,19 +52,15 @@ export const Contact: React.FC<{}> = () => {
             <FieldForm type="text" title="Nombre *" name="name" />
             <FieldForm type="text" title="Apellidos *" name="surname" />
             <FieldForm type="email" title="Correo electrónico *" name="email" />
-            <FieldForm
-              type="email"
-              title="Confirmar correo *"
-              name="email-confirmation"
-            />
-              <FieldForm type="text" title="Teléfono *" name="phone-number" />
+            <FieldForm type="email" title="Confirmar correo *" name="email-confirmation" />
+            <FieldForm type="text" title="Teléfono *" name="phone-number" />
             <div className="prueba">
               <FieldForm type="text" title="Asunto *" name="subject" />
             </div>
-          </div>
-          <div className="text-area">
-            <p>Mensaje *</p>
-            <InputTextArea name="message" cols={115} rows={10} placeholder="" />
+            <div className="text-area">
+              <p>Mensaje *</p>
+              <InputTextArea name="message" cols={115} rows={10} placeholder="" />
+            </div>
           </div>
           <div className="consent-captcha">
             <div className="consent">
@@ -75,8 +71,8 @@ export const Contact: React.FC<{}> = () => {
             <div className="captcha">
               <p>CAPTCHA</p>
             </div>
+            <LinkButton path="" text="Enviar" />
           </div>
-          <LinkButton path="" text="Enviar" />
         </div>
       </div>
     </div>
