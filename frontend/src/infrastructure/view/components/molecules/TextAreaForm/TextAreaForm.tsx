@@ -16,6 +16,7 @@ export const TextAreaForm: React.FC<TextAreaFormProps> = ({
   onBlur,
   onChange,
   readonly,
+  stateValidate,
   messageInfoUser,
 }) => {
   return (
@@ -32,7 +33,11 @@ export const TextAreaForm: React.FC<TextAreaFormProps> = ({
         wrap={wrap}
         readonly={readonly}
         maxlength={maxlength}
+        stateValidate={stateValidate}
       />
+      {stateValidate === 'incorrect' && (
+        <p aria-label={'message-error'}>{messageInfoUser}</p>
+      )}
     </div>
   );
 };

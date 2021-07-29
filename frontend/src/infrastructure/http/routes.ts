@@ -38,10 +38,13 @@ type typeRoute = {
       fetchProposalsAndVolunteers: (id: string) => string;
       cancelProposal: (id: string) => string;
       changeStatusOfVolunteerInProposal: string;
+      updateStatusToEnrolmentClosed: (id: string) => string;
+      updateToPublished: (id: string) => string;
     };
     organizations: {
       register: string;
       delete: (id: string) => string;
+      uploadLogo: string;
       registerAsReviser: string;
       registerEsalEmployee: string;
       duda: (id: string) => string;
@@ -116,12 +119,16 @@ export const ROUTE: typeRoute = {
       fetchProposalsAndVolunteers: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/proposal`,
       cancelProposal: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/cancel`,
       changeStatusOfVolunteerInProposal: `${ENDPOINT_PROPOSALS}/changeStatusVolunteerProposal`,
+      updateStatusToEnrolmentClosed: (id: string) =>
+        `${ENDPOINT_PROPOSALS}/${id}/status/close`,
+      updateToPublished: (id: string) => `${ENDPOINT_PROPOSALS}/${id}/status/publish`,
     },
     organizations: {
       register: `${ENDPOINT_ORGANIZATIONS}`,
       delete: (id: string) => `${ENDPOINT_ORGANIZATIONS}/${id}`,
       registerAsReviser: `${ENDPOINT_ORGANIZATIONS}/reviser`,
       registerEsalEmployee: `${ENDPOINT_CONTACTPERSON}`,
+      uploadLogo: `${ENDPOINT_ORGANIZATIONS}/logo`,
       duda: (id: string) => `${ENDPOINT_CONTACTPERSON}/${id}`,
     },
     unLoggedUsers: {
