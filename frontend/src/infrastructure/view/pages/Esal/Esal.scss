@@ -1,4 +1,14 @@
 .esal {
-  padding: 2rem;
-
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  text-align: center;
+  h1{
+    grid-column: 2/3;
+  }  
+  .content{
+    grid-column: 2/3;
+  }
+  .buttons{
+    grid-column: 2/3;
+  }
 }
