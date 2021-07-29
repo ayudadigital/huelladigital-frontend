@@ -1,25 +1,24 @@
 import * as React from 'react';
-import { useContext, useState } from 'react';
+import {useContext, useState} from 'react';
 import './ConvocatoryRegister.scss';
-import { FieldForm } from '../../../components/molecules/FieldForm';
-import { SubmitButton } from '../../../components/atoms/SubmitButton';
-import { ConvocatoryCard } from '../../../components/organisms/ConvocatoryCard';
-import { FormSelect } from '../../../components/molecules/FormSelect';
-import { LIST_MUNICIPALITY } from './assets/listMunicipality';
-import { ConvocatoryService } from '../../../../../domain/services/Convocatory.service';
-import { Convocatory, Skill } from '../../../../../domain/models/Convocatory';
-import { stateValidateTypes } from '../../../components/atoms/InputFieldForm/types';
-import { TextAreaForm } from '../../../components/molecules/TextAreaForm';
-import { Label } from '../../../components/atoms/Label';
-import { Image } from '../../../components/atoms/Image';
+import {FieldForm} from '../../../components/molecules/FieldForm';
+import {SubmitButton} from '../../../components/atoms/SubmitButton';
+import {ConvocatoryCard} from '../../../components/organisms/ConvocatoryCard';
+import {FormSelect} from '../../../components/molecules/FormSelect';
+import {LIST_MUNICIPALITY} from './assets/listMunicipality';
+import {ConvocatoryService} from '../../../../../domain/services/Convocatory.service';
+import {Convocatory, Skill} from '../../../../../domain/models/Convocatory';
+import {stateValidateTypes} from '../../../components/atoms/InputFieldForm/types';
+import {TextAreaForm} from '../../../components/molecules/TextAreaForm';
+import {Label} from '../../../components/atoms/Label';
+import {Image} from '../../../components/atoms/Image';
 import superHeroes from '../../../components/atoms/Image/assets/superHeroes.svg';
-import { FormRadio } from '../../../components/molecules/FormRadio';
-import { RequirementDisplay } from '../../../components/organisms/Forms/RequirementsFormList/RequirementsFormList.stories';
-import { Role } from '../../../../../domain/models/Roles';
-import { Context } from '../../../../Context';
-import { LinkText } from '../../../components/atoms/LinkText';
-import { ROUTE } from '../../../../http/routes';
-import { LinkButton } from '../../../components/atoms/LinkButton/LinkButton';
+import {FormRadio} from '../../../components/molecules/FormRadio';
+import {RequirementDisplay} from '../../../components/organisms/Forms/RequirementsFormList/RequirementsFormList.stories';
+import {Role} from '../../../../../domain/models/Roles';
+import {Context} from '../../../../Context';
+import {ROUTE} from '../../../../http/routes';
+import {LinkButton} from '../../../components/atoms/LinkButton/LinkButton';
 
 export const ConvocatoryRegister: React.FC<{}> = () => {
   const islandTenerife = ['Tenerife', 'La Palmas', 'La Gomera', 'El Hierro'];
@@ -122,7 +121,6 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
     event.preventDefault();
 
     const convocatoryTemp: Convocatory = {
-      id: '',
       title: data.title,
       organizer: '',
       category: '',
@@ -154,7 +152,7 @@ export const ConvocatoryRegister: React.FC<{}> = () => {
 
   const auth = useContext(Context);
   // @ts-ignore
-  if (auth.isAuth && auth.role == Role.CONTACT_PERSON_NOT_CONFIRMED) {
+  if (auth.isAuth && auth.role === Role.CONTACT_PERSON_NOT_CONFIRMED) {
     return showNotConfirmedView();
   }
 
