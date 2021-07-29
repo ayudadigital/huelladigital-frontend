@@ -21,13 +21,13 @@ const profile = () => {
     });
 };
 
-const isProfileComplete = (profile: UserProfileDTO) => {
+const isProfileComplete = ({address, birthDate, email, name, zipCode}: UserProfileDTO) => {
   return (
-    !!profile.email &&
-    !!profile.name &&
-    !!profile.zipCode &&
-    !!profile.address &&
-    !!profile.birthDate
+    !!email &&
+    !!name &&
+    !!zipCode &&
+    !!address &&
+    !!birthDate
   );
 };
 
