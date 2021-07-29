@@ -15,6 +15,7 @@ describe('method into convocatoryRepository', () => {
     it('should create convocatory with an http post', () => {
         const exampleSkill: Skill = {name: 'Nombre skill', description: 'description'};
         const proposal: Convocatory = {
+            id:'',
             title: 'Example Title',
             organizer: 'Example FormRegisterEsal',
             province: 35,
