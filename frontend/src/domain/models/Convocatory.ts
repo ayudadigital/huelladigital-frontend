@@ -1,6 +1,7 @@
 import {Volunteer} from './Volunteer';
 
 export type Convocatory = {
+    id?:string;
     title: string;
     organizer: string;
     category: string;

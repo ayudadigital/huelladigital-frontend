@@ -40,8 +40,8 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
       'multipart/data-form',
       true,
     )
-    .then((response) => {
-      console.log(response);
+    .then((res) => {
+      console.log(res);
     });
   return response;
 };
@@ -49,7 +49,7 @@ const createConvocatory = (convocatory: Convocatory, file: string) => {
 const submitForRevision = (id: string, feedback: string | null) => {
   const hasFeedBack = !!feedback;
   const body = {
-    feedback: feedback,
+    feedback,
     hasFeedback: hasFeedBack,
   };
   return http.post(
