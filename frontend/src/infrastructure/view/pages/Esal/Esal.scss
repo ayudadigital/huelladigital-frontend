@@ -33,6 +33,11 @@ $yellow-tone: #eabd00;
       border-radius: 0.3rem;
       font-size: 1rem;
       padding: 1.25rem 2.5rem;
+      transition: 1s;
+      &:hover{
+        background-color: $purple-tone;
+        transform: scale(1.1);
+      }
     }
   }
   .last-message{
@@ -40,6 +45,14 @@ $yellow-tone: #eabd00;
     font-size: 1rem;
     h2{
       font-weight: normal;
+      color: $purple-tone;
+    }
+  }
+  .LinkText{
+    text-decoration: none;
+    color: $yellow-tone;
+    font-weight: bold; 
+    &:hover{
       color: $purple-tone;
     }
   }
