@@ -6,7 +6,7 @@ $line-space: 1.5;
 $title-font-size: 50px;
 $purple-tone: #7e254e;
 
-.main-div {
+.main{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,13 +368,13 @@ $purple-tone: #7e254e;
   }
 }
 
-@media (max-width: 576px) {
-  @import "../../../styles/Home/homeMobile";
-}
-
 @media (min-width: 992px) {
   .Home {
     padding: 0;
     background-size: 45%;
   }
+}
+
+@media (max-width: 576px) {
+  @import "../../../styles/Home/homeMobile";
 }
