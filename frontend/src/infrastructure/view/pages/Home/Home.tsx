@@ -24,7 +24,7 @@ import educationIcon from './assets/educationIcon.svg';
 
 export const Home: React.FC<{}> = () => {
   return (
-    <div className="main-div">
+    <div className="main">
       <div className="welcome-div">
         <p className="title">PLATAFORMA DE VOLUNTARIADO EN CANARIAS</p>
         <p className="info">
