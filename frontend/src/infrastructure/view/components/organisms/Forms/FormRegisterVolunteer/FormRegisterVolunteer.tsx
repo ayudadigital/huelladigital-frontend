@@ -9,6 +9,7 @@ import {VolunteerCredentialsDTO } from '../../../../../http/dtos/CredentialsDTO'
 import {volunteerRepository} from '../../../../../repositories/Volunteer.repository';
 import '../styles.scss';
 import { CheckInterface, DataInterface } from './types';
+import { LinkText } from '../../../atoms/LinkText/LinkText';
 
 export const FormRegisterVolunteer: React.FC = () => {
   const [data, setData] = useState<DataInterface>({
@@ -150,6 +151,19 @@ export const FormRegisterVolunteer: React.FC = () => {
         messageInfoUser={'Las contraseñas no coinciden'}
       />
       <SubmitButton text={'Registrarse'} disabled={submitState} />
+
+      <div>
+        <p>
+          Consentimiento <span style={{color: "red"}}> *</span>
+        </p>
+        <p>
+          <input type="checkbox" required/> Estoy de acuerdo con la <LinkText to="privacy-policy" text="Política de Privacidad"/> del sitio.
+        </p>
+        <p>
+          {/* Debe de hacer un POST a /api/v1/volunteers/profile/newsletter setteandoa  true */}
+          <input type="checkbox" required/> Para poder ayudar es imprescindible conocer las convocatorias del voluntarioado. Quiero suscribirme al newsletter de huellapositiva.com
+        </p>
+      </div>
     </form>
   );
 };

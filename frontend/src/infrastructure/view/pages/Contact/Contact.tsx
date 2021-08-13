@@ -41,7 +41,7 @@ export const Contact: React.FC<{}> = () => {
 
         <p className="faq">
           Si tienes alguna duda consulta nuestras{' '}
-          <LinkText to={ROUTE.faq} text="preguntas frecuentes" />
+          <LinkText to={ROUTE.faq} text="preguntas frecuentes." />
         </p>
         <p className="slogan">¡Cada persona suma!</p>
       </div>
@@ -52,28 +52,27 @@ export const Contact: React.FC<{}> = () => {
             <FieldForm type="text" title="Nombre *" name="name" />
             <FieldForm type="text" title="Apellidos *" name="surname" />
             <FieldForm type="email" title="Correo electrónico *" name="email" />
-            <FieldForm
-              type="email"
-              title="Confirmar correo *"
-              name="email-confirmation"
-            />
+            <FieldForm type="email" title="Confirmar correo *" name="email-confirmation" />
             <FieldForm type="text" title="Teléfono *" name="phone-number" />
-            <FieldForm type="text" title="Asunto *" name="subject" />
-          </div>
-          <div className="text-area">
-            <InputTextArea name="message" cols={115} rows={10} placeholder="Mensaje *" />
+            <div className="prueba">
+              <FieldForm type="text" title="Asunto *" name="subject" />
+            </div>
+            <div className="text-area">
+              <p>Mensaje *</p>
+              <InputTextArea name="message" cols={115} rows={10} placeholder="" />
+            </div>
           </div>
           <div className="consent-captcha">
             <div className="consent">
               <p>Consentimiento *</p>
-              <label>Acepto la política de privacidad del sitio</label>
               <input type="checkbox"></input>
+              <label> Acepto la <LinkText to={ROUTE.privacyPolicy} text="política de privacidad" /> del sitio</label>
             </div>
             <div className="captcha">
               <p>CAPTCHA</p>
             </div>
+            <LinkButton path="" text="Enviar" />
           </div>
-          <LinkButton path="" text="Enviar" />
         </div>
       </div>
     </div>
