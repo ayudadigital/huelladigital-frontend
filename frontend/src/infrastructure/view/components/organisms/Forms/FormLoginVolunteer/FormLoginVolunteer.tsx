@@ -1,36 +1,48 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles.scss';
 import { FieldForm } from '../../../molecules/FieldForm';
 import { SubmitButton } from '../../../atoms/SubmitButton';
 import { VolunteerCredential } from '../../../../../../domain/models/Credential';
 import { VolunteerService } from '../../../../../../domain/services/Volunteer.service';
+import formatRoles, { stateValidateTypes } from '../../../atoms/InputFieldForm/types';
+
+const isValidate: { [key: string]: (value: string) => boolean } = {
+  email: (value) => formatRoles.regexEmail.test(value),
+  password: (value: string) => formatRoles.regexPassword.test(value),
+};
 
 export const FormLoginVolunteer: React.FC<any> = () => {
-  const [stateButton, setStateButton] = useState(true);
+  const [stateButton, setStateButton] = useState<boolean>(true);
   const [messageShow, setMessageShow] = useState(false);
-  const [data, setData] = useState({
+  const [data, setData] = useState<Record<string, string>>({
     email: '',
     password: '',
   });
+  const validate: Record<string, stateValidateTypes> = {
+    email: '',
+    password: '',
+  };
 
-  const handleStateButton = useCallback(() => {
-    data.email !== '' && data.password !== ''
-      ? setStateButton(false)
-      : setStateButton(true);
-  }, [data.email, data.password]);
+  const isCorrect = () => {
+    const key = Object.keys(validate).map((keys) => keys);
+    for (const keyForm in data) {
+      validate[keyForm] = isValidate[keyForm](data[keyForm]) ? 'correct' : 'incorrect';
+    }
+    setStateButton(key.every((valueKey) => validate[valueKey] !== 'incorrect'));
+  };
 
-  async function handleSubmit(event: React.FormEvent) {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const volunteerCredential: VolunteerCredential = {
       email: data.email,
       password: data.password,
     };
     VolunteerService.loginVolunteer(volunteerCredential);
-  }
+  };
 
   useEffect(() => {
-    handleStateButton();
-  }, [data, handleStateButton]);
+    isCorrect();
+  }, [data]);
 
   return (
     <form className="ContainerForm" method="POST" id="form" onSubmit={handleSubmit}>
@@ -49,7 +61,7 @@ export const FormLoginVolunteer: React.FC<any> = () => {
       {messageShow && (
         <p style={{ color: 'red', marginTop: '5px' }}>El email o contraseña están mal</p>
       )}
-      <SubmitButton text={'Acceder'} disabled={stateButton} />
+      <SubmitButton text={'Acceder'} disabled={!stateButton} />
     </form>
   );
 };

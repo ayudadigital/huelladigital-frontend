@@ -29,7 +29,7 @@ const formatRoles = {
   ),
   regexZipcode: new RegExp(/\d{5}/),
   regexAddress: new RegExp(/^[a-z A-Z]+\s[0-9]+$/),
-  regexPassword: new RegExp(/^[a-zA-Z0-9.,:+`%!@#$^'?(){}~_/\-\[\]]*$/),
+  regexPassword: new RegExp(/(.|\s)*\S(.|\s)*/),
 };
 
 export default formatRoles;
