@@ -1,9 +1,7 @@
 import { volunteerRepository } from './Volunteer.repository';
 import { http } from '../http/http';
-import { VolunteerCredentialsDTO } from '../http/dtos/CredentialsDTO';
-import { mockComponent } from 'react-dom/test-utils';
 import { ROUTE } from '../http/routes';
-import { BASE } from '../../infrastructure/base';
+import { BASE } from '../base';
 import { VolunteerCredential } from '../../domain/models/Credential';
 
 describe('volunteerRepository', () => {

@@ -4,7 +4,6 @@ import { ROUTE } from '../http/routes';
 import { BASE } from '../base';
 import { activateAuth } from '../http/cookies';
 import { VolunteerCredential } from '../../domain/models/Credential';
-import UserProfileDTO from '../http/dtos/UserProfileDTO';
 import { profileRepository } from './Profile.repository';
 
 const login = (loginCredentials: VolunteerCredential) => {
@@ -38,9 +37,6 @@ const login = (loginCredentials: VolunteerCredential) => {
       } else {
         return 403;
       }
-    })
-    .catch((error) => {
-      console.log(error);
     });
 };
 
@@ -61,9 +57,6 @@ const register = (registerCredentials: VolunteerCredentialsDTO) => {
       } else if (response.status === 409) {
         return 409;
       }
-    })
-    .catch((error) => {
-      console.log(error);
     });
 };
 
