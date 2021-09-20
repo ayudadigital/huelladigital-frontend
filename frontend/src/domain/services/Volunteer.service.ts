@@ -17,7 +17,7 @@ const editProfile = (newVolunteerData: Volunteer) => {
 };
 
 const loginVolunteer = (volunteerCredential: VolunteerCredential) => {
-  volunteerRepository.login(volunteerCredential);
+  return volunteerRepository.login(volunteerCredential).then((status) => status);
 };
 
 export const VolunteerService = {
