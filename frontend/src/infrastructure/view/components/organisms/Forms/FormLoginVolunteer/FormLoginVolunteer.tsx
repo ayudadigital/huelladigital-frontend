@@ -13,7 +13,7 @@ const isValidate: { [key: string]: (value: string) => boolean } = {
 
 export const FormLoginVolunteer: React.FC<any> = () => {
   const [stateButton, setStateButton] = useState<boolean>(true);
-  const [messageShow, setMessageShow] = useState(false);
+  const [messageShow, setMessageShow] = useState<boolean>(false);
   const [data, setData] = useState<Record<string, string>>({
     email: '',
     password: '',
@@ -37,7 +37,9 @@ export const FormLoginVolunteer: React.FC<any> = () => {
       email: data.email,
       password: data.password,
     };
-    VolunteerService.loginVolunteer(volunteerCredential);
+    VolunteerService.loginVolunteer(volunteerCredential).then((status) =>
+      setMessageShow(!!(status !== 200 || 201)),
+    );
   };
 
   useEffect(() => {

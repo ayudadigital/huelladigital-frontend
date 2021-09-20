@@ -7,7 +7,7 @@ import { VolunteerCredential } from '../../domain/models/Credential';
 import { profileRepository } from './Profile.repository';
 
 const login = (loginCredentials: VolunteerCredential) => {
-  http
+  return http
     .post(`${BASE.API}${ROUTE.API.volunteers.login}`, JSON.stringify(loginCredentials))
     .then((response) => {
       if (response.status === 201 || response.status === 200) {
