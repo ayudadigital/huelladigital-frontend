@@ -1,26 +1,25 @@
-import React from 'react';
-import './Home.scss';
-import { LinkButton } from '../../components/atoms/LinkButton/LinkButton';
-import { ROUTE } from '../../../http/routes';
-import { LinkText } from '../../components/atoms/LinkText';
-import { Image } from '../../components/atoms/Image';
-import { DescriptiveImage } from '../../components/molecules/DescriptiveImage';
-import answersImage from './assets/answers.png';
-import newInitiativeImage from './assets/new_initiative.png';
-import overwhelmedEntitiesImage from './assets/overwhelmed_entities.png';
-import covidCampaignImage from './assets/covid_campaign.jpg';
-import answersSchemeImage from './assets/esquema-respuesta-pv.jpg';
-import huellaStructure from './assets/huella_structure.png';
-import notionLogo from './assets/notionLogo.png';
-import asaicanLogo from './assets/asaicanLogo.png';
-import albaQuadradoLogo from './assets/albaQuadradoLogo.png';
-import miroLogo from './assets/miroLogo.png';
-import nataliaPachecoLogo from './assets/nataliaPachecoLogo.png';
-import slackLogo from './assets/slackLogo.png';
-import shieldIcon from './assets/shieldIcon.svg';
-import careIcon from './assets/careIcon.svg';
-import supportIcon from './assets/supportIcon.svg';
-import educationIcon from './assets/educationIcon.svg';
+import React from "react";
+import "./Home.scss";
+import { LinkButton } from "../../components/atoms/LinkButton/LinkButton";
+import { LinkText } from "../../components/atoms/LinkText";
+import { Image } from "../../components/atoms/Image";
+import { DescriptiveImage } from "../../components/molecules/DescriptiveImage";
+import answersImage from "./assets/answers.png";
+import newInitiativeImage from "./assets/new_initiative.png";
+import overwhelmedEntitiesImage from "./assets/overwhelmed_entities.png";
+import covidCampaignImage from "./assets/covid_campaign.jpg";
+import answersSchemeImage from "./assets/esquema-respuesta-pv.jpg";
+import huellaStructure from "./assets/huella_structure.png";
+import notionLogo from "./assets/notionLogo.png";
+import asaicanLogo from "./assets/asaicanLogo.png";
+import albaQuadradoLogo from "./assets/albaQuadradoLogo.png";
+import miroLogo from "./assets/miroLogo.png";
+import nataliaPachecoLogo from "./assets/nataliaPachecoLogo.png";
+import slackLogo from "./assets/slackLogo.png";
+import shieldIcon from "./assets/shieldIcon.svg";
+import careIcon from "./assets/careIcon.svg";
+import supportIcon from "./assets/supportIcon.svg";
+import educationIcon from "./assets/educationIcon.svg";
 
 export const Home: React.FC<{}> = () => {
   return (
@@ -40,6 +39,7 @@ export const Home: React.FC<{}> = () => {
       <div className="main-event-div">
         <p className="title">¿Qué es la campaña?</p>
         <iframe
+          title="¿Qué es la campaña?"
           width="500"
           height="350"
           src="https://www.youtube.com/embed/3woUcQNAf2k"
@@ -316,6 +316,7 @@ export const Home: React.FC<{}> = () => {
         <div>
           <p>#DiSÍalVoluntariado</p>
           <iframe
+            title="Di si al voluntariado"
             width="500"
             height="350"
             src="https://www.youtube.com/embed/3woUcQNAf2k"
@@ -325,6 +326,7 @@ export const Home: React.FC<{}> = () => {
         <div>
           <p>¿Qué es la Innovación Social?</p>
           <iframe
+            title="¿Qué es la Innovación Social?"
             width="500"
             height="350"
             src="https://www.youtube.com/embed/3woUcQNAf2k"
