@@ -1,7 +1,6 @@
-// @ts-nocheck
 import React, { useContext } from "react";
 import "./styles/scss/index.scss";
-import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./view/pages/Home/Home";
 import { ROUTE } from "./http/routes";
 import { EmailConfirmation } from "./view/pages/EmailConfirmation";
@@ -31,25 +30,23 @@ const App: React.FC = () => {
         <WrapperPages>
           <Header />
           <Routes>
-            <Route path={ROUTE.proposals.list} component={ConvocatoryList} />
-            <Route path={ROUTE.proposals.details} component={ConvocatoryDetails} />
-            <Route path={ROUTE.proposals.register} component={ConvocatoryRegister} />
-            <Route
-              path={ROUTE.proposals.volunteers(':id')}
-              component={ConvocatoryVolunteers}
-            />
-            <Route exact path={ROUTE.home} component={Home} />
-            <Route exact path={ROUTE.loginRegister} component={LoginRegister} />
-            <Route exact path={ROUTE.faq} component={FrequentlyAskedQuestions} />
-            <Route exact path={ROUTE.organizations.register} component={Esal} />
-            <Route path={ROUTE.cookiesPolicy} component={CookiesPolicy} />
-            <Route path={ROUTE.legalAdvice} component={LegalAdvice} />
-            <Route path={ROUTE.email.confirmation} component={EmailConfirmation} />
-            <Route path={ROUTE.volunteers.profile} component={ModifyUser} />
-            <Route path={ROUTE.privacyPolicy} component={PrivacyPolicy} />
-            <Route path={ROUTE.contact} component={Contact} />
-            {!isAuth && <Navigate from={ROUTE.home} to={ROUTE.loginRegister} />}
-            {isAuth && <Navigate from={ROUTE.loginRegister} to={ROUTE.home} />}
+            <Route path={ROUTE.proposals.list} loader={ConvocatoryList} />
+            <Route path={ROUTE.proposals.details} loader={ConvocatoryDetails} />
+            <Route path={ROUTE.proposals.register} loader={ConvocatoryRegister} />
+            <Route path={ROUTE.proposals.volunteers(':id')} loader={ConvocatoryVolunteers} />
+            <Route path={ROUTE.home} loader={Home} />
+            <Route path={ROUTE.loginRegister} loader={LoginRegister} />
+            <Route path={ROUTE.faq} loader={FrequentlyAskedQuestions} />
+            <Route path={ROUTE.organizations.register} loader={Esal} />
+            <Route path={ROUTE.cookiesPolicy} loader={CookiesPolicy} />
+            <Route path={ROUTE.legalAdvice} loader={LegalAdvice} />
+            <Route path={ROUTE.email.confirmation} loader={EmailConfirmation} />
+            <Route path={ROUTE.volunteers.profile} loader={ModifyUser} />
+            <Route path={ROUTE.privacyPolicy} loader={PrivacyPolicy} />
+            <Route path={ROUTE.contact} loader={Contact} />
+            {/*TODO: Resolve the problems with redirect component, to avoid showing blank page*/}
+            {/*{!isAuth && <Redirect from={ROUTE.home} to={ROUTE.loginRegister} />}*/}
+            {/*{isAuth && <Redirect from={ROUTE.loginRegister} to={ROUTE.home} />}*/}
           </Routes>
           <Footer />
         </WrapperPages>

@@ -1,7 +1,11 @@
-import * as React from 'react';
-import './WrapperPages.scss';
+import * as React from "react";
+import "./WrapperPages.scss";
 
-export const WrapperPages: React.FC<{}> = ({children}) => (
+type Props = {
+  children: JSX.Element[],
+};
+
+export const WrapperPages: React.FC<Props> = ({children}) => (
   <div className="WrapperPages">
     {children}
   </div>
